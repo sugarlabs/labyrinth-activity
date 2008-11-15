@@ -26,7 +26,10 @@
 import sys
 from os.path import *
 import os
-from Numeric import *
+
+# Not available on OLPC's XO, but not needed neither
+#from Numeric import *
+
 import gtk
 
 __BE_VERBOSE=os.environ.get('DEBUG_LABYRINTH',0)
