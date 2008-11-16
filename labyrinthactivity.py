@@ -3,13 +3,15 @@ import os
 import logging
 from gettext import gettext as _
 import tarfile
-import sha
+import tempfile
 import xml.dom.minidom as dom
 
 import gobject
 import gtk
 
 from sugar.activity import activity
+
+# labyrinth sources are shipped inside the 'src' subdirectory
 sys.path.append(os.path.join(activity.get_bundle_path(), 'src'))
 
 import UndoManager
@@ -53,12 +55,12 @@ class LabyrinthActivity(activity.Activity):
         self.MainArea.grab_focus ()
 
     def read_file(self, file_path):
-        tf = tarfile.open(file_path)
-        mapname = utils.get_save_dir() + tf.getnames()[0]
-        tf.extractall(utils.get_save_dir())
-        tf.close()
+        tar_file = tarfile.open(file_path)
+        map_name = tar_file.getnames()[0]
+        tar_file.extractall(tempfile.gettempdir())
+        tar_file.close()
 
-        f = file (mapname, 'r')
+        f = file (os.path.join(tempfile.gettempdir(), map_name), 'r')
         doc = dom.parse (f)
         top_element = doc.documentElement
         self.set_title(top_element.getAttribute ("title"))
@@ -76,27 +78,29 @@ class LabyrinthActivity(activity.Activity):
     def write_file(self, file_path):
         logging.debug('write_file')
         self.MainArea.save_thyself ()
+
+        if self.save_file is None:
+            # FIXME: Create an empty file because the Activity superclass
+            # always requires one
+            fd, self.save_file = tempfile.mkstemp(suffix='.map')
+            del fd
+
         tf = tarfile.open (file_path, "w")
-        tf.add (self.save_file, utils.strip_path_from_file_name(self.save_file))
+        tf.add (self.save_file, os.path.split(self.save_file)[1])
         for t in self.MainArea.thoughts:
             if isinstance(t, ImageThought.ImageThought):
-                tf.add (t.filename, 'images/' + utils.strip_path_from_file_name(t.filename))
+                tf.add (t.filename, 'images/' + os.path.split(t.filename)[1])
                 
         tf.close()
+
+        os.unlink(self.save_file)
 
     def doc_save_cb (self, widget, doc, top_element):
         logging.debug('doc_save_cb')
         save_string = self.serialize_to_xml(doc, top_element)
-        if not self.save_file:
-            sham = sha.new (save_string)
-            save_loc = utils.get_save_dir ()
-            self.save_file = save_loc+sham.hexdigest()+".map"
-            counter = 1
-            while os.path.exists(self.save_file):
-            
-                print "Warning: Duplicate File.  Saving to alternative"
-                self.save_file = save_loc + "Dup"+str(counter)+sham.hexdigest()+".map"
-                counter += 1
+
+        fd, self.save_file = tempfile.mkstemp(suffix='.map')
+        del fd
 
         self.save_map(self.save_file, save_string)
         #self.emit ('file_saved', self.save_file, self)
