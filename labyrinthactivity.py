@@ -29,6 +29,8 @@ class LabyrinthActivity(activity.Activity):
 
         self._edit_toolbar = activity.EditToolbar()
         toolbox.add_toolbar(_('Edit'), self._edit_toolbar)
+        self._edit_toolbar.undo.child.connect('clicked', self.__undo_cb)
+        self._edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
         self._edit_toolbar.show()
 
         self.undo = UndoManager.UndoManager (self,
@@ -50,6 +52,14 @@ class LabyrinthActivity(activity.Activity):
         self.MainArea.initialize_model(self.tree_model)
 
         self.set_focus_child (self.MainArea)
+
+        self.undo.unblock()
+
+    def __undo_cb(self, button):
+        self.undo.undo_action(None)
+
+    def __redo_cb(self, button):
+        self.undo.redo_action(None)
 
     def main_area_focus_cb (self, arg, event, extended = False):
         self.MainArea.grab_focus ()
