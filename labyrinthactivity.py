@@ -10,6 +10,7 @@ import gobject
 import gtk
 
 from sugar.activity import activity
+from sugar.graphics.toolbutton import ToolButton
 
 # labyrinth sources are shipped inside the 'src' subdirectory
 sys.path.append(os.path.join(activity.get_bundle_path(), 'src'))
@@ -38,6 +39,12 @@ class LabyrinthActivity(activity.Activity):
                                              edit_toolbar.redo.child)
         self._undo.block ()
 
+        self._add_text_thought = ToolButton('go-next-paired')
+        self._add_text_thought.set_tooltip(_('Add idea as text'))
+        self._add_text_thought.connect('clicked', self.__add_text_thought_cb)
+        edit_toolbar.insert(self._add_text_thought, -1)
+        self._add_text_thought.show()
+
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING
 
@@ -54,6 +61,11 @@ class LabyrinthActivity(activity.Activity):
         self.set_focus_child (self._main_area)
 
         self._undo.unblock()
+
+    def __add_text_thought_cb(self, button):
+        coords = (100, 100)
+        thought = self._main_area.create_new_thought(coords, MMapArea.TYPE_TEXT)
+        self._main_area.begin_editing(thought)
 
     def __undo_cb(self, button):
         self._undo.undo_action(None)
