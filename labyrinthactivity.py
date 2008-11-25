@@ -39,11 +39,13 @@ class LabyrinthActivity(activity.Activity):
                                              edit_toolbar.redo.child)
         self._undo.block ()
 
+        """
         self._add_text_thought = ToolButton('go-next-paired')
         self._add_text_thought.set_tooltip(_('Add idea as text'))
         self._add_text_thought.connect('clicked', self.__add_text_thought_cb)
         edit_toolbar.insert(self._add_text_thought, -1)
         self._add_text_thought.show()
+        """
 
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING
