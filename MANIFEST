@@ -46,7 +46,6 @@ po/nl.po
 po/Makefile.in.in
 po/pt_PT.po
 po/fr.po
-po/POTFILES
 po/sv.po
 po/es.po
 po/pt_BR.po
@@ -71,7 +70,6 @@ src/__init__.py
 src/MMapArea.py
 src/ResourceThought.py
 src/TextBufferMarkup.py
-src/Makefile.in
 src/MainWindow.py
 src/MapList.py
 src/ImageThought.py

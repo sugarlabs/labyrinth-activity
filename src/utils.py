@@ -32,6 +32,10 @@ import os
 
 import gtk
 
+def color_to_string(color):
+    # Needed for compatibility with pygtk < 2.12
+    return '#%04x%04x%04x' % (color.red, color.green, color.blue)
+
 __BE_VERBOSE=os.environ.get('DEBUG_LABYRINTH',0)
 if __BE_VERBOSE:
 	def print_debug(*data):

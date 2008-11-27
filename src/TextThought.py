@@ -834,8 +834,8 @@ class TextThought (BaseThought.BaseThought):
 		self.element.setAttribute ("ul-coords", str(self.ul))
 		self.element.setAttribute ("lr-coords", str(self.lr))
 		self.element.setAttribute ("identity", str(self.identity))
-		self.element.setAttribute ("background-color", self.background_color.to_string())
-		self.element.setAttribute ("foreground-color", self.foreground_color.to_string())
+		self.element.setAttribute ("background-color", utils.color_to_string(self.background_color))
+		self.element.setAttribute ("foreground-color", utils.color_to_string(self.foreground_color))
 		if self.editing:
 			self.element.setAttribute ("edit", "true")
 		else:
