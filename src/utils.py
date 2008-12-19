@@ -160,15 +160,15 @@ def gtk_to_cairo_color(color):
 	return (color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0)
 
 def draw_thought_extended (context, ul, lr, am_root, am_primary, background_color, fatborder=False, dashborder=False):
-	context.move_to (ul[0], ul[1]+5)
-	context.line_to (ul[0], lr[1]-5)
-	context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0]+5, lr[1])
-	context.line_to (lr[0]-5, lr[1])
-	context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1]-5)
-	context.line_to (lr[0], ul[1]+5)
-	context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0]-5, ul[1])
-	context.line_to (ul[0]+5, ul[1])
-	context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1]+5)
+	context.move_to (ul[0], ul[1]+15)
+	context.line_to (ul[0], lr[1]-15)
+	context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0]+15, lr[1])
+	context.line_to (lr[0]-15, lr[1])
+	context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1]-15)
+	context.line_to (lr[0], ul[1]+15)
+	context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0]-15, ul[1])
+	context.line_to (ul[0]+15, ul[1])
+	context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1]+15)
 	if am_root:
 		bg = selected_colors["bg"]
 		context.set_source_rgb (bg[0], bg[1], bg[2])
