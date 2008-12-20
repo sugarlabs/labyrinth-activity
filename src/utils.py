@@ -32,6 +32,13 @@ import os
 
 import gtk
 
+try:
+	# Sugar specific modules
+	from sugar.profile import get_color
+	from sugar.graphics.style import Color
+except:
+	pass
+
 def color_to_string(color):
     # Needed for compatibility with pygtk < 2.12
     return '#%04x%04x%04x' % (color.red, color.green, color.blue)
@@ -63,6 +70,29 @@ selected_colors = {
 	}
 
 default_font = None
+
+try:
+	# Sugar specific tweak
+	xo_col = get_color()
+	rf, gf, bf, af = Color(xo_col.get_fill_color()).get_rgba()
+	rs, gs, bs, as = Color(xo_col.get_stroke_color()).get_rgba()
+
+	# Use white or black text for best contrast
+	if rf + gf + bf < 0.5:
+		rt, gt, bt = 1, 1, 1
+	else:
+		rt, gt, bt = 0, 0, 0
+	primary_colors = {
+		"bg" : (rf, gf, bf),
+		"fg" : (rs, gs, bs),
+		"text" : (rt, gt, bt)
+		}
+except:
+	primary_colors = {
+		"bg" : (0.2, 0.6, 1.0),
+		"fg" : (0, 0, 0),
+		"text" : (0, 0, 0)
+		}
 
 def get_save_dir ():
 	''' Returns the path to the directory to save the maps to '''
@@ -170,15 +200,19 @@ def draw_thought_extended (context, ul, lr, am_root, am_primary, background_colo
 	context.line_to (ul[0]+15, ul[1])
 	context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1]+15)
 	if am_root:
-		bg = selected_colors["bg"]
-		context.set_source_rgb (bg[0], bg[1], bg[2])
+		r,g,b = selected_colors["bg"]
 	elif am_primary:
-		context.set_source_rgb (0.937, 0.831, 0.000)		
+		r,g,b = primary_colors["bg"]
 	else:
 		r,g,b = gtk_to_cairo_color(background_color)
-		context.set_source_rgb (r, g, b)
+	context.set_source_rgb (r, g, b)
 	context.fill_preserve ()
-	context.set_source_rgb (0,0,0)
+	if am_primary:
+		r,g,b = primary_colors["fg"]
+		context.set_source_rgb (r,g,b)
+		fatborder = True
+	else:
+		context.set_source_rgb (0,0,0)
 	if dashborder:
 		context.set_dash([4.0], 0.0)
 	if fatborder:

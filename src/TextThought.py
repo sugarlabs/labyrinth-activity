@@ -336,7 +336,9 @@ class TextThought (BaseThought.BaseThought):
 			context.stroke ()
 
 		(textx, texty) = (self.text_location[0], self.text_location[1])
-		if (self.foreground_color):
+		if self.am_primary:
+			r, g, b = utils.primary_colors["text"]
+		elif (self.foreground_color):
 			r, g, b = utils.gtk_to_cairo_color(self.foreground_color)
 		else:
 			r, g ,b = utils.gtk_to_cairo_color(utils.default_colors["text"])
