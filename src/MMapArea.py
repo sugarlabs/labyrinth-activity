@@ -819,17 +819,17 @@ class MMapArea (gtk.DrawingArea):
 			xe,ye = context.device_to_user_distance(xe, ye)
 
 			color = utils.selected_colors["border"]
-			context.set_line_width(1.0)
+			context.set_line_width(2.0)
 			context.set_source_rgb(color[0], color[1], color[2])
 			context.rectangle(xs, ys, xe, ye)
 			context.stroke()
 			
-			color = utils.selected_colors["fill"]
-			context.set_source_rgba(color[0], color[1], color[2], 0.3)
-			context.rectangle(xs, ys, xe, ye)
-			context.fill()
-			context.set_line_width(2.0)
-			context.set_source_rgba(0.0, 0.0, 0.0, 1.0)
+			#color = utils.selected_colors["fill"]
+			#context.set_source_rgba(color[0], color[1], color[2], 0.3)
+			#context.rectangle(xs, ys, xe, ye)
+			#context.fill()
+			#context.set_line_width(2.0)
+			#context.set_source_rgba(0.0, 0.0, 0.0, 1.0)
 
 	def undo_create_cb (self, action, mode):
 		self.undo.block ()
