@@ -11,6 +11,7 @@ import gtk
 
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.menuitem import MenuItem
 
 # labyrinth sources are shipped inside the 'src' subdirectory
 sys.path.append(os.path.join(activity.get_bundle_path(), 'src'))
@@ -32,20 +33,30 @@ class LabyrinthActivity(activity.Activity):
         toolbox.add_toolbar(_('Edit'), edit_toolbar)
         edit_toolbar.undo.child.connect('clicked', self.__undo_cb)
         edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
+        edit_toolbar.copy.connect('clicked', self.__copy_cb)
+	menu_item = MenuItem('Cut') 
+        menu_item.connect('activate', self.__cut_cb)
+	menu_item.show()
+        edit_toolbar.copy.get_palette().menu.append(menu_item)
+        edit_toolbar.paste.connect('clicked', self.__paste_cb)
         edit_toolbar.show()
+
+        self.clipboard = gtk.Clipboard()
 
         self._undo = UndoManager.UndoManager (self,
                                              edit_toolbar.undo.child,
                                              edit_toolbar.redo.child)
         self._undo.block ()
 
-        """
+	# <------ has issues:
+	# - add some default text so it draws?
+	# - link to primary or selected nodes
+	# - position in free space near linked node
         self._add_text_thought = ToolButton('go-next-paired')
         self._add_text_thought.set_tooltip(_('Add idea as text'))
         self._add_text_thought.connect('clicked', self.__add_text_thought_cb)
         edit_toolbar.insert(self._add_text_thought, -1)
         self._add_text_thought.show()
-        """
 
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING
@@ -74,6 +85,15 @@ class LabyrinthActivity(activity.Activity):
 
     def __redo_cb(self, button):
         self._undo.redo_action(None)
+
+    def __cut_cb (self, event):
+        self._main_area.cut_clipboard (self.clipboard)
+
+    def __copy_cb (self, event):
+        self._main_area.copy_clipboard (self.clipboard)
+
+    def __paste_cb (self, event):
+        self._main_area.paste_clipboard (self.clipboard)
 
     def __main_area_focus_cb (self, arg, event, extended = False):
         self._main_area.grab_focus ()
