@@ -11,6 +11,7 @@ import gtk
 
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.menuitem import MenuItem
 
 # labyrinth sources are shipped inside the 'src' subdirectory
@@ -48,15 +49,26 @@ class LabyrinthActivity(activity.Activity):
                                              edit_toolbar.redo.child)
         self._undo.block ()
 
-	# <------ has issues:
-	# - add some default text so it draws?
-	# - link to primary or selected nodes
-	# - position in free space near linked node
-        self._add_text_thought = ToolButton('go-next-paired')
-        self._add_text_thought.set_tooltip(_('Add idea as text'))
-        self._add_text_thought.connect('clicked', self.__add_text_thought_cb)
-        edit_toolbar.insert(self._add_text_thought, -1)
-        self._add_text_thought.show()
+        separator = gtk.SeparatorToolItem()
+        separator.set_draw(True)
+        edit_toolbar.insert(separator, -1)
+        separator.show()
+
+        self._edit_mode = RadioToolButton(named_icon='edit-mode')
+        self._edit_mode.set_tooltip(_('Edit mode'))
+        self._edit_mode.set_accelerator(_('e'))
+        self._edit_mode.set_group(None)
+        self._edit_mode.connect('clicked', self.__edit_mode_cb)
+        edit_toolbar.insert(self._edit_mode, -1)
+        self._edit_mode.show()
+
+        self._draw_mode = RadioToolButton(named_icon='draw-mode')
+	self._draw_mode.set_group(self._edit_mode)
+        self._draw_mode.set_tooltip(_('Drawing mode'))
+        self._draw_mode.set_accelerator(_('d'))
+        self._draw_mode.connect('clicked', self.__draw_mode_cb)
+        edit_toolbar.insert(self._draw_mode, -1)
+        self._draw_mode.show()
 
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING
@@ -65,6 +77,7 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.connect ("doc_save", self.__doc_save_cb)
         self._main_area.connect ("set_focus", self.__main_area_focus_cb)
         self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
+        self._main_area.set_mode (self._mode)
         self.set_canvas(self._main_area)
         self._main_area.show()
 
@@ -75,10 +88,13 @@ class LabyrinthActivity(activity.Activity):
 
         self._undo.unblock()
 
-    def __add_text_thought_cb(self, button):
-        coords = (100, 100)
-        thought = self._main_area.create_new_thought(coords, MMapArea.TYPE_TEXT)
-        self._main_area.begin_editing(thought)
+    def __edit_mode_cb(self, button):
+        self._mode = MMapArea.MODE_EDITING
+        self._main_area.set_mode (self._mode)
+
+    def __draw_mode_cb(self, button):
+        self._mode = MMapArea.MODE_DRAW
+        self._main_area.set_mode (self._mode)
 
     def __undo_cb(self, button):
         self._undo.undo_action(None)
