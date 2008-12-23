@@ -12,6 +12,7 @@ import gtk
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.radiotoolbutton import RadioToolButton
+from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.menuitem import MenuItem
 
 # labyrinth sources are shipped inside the 'src' subdirectory
@@ -41,6 +42,9 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.copy.get_palette().menu.append(menu_item)
         edit_toolbar.paste.connect('clicked', self.__paste_cb)
         edit_toolbar.show()
+
+        activity_toolbar = toolbox.get_activity_toolbar()
+        activity_toolbar.share.props.visible = False
 
         self.clipboard = gtk.Clipboard()
 
