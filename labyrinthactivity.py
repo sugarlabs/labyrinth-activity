@@ -60,7 +60,7 @@ class LabyrinthActivity(activity.Activity):
 
         self._edit_mode = RadioToolButton(named_icon='edit-mode')
         self._edit_mode.set_tooltip(_('Edit mode'))
-        self._edit_mode.set_accelerator(_('e'))
+        self._edit_mode.set_accelerator(_('<ctrl>e'))
         self._edit_mode.set_group(None)
         self._edit_mode.connect('clicked', self.__edit_mode_cb)
         edit_toolbar.insert(self._edit_mode, -1)
@@ -69,7 +69,7 @@ class LabyrinthActivity(activity.Activity):
         self._draw_mode = RadioToolButton(named_icon='draw-mode')
 	self._draw_mode.set_group(self._edit_mode)
         self._draw_mode.set_tooltip(_('Drawing mode'))
-        self._draw_mode.set_accelerator(_('d'))
+        self._draw_mode.set_accelerator(_('<ctrl>d'))
         self._draw_mode.connect('clicked', self.__draw_mode_cb)
         edit_toolbar.insert(self._draw_mode, -1)
         self._draw_mode.show()
