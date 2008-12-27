@@ -74,6 +74,14 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.insert(self._draw_mode, -1)
         self._draw_mode.show()
 
+        self._image_mode = RadioToolButton(named_icon='add-image')
+        self._image_mode.set_group(self._edit_mode)
+        self._image_mode.set_tooltip(_('Image add mode'))
+        self._image_mode.set_accelerator(_('<ctrl>i'))
+        self._image_mode.connect('clicked', self.__image_mode_cb)
+        edit_toolbar.insert(self._image_mode, -1)
+        self._image_mode.show()
+
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING
 
@@ -98,6 +106,10 @@ class LabyrinthActivity(activity.Activity):
 
     def __draw_mode_cb(self, button):
         self._mode = MMapArea.MODE_DRAW
+        self._main_area.set_mode (self._mode)
+
+    def __image_mode_cb(self, button):
+        self._mode = MMapArea.MODE_IMAGE
         self._main_area.set_mode (self._mode)
 
     def __undo_cb(self, button):
