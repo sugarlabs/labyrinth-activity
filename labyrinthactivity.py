@@ -23,6 +23,7 @@ import MMapArea
 import ImageThought
 import utils
 
+
 class LabyrinthActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
@@ -36,9 +37,9 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.undo.child.connect('clicked', self.__undo_cb)
         edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
         edit_toolbar.copy.connect('clicked', self.__copy_cb)
-	menu_item = MenuItem('Cut') 
+        menu_item = MenuItem('Cut') 
         menu_item.connect('activate', self.__cut_cb)
-	menu_item.show()
+        menu_item.show()
         edit_toolbar.copy.get_palette().menu.append(menu_item)
         edit_toolbar.paste.connect('clicked', self.__paste_cb)
         edit_toolbar.show()
@@ -67,20 +68,23 @@ class LabyrinthActivity(activity.Activity):
         self._edit_mode.show()
 
         self._draw_mode = RadioToolButton(named_icon='draw-mode')
-	self._draw_mode.set_group(self._edit_mode)
+        self._draw_mode.set_group(self._edit_mode)
         self._draw_mode.set_tooltip(_('Drawing mode'))
         self._draw_mode.set_accelerator(_('<ctrl>d'))
         self._draw_mode.connect('clicked', self.__draw_mode_cb)
         edit_toolbar.insert(self._draw_mode, -1)
         self._draw_mode.show()
 
-        self._image_mode = RadioToolButton(named_icon='add-image')
-        self._image_mode.set_group(self._edit_mode)
-        self._image_mode.set_tooltip(_('Image add mode'))
-        self._image_mode.set_accelerator(_('<ctrl>i'))
-        self._image_mode.connect('clicked', self.__image_mode_cb)
-        edit_toolbar.insert(self._image_mode, -1)
-        self._image_mode.show()
+        # FIXME: Disabled image add mode toolbar icon while I get the
+		# Object chooser working (needs bunch of custom fluff the normal
+		# gtk+ file picker does not).
+        #self._image_mode = RadioToolButton(named_icon='add-image')
+        #self._image_mode.set_group(self._edit_mode)
+        #self._image_mode.set_tooltip(_('Image add mode'))
+        #self._image_mode.set_accelerator(_('<ctrl>i'))
+        #self._image_mode.connect('clicked', self.__image_mode_cb)
+        #edit_toolbar.insert(self._image_mode, -1)
+        #self._image_mode.show()
 
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING

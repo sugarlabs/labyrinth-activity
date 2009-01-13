@@ -30,6 +30,12 @@ import BaseThought
 import utils
 import UndoManager
 
+try:
+	from sugar.graphics.objectchooser import ObjectChooser
+	SUGAR_ACTIVITY = True
+except:
+	SUGAR_ACTIVITY = False
+
 MODE_EDITING = 0
 MODE_IMAGE = 1
 MODE_DRAW = 2
@@ -51,9 +57,63 @@ class ImageThought (BaseThought.ResizableThought):
 		self.button_press = False
 
 		if not loading:
-			self.all_okay = self.open_image ()
+			if SUGAR_ACTIVITY:
+				self.all_okay = self.journal_open_image ()
+			else:
+				self.all_okay = self.open_image ()
 		else:
 			self.all_okay = True
+
+	# FIXME: Work in progress, needs at least activity self to create
+	# tmp files/links in the right places and reference the window.
+	def journal_open_image (self, filename = None):
+		if not filename:
+			chooser = ObjectChooser()
+
+			try:
+				result = chooser.run()
+				if result == gtk.RESPONSE_ACCEPT:
+					jobject = chooser.get_selected_object()
+				else:
+					chooser.destroy()
+					del chooser
+					return False
+
+				if jobject and jobject.file_path:
+					fname = jobject.file_path
+				else:
+					chooser.destroy()
+					del chooser
+					return False
+			finally:
+				chooser.destroy()
+				del chooser
+		else:
+			fname = filename
+
+		print "fname =",fname
+
+		try:
+			self.orig_pic = gtk.gdk.pixbuf_new_from_file (fname)
+		except:
+			try:
+				# lets see if file was imported and is already extracted
+				fname = utils.get_save_dir() + 'images/' + utils.strip_path_from_file_name(filename)
+				self.orig_pic = gtk.gdk.pixbuf_new_from_file (fname)
+			except:
+				return False
+
+		self.filename = fname
+				
+		if not filename:
+			self.width = self.orig_pic.get_width ()
+			self.height = self.orig_pic.get_height ()
+			margin = utils.margin_required (utils.STYLE_NORMAL)
+
+			self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
+			self.pic = self.orig_pic
+		self.text = fname[fname.rfind('/')+1:fname.rfind('.')]
+		return True
 
 	def open_image (self, filename = None):
 		# Present a dialog for the user to choose an image here
@@ -308,7 +368,10 @@ class ImageThought (BaseThought.ResizableThought):
 				print "Unknown: "+n.nodeName
 		margin = utils.margin_required (utils.STYLE_NORMAL)
 		self.pic_location = (self.ul[0]+margin[0], self.ul[1]+margin[1])
-		self.okay = self.open_image (self.filename)
+		if SUGAR_ACTIVITY:
+			self.okay = self.journal_open_image (self.filename)
+		else:
+			self.okay = self.open_image (self.filename)
 		self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
 		if not self.okay:
 			dialog = gtk.MessageDialog (None, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
@@ -324,7 +387,10 @@ class ImageThought (BaseThought.ResizableThought):
 		return
 	
 	def change_image_cb(self, widget):
-		self.open_image()
+		if SUGAR_ACTIVITY:
+			self.journal_open_image()
+		else:
+			self.open_image()
 	
 	def get_popup_menu_items(self):
 		image = gtk.Image()

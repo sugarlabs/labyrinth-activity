@@ -1134,6 +1134,12 @@ class MMapArea (gtk.DrawingArea):
 			for t in self.thoughts:
 				t.select ()
 				self.selected.append (t)
+
+		# FIXME: Quick addition for using ctr-l to link selected nodes, should
+		# move this into a toolbar with a matching accelerator.
+		elif event.keyval == gtk.keysyms.l and event.state & gtk.gdk.CONTROL_MASK:
+			self.link_menu_cb()
+
 		else:
 			return False
 
