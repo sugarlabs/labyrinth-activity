@@ -54,17 +54,21 @@ class LabyrinthActivity(activity.Activity):
                                              edit_toolbar.redo.child)
         self._undo.block ()
 
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(True)
-        edit_toolbar.insert(separator, -1)
-        separator.show()
+        #separator = gtk.SeparatorToolItem()
+        #separator.set_draw(True)
+        #edit_toolbar.insert(separator, -1)
+        #separator.show()
+
+        thought_toolbar = gtk.Toolbar()
+        thought_toolbar.show()
+        toolbox.add_toolbar(_('Thoughts'), thought_toolbar)
 
         self._edit_mode = RadioToolButton(named_icon='edit-mode')
         self._edit_mode.set_tooltip(_('Edit mode'))
         self._edit_mode.set_accelerator(_('<ctrl>e'))
         self._edit_mode.set_group(None)
         self._edit_mode.connect('clicked', self.__edit_mode_cb)
-        edit_toolbar.insert(self._edit_mode, -1)
+        thought_toolbar.insert(self._edit_mode, -1)
         self._edit_mode.show()
 
         self._draw_mode = RadioToolButton(named_icon='draw-mode')
@@ -72,19 +76,47 @@ class LabyrinthActivity(activity.Activity):
         self._draw_mode.set_tooltip(_('Drawing mode'))
         self._draw_mode.set_accelerator(_('<ctrl>d'))
         self._draw_mode.connect('clicked', self.__draw_mode_cb)
-        edit_toolbar.insert(self._draw_mode, -1)
+        thought_toolbar.insert(self._draw_mode, -1)
         self._draw_mode.show()
 
         # FIXME: Disabled image add mode toolbar icon while I get the
-		# Object chooser working (needs bunch of custom fluff the normal
-		# gtk+ file picker does not).
-        #self._image_mode = RadioToolButton(named_icon='add-image')
-        #self._image_mode.set_group(self._edit_mode)
-        #self._image_mode.set_tooltip(_('Image add mode'))
-        #self._image_mode.set_accelerator(_('<ctrl>i'))
-        #self._image_mode.connect('clicked', self.__image_mode_cb)
-        #edit_toolbar.insert(self._image_mode, -1)
-        #self._image_mode.show()
+        # Object chooser working (needs bunch of custom fluff the normal
+        # gtk+ file picker does not).
+        self._image_mode = RadioToolButton(named_icon='add-image')
+        self._image_mode.set_group(self._edit_mode)
+        self._image_mode.set_tooltip(_('Image add mode'))
+        self._image_mode.set_accelerator(_('<ctrl>i'))
+        self._image_mode.connect('clicked', self.__image_mode_cb)
+        thought_toolbar.insert(self._image_mode, -1)
+        self._image_mode.show()
+
+        view_toolbar = gtk.Toolbar()
+        view_toolbar.show()
+        toolbox.add_toolbar(_('View'), view_toolbar)
+
+        self._zoom_in = ToolButton('zoom-in')
+        self._zoom_in.set_tooltip(_('Zoom in'))
+        self._zoom_in.connect('clicked', self.__zoom_in_cb)
+        view_toolbar.insert(self._zoom_in, -1)
+        self._zoom_in.show()
+
+        self._zoom_out = ToolButton('zoom-out')
+        self._zoom_out.set_tooltip(_('Zoom out'))
+        self._zoom_out.connect('clicked', self.__zoom_out_cb)
+        view_toolbar.insert(self._zoom_out, -1)
+        self._zoom_out.show()
+
+        self._zoom_tofit = ToolButton('zoom-best-fit')
+        self._zoom_tofit.set_tooltip(_('Fit to window'))
+        self._zoom_tofit.connect('clicked', self.__zoom_tofit_cb)
+        view_toolbar.insert(self._zoom_tofit, -1)
+        self._zoom_tofit.show()
+
+        self._zoom_original = ToolButton('zoom-original')
+        self._zoom_original.set_tooltip(_('Original size'))
+        self._zoom_original.connect('clicked', self.__zoom_original_cb)
+        view_toolbar.insert(self._zoom_original, -1)
+        self._zoom_original.show()
 
         self._save_file = None
         self._mode = MMapArea.MODE_EDITING
@@ -103,6 +135,48 @@ class LabyrinthActivity(activity.Activity):
         self.set_focus_child (self._main_area)
 
         self._undo.unblock()
+
+    def __zoom_in_cb(self, button):
+        self._main_area.scale_fac *= 1.2
+        self._main_area.invalidate()
+
+    def __zoom_out_cb(self, button):
+        self._main_area.scale_fac /= 1.2
+        self._main_area.invalidate()
+
+    def __zoom_original_cb(self, button):
+        self._main_area.scale_fac = 1.0
+        self._main_area.invalidate()
+
+    def __zoom_tofit_cb(self, button):
+        if len(self._main_area.thoughts) == 0:
+            self._main_area.scale_fac = 1.0
+            self._main_area.translation[0] = 0
+            self._main_area.translation[1] = 0
+            self._main_area.invalidate()
+            return
+        # Find thoughts extent
+        left = right = upper = lower = None
+        for t in self._main_area.thoughts:
+            if right == None or t.lr[0] > right:
+                right = t.lr[0]
+            if lower == None or t.lr[1] > lower:
+                lower = t.lr[1]
+            if left == None or  t.ul[0] < left:
+                left = t.ul[0]
+            if upper == None or t.ul[1] < upper:
+                upper = t.ul[1]
+        width = right - left
+        height = lower - upper
+        geom = self._main_area.window.get_geometry()
+        overlap = (width - geom[2], height - geom[3])
+        # Leave 10% space around the edge
+        width_scale = float(geom[2]) / (width * 1.1)
+        height_scale = float(geom[3]) / (height * 1.1)
+        self._main_area.translation[0] = (geom[2] / 2.0) - (width / 2.0 + left)
+        self._main_area.translation[1] = (geom[3] / 2.0) - (height / 2.0 + upper)
+        self._main_area.scale_fac = min(width_scale, height_scale)
+        self._main_area.invalidate()
 
     def __edit_mode_cb(self, button):
         self._mode = MMapArea.MODE_EDITING
