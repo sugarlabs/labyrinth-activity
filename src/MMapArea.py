@@ -804,7 +804,7 @@ class MMapArea (gtk.DrawingArea):
 		height = area.height / self.scale_fac
 		for t in self.thoughts:
 			try:
-				if t.lr[0] >= ax and t.ul[0] <= ax + width and t.lr[1] <= ay + height and t.ul[1] >= ay:
+				if t.lr[0] >= ax and t.ul[0] <= ax + width and t.lr[1] >= ay and t.ul[1] <= ay + height:
 					t.draw (context)
 			except:
 				t.draw(context)
