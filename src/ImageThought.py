@@ -68,15 +68,11 @@ class ImageThought (ResizableThought):
 				if result == gtk.RESPONSE_ACCEPT:
 					jobject = chooser.get_selected_object()
 				else:
-					chooser.destroy()
-					del chooser
 					return False
 
 				if jobject and jobject.file_path:
 					fname = jobject.file_path
 				else:
-					chooser.destroy()
-					del chooser
 					return False
 			finally:
 				chooser.destroy()
