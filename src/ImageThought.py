@@ -25,53 +25,46 @@ import xml.dom
 import gettext
 _ = gettext.gettext
 import cairo
+import os
+
+from sugar import mime
 
 from BaseThought import *
 import utils
 import UndoManager
 
-try:
-	from sugar.graphics.objectchooser import ObjectChooser
-	SUGAR_ACTIVITY = True
-except:
-	SUGAR_ACTIVITY = False
+from sugar.activity.activity import get_activity_root
+from sugar.graphics.objectchooser import ObjectChooser
 
 class ImageThought (ResizableThought):
 	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color):
-		super (ImageThought, self).__init__(save, "image_thought", undo, background_color, None)
+		super (ImageThought, self).__init__(coords, save, "image_thought", undo, background_color, None)
 
 		self.identity = thought_number
-		margin = utils.margin_required (utils.STYLE_NORMAL)
-		if coords:
-			self.ul = (coords[0]-margin[0], coords[1] - margin[1])
-			self.pic_location = coords
-		else:
-			self.ul = None
+		self.pic = None
+		self.orig_pic = None
+		self.pic_location = coords
 		self.button_press = False
-
-		if not loading:
-			if SUGAR_ACTIVITY:
-				self.all_okay = self.journal_open_image ()
-			else:
-				self.all_okay = self.open_image ()
-		else:
-			self.all_okay = True
+		self.all_okay = True
 
 	# FIXME: Work in progress, needs at least activity self to create
 	# tmp files/links in the right places and reference the window.
-	def journal_open_image (self, filename = None):
+	def journal_open_image (self, filename=None):
 		if not filename:
-			chooser = ObjectChooser()
+			chooser = ObjectChooser(_('Choose image'),
+                    what_filter=mime.GENERIC_TYPE_IMAGE)
 
 			try:
 				result = chooser.run()
-				if result == gtk.RESPONSE_ACCEPT:
+				if result == gtk.RESPONSE_ACCEPT and chooser.get_selected_object():
 					jobject = chooser.get_selected_object()
 				else:
 					return False
 
 				if jobject and jobject.file_path:
-					fname = jobject.file_path
+					fname = os.path.join(get_activity_root(), 'tmp',
+							os.path.basename(jobject.file_path))
+					os.rename(jobject.file_path, fname)
 				else:
 					return False
 			finally:
@@ -93,63 +86,13 @@ class ImageThought (ResizableThought):
 				return False
 
 		self.filename = fname
-				
-		if not filename:
-			self.width = self.orig_pic.get_width ()
-			self.height = self.orig_pic.get_height ()
-			margin = utils.margin_required (utils.STYLE_NORMAL)
-
-			self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
-			self.pic = self.orig_pic
 		self.text = fname[fname.rfind('/')+1:fname.rfind('.')]
-		return True
+		self.recalc_edges(True)
 
-	def open_image (self, filename = None):
-		# Present a dialog for the user to choose an image here
-		if not filename:
-			fil = gtk.FileFilter ()
-			fil.set_name("Images")
-			fil.add_pixbuf_formats ()
-			dialog = gtk.FileChooserDialog (_("Choose image to insert"), None, gtk.FILE_CHOOSER_ACTION_OPEN, \
-			                         (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_OPEN, gtk.RESPONSE_OK))
-			dialog.add_filter (fil)
-			res = dialog.run ()
-			dialog.hide ()
-			if res != gtk.RESPONSE_OK:
-				return False
-			else:
-				fname = dialog.get_filename()
-		else:
-			fname = filename
-
-		try:
-			self.orig_pic = gtk.gdk.pixbuf_new_from_file (fname)
-		except:
-			try:
-				# lets see if file was imported and is already extracted
-				fname = utils.get_save_dir() + 'images/' + utils.strip_path_from_file_name(filename)
-				self.orig_pic = gtk.gdk.pixbuf_new_from_file (fname)
-			except:
-				return False
-
-		self.filename = fname
-				
-		if not filename:
-			self.width = self.orig_pic.get_width ()
-			self.height = self.orig_pic.get_height ()
-			margin = utils.margin_required (utils.STYLE_NORMAL)
-
-			self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
-			self.pic = self.orig_pic
-		self.text = fname[fname.rfind('/')+1:fname.rfind('.')]
 		return True
 
 	def draw (self, context):
-		if len (self.extended_buffer.get_text()) == 0:
-			utils.draw_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_NORMAL)
-		else:
-			utils.draw_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_EXTENDED_CONTENT)
-
+		ResizableThought.draw(self, context)
 		if self.pic:
 			context.set_source_pixbuf (self.pic, self.pic_location[0], self.pic_location[1])
 			context.rectangle (self.pic_location[0], self.pic_location[1], self.width, self.height)
@@ -170,94 +113,55 @@ class ImageThought (ResizableThought):
 			context.fill ()
 		context.set_source_rgb (0,0,0)
 
-	def recalc_edges (self):
+	def recalc_edges (self, force=False, scale=gtk.gdk.INTERP_HYPER):
+		self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
+
 		margin = utils.margin_required (utils.STYLE_NORMAL)
 		self.pic_location = (self.ul[0]+margin[0], self.ul[1]+margin[1])
-		self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
 
-	def undo_resize (self, action, mode):
-		self.undo.block ()
-		if mode == UndoManager.UNDO:
-			choose = 0
-		else:
-			choose = 1
-		self.ul = action.args[choose][0]
-		self.width = action.args[choose][1]
-		self.height = action.args[choose][2]
-		self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height), gtk.gdk.INTERP_HYPER)
-		self.recalc_edges ()
-		self.emit ("update_links")
-		self.emit ("update_view")
-		self.undo.unblock ()
+		pic_w = max(MIN_SIZE, self.width - margin[0] - margin[2])
+		pic_h = max(MIN_SIZE, self.height - margin[1] - margin[3])
 
-	def process_button_down (self, event, mode, transformed):
-		self.orig_size = None
-		modifiers = gtk.accelerator_get_default_mod_mask ()
+		if self.orig_pic and (force or not self.pic or self.pic.get_width() != pic_w
+				or self.pic.get_height() != pic_h):
+			self.pic = self.orig_pic.scale_simple(pic_w, pic_h, scale)
 
-		if event.button == 1:
-			if event.type == gtk.gdk.BUTTON_PRESS:
-				self.emit ("select_thought", event.state & modifiers)
-				self.emit ("update_view")
-			self.button_down = True
-			if self.resizing != RESIZE_NONE:
-				self.orig_size = (self.ul, self.width, self.height)
-				return True
-		elif event.button == 3:
-			self.emit ("popup_requested", event, 1)
+	def process_button_down (self, event, coords):
+		if ResizableThought.process_button_down(self, event, coords):
+			return True
 
-		self.emit ("update_view")
+		if event.button == 1 and self.editing:
+			self.journal_open_image()
+			return True
 
-	def process_button_release (self, event, unending_link, mode, transformed):
-		if unending_link:
-			unending_link.set_child (self)
-			self.emit ("claim_unending_link")
-		if self.orig_pic:
-			self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height), gtk.gdk.INTERP_HYPER)
-		self.emit ("update_view")
+		return False
 
+	def process_button_release (self, event, transformed):
 		if self.button_down:
-			self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
-					self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
-			self.resizing = RESIZE_NONE
-			self.button_down = False
+			if self.creating:
+				if not self.journal_open_image():
+					return False
+				if self.width >= MIN_SIZE or self.height >= MIN_SIZE:
+					self.width = max(MIN_SIZE, self.width)
+					self.height = max(MIN_SIZE, self.height)
+				else:
+					self.width = self.orig_pic.get_width()
+					self.height = self.orig_pic.get_height()
+				self.creating = False
+			else:
+				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
+						self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
 
-	def handle_motion (self, event, mode, transformed):
-		diffx = transformed[0] - self.motion_coords[0]
-		diffy = transformed[1] - self.motion_coords[1]
-		tmp = self.motion_coords
-		self.motion_coords = transformed
-		resizing = False
+			self.recalc_edges(True)
 
-		if self.resizing != RESIZE_NONE and self.button_down:
-			if self.resizing & RESIZE_LEFT:
-				if transformed[0] < self.lr[0] - 20:
-					self.ul = (transformed[0], self.ul[1])
-					resizing = True;
-			if self.resizing & RESIZE_RIGHT:
-				if transformed[0] > self.pic_location[0] + 20:
-					self.lr = (transformed[0], self.lr[1])
-					resizing = True;
-			if self.resizing & RESIZE_TOP:
-				if transformed[1] < self.lr[1] - 20:
-					self.ul = (self.ul[0], transformed[1])
-					resizing = True;
-			if self.resizing & RESIZE_BOTTOM:
-				if transformed[1] > self.pic_location[1] + 20:
-					self.lr = (self.lr[0], transformed[1])
-					resizing = True;
+		return ResizableThought.process_button_release(self, event, transformed)
 
-		if resizing:
-			self.pic_location = self.ul
-			self.width = self.lr[0] - self.ul[0]
-			self.height = self.lr[1] - self.ul[1]
+	def handle_motion (self, event, coords):
+		if ResizableThought.handle_motion(self, event, coords):
+			self.recalc_edges(False, gtk.gdk.INTERP_NEAREST)
+			return True
 
-			self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height),
-					gtk.gdk.INTERP_NEAREST)
-
-			self.emit ("update_links")
-			self.emit ("update_view")
-
-		return True
+		return False
 
 	def update_save (self):
 		text = self.extended_buffer.get_text ()
@@ -315,10 +219,7 @@ class ImageThought (ResizableThought):
 				print "Unknown: "+n.nodeName
 		margin = utils.margin_required (utils.STYLE_NORMAL)
 		self.pic_location = (self.ul[0]+margin[0], self.ul[1]+margin[1])
-		if SUGAR_ACTIVITY:
-			self.okay = self.journal_open_image (self.filename)
-		else:
-			self.okay = self.open_image (self.filename)
+		self.okay = self.journal_open_image (self.filename)
 		self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
 		if not self.okay:
 			dialog = gtk.MessageDialog (None, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
@@ -330,19 +231,8 @@ class ImageThought (ResizableThought):
 			self.pic = None
 			self.orig_pic = None
 		else:
-			self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height), gtk.gdk.INTERP_HYPER)
+			self.recalc_edges()
 		return
 	
-	def change_image_cb(self, widget):
-		if SUGAR_ACTIVITY:
-			self.journal_open_image()
-		else:
-			self.open_image()
-	
-	def get_popup_menu_items(self):
-		image = gtk.Image()
-		image.set_from_stock(gtk.STOCK_OPEN, gtk.ICON_SIZE_MENU)
-		item = gtk.ImageMenuItem(_('Change Image'))
-		item.set_image(image)
-		item.connect('activate', self.change_image_cb)
-		return [item]
+	def enter (self):
+		self.editing = True

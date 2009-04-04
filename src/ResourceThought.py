@@ -62,7 +62,7 @@ class ResourceThought (TextThought.TextThought):
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 		if event.type == gtk.gdk.BUTTON_PRESS and not self.editing:
 			self.emit ("select_thought", event.state & modifiers)
-		if event.button == 1 and mode == BaseThought.MODE_EDITING and event.type == gtk.gdk._2BUTTON_PRESS:
+		if event.button == 1 and mode == BaseThought.MODE_TEXT and event.type == gtk.gdk._2BUTTON_PRESS:
 			if self.uri.find("http://") == -1:
 				webbrowser.open("http://" + self.uri)
 			else:

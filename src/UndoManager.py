@@ -106,6 +106,11 @@ class UndoManager:
 		self.update_sensitive ()
 		result.callback (result, mode=UNDO)
 
+	def forget_action (self):
+		result = self.undo_list.pop()
+		self.update_sensitive ()
+		result.callback (result, mode=UNDO)
+
 	def redo_action (self, arg):
 		result = self.redo_list.pop()
 		self.undo_list.append (result)

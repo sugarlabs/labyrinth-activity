@@ -23,27 +23,26 @@
 import gtk
 import pango
 import utils
-import BaseThought
-import prefs
-import UndoManager
 import os
-
 import xml.dom
+
+from BaseThought import *
+import UndoManager
+import prefs
 
 UNDO_ADD_ATTR=64
 UNDO_ADD_ATTR_SELECTION=65
 UNDO_REMOVE_ATTR=66
 UNDO_REMOVE_ATTR_SELECTION=67
 
-class TextThought (BaseThought.BaseThought):
+class TextThought (ResizableThought):
 	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color, foreground_color, name="thought"):
-		super (TextThought, self).__init__(save, name, undo, background_color, foreground_color)
+		super (TextThought, self).__init__(coords, save, name, undo, background_color, foreground_color)
 
 		self.index = 0
 		self.end_index = 0
 		self.bytes = ""
 		self.bindex = 0
-		self.text_location = coords
 		self.text_element = save.createTextNode ("GOOBAH")
 		self.element.appendChild (self.text_element)
 		self.layout = None
@@ -54,6 +53,8 @@ class TextThought (BaseThought.BaseThought):
 		self.attrlist = None
 		self.attributes = pango.AttrList()
 		self.current_attrs = []
+		self.double_click = False
+		self.orig_text = None
 
 		if prefs.get_direction () == gtk.TEXT_DIR_LTR:
 			self.pango_context.set_base_dir (pango.DIRECTION_LTR)
@@ -66,6 +67,7 @@ class TextThought (BaseThought.BaseThought):
 			self.ul = (coords[0]-margin[0], coords[1] - margin[1])
 		else:
 			self.ul = None
+
 		self.all_okay = True
 
 	def index_from_bindex (self, bindex):
@@ -196,7 +198,7 @@ class TextThought (BaseThought.BaseThought):
 		self.emit("update-attrs", bold, italics, underline, pango_font)
 		return show_text
 
-	def recalc_edges (self):
+	def recalc_text_edges (self):
 		if (not hasattr(self, "layout")):
 			return
 		del self.layout
@@ -216,22 +218,38 @@ class TextThought (BaseThought.BaseThought):
 		self.layout.set_text (show_text)
 		self.layout.set_attributes(self.attrlist)
 
-		(x,y) = self.layout.get_pixel_size ()
 		margin = utils.margin_required (utils.STYLE_NORMAL)
+		text_w, text_h = self.layout.get_pixel_size()
+		text_w += margin[0] + margin[2]
+		text_h += margin[1] + margin[3]
+
+		self.width = max(self.width, text_w)
+		self.height = max(self.height, text_h)
+
+		self.min_x = self.ul[0] + (self.width - text_w)/2 + margin[0]
+		self.min_y = self.ul[1] + (self.height - text_h)/2 + margin[1]
+		self.max_x = self.min_x + text_w
+		self.max_y = self.min_y + text_h
+
+		"""
 		if prefs.get_direction () == gtk.TEXT_DIR_LTR:
 			self.text_location = (self.ul[0] + margin[0], self.ul[1] + margin[1])
-			self.lr = (x + self.text_location[0]+margin[2], y + self.text_location[1] + margin[3])
+			self.lr = (text_w + self.text_location[0]+margin[2], text_h + self.text_location[1] + margin[3])
 		else:
 			self.layout.set_alignment (pango.ALIGN_RIGHT)
 			tmp1 = self.ul[1]
 			if not self.lr:
-				self.lr = (self.ul[0], self.ul[1] + y + margin[1] + margin[3])
-			self.text_location = (self.lr[0] - margin[2] - x, self.ul[1] + margin[1])
-			self.ul = (self.lr[0] - margin[0] - margin[2] - x, tmp1)
+				self.lr = (self.ul[0], self.ul[1] + text_h + margin[1] + margin[3])
+			self.text_location = (self.lr[0] - margin[2] - text_w, self.ul[1] + margin[1])
+			self.ul = (self.lr[0] - margin[0] - margin[2] - text_w, tmp1)
+		"""
+
+	def recalc_edges (self):
+		self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
+		if not self.creating:
+			self.recalc_text_edges()
 
 	def commit_text (self, context, string, mode, font_name):
-		if not self.editing:
-			self.emit ("begin_editing")
 		self.set_font(font_name)
 		self.add_text (string)
 		self.recalc_edges ()
@@ -310,32 +328,14 @@ class TextThought (BaseThought.BaseThought):
 		self.end_index = self.index
 
 	def draw (self, context):
+		ResizableThought.draw(self, context)
+
+		if self.creating:
+			return
 		if not self.layout:
 			self.recalc_edges ()
-		if not self.editing:
-			# We should draw the entire bounding box around ourselves
-			# We should also have our coordinates figured out.	If not, scream!
-			if not self.ul or not self.lr:
-				print "Warning: Trying to draw unfinished box "+str(self.identity)+". Aborting."
-				return
-			style = utils.STYLE_EXTENDED_CONTENT
-			if len (self.extended_buffer.get_text()) == 0:
-				style = utils.STYLE_NORMAL
-			utils.draw_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, style)
-		else:
-			ux, uy = self.ul
-			if prefs.get_direction() == gtk.TEXT_DIR_LTR:
-				context.move_to (ux, uy+5)
-				context.line_to (ux, uy)
-				context.line_to (ux+5, uy)
-			else:
-				lx = self.lr[0]
-				context.move_to (lx, uy+5)
-				context.line_to (lx, uy)
-				context.line_to (lx-5, uy)
-			context.stroke ()
 
-		(textx, texty) = (self.text_location[0], self.text_location[1])
+		(textx, texty) = (self.min_x, self.min_y)
 		if self.am_primary:
 			r, g, b = utils.primary_colors["text"]
 		elif (self.foreground_color):
@@ -361,35 +361,6 @@ class TextThought (BaseThought.BaseThought):
 		context.set_source_rgb (0,0,0)
 		context.stroke ()
 
-	def begin_editing (self):
-		self.editing = True
-		self.emit ("update_links")
-		return True
-
-	def finish_editing (self):
-		if not self.editing:
-			return
-		self.editing = False
-		self.end_index = self.index
-		self.emit ("update_links")
-		self.recalc_edges ()
-		if len (self.text) == 0:
-			self.emit ("delete_thought")
-
-	def includes (self, coords, mode):
-		if not self.ul or not self.lr or not coords:
-			return False
-
-		inside = (coords[0] < self.lr[0] + self.sensitive) and \
-				 (coords[0] > self.ul[0] - self.sensitive) and \
-			     (coords[1] < self.lr[1] + self.sensitive) and \
-			     (coords[1] > self.ul[1] - self.sensitive)
-		if inside and self.editing:
-			self.emit ("change_mouse_cursor", gtk.gdk.XTERM)
-		elif inside:
-			self.emit ("change_mouse_cursor", gtk.gdk.LEFT_PTR)
-		return inside
-
 	def process_key_press (self, event, mode):
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 		shift = event.state & modifiers == gtk.gdk.SHIFT_MASK
@@ -403,7 +374,7 @@ class TextThought (BaseThought.BaseThought):
 				self.index = self.bindex = 0
 				self.end_index = len (self.text)
 		elif event.keyval == gtk.keysyms.Escape:
-			self.emit ("finish_editing")
+			self.leave()
 		elif event.keyval == gtk.keysyms.Left:
 			if prefs.get_direction() == gtk.TEXT_DIR_LTR:
 				self.move_index_back (shift)
@@ -435,14 +406,17 @@ class TextThought (BaseThought.BaseThought):
 			clear_attrs = False
 		else:
 			handled = False
+
 		if clear_attrs:
 			del self.current_attrs
 			self.current_attrs = []
+
 		self.recalc_edges ()
 		self.selection_changed ()
 		self.emit ("title_changed", self.text)
 		self.bindex = self.bindex_from_index (self.index)
 		self.emit ("update_view")
+
 		return handled
 
 	def undo_text_action (self, action, mode):
@@ -470,7 +444,6 @@ class TextThought (BaseThought.BaseThought):
 		self.attributes = pango.AttrList()
 		map(lambda a : self.attributes.change(a), attrs)
 		self.recalc_edges ()
-		self.emit ("begin_editing")
 		self.emit ("title_changed", self.text)
 		self.emit ("update_view")
 		self.emit ("grab_focus", False)
@@ -635,7 +608,7 @@ class TextThought (BaseThought.BaseThought):
 
 	def move_index_back (self, mod):
 		if self.index <= 0:
-			self.end_index = self.index
+			self.index = 0
 			return
 		self.index -= int(self.bytes[self.bindex-1])
 		if not mod:
@@ -643,7 +616,7 @@ class TextThought (BaseThought.BaseThought):
 
 	def move_index_forward (self, mod):
 		if self.index >= len(self.text):
-			self.end_index = self.index
+			self.index = len(self.text)
 			return
 		self.index += int(self.bytes[self.bindex])
 		if not mod:
@@ -653,7 +626,6 @@ class TextThought (BaseThought.BaseThought):
 		tmp = self.text.decode ()
 		lines = tmp.splitlines ()
 		if len (lines) == 1:
-			self.end_index = self.index
 			return
 		loc = 0
 		line = 0
@@ -665,7 +637,6 @@ class TextThought (BaseThought.BaseThought):
 				break
 			line+=1
 		if line == -1:
-			self.end_index = self.index
 			return
 		elif line >= len (lines):
 			self.bindex -= len (lines[-1])+1
@@ -689,7 +660,6 @@ class TextThought (BaseThought.BaseThought):
 		tmp = self.text.decode ()
 		lines = tmp.splitlines ()
 		if len (lines) == 1:
-			self.end_index = self.index
 			return
 		loc = 0
 		line = 0
@@ -699,7 +669,6 @@ class TextThought (BaseThought.BaseThought):
 				break
 			line += 1
 		if line >= len (lines)-1:
-			self.end_index = self.index
 			return
 		dist = self.bindex - (loc - len (lines[line]))+1
 		self.bindex = loc
@@ -726,15 +695,19 @@ class TextThought (BaseThought.BaseThought):
 				return
 			line += 1
 
-	def process_button_down (self, event, mode, transformed):
+	def process_button_down (self, event, coords):
+		if ResizableThought.process_button_down(self, event, coords):
+			return True
+
+		if not self.editing:
+			return False
+
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 
 		if event.button == 1:
-			if event.type == gtk.gdk.BUTTON_PRESS and not self.editing:
-				self.emit ("select_thought", event.state & modifiers)
-			elif event.type == gtk.gdk.BUTTON_PRESS and self.editing:
-				x = int ((transformed[0] - self.ul[0])*pango.SCALE)
-				y = int ((transformed[1] - self.ul[1])*pango.SCALE)
+			if event.type == gtk.gdk.BUTTON_PRESS:
+				x = int ((coords[0] - self.min_x)*pango.SCALE)
+				y = int ((coords[1] - self.min_y)*pango.SCALE)
 				loc = self.layout.xy_to_index (x, y)
 				self.index = loc[0]
 				if loc[0] >= len(self.text) -1 or self.text[loc[0]+1] == '\n':
@@ -742,15 +715,14 @@ class TextThought (BaseThought.BaseThought):
 				self.bindex = self.bindex_from_index (self.index)
 				if not (event.state & modifiers) & gtk.gdk.SHIFT_MASK:
 					self.end_index = self.index
-			elif mode == BaseThought.MODE_EDITING and event.type == gtk.gdk._2BUTTON_PRESS:
-				if self.editing:
-					self.move_index_horizontal(False)	# go to the end
-					self.index = 0						# and mark all
-				else:
-					self.emit ("begin_editing")
-		elif event.button == 2 and self.editing:
-			x = int ((transformed[0] - self.ul[0])*pango.SCALE)
-			y = int ((transformed[1] - self.ul[1])*pango.SCALE)
+			elif event.type == gtk.gdk._2BUTTON_PRESS:
+				self.index = len(self.text)
+				self.end_index = 0						# and mark all
+				self.selection_changed ()
+				self.double_click = True
+		elif event.button == 2:
+			x = int ((coords[0] - self.min_x)*pango.SCALE)
+			y = int ((coords[1] - self.min_y)*pango.SCALE)
 			loc = self.layout.xy_to_index (x, y)
 			self.index = loc[0]
 			if loc[0] >= len(self.text) -1 or self.text[loc[0]+1] == '\n':
@@ -760,46 +732,53 @@ class TextThought (BaseThought.BaseThought):
 			if os.name != 'nt':
 				clip = gtk.Clipboard (selection="PRIMARY")
 				self.paste_text (clip)
-		elif event.button == 3:
-			self.emit ("popup_requested", event, 1)
 			
 		del self.current_attrs
 		self.current_attrs = []
 		self.recalc_edges()
 		self.emit ("update_view")
 
-	def process_button_release (self, event, unending_link, mode, transformed):
-		if unending_link:
-			unending_link.set_child (self)
-			self.emit ("claim_unending_link")
+	def process_button_release (self, event, transformed):
+		if self.orig_size:
+			if self.creating:
+				orig_size = self.width >= MIN_SIZE or self.height >= MIN_SIZE
+				self.width = orig_size and max(MIN_SIZE, self.width) or DEFAULT_WIDTH
+				self.height = orig_size and max(MIN_SIZE, self.height) or DEFAULT_HEIGHT
+				self.recalc_edges()
+				self.creating = False
+			else:
+				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
+						self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
+
+		self.double_click = False
+		return ResizableThought.process_button_release(self, event, transformed)
 
 	def selection_changed (self):
 		(start, end) = (min(self.index, self.end_index), max(self.index, self.end_index))
 		self.emit ("text_selection_changed", start, end, self.text[start:end])
 
-	def handle_motion (self, event, mode, transformed):
-		if event.state & gtk.gdk.BUTTON1_MASK and self.editing:
-			if transformed[0] < self.lr[0] and transformed[0] > self.ul[0] and \
-			   transformed[1] < self.lr[1] and transformed[1] > self.ul[1]:
-				x = int ((transformed[0] - self.ul[0])*pango.SCALE)
-				y = int ((transformed[1] - self.ul[1])*pango.SCALE)
+	def handle_motion (self, event, transformed):
+		if ResizableThought.handle_motion(self, event, transformed):
+			self.recalc_edges()
+			return True
+
+		if not self.editing or self.resizing:
+			return False
+
+		if event.state & gtk.gdk.BUTTON1_MASK and not self.double_click:
+			if transformed[0] < self.max_x and transformed[0] > self.min_x and \
+			   transformed[1] < self.max_y and transformed[1] > self.min_y:
+				x = int ((transformed[0] - self.min_x)*pango.SCALE)
+				y = int ((transformed[1] - self.min_y)*pango.SCALE)
 				loc = self.layout.xy_to_index (x, y)
 				self.index = loc[0]
 				if loc[0] >= len(self.text) -1 or self.text[loc[0]+1] == '\n':
 					self.index += loc[1]
 				self.bindex = self.bindex_from_index (self.index)
 				self.selection_changed ()
-			elif mode == BaseThought.MODE_EDITING:
-				self.emit ("finish_editing")
-				self.emit ("create_link", \
-				 (self.ul[0]-((self.ul[0]-self.lr[0]) / 2.), self.ul[1]-((self.ul[1]-self.lr[1]) / 2.)))
 				return True
-		elif event.state & gtk.gdk.BUTTON1_MASK and not self.editing and \
-			mode == BaseThought.MODE_EDITING and not event.state & gtk.gdk.CONTROL_MASK:
-			self.emit ("create_link", \
-			 (self.ul[0]-((self.ul[0]-self.lr[0]) / 2.), self.ul[1]-((self.ul[1]-self.lr[1]) / 2.)))
-		self.recalc_edges()
-		self.emit ("update_view")
+
+		return False
 
 	def export (self, context, move_x, move_y):
 		utils.export_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_NORMAL,
@@ -807,7 +786,7 @@ class TextThought (BaseThought.BaseThought):
 
 		r,g,b = utils.gtk_to_cairo_color (self.foreground_color)
 		context.set_source_rgb (r, g, b)
-		context.move_to (self.text_location[0]+move_x, self.text_location[1]+move_y)
+		context.move_to (self.min_x+move_x, self.min_y+move_y)
 		context.show_layout (self.layout)
 		context.set_source_rgb (0,0,0)
 		context.stroke ()
@@ -832,19 +811,11 @@ class TextThought (BaseThought.BaseThought):
 			except xml.dom.NotFoundErr:
 				pass
 		self.element.setAttribute ("cursor", str(self.index))
-		self.element.setAttribute ("selection_end", str(self.end_index))
 		self.element.setAttribute ("ul-coords", str(self.ul))
 		self.element.setAttribute ("lr-coords", str(self.lr))
 		self.element.setAttribute ("identity", str(self.identity))
 		self.element.setAttribute ("background-color", utils.color_to_string(self.background_color))
 		self.element.setAttribute ("foreground-color", utils.color_to_string(self.foreground_color))
-		if self.editing:
-			self.element.setAttribute ("edit", "true")
-		else:
-			try:
-				self.element.removeAttribute ("edit")
-			except xml.dom.NotFoundErr:
-				pass
 		if self.am_selected:
 				self.element.setAttribute ("current_root", "true")
 		else:
@@ -918,14 +889,15 @@ class TextThought (BaseThought.BaseThought):
 
 	def load (self, node):
 		self.index = int (node.getAttribute ("cursor"))
-		if node.hasAttribute ("selection_end"):
-			self.end_index = int (node.getAttribute ("selection_end"))
-		else:
-			self.end_index = self.index
+		self.end_index = self.index
 		tmp = node.getAttribute ("ul-coords")
 		self.ul = utils.parse_coords (tmp)
 		tmp = node.getAttribute ("lr-coords")
 		self.lr = utils.parse_coords (tmp)
+
+		self.width = self.lr[0] - self.ul[0]
+		self.height = self.lr[1] - self.ul[1]
+
 		self.identity = int (node.getAttribute ("identity"))
 		try:
 			tmp = node.getAttribute ("background-color")
@@ -934,12 +906,6 @@ class TextThought (BaseThought.BaseThought):
 			self.foreground_color = gtk.gdk.color_parse(tmp)
 		except ValueError:
 			pass
-
-		if node.hasAttribute ("edit"):
-			self.editing = True
-		else:
-			self.editing = False
-			self.end_index = self.index
 
 		self.am_selected = node.hasAttribute ("current_root")
 		self.am_primary = node.hasAttribute ("primary_root")
@@ -968,7 +934,7 @@ class TextThought (BaseThought.BaseThought):
 			else:
 				print "Unknown: "+n.nodeName
 		self.rebuild_byte_table ()
-		self.recalc_edges ()
+		self.recalc_edges()
 
 	def copy_text (self, clip):
 		if self.end_index > self.index:
@@ -1229,6 +1195,24 @@ class TextThought (BaseThought.BaseThought):
 													  old_attrs,
 													  self.attributes.copy()))
 		self.recalc_edges()
-		
-	def get_popup_menu_items(self):
-		return []
+
+	def inside(self, inside):
+		if self.editing:
+			self.emit ("change_mouse_cursor", gtk.gdk.XTERM)
+		else:
+			ResizableThought.inside(self, inside)
+
+	def enter(self):
+		if self.editing:
+			return
+		self.orig_text = self.text
+		self.editing = True
+
+	def leave(self):
+		if not self.editing:
+			return
+		ResizableThought.leave(self)
+		self.editing = False
+		self.end_index = self.index
+		self.emit ("update_links")
+		self.recalc_edges ()

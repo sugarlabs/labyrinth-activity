@@ -48,96 +48,105 @@ class LabyrinthActivity(activity.Activity):
 
         toolbox = activity.ActivityToolbox(self)
         self.set_toolbox(toolbox)
-        toolbox.show()
 
         edit_toolbar = activity.EditToolbar()
         toolbox.add_toolbar(_('Edit'), edit_toolbar)
         edit_toolbar.undo.child.connect('clicked', self.__undo_cb)
         edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
         edit_toolbar.copy.connect('clicked', self.__copy_cb)
+
         menu_item = MenuItem('Cut') 
         menu_item.connect('activate', self.__cut_cb)
-        menu_item.show()
         edit_toolbar.copy.get_palette().menu.append(menu_item)
         edit_toolbar.paste.connect('clicked', self.__paste_cb)
-        edit_toolbar.show()
 
         activity_toolbar = toolbox.get_activity_toolbar()
         activity_toolbar.share.props.visible = False
 
         self.clipboard = gtk.Clipboard()
 
-        self._undo = UndoManager.UndoManager (self,
-                                             edit_toolbar.undo.child,
-                                             edit_toolbar.redo.child)
-        self._undo.block ()
+        self.mods = [None] * 4
 
-        #separator = gtk.SeparatorToolItem()
-        #separator.set_draw(True)
-        #edit_toolbar.insert(separator, -1)
-        #separator.show()
+        self.mods[0] = RadioToolButton(named_icon='select-mode')
+        self.mods[0].set_tooltip(_('Select mode'))
+        self.mods[0].set_accelerator(_('<ctrl>s'))
+        self.mods[0].set_group(None)
+        self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
+        edit_toolbar.insert(self.mods[0], 0)
 
-        thought_toolbar = gtk.Toolbar()
-        thought_toolbar.show()
-        toolbox.add_toolbar(_('Thoughts'), thought_toolbar)
+        self.mods[1] = RadioToolButton(named_icon='text-mode')
+        self.mods[1].set_tooltip(_('Edit mode'))
+        self.mods[1].set_accelerator(_('<ctrl>e'))
+        self.mods[1].set_group(self.mods[0])
+        self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
+        edit_toolbar.insert(self.mods[1], 1)
 
-        self._edit_mode = RadioToolButton(named_icon='edit-mode')
-        self._edit_mode.set_tooltip(_('Edit mode'))
-        self._edit_mode.set_accelerator(_('<ctrl>e'))
-        self._edit_mode.set_group(None)
-        self._edit_mode.connect('clicked', self.__edit_mode_cb)
-        thought_toolbar.insert(self._edit_mode, -1)
-        self._edit_mode.show()
+        self.mods[2] = RadioToolButton(named_icon='draw-mode')
+        self.mods[2].set_group(self.mods[0])
+        self.mods[2].set_tooltip(_('Drawing mode'))
+        self.mods[2].set_accelerator(_('<ctrl>d'))
+        self.mods[2].connect('clicked', self.__mode_cb, MMapArea.MODE_DRAW)
+        edit_toolbar.insert(self.mods[2], 2)
 
-        self._draw_mode = RadioToolButton(named_icon='draw-mode')
-        self._draw_mode.set_group(self._edit_mode)
-        self._draw_mode.set_tooltip(_('Drawing mode'))
-        self._draw_mode.set_accelerator(_('<ctrl>d'))
-        self._draw_mode.connect('clicked', self.__draw_mode_cb)
-        thought_toolbar.insert(self._draw_mode, -1)
-        self._draw_mode.show()
+        self.mods[3] = RadioToolButton(named_icon='image-mode')
+        self.mods[3].set_group(self.mods[0])
+        self.mods[3].set_tooltip(_('Image add mode'))
+        self.mods[3].set_accelerator(_('<ctrl>i'))
+        self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
+        edit_toolbar.insert(self.mods[3], 3)
 
-        # FIXME: Disabled image add mode toolbar icon while I get the
-        # Object chooser working (needs bunch of custom fluff the normal
-        # gtk+ file picker does not).
-        self._image_mode = RadioToolButton(named_icon='add-image')
-        self._image_mode.set_group(self._edit_mode)
-        self._image_mode.set_tooltip(_('Image add mode'))
-        self._image_mode.set_accelerator(_('<ctrl>i'))
-        self._image_mode.connect('clicked', self.__image_mode_cb)
-        thought_toolbar.insert(self._image_mode, -1)
-        self._image_mode.show()
+        separator = gtk.SeparatorToolItem()
+        separator.set_draw(False)
+        edit_toolbar.insert(separator, 4)
+
+        tool = ToolButton('link')
+        tool.set_tooltip(_('Link/unlink two selected thoughts'))
+        tool.connect('clicked', self.__link_cb)
+        edit_toolbar.insert(tool, 5)
+
+        separator = gtk.SeparatorToolItem()
+        separator.set_draw(False)
+        edit_toolbar.insert(separator, 6)
+
+        tool = ToolButton('edit-delete')
+        tool.set_tooltip(_('Delete the selected element(s)'))
+        tool.connect('clicked', self.__delete_cb)
+        edit_toolbar.insert(tool, 7)
+
+        separator = gtk.SeparatorToolItem()
+        edit_toolbar.insert(separator, 8)
 
         view_toolbar = gtk.Toolbar()
-        view_toolbar.show()
         toolbox.add_toolbar(_('View'), view_toolbar)
 
         self._zoom_in = ToolButton('zoom-in')
         self._zoom_in.set_tooltip(_('Zoom in'))
         self._zoom_in.connect('clicked', self.__zoom_in_cb)
         view_toolbar.insert(self._zoom_in, -1)
-        self._zoom_in.show()
 
         self._zoom_out = ToolButton('zoom-out')
         self._zoom_out.set_tooltip(_('Zoom out'))
         self._zoom_out.connect('clicked', self.__zoom_out_cb)
         view_toolbar.insert(self._zoom_out, -1)
-        self._zoom_out.show()
 
         self._zoom_tofit = ToolButton('zoom-best-fit')
         self._zoom_tofit.set_tooltip(_('Fit to window'))
         self._zoom_tofit.connect('clicked', self.__zoom_tofit_cb)
         view_toolbar.insert(self._zoom_tofit, -1)
-        self._zoom_tofit.show()
 
         self._zoom_original = ToolButton('zoom-original')
         self._zoom_original.set_tooltip(_('Original size'))
         self._zoom_original.connect('clicked', self.__zoom_original_cb)
         view_toolbar.insert(self._zoom_original, -1)
-        self._zoom_original.show()
 
         self._save_file = None
-        self._mode = MMapArea.MODE_EDITING
+        self._mode = MMapArea.MODE_TEXT
+        self.mods[MMapArea.MODE_TEXT].set_active(True)
+
+        self._undo = UndoManager.UndoManager (self,
+                                             edit_toolbar.undo.child,
+                                             edit_toolbar.redo.child)
+        self._undo.block ()
 
         self._main_area = MMapArea.MMapArea (self._undo)
         self._main_area.connect ("doc_save", self.__doc_save_cb)
@@ -146,14 +155,13 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.connect ("expose_event", self.__expose)
         self._main_area.set_mode (self._mode)
         self.set_canvas(self._main_area)
-        self._main_area.show()
-
-        tree_model = gtk.TreeStore(gobject.TYPE_STRING)
-        self._main_area.initialize_model(tree_model)
 
         self.set_focus_child (self._main_area)
-        
+
         self._undo.unblock()
+
+        toolbox.set_current_toolbar(1)
+        self.show_all()
                 
     def __expose(self, widget, event):
         """Create skeleton map at start
@@ -269,16 +277,8 @@ class LabyrinthActivity(activity.Activity):
                 'y':(geom[3] / 2.0) - (height / 2.0 + upper),
                 'scale':min(width_scale, height_scale)}
 
-    def __edit_mode_cb(self, button):
-        self._mode = MMapArea.MODE_EDITING
-        self._main_area.set_mode (self._mode)
-
-    def __draw_mode_cb(self, button):
-        self._mode = MMapArea.MODE_DRAW
-        self._main_area.set_mode (self._mode)
-
-    def __image_mode_cb(self, button):
-        self._mode = MMapArea.MODE_IMAGE
+    def __mode_cb(self, button, mode):
+        self._mode = mode
         self._main_area.set_mode (self._mode)
 
     def __undo_cb(self, button):
@@ -319,6 +319,8 @@ class LabyrinthActivity(activity.Activity):
             tmp = top_element.getAttribute("translation")
             (x,y) = utils.parse_coords(tmp)
             self._main_area.translation = [x,y]
+
+        self.mods[self._mode].set_active(True)
 
     def write_file(self, file_path):
         logging.debug('write_file')
@@ -368,3 +370,8 @@ class LabyrinthActivity(activity.Activity):
         f.write (string)
         f.close ()
 
+    def __link_cb(self, widget):
+        self._main_area.link_menu_cb()
+
+    def __delete_cb(self, widget):
+        self._main_area.delete_selected_elements ()

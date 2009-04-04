@@ -161,7 +161,7 @@ class LabyrinthWindow (gobject.GObject):
 			# TODO: This shouldn't be set to a hard-coded number.  Fix.
 			self.pane_pos = 500
 			self.title_cp = _("Untitled Map")
-			self.mode = MMapArea.MODE_EDITING
+			self.mode = MMapArea.MODE_TEXT
 			self.extended_visible = False
 		else:
 			self.parse_file (filename)
@@ -255,7 +255,7 @@ class LabyrinthWindow (gobject.GObject):
 			 None, self.zoomout_cb)]
 		self.radio_actions = [
 			('Edit', gtk.STOCK_EDIT, _('_Edit Mode'), '<control>E',
-			 _('Turn on edit mode'), MMapArea.MODE_EDITING),
+			 _('Turn on edit mode'), MMapArea.MODE_TEXT),
 			 ('AddImage', gtk.STOCK_ADD, _('_Add Image'), None,
 			 _('Add an image to selected thought'), MMapArea.MODE_IMAGE),
 			 ('Drawing', gtk.STOCK_COLOR_PICKER, _('_Drawing Mode'), None,
@@ -770,7 +770,7 @@ class LabyrinthWindow (gobject.GObject):
 		else:
 			start, end = self.MainArea.get_selection_bounds ()
 			try:
-				if self.mode == MMapArea.MODE_EDITING and len(self.MainArea.selected) and \
+				if self.mode == MMapArea.MODE_TEXT and len(self.MainArea.selected) and \
 				   self.MainArea.selected[0].editing:
 					self.paste.set_sensitive (True)
 			except AttributeError:

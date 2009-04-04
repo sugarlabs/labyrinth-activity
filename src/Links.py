@@ -52,6 +52,8 @@ class Link (gobject.GObject):
 		self.element = save.createElement ("link")
 		self.selected = False
 		self.color = utils.gtk_to_cairo_color(gtk.gdk.color_parse("black"))
+		self.model_iter = None
+		self.text = None
 
 		if not self.start and parent and parent.lr:
 			self.start = (parent.ul[0]-((parent.ul[0]-parent.lr[0]) / 2.), \
@@ -63,7 +65,7 @@ class Link (gobject.GObject):
 	def get_save_element (self):
 		return self.element
 
-	def includes (self, coords, mode):
+	def includes (self, coords):
 		# TODO: Change this to make link selection work.  Also needs
 		# some fairly large changes in MMapArea
 		if not self.start or not self.end or not coords:
@@ -210,7 +212,7 @@ class Link (gobject.GObject):
 			else:
 				self.child_number = int (tmp)
 				
-	def process_button_down (self, event, mode, transformed):
+	def process_button_down (self, event, transformed):
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 		self.button_down = True
 		if event.button == 1:
@@ -222,12 +224,10 @@ class Link (gobject.GObject):
 		self.emit ("update_view")
 		return False
 
-	def process_button_release (self, event, unending_link, mode, transformed):
-		return False
+	def process_button_release (self, event, transformed):
+		return True
 
 	def process_key_press (self, event, mode):
-		if mode != BaseThought.MODE_EDITING:
-			return False
 		if event.keyval == gtk.keysyms.plus or \
 		   event.keyval == gtk.keysyms.KP_Add:
 			self.strength += 1
@@ -242,12 +242,9 @@ class Link (gobject.GObject):
 		self.emit("update_view")
 		return True
 
-	def handle_motion (self, event, mode, transformed):
+	def handle_motion (self, event, transformed):
 		pass
 				
-	def want_motion (self):
-		return False
-		
 	def select(self):
 		self.selected = True
 
@@ -278,4 +275,6 @@ class Link (gobject.GObject):
 		item.set_image(image)
 		item.connect('activate', self.set_color_cb)
 		return [item]
-	
+
+	def leave (self):
+		pass

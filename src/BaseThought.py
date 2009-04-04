@@ -22,16 +22,19 @@
 import gobject
 import gtk
 import utils
-import TextBufferMarkup
 import pango
+
+import TextBufferMarkup
+import UndoManager
 
 UNDO_RESIZE = 0
 UNDO_DRAW = 1
 UNDO_ERASE = 2
 
-MODE_EDITING = 0
-MODE_IMAGE = 1
-MODE_DRAW = 2
+MIN_SIZE = 20
+
+DEFAULT_WIDTH	= 100
+DEFAULT_HEIGHT	= 70
 
 class BaseThought (gobject.GObject):
 	''' The basic class to derive other thoughts from. \
@@ -44,15 +47,6 @@ class BaseThought (gobject.GObject):
 	__gsignals__ = dict (select_thought      = (gobject.SIGNAL_RUN_FIRST,
 											    gobject.TYPE_NONE,
 											    (gobject.TYPE_PYOBJECT,)),
-						 begin_editing       = (gobject.SIGNAL_RUN_FIRST,
-						 					    gobject.TYPE_NONE,
-						 					    ()),
-						 popup_requested     = (gobject.SIGNAL_RUN_FIRST,
-						 					    gobject.TYPE_NONE,
-						 					    (gobject.TYPE_PYOBJECT, gobject.TYPE_INT)),
-						 claim_unending_link = (gobject.SIGNAL_RUN_FIRST,
-						 						gobject.TYPE_NONE,
-						 						()),
 						 update_view		 = (gobject.SIGNAL_RUN_LAST,
 						 						gobject.TYPE_NONE,
 						 						()),
@@ -62,12 +56,6 @@ class BaseThought (gobject.GObject):
 						 title_changed       = (gobject.SIGNAL_RUN_LAST,
 						 						gobject.TYPE_NONE,
 						 						(gobject.TYPE_STRING,)),
-						 finish_editing		 = (gobject.SIGNAL_RUN_FIRST,
-						 						gobject.TYPE_NONE,
-						 						()),
-						 delete_thought		 = (gobject.SIGNAL_RUN_LAST,
-						 						gobject.TYPE_NONE,
-						 						()),
 						 text_selection_changed = (gobject.SIGNAL_RUN_LAST,
 						 						   gobject.TYPE_NONE,
 						 						   (gobject.TYPE_INT, gobject.TYPE_INT, gobject.TYPE_STRING)),
@@ -115,6 +103,7 @@ class BaseThought (gobject.GObject):
 		self.extended_buffer.connect ("set_attrs", self.set_extended_attrs)
 		self.element = save.createElement (elem_type)
 		self.element.appendChild (extended_elem)
+		self.creating = True
 
 	# These are self-explanitory.  You probably don't want to
 	# overwrite these methods, unless you have a very good reason
@@ -138,11 +127,11 @@ class BaseThought (gobject.GObject):
 	def okay (self):
 		return self.all_okay
 
+	def move_content_by (self, x, y):
+		pass
+
 	def move_by (self, x, y):
-		self.ul = (self.ul[0]+x, self.ul[1]+y)
-		self.recalc_edges ()
-		self.emit ("update_links")
-		self.emit ("update_view")
+		pass
 
 	def focus_buffer (self, buf):
 		self.emit ("select_thought", None)
@@ -157,8 +146,6 @@ class BaseThought (gobject.GObject):
 	# This, you may want to change.  Though, doing so will only affect
 	# thoughts that are "parents"
 	def find_connection (self, other):
-		if self.editing or other.editing:
-			return None, None
 		if not self.ul or not self.lr or not other.ul \
 		or not other.lr:
 			return None, None
@@ -181,25 +168,19 @@ class BaseThought (gobject.GObject):
 	# All the rest of these should be handled within you're thought
 	# type, supposing you actually want to handle them.
 	# You almost certianly do want to ;)
-	def process_button_down (self, event, mode, transformed):
+	def process_button_down (self, event, transformed):
 		return False
 
-	def process_button_release (self, event, unending_link, mode, transformed):
+	def process_button_release (self, event, transformed):
 		return False
 
 	def process_key_press (self, event, mode):
 		return False
 
-	def handle_motion (self, event, mode, transformed):
-		pass
-
-	def includes (self, coords, mode):
-		pass
-
-	def begin_editing (self):
+	def handle_motion (self, event, transformed):
 		return False
 
-	def finish_editing (self):
+	def includes (self, coords):
 		pass
 
 	def draw (self, context):
@@ -226,9 +207,6 @@ class BaseThought (gobject.GObject):
 	def commit_text (self, im_context, string, mode):
 		pass
 
-	def want_motion (self):
-		return False
-
 	def recalc_edges (self):
 		pass
 
@@ -250,10 +228,13 @@ class BaseThought (gobject.GObject):
 	def set_bold (self, active):
 		pass
 		
-	def get_popup_menu_items(self):
+	def inside (self, inside):
 		pass
 
-	def inside (self, inside, mode):
+	def enter (self):
+		pass
+
+	def leave (self):
 		pass
 
 RESIZE_NONE 	= 0
@@ -280,22 +261,42 @@ class ResizableThought (BaseThought):
 
 	# Possible types of resizing - where the user selected to resize
 
-	def __init__ (self, save, elem_type, undo, background_color, foreground_color):
+	def __init__ (self, coords, save, elem_type, undo, background_color, foreground_color):
 		super (ResizableThought, self).__init__(save, elem_type, undo, background_color, foreground_color)
-		self.resizing = False
+		self.resizing = RESIZE_NONE
 		self.button_down = False
+		self.orig_size = None
 
-	def want_motion (self):
-		return self.button_down
+		if coords:
+			margin = utils.margin_required (utils.STYLE_NORMAL)
+			self.ul = (coords[0]-margin[0], coords[1]-margin[1])
+			self.lr = (coords[0]+margin[2], coords[1]+margin[3])
+			self.width = 1
+			self.height = 1
 
-	def inside (self, inside, mode):
+		self.min_x = self.max_x = None
+		self.min_y = self.max_y = None
+
+
+	def move_content_by (self, x, y):
+		if self.min_x != None: self.min_x += x
+		if self.min_y != None: self.min_y += y
+		if self.max_x != None: self.max_x += x
+		if self.max_y != None: self.max_y += y
+
+	def move_by (self, x, y):
+		self.move_content_by(x, y)
+		self.ul = (self.ul[0]+x, self.ul[1]+y)
+		self.recalc_edges ()
+		self.emit ("update_links")
+		self.emit ("update_view")
+
+	def inside (self, inside):
 		self.emit ("change_mouse_cursor", gtk.gdk.LEFT_PTR)
 
-	def includes (self, coords, mode):
+	def includes (self, coords):
 		if not self.ul or not self.lr or not coords:
 			return False
-
-		self.motion_coords = coords
 
 		if self.button_down:
 			resizing = self.resizing
@@ -314,24 +315,127 @@ class ResizableThought (BaseThought):
 				# In the second case, we want to intercept all the fun thats
 				# going to happen so we can resize the thought
 
-				if abs (coords[0] - self.ul[0]) < self.sensitive:
-					if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
+				if abs (coords[0] - self.ul[0]) <= self.sensitive:
+					if coords[1] <= self.lr[1] and coords[1] >= self.ul[1]:
 						resizing = resizing | RESIZE_LEFT
-				elif abs (coords[0] - self.lr[0]) < self.sensitive:
-					if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
+				elif abs (coords[0] - self.lr[0]) <= self.sensitive:
+					if coords[1] <= self.lr[1] and coords[1] >= self.ul[1]:
 						resizing = resizing | RESIZE_RIGHT
 
-				if abs (coords[1] - self.ul[1]) < self.sensitive and \
-						(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
+				if abs (coords[1] - self.ul[1]) <= self.sensitive and \
+						(coords[0] <= self.lr[0] and coords[0] >= self.ul[0]):
 					resizing = resizing | RESIZE_TOP
-				elif abs (coords[1] - self.lr[1]) < self.sensitive and \
-						(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
+				elif abs (coords[1] - self.lr[1]) <= self.sensitive and \
+						(coords[0] <= self.lr[0] and coords[0] >= self.ul[0]):
 					resizing = resizing | RESIZE_BOTTOM
 
 		if resizing == RESIZE_NONE:
-			self.inside(inside, mode)
+			self.inside(inside)
 		else:
 			self.emit ("change_mouse_cursor", CURSOR[resizing])
 
 		self.resizing = resizing
 		return inside
+
+	def process_button_down(self, event, coords):
+		self.orig_size = None
+
+		if self.resizing:
+			self.button_down = True
+			self.orig_size = (self.ul, self.width, self.height)
+			return True
+
+		return False
+
+	def process_button_release(self, event, coords):
+		self.resizing = RESIZE_NONE
+		self.button_down = False
+
+		if self.width < MIN_SIZE or self.height < MIN_SIZE:
+			self.width = max(MIN_SIZE, self.width)
+			self.height = max(MIN_SIZE, self.height)
+			self.recalc_edges()
+
+		return True
+
+	def handle_motion (self, event, coords):
+		if not self.resizing or not self.button_down:
+			return False
+
+		resizing = False
+
+		if self.resizing & RESIZE_LEFT:
+			if self.min_x is None or coords[0] < self.lr[0]-(self.max_x-self.min_x):
+				if self.min_x and coords[0] > self.min_x:
+					self.move_content_by(coords[0] - self.min_x, 0)
+				self.ul = (coords[0], self.ul[1])
+				resizing = True;
+		elif self.resizing & RESIZE_RIGHT:
+			if self.max_x is None or coords[0] > self.ul[0]+(self.max_x-self.min_x):
+				if self.max_x and coords[0] < self.max_x:
+					self.move_content_by(coords[0] - self.max_x, 0)
+				self.lr = (coords[0], self.lr[1])
+				resizing = True;
+		if self.resizing & RESIZE_TOP:
+			if self.min_y is None or coords[1] < self.lr[1]-(self.max_y-self.min_y):
+				if self.min_y and coords[1] > self.min_y:
+					self.move_content_by(0, coords[1] - self.min_y)
+				self.ul = (self.ul[0], coords[1])
+				resizing = True;
+		elif self.resizing & RESIZE_BOTTOM:
+			if self.max_y is None or coords[1] > self.ul[1]+(self.max_y-self.min_y):
+				if self.max_y and coords[1] < self.max_y:
+					self.move_content_by(0, coords[1] - self.max_y)
+				self.lr = (self.lr[0], coords[1])
+				resizing = True;
+
+		if not resizing:
+			return False
+
+		if self.ul[0] > self.lr[0]:
+			# horizontal mirroring
+			tmp = self.ul[0]
+			self.ul = (self.lr[0], self.ul[1])
+			self.lr = (tmp, self.lr[1])
+			self.resizing = (~self.resizing & 0x3) | (self.resizing & (0x3<<2))
+
+		if self.ul[1] > self.lr[1]:
+			# vertical mirroring
+			tmp = self.ul[1]
+			self.ul = (self.ul[0], self.lr[1])
+			self.lr = (self.lr[0], tmp)
+			self.resizing = (~self.resizing & (0x3<<2)) | (self.resizing & 0x3)
+
+		self.width = self.lr[0] - self.ul[0]
+		self.height = self.lr[1] - self.ul[1]
+
+		return True
+
+	def leave (self):
+		self.editing = False
+		self.emit('change_mouse_cursor', gtk.gdk.LEFT_PTR)
+
+	def undo_resize (self, action, mode):
+		self.undo.block ()
+		if mode == UndoManager.UNDO:
+			choose = 0
+		else:
+			choose = 1
+		self.ul = action.args[choose][0]
+		self.width = action.args[choose][1]
+		self.height = action.args[choose][2]
+		self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height), gtk.gdk.INTERP_HYPER)
+		self.recalc_edges ()
+		self.emit ("update_links")
+		self.emit ("update_view")
+		self.undo.unblock ()
+
+	def draw (self, context):
+		if len (self.extended_buffer.get_text()) == 0:
+			utils.draw_thought_outline (context, self.ul, self.lr,
+					self.background_color, self.am_selected, self.am_primary,
+					utils.STYLE_NORMAL)
+		else:
+			utils.draw_thought_outline (context, self.ul, self.lr,
+					self.background_color, self.am_selected, self.am_primary,
+					utils.STYLE_EXTENDED_CONTENT)

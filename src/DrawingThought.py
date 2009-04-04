@@ -51,30 +51,17 @@ class DrawingThought (ResizableThought):
 
 	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color, foreground_color):
 		global ndraw
-		super (DrawingThought, self).__init__(save, "drawing_thought", undo, background_color, foreground_color)
+		super (DrawingThought, self).__init__(coords, save, "drawing_thought", undo, background_color, foreground_color)
 		ndraw+=1
 		self.identity = thought_number
 		self.points = []
 		self.text = _("Drawing #%d" % ndraw)
 		self.drawing = 0
-		if not loading:
-			margin = utils.margin_required (utils.STYLE_NORMAL)
-			self.ul = (coords[0]-margin[0], coords[1]-margin[1])
-			self.lr = (coords[0]+100+margin[2], coords[1]+100+margin[3])
-			self.min_x = coords[0]+90
-			self.max_x = coords[0]+15
-			self.min_y = coords[1]+90
-			self.max_y = coords[1]+15
-			self.width = 100
-			self.height = 100
-
 		self.all_okay = True
 
 	def draw (self, context):
-		if len (self.extended_buffer.get_text()) == 0:
-			utils.draw_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_NORMAL)
-		else:
-			utils.draw_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_EXTENDED_CONTENT)
+		ResizableThought.draw(self, context)
+
 		cwidth = context.get_line_width ()
 		context.set_line_width (2)
 		if len (self.points) > 0:
@@ -96,19 +83,6 @@ class DrawingThought (ResizableThought):
 	def recalc_edges (self):
 		self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
 
-	def undo_resize (self, action, mode):
-		self.undo.block ()
-		choose = 1
-		if mode == UndoManager.UNDO:
-			choose = 0
-		self.ul = action.args[choose][0]
-		self.width = action.args[choose][1]
-		self.height = action.args[choose][2]
-		self.recalc_edges ()
-		self.emit ("update_links")
-		self.emit ("update_view")
-		self.undo.unblock ()
-
 	def undo_drawing (self, action, mode):
 		self.undo.block ()
 		if mode == UndoManager.UNDO:
@@ -128,56 +102,53 @@ class DrawingThought (ResizableThought):
 		self.emit ("update_view")
 		self.undo.unblock ()
 
-	def process_button_down (self, event, mode, transformed):
-		self.orig_size = None
-		modifiers = gtk.accelerator_get_default_mod_mask ()
+	def process_button_down (self, event, coords):
+		if ResizableThought.process_button_down(self, event, coords):
+			return True
 
 		if event.button == 1:
-			if event.type == gtk.gdk.BUTTON_PRESS:
-				self.emit ("select_thought", event.state & modifiers)
-				self.emit ("update_view")
+			self.button_down = True
+			self.drawing = 2
+			if not event.state & gtk.gdk.SHIFT_MASK:
+				self.drawing = 1
+			self.orig_size = (self.ul, self.width, self.height)
+			self.ins_points = []
+			self.del_points = []
+			return True
 
-			if mode == MODE_DRAW and self.resizing == RESIZE_NONE:
-				self.button_down = True
-				self.drawing = 2
-				if not event.state & gtk.gdk.SHIFT_MASK:
-					self.drawing = 1
-				self.orig_size = (self.ul, self.width, self.height)
-				self.ins_points = []
-				self.del_points = []
-				return True
-			elif self.resizing != RESIZE_NONE:
-				self.button_down = True
-				self.orig_size = (self.ul, self.width, self.height)
-				return True
+		return False
 
-		elif event.button == 3:
-			self.emit ("popup_requested", event, 1)
-
-		self.emit ("update_view")
-
-	def process_button_release (self, event, unending_link, mode, transformed):
-		if unending_link:
-			unending_link.set_child (self)
-			self.emit ("claim_unending_link")
+	def process_button_release (self, event, transformed):
 		if len(self.points) > 0:
 			self.points[-1].style=STYLE_END
-		self.emit ("update_view")
 
 		if self.orig_size:
 			if self.drawing == 0:
-				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
-						self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
+				# correct sizes after creation
+				if self.creating:
+					orig_size = self.width >= MIN_SIZE or self.height >= MIN_SIZE
+					self.width = orig_size and max(MIN_SIZE, self.width) or DEFAULT_WIDTH
+					self.height = orig_size and max(MIN_SIZE, self.height) or DEFAULT_HEIGHT
+					self.recalc_edges()
+					self.creating = False
+				else:
+					self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
+							self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
+
 			elif self.drawing == 1:
 				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_DRAW, \
 						self.undo_drawing, self.ins_points, self.orig_size, \
 						(self.ul, self.width, self.height)))
+
 			elif self.drawing == 2:
 				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_ERASE, \
 						self.undo_erase, self.ins_points))
 
-		self.resizing = RESIZE_NONE
-		self.button_down = False
+		self.drawing = 0
+		return ResizableThought.process_button_release(self, event, transformed)
+
+	def leave(self):
+		ResizableThought.leave(self)
 		self.drawing = 0
 
 	def undo_erase (self, action, mode):
@@ -198,70 +169,41 @@ class DrawingThought (ResizableThought):
 		self.undo.unblock ()
 		self.emit ("update_view")
 
-	def handle_motion (self, event, mode, transformed):
-		diffx = transformed[0] - self.motion_coords[0]
-		diffy = transformed[1] - self.motion_coords[1]
-		change = (len(self.points) == 0)
-		tmp = self.motion_coords
-		self.motion_coords = transformed
-
-		if self.resizing != RESIZE_NONE and self.button_down:
-			resizing = False
-
-			if self.resizing & RESIZE_LEFT:
-				if transformed[0] < self.min_x:
-					self.ul = (transformed[0], self.ul[1])
-					resizing = True;
-			if self.resizing & RESIZE_RIGHT:
-				if transformed[0] > self.max_x:
-					self.lr = (transformed[0], self.lr[1])
-					resizing = True;
-			if self.resizing & RESIZE_TOP:
-				if transformed[1] < self.min_y:
-					self.ul = (self.ul[0], transformed[1])
-					resizing = True;
-			if self.resizing & RESIZE_BOTTOM:
-				if transformed[1] > self.max_y:
-					self.lr = (self.lr[0], transformed[1])
-					resizing = True;
-
-			if not resizing:
-				self.motion_coords = tmp
-				return True
-
-			self.width = self.lr[0] - self.ul[0]
-			self.height = self.lr[1] - self.ul[1]
-
-			self.emit ("update_links")
-			self.emit ("update_view")
+	def handle_motion (self, event, coords):
+		if ResizableThought.handle_motion(self, event, coords):
 			return True
 
-		elif self.drawing == 1:
-			if transformed[0] < self.ul[0]+5:
-				self.ul = (transformed[0]-5, self.ul[1])
-			elif transformed[0] > self.lr[0]-5:
-				self.lr = (transformed[0]+5, self.lr[1])
-			if transformed[1] < self.ul[1]+5:
-				self.ul = (self.ul[0], transformed[1]-5)
-			elif transformed[1] > self.lr[1]-5:
-				self.lr = (self.lr[0], transformed[1]+5)
+		if not self.editing:
+			return False
 
-			if transformed[0] < self.min_x:
-				self.min_x = transformed[0]-10
-			elif transformed[0] > self.max_x:
-				self.max_x = transformed[0]+5
-			if transformed[1] < self.min_y:
-				self.min_y = transformed[1]-10
-			elif transformed[1] > self.max_y:
-				self.max_y = transformed[1]+5
+		if self.drawing == 1:
+			if coords[0] < self.ul[0]+5:
+				self.ul = (coords[0]-5, self.ul[1])
+			elif coords[0] > self.lr[0]-5:
+				self.lr = (coords[0]+5, self.lr[1])
+			if coords[1] < self.ul[1]+5:
+				self.ul = (self.ul[0], coords[1]-5)
+			elif coords[1] > self.lr[1]-5:
+				self.lr = (self.lr[0], coords[1]+5)
+
+			if self.min_x is None or coords[0] < self.min_x:
+				self.min_x = coords[0]-10
+			elif self.max_x is None or coords[0] > self.max_x:
+				self.max_x = coords[0]+5
+			if self.min_y is None or coords[1] < self.min_y:
+				self.min_y = coords[1]-10
+			elif self.max_y is None or coords[1] > self.max_y:
+				self.max_y = coords[1]+5
 			self.width = self.lr[0] - self.ul[0]
 			self.height = self.lr[1] - self.ul[1]
 			if len(self.points) == 0 or self.points[-1].style == STYLE_END:
-				p = self.DrawingPoint (transformed, STYLE_BEGIN, self.foreground_color)
+				p = self.DrawingPoint (coords, STYLE_BEGIN, self.foreground_color)
 			else:
-				p = self.DrawingPoint (transformed, STYLE_CONTINUE)
+				p = self.DrawingPoint (coords, STYLE_CONTINUE)
 			self.points.append (p)
 			self.ins_points.append (p)
+			return True
+
 		elif self.drawing == 2 and len (self.points) > 0:
 			out = self.points[0]
 			loc = []
@@ -270,7 +212,7 @@ class DrawingThought (ResizableThought):
 
 			for x in self.points:
 				ins_point += 1
-				dist = (x.x - transformed[0])**2 + (x.y - transformed[1])**2
+				dist = (x.x - coords[0])**2 + (x.y - coords[1])**2
 
 				if dist < 16:
 					if x == self.points[0]:
@@ -284,7 +226,7 @@ class DrawingThought (ResizableThought):
 						x1 = x.x - out.x
 						y1 = x.y - out.y
 						d_rsqr = x1**2 + y1 **2
-						d = ((out.x-transformed[0])*(x.y-transformed[1]) - (x.x-transformed[0])*(out.y-transformed[1]))
+						d = ((out.x-coords[0])*(x.y-coords[1]) - (x.x-coords[0])*(out.y-coords[1]))
 						det = (d_rsqr*16) - d**2
 						if det > 0:
 							xt = -99999
@@ -295,10 +237,10 @@ class DrawingThought (ResizableThought):
 								sgn = -1
 							else:
 								sgn = 1
-							xt = (((d*y1) + sgn*x1 * math.sqrt (det)) / d_rsqr) +transformed[0]
-							xalt = (((d*y1) - sgn*x1 * math.sqrt (det)) / d_rsqr) +transformed[0]
-							yt = (((-d*x1) + abs(y1)*math.sqrt(det)) / d_rsqr) + transformed[1]
-							yalt = (((-d*x1) - abs(y1)*math.sqrt(det)) / d_rsqr) +transformed[1]
+							xt = (((d*y1) + sgn*x1 * math.sqrt (det)) / d_rsqr) +coords[0]
+							xalt = (((d*y1) - sgn*x1 * math.sqrt (det)) / d_rsqr) +coords[0]
+							yt = (((-d*x1) + abs(y1)*math.sqrt(det)) / d_rsqr) + coords[1]
+							yalt = (((-d*x1) - abs(y1)*math.sqrt(det)) / d_rsqr) +coords[1]
 							x1_inside = (xt > x.x and xt < out.x) or (xt > out.x and xt < x.x)
 							x2_inside = (xalt > x.x and xalt < out.x) or (xalt > out.x and xalt < x.x)
 							y1_inside = (yt > x.y and yt < out.y) or (yt > out.y and yt < x.y)
@@ -370,19 +312,13 @@ class DrawingThought (ResizableThought):
 				self.ins_points.append ((1, self.points.index (x), x))
 				self.points.remove (x)
 
-		self.emit ("update_links")
-		self.emit ("update_view")
-		return True
+			return True
 
-	def move_by (self, x, y):
-		self.ul = (self.ul[0]+x, self.ul[1]+y)
-		self.min_x += x
-		self.min_y += y
-		self.max_x += x
-		self.max_y += y
+		return False
+
+	def move_content_by(self, x, y):
 		map(lambda p : p.move_by(x,y), self.points)
-		self.recalc_edges ()
-		self.emit ("update_links")
+		ResizableThought.move_content_by(self, x, y)
 
 	def update_save (self):
 		next = self.element.firstChild
@@ -446,10 +382,18 @@ class DrawingThought (ResizableThought):
 			self.foreground_color = gtk.gdk.color_parse(tmp)
 		except ValueError:
 			pass
-		self.min_x = float(node.getAttribute ("min_x"))
-		self.min_y = float(node.getAttribute ("min_y"))
-		self.max_x = float(node.getAttribute ("max_x"))
-		self.max_y = float(node.getAttribute ("max_y"))
+
+		def get_min_max(node, name):
+			attr = node.getAttribute(name)
+			if attr == 'None':
+				return None
+			else:
+				return float(attr)
+
+		self.min_x = get_min_max(node, 'min_x')
+		self.min_y = get_min_max(node, 'min_y')
+		self.max_x = get_min_max(node, 'max_x')
+		self.max_y = get_min_max(node, 'max_y')
 
 		self.width = self.lr[0] - self.ul[0]
 		self.height = self.lr[1] - self.ul[1]
@@ -492,11 +436,11 @@ class DrawingThought (ResizableThought):
 		context.stroke ()
 		return
 
-	def get_popup_menu_items(self):
-		return []
-
-	def inside(self, inside, mode):
-		if mode == MODE_DRAW and (self.drawing or inside):
+	def inside(self, inside):
+		if self.editing:
 			self.emit ("change_mouse_cursor", gtk.gdk.PENCIL)
 		else:
-			ResizableThought.inside(self, inside, mode)
+			ResizableThought.inside(self, inside)
+
+	def enter (self):
+		self.editing = True
