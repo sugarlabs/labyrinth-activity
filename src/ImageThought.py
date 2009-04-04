@@ -36,19 +36,12 @@ try:
 except:
 	SUGAR_ACTIVITY = False
 
-MODE_EDITING = 0
-MODE_IMAGE = 1
-MODE_DRAW = 2
-
-UNDO_RESIZE = 0
-
 class ImageThought (ResizableThought):
 	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color):
 		super (ImageThought, self).__init__(save, "image_thought", undo, background_color, None)
 
 		self.identity = thought_number
 		margin = utils.margin_required (utils.STYLE_NORMAL)
-		self.want_move = False
 		if coords:
 			self.ul = (coords[0]-margin[0], coords[1] - margin[1])
 			self.pic_location = coords
@@ -181,9 +174,6 @@ class ImageThought (ResizableThought):
 			context.fill ()
 		context.set_source_rgb (0,0,0)
 
-	def want_motion (self):
-		return self.want_move
-
 	def recalc_edges (self):
 		margin = utils.margin_required (utils.STYLE_NORMAL)
 		self.pic_location = (self.ul[0]+margin[0], self.ul[1]+margin[1])
@@ -205,64 +195,60 @@ class ImageThought (ResizableThought):
 		self.undo.unblock ()
 
 	def process_button_down (self, event, mode, transformed):
+		self.orig_size = None
 		modifiers = gtk.accelerator_get_default_mod_mask ()
-		self.button_down = True
+
 		if event.button == 1:
 			if event.type == gtk.gdk.BUTTON_PRESS:
 				self.emit ("select_thought", event.state & modifiers)
 				self.emit ("update_view")
-			if mode == MODE_EDITING and self.resizing != RESIZE_NONE:
+			self.button_down = True
+			if self.resizing != RESIZE_NONE:
 				self.orig_size = (self.ul, self.width, self.height)
-				self.want_move = True
 				return True
 		elif event.button == 3:
 			self.emit ("popup_requested", event, 1)
+
 		self.emit ("update_view")
 
 	def process_button_release (self, event, unending_link, mode, transformed):
-		self.button_down = False
 		if unending_link:
 			unending_link.set_child (self)
 			self.emit ("claim_unending_link")
 		if self.orig_pic:
 			self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height), gtk.gdk.INTERP_HYPER)
 		self.emit ("update_view")
-		if self.want_move:
-			self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, self.undo_resize, \
-														self.orig_size, (self.ul, self.width, self.height)))
-			self.want_move = False
+
+		if self.button_down:
+			self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
+					self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
+			self.resizing = RESIZE_NONE
+			self.button_down = False
 
 	def handle_motion (self, event, mode, transformed):
-		if self.resizing == RESIZE_NONE or not self.want_move or not event.state & gtk.gdk.BUTTON1_MASK:
-			if not event.state & gtk.gdk.BUTTON1_MASK:
-				return False
-			elif mode == MODE_EDITING:
-				self.emit ("create_link", \
-				 (self.ul[0]-((self.ul[0]-self.lr[0]) / 2.), self.ul[1]-((self.ul[1]-self.lr[1]) / 2.)))
-			return True
 		diffx = transformed[0] - self.motion_coords[0]
 		diffy = transformed[1] - self.motion_coords[1]
 		tmp = self.motion_coords
 		self.motion_coords = transformed
-
 		resizing = False
 
-		if self.resizing & RESIZE_LEFT:
-			if transformed[0] < self.lr[0] - 20:
-				self.ul = (transformed[0], self.ul[1])
-				resizing = True;
-		if self.resizing & RESIZE_RIGHT:
-			if transformed[0] > self.pic_location[0] + 20:
-				self.lr = (transformed[0], self.lr[1])
-				resizing = True;
-		if self.resizing & RESIZE_TOP:
-			if transformed[1] < self.lr[1] - 20:
-				self.ul = (self.ul[0], transformed[1])
-				resizing = True;
-		if self.resizing & RESIZE_BOTTOM:
-			if transformed[1] > self.pic_location[1] + 20:
-				self.lr = (self.lr[0], transformed[1])
-				resizing = True;
+		if self.resizing != RESIZE_NONE and self.button_down:
+			if self.resizing & RESIZE_LEFT:
+				if transformed[0] < self.lr[0] - 20:
+					self.ul = (transformed[0], self.ul[1])
+					resizing = True;
+			if self.resizing & RESIZE_RIGHT:
+				if transformed[0] > self.pic_location[0] + 20:
+					self.lr = (transformed[0], self.lr[1])
+					resizing = True;
+			if self.resizing & RESIZE_TOP:
+				if transformed[1] < self.lr[1] - 20:
+					self.ul = (self.ul[0], transformed[1])
+					resizing = True;
+			if self.resizing & RESIZE_BOTTOM:
+				if transformed[1] > self.pic_location[1] + 20:
+					self.lr = (self.lr[0], transformed[1])
+					resizing = True;
 
 		if resizing:
 			self.pic_location = self.ul

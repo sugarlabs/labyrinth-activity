@@ -25,6 +25,9 @@ import utils
 import TextBufferMarkup
 import pango
 
+UNDO_RESIZE = 0
+UNDO_DRAW = 1
+UNDO_ERASE = 2
 
 MODE_EDITING = 0
 MODE_IMAGE = 1
@@ -101,7 +104,6 @@ class BaseThought (gobject.GObject):
 		self.index = 0
 		self.end_index = 0
 		self.text = ""
-		self.want_move = False
 		self.undo = undo
 		self.background_color = background_color
 		self.foreground_color = foreground_color
@@ -251,6 +253,9 @@ class BaseThought (gobject.GObject):
 	def get_popup_menu_items(self):
 		pass
 
+	def inside (self, inside, mode):
+		pass
+
 RESIZE_NONE 	= 0
 RESIZE_LEFT 	= 1
 RESIZE_RIGHT 	= 2
@@ -280,60 +285,53 @@ class ResizableThought (BaseThought):
 		self.resizing = False
 		self.button_down = False
 
-	def before_inside (self, inside, mode):
-		return False
+	def want_motion (self):
+		return self.button_down
 
-	def after_inside (self, inside, coords, mode):
-		if inside:
-			if mode == MODE_DRAW:
-				self.emit ("change_mouse_cursor", gtk.gdk.PENCIL)
-			else:
-				self.emit("change_mouse_cursor", gtk.gdk.LEFT_PTR)
-		return inside
+	def inside (self, inside, mode):
+		self.emit ("change_mouse_cursor", gtk.gdk.LEFT_PTR)
 
 	def includes (self, coords, mode):
 		if not self.ul or not self.lr or not coords:
 			return False
 
-		inside = (coords[0] < self.lr[0] + self.sensitive) and \
-				 (coords[0] > self.ul[0] - self.sensitive) and \
-			     (coords[1] < self.lr[1] + self.sensitive) and \
-			     (coords[1] > self.ul[1] - self.sensitive)
-
-		self.resizing = RESIZE_NONE
 		self.motion_coords = coords
 
-		if self.before_inside(inside, mode):
-			return inside;
-
-		if inside:
-			# 2 cases: 1. The click was within the main area
-			#		   2. The click was near the border
-			# In the first case, we handle as normal
-			# In the second case, we want to intercept all the fun thats
-			# going to happen so we can resize the thought
-
-			if abs (coords[0] - self.ul[0]) < self.sensitive:
-				if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
-					self.resizing = self.resizing | RESIZE_LEFT
-			elif abs (coords[0] - self.lr[0]) < self.sensitive:
-				if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
-					self.resizing = self.resizing | RESIZE_RIGHT
-
-			if abs (coords[1] - self.ul[1]) < self.sensitive and \
-				 	(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
-				self.resizing = self.resizing | RESIZE_TOP
-			elif abs (coords[1] - self.lr[1]) < self.sensitive and \
-				 	(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
-				self.resizing = self.resizing | RESIZE_BOTTOM
-
-			if self.resizing == RESIZE_NONE:
-				inside = self.after_inside(True, coords, mode)
-			else:
-				self.emit ("change_mouse_cursor", CURSOR[self.resizing])
-
+		if self.button_down:
+			resizing = self.resizing
+			inside = True
 		else:
-			inside = self.after_inside(False, coords, mode)
+			inside = (coords[0] < self.lr[0] + self.sensitive) and \
+					 (coords[0] > self.ul[0] - self.sensitive) and \
+					 (coords[1] < self.lr[1] + self.sensitive) and \
+					 (coords[1] > self.ul[1] - self.sensitive)
+			resizing = RESIZE_NONE
 
-		self.want_move = (self.resizing != RESIZE_NONE)
+			if inside:
+				# 2 cases: 1. The click was within the main area
+				#		   2. The click was near the border
+				# In the first case, we handle as normal
+				# In the second case, we want to intercept all the fun thats
+				# going to happen so we can resize the thought
+
+				if abs (coords[0] - self.ul[0]) < self.sensitive:
+					if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
+						resizing = resizing | RESIZE_LEFT
+				elif abs (coords[0] - self.lr[0]) < self.sensitive:
+					if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
+						resizing = resizing | RESIZE_RIGHT
+
+				if abs (coords[1] - self.ul[1]) < self.sensitive and \
+						(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
+					resizing = resizing | RESIZE_TOP
+				elif abs (coords[1] - self.lr[1]) < self.sensitive and \
+						(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
+					resizing = resizing | RESIZE_BOTTOM
+
+		if resizing == RESIZE_NONE:
+			self.inside(inside, mode)
+		else:
+			self.emit ("change_mouse_cursor", CURSOR[resizing])
+
+		self.resizing = resizing
 		return inside

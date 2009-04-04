@@ -25,6 +25,7 @@ import xml.dom
 import gettext
 _ = gettext.gettext
 import math
+import logging
 
 from BaseThought import *
 import utils
@@ -34,14 +35,6 @@ STYLE_CONTINUE=0
 STYLE_END=1
 STYLE_BEGIN=2
 ndraw =0
-
-MODE_EDITING = 0
-MODE_IMAGE = 1
-MODE_DRAW = 2
-
-UNDO_RESIZE = 0
-UNDO_DRAW = 1
-UNDO_ERASE = 2
 
 class DrawingThought (ResizableThought):
 	class DrawingPoint (object):
@@ -61,7 +54,6 @@ class DrawingThought (ResizableThought):
 		super (DrawingThought, self).__init__(save, "drawing_thought", undo, background_color, foreground_color)
 		ndraw+=1
 		self.identity = thought_number
-		self.want_move = False
 		self.points = []
 		self.text = _("Drawing #%d" % ndraw)
 		self.drawing = 0
@@ -101,9 +93,6 @@ class DrawingThought (ResizableThought):
 		context.stroke ()
 		return
 
-	def want_motion (self):
-		return self.want_move
-
 	def recalc_edges (self):
 		self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
 
@@ -140,14 +129,16 @@ class DrawingThought (ResizableThought):
 		self.undo.unblock ()
 
 	def process_button_down (self, event, mode, transformed):
+		self.orig_size = None
 		modifiers = gtk.accelerator_get_default_mod_mask ()
-		self.button_down = True
+
 		if event.button == 1:
 			if event.type == gtk.gdk.BUTTON_PRESS:
 				self.emit ("select_thought", event.state & modifiers)
 				self.emit ("update_view")
+
 			if mode == MODE_DRAW and self.resizing == RESIZE_NONE:
-				self.want_move = True
+				self.button_down = True
 				self.drawing = 2
 				if not event.state & gtk.gdk.SHIFT_MASK:
 					self.drawing = 1
@@ -155,35 +146,39 @@ class DrawingThought (ResizableThought):
 				self.ins_points = []
 				self.del_points = []
 				return True
-			self.drawing = 0
-			if self.resizing != RESIZE_NONE:
-				self.want_move = True
+			elif self.resizing != RESIZE_NONE:
+				self.button_down = True
 				self.orig_size = (self.ul, self.width, self.height)
 				return True
+
 		elif event.button == 3:
 			self.emit ("popup_requested", event, 1)
+
 		self.emit ("update_view")
 
 	def process_button_release (self, event, unending_link, mode, transformed):
-		self.button_down = False
 		if unending_link:
 			unending_link.set_child (self)
 			self.emit ("claim_unending_link")
 		if len(self.points) > 0:
 			self.points[-1].style=STYLE_END
 		self.emit ("update_view")
-		if self.want_move and self.drawing == 0:
-			self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, self.undo_resize, \
-														self.orig_size, (self.ul, self.width, self.height)))
-		elif self.want_move and self.drawing == 1:
-			self.undo.add_undo (UndoManager.UndoAction (self, UNDO_DRAW, self.undo_drawing, \
-														self.ins_points, self.orig_size, \
-														(self.ul, self.width, self.height)))
-		elif self.want_move and self.drawing == 2:
-			self.undo.add_undo (UndoManager.UndoAction (self, UNDO_ERASE, self.undo_erase, \
-														self.ins_points))
+
+		if self.orig_size:
+			if self.drawing == 0:
+				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_RESIZE, \
+						self.undo_resize, self.orig_size, (self.ul, self.width, self.height)))
+			elif self.drawing == 1:
+				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_DRAW, \
+						self.undo_drawing, self.ins_points, self.orig_size, \
+						(self.ul, self.width, self.height)))
+			elif self.drawing == 2:
+				self.undo.add_undo (UndoManager.UndoAction (self, UNDO_ERASE, \
+						self.undo_erase, self.ins_points))
+
+		self.resizing = RESIZE_NONE
+		self.button_down = False
 		self.drawing = 0
-		self.want_move = False
 
 	def undo_erase (self, action, mode):
 		self.undo.block ()
@@ -204,13 +199,6 @@ class DrawingThought (ResizableThought):
 		self.emit ("update_view")
 
 	def handle_motion (self, event, mode, transformed):
-		if (self.resizing == RESIZE_NONE or not self.want_move or not event.state & gtk.gdk.BUTTON1_MASK) \
-		   and mode != MODE_DRAW:
-			if not event.state & gtk.gdk.BUTTON1_MASK or mode != MODE_EDITING:
-				return False
-			else:
-				self.emit ("create_link", \
-				 (self.ul[0]-((self.ul[0]-self.lr[0]) / 2.), self.ul[1]-((self.ul[1]-self.lr[1]) / 2.)))
 		diffx = transformed[0] - self.motion_coords[0]
 		diffy = transformed[1] - self.motion_coords[1]
 		change = (len(self.points) == 0)
@@ -507,14 +495,8 @@ class DrawingThought (ResizableThought):
 	def get_popup_menu_items(self):
 		return []
 
-	def before_inside(self, inside, mode):
-		if inside and self.drawing:
-			#self.emit ("change_mouse_cursor", gtk.gdk.PENCIL)
-			return True
-		return False
-
-	def after_inside(self, inside, coords, mode):
-		if self.want_move:
-			#self.emit("change_mouse_cursor", gtk.gdk.LEFT_PTR)
-			return True
-		return ResizableThought.after_inside(self, inside, coords, mode)
+	def inside(self, inside, mode):
+		if mode == MODE_DRAW and (self.drawing or inside):
+			self.emit ("change_mouse_cursor", gtk.gdk.PENCIL)
+		else:
+			ResizableThought.inside(self, inside, mode)
