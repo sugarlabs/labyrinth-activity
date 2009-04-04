@@ -26,7 +26,7 @@ import gettext
 _ = gettext.gettext
 import cairo
 
-import BaseThought
+from BaseThought import *
 import utils
 import UndoManager
 
@@ -42,7 +42,7 @@ MODE_DRAW = 2
 
 UNDO_RESIZE = 0
 
-class ImageThought (BaseThought.ResizableThought):
+class ImageThought (ResizableThought):
 	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color):
 		super (ImageThought, self).__init__(save, "image_thought", undo, background_color, None)
 
@@ -211,7 +211,7 @@ class ImageThought (BaseThought.ResizableThought):
 			if event.type == gtk.gdk.BUTTON_PRESS:
 				self.emit ("select_thought", event.state & modifiers)
 				self.emit ("update_view")
-			if mode == MODE_EDITING and self.resizing != self.RESIZE_NONE:
+			if mode == MODE_EDITING and self.resizing != RESIZE_NONE:
 				self.orig_size = (self.ul, self.width, self.height)
 				self.want_move = True
 				return True
@@ -233,7 +233,7 @@ class ImageThought (BaseThought.ResizableThought):
 			self.want_move = False
 
 	def handle_motion (self, event, mode, transformed):
-		if self.resizing == self.RESIZE_NONE or not self.want_move or not event.state & gtk.gdk.BUTTON1_MASK:
+		if self.resizing == RESIZE_NONE or not self.want_move or not event.state & gtk.gdk.BUTTON1_MASK:
 			if not event.state & gtk.gdk.BUTTON1_MASK:
 				return False
 			elif mode == MODE_EDITING:
@@ -244,72 +244,37 @@ class ImageThought (BaseThought.ResizableThought):
 		diffy = transformed[1] - self.motion_coords[1]
 		tmp = self.motion_coords
 		self.motion_coords = transformed
-		if self.resizing == self.RESIZE_LEFT:
-			if self.width - diffx < 10:
-				self.motion_coords = tmp
-				return True
-			self.ul = (self.ul[0]+diffx, self.ul[1])
-			self.pic_location = (self.pic_location[0]+diffx, self.pic_location[1])
-			self.width -= diffx
-		elif self.resizing == self.RESIZE_RIGHT:
-			if self.width + diffx < 10:
-				self.motion_coords = tmp
-				return True
-			self.lr = (self.lr[0]+diffx, self.lr[1])
-			self.width += diffx
-		elif self.resizing == self.RESIZE_TOP:
-			if self.height - diffy < 10:
-				self.motion_coords = tmp
-				return True
-			self.ul = (self.ul[0], self.ul[1]+diffy)
-			self.pic_location = (self.pic_location[0], self.pic_location[1]+diffy)
-			self.height -= diffy
-		elif self.resizing == self.RESIZE_BOTTOM:
-			if self.height + diffy < 10:
-				self.motion_coords = tmp
-				return True
-			self.lr = (self.lr[0], self.lr[1]+diffy)
-			self.height += diffy
-		elif self.resizing == self.RESIZE_UL:
-			if self.height - diffy < 10 or self.width - diffx < 10:
-				self.motion_coords = tmp
-				return True
-			self.ul = (self.ul[0]+diffx, self.ul[1]+diffy)
-			self.pic_location = (self.pic_location[0]+diffx, self.pic_location[1]+diffy)
-			self.width -= diffx
-			self.height -= diffy
-		elif self.resizing == self.RESIZE_UR:
-			if self.height - diffy < 10 or self.width + diffx < 10:
-				self.motion_coords = tmp
-				return True
-			self.ul = (self.ul[0], self.ul[1]+diffy)
-			self.lr = (self.lr[0]+diffx, self.lr[1])
-			self.pic_location = (self.pic_location[0], self.pic_location[1]+diffy)
-			self.width += diffx
-			self.height -= diffy
-		elif self.resizing == self.RESIZE_LL:
-			if self.height + diffy < 10 or self.width - diffx < 10:
-				self.motion_coords = tmp
-				return True
-			self.ul = (self.ul[0]+diffx, self.ul[1])
-			self.lr = (self.lr[0], self.lr[1]+diffy)
-			self.pic_location = (self.pic_location[0]+diffx, self.pic_location[1])
-			self.width -= diffx
-			self.height += diffy
-		elif self.resizing == self.RESIZE_LR:
-			if self.height + diffy < 10:
-				self.motion_coords = tmp
-				return True
-			if self.width + diffx < 10:
-				self.motion_coords = tmp
-				return True
-			self.lr = (self.lr[0]+diffx, self.lr[1]+diffy)
-			self.width += diffx
-			self.height += diffy
-		if self.orig_pic:
-			self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height), gtk.gdk.INTERP_NEAREST)
-		self.emit ("update_links")
-		self.emit ("update_view")
+
+		resizing = False
+
+		if self.resizing & RESIZE_LEFT:
+			if transformed[0] < self.lr[0] - 20:
+				self.ul = (transformed[0], self.ul[1])
+				resizing = True;
+		if self.resizing & RESIZE_RIGHT:
+			if transformed[0] > self.pic_location[0] + 20:
+				self.lr = (transformed[0], self.lr[1])
+				resizing = True;
+		if self.resizing & RESIZE_TOP:
+			if transformed[1] < self.lr[1] - 20:
+				self.ul = (self.ul[0], transformed[1])
+				resizing = True;
+		if self.resizing & RESIZE_BOTTOM:
+			if transformed[1] > self.pic_location[1] + 20:
+				self.lr = (self.lr[0], transformed[1])
+				resizing = True;
+
+		if resizing:
+			self.pic_location = self.ul
+			self.width = self.lr[0] - self.ul[0]
+			self.height = self.lr[1] - self.ul[1]
+
+			self.pic = self.orig_pic.scale_simple (int(self.width), int(self.height),
+					gtk.gdk.INTERP_NEAREST)
+
+			self.emit ("update_links")
+			self.emit ("update_view")
+
 		return True
 
 	def update_save (self):
@@ -399,5 +364,3 @@ class ImageThought (BaseThought.ResizableThought):
 		item.set_image(image)
 		item.connect('activate', self.change_image_cb)
 		return [item]
-		
-		

@@ -251,6 +251,22 @@ class BaseThought (gobject.GObject):
 	def get_popup_menu_items(self):
 		pass
 
+RESIZE_NONE 	= 0
+RESIZE_LEFT 	= 1
+RESIZE_RIGHT 	= 2
+RESIZE_TOP 		= 4
+RESIZE_BOTTOM 	= 8
+
+CURSOR = {}
+
+CURSOR[RESIZE_LEFT] 				= gtk.gdk.LEFT_SIDE;
+CURSOR[RESIZE_RIGHT]				= gtk.gdk.RIGHT_SIDE;
+CURSOR[RESIZE_TOP]					= gtk.gdk.TOP_SIDE;
+CURSOR[RESIZE_BOTTOM]				= gtk.gdk.BOTTOM_SIDE;
+CURSOR[RESIZE_LEFT|RESIZE_TOP]		= gtk.gdk.TOP_LEFT_CORNER;
+CURSOR[RESIZE_LEFT|RESIZE_BOTTOM]	= gtk.gdk.BOTTOM_LEFT_CORNER;
+CURSOR[RESIZE_RIGHT|RESIZE_TOP]		= gtk.gdk.TOP_RIGHT_CORNER;
+CURSOR[RESIZE_RIGHT|RESIZE_BOTTOM]	= gtk.gdk.BOTTOM_RIGHT_CORNER;
 
 class ResizableThought (BaseThought):
 	''' A resizable thought base class.  This allows the sides and corners \
@@ -258,20 +274,22 @@ class ResizableThought (BaseThought):
 	    functionality.  Other stuff must be done within the derived classes'''
 
 	# Possible types of resizing - where the user selected to resize
-	RESIZE_NONE = 0
-	RESIZE_LEFT = 1
-	RESIZE_RIGHT = 2
-	RESIZE_TOP = 3
-	RESIZE_BOTTOM = 4
-	RESIZE_UL = 5
-	RESIZE_UR = 6
-	RESIZE_LL = 7
-	RESIZE_LR = 8
 
 	def __init__ (self, save, elem_type, undo, background_color, foreground_color):
 		super (ResizableThought, self).__init__(save, elem_type, undo, background_color, foreground_color)
 		self.resizing = False
 		self.button_down = False
+
+	def before_inside (self, inside, mode):
+		return False
+
+	def after_inside (self, inside, coords, mode):
+		if inside:
+			if mode == MODE_DRAW:
+				self.emit ("change_mouse_cursor", gtk.gdk.PENCIL)
+			else:
+				self.emit("change_mouse_cursor", gtk.gdk.LEFT_PTR)
+		return inside
 
 	def includes (self, coords, mode):
 		if not self.ul or not self.lr or not coords:
@@ -282,12 +300,11 @@ class ResizableThought (BaseThought):
 			     (coords[1] < self.lr[1] + self.sensitive) and \
 			     (coords[1] > self.ul[1] - self.sensitive)
 
-		self.resizing = self.RESIZE_NONE
+		self.resizing = RESIZE_NONE
 		self.motion_coords = coords
 
-		if inside and (mode != MODE_EDITING or self.button_down):
-			self.emit ("change_mouse_cursor", gtk.gdk.LEFT_PTR)
-			return inside
+		if self.before_inside(inside, mode):
+			return inside;
 
 		if inside:
 			# 2 cases: 1. The click was within the main area
@@ -295,44 +312,28 @@ class ResizableThought (BaseThought):
 			# In the first case, we handle as normal
 			# In the second case, we want to intercept all the fun thats
 			# going to happen so we can resize the thought
+
 			if abs (coords[0] - self.ul[0]) < self.sensitive:
-				# its near the top edge somewhere
-				if abs (coords[1] - self.ul[1]) < self.sensitive:
-				# Its in the ul corner
-					self.resizing = self.RESIZE_UL
-					self.emit ("change_mouse_cursor", gtk.gdk.TOP_LEFT_CORNER)
-				elif abs (coords[1] - self.lr[1]) < self.sensitive:
-				# Its in the ll corner
-					self.resizing = self.RESIZE_LL
-					self.emit ("change_mouse_cursor", gtk.gdk.BOTTOM_LEFT_CORNER)
-				elif coords[1] < self.lr[1] and coords[1] > self.ul[1]:
-				#anywhere else along the left edge
-					self.resizing = self.RESIZE_LEFT
-					self.emit ("change_mouse_cursor", gtk.gdk.LEFT_SIDE)
+				if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
+					self.resizing = self.resizing | RESIZE_LEFT
 			elif abs (coords[0] - self.lr[0]) < self.sensitive:
-				if abs (coords[1] - self.ul[1]) < self.sensitive:
-				# Its in the UR corner
-					self.resizing = self.RESIZE_UR
-					self.emit ("change_mouse_cursor", gtk.gdk.TOP_RIGHT_CORNER)
-				elif abs (coords[1] - self.lr[1]) < self.sensitive:
-				# Its in the lr corner
-					self.resizing = self.RESIZE_LR
-					self.emit ("change_mouse_cursor", gtk.gdk.BOTTOM_RIGHT_CORNER)
-				elif coords[1] < self.lr[1] and coords[1] > self.ul[1]:
-				#anywhere else along the right edge
-					self.resizing = self.RESIZE_RIGHT
-					self.emit ("change_mouse_cursor", gtk.gdk.RIGHT_SIDE)
-			elif abs (coords[1] - self.ul[1]) < self.sensitive and \
-				 (coords[0] < self.lr[0] and coords[0] > self.ul[0]):
-				# Along the top edge somewhere
-					self.resizing = self.RESIZE_TOP
-					self.emit ("change_mouse_cursor", gtk.gdk.TOP_SIDE)
+				if coords[1] < self.lr[1] and coords[1] > self.ul[1]:
+					self.resizing = self.resizing | RESIZE_RIGHT
+
+			if abs (coords[1] - self.ul[1]) < self.sensitive and \
+				 	(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
+				self.resizing = self.resizing | RESIZE_TOP
 			elif abs (coords[1] - self.lr[1]) < self.sensitive and \
-				 (coords[0] < self.lr[0] and coords[0] > self.ul[0]):
-				# Along the bottom edge somewhere
-					self.resizing = self.RESIZE_BOTTOM
-					self.emit ("change_mouse_cursor", gtk.gdk.BOTTOM_SIDE)
+				 	(coords[0] < self.lr[0] and coords[0] > self.ul[0]):
+				self.resizing = self.resizing | RESIZE_BOTTOM
+
+			if self.resizing == RESIZE_NONE:
+				inside = self.after_inside(True, coords, mode)
 			else:
-				self.emit ("change_mouse_cursor", gtk.gdk.LEFT_PTR)
-		self.want_move = (self.resizing != self.RESIZE_NONE)
+				self.emit ("change_mouse_cursor", CURSOR[self.resizing])
+
+		else:
+			inside = self.after_inside(False, coords, mode)
+
+		self.want_move = (self.resizing != RESIZE_NONE)
 		return inside
