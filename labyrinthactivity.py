@@ -25,6 +25,7 @@ import xml.dom.minidom as dom
 
 import gobject
 import gtk
+import pango
 
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
@@ -142,6 +143,7 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.connect ("doc_save", self.__doc_save_cb)
         self._main_area.connect ("set_focus", self.__main_area_focus_cb)
         self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
+        self._main_area.connect ("expose_event", self.__expose)
         self._main_area.set_mode (self._mode)
         self.set_canvas(self._main_area)
         self._main_area.show()
@@ -150,8 +152,74 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.initialize_model(tree_model)
 
         self.set_focus_child (self._main_area)
-
+        
         self._undo.unblock()
+                
+    def __expose(self, widget, event):
+        """Create skeleton map at start
+        """
+        thought_count = len(self._main_area.thoughts)
+        if thought_count > 1:
+            return False
+
+        context = self._main_area.window.cairo_create()
+        pango_context = self._main_area.pango_context
+        layout = pango.Layout(pango_context)
+        context.set_source_rgb(0.6, 0.6, 0.6)
+        context.set_line_width(4.0)
+        context.set_dash([10.0, 5.0], 0.0)
+        geom = list(self._main_area.window.get_geometry())
+        geom[3] =  geom[3] - ((self.window.get_geometry()[3] - geom[3]) / 2)
+            
+        if thought_count == 0:
+            layout.set_alignment(pango.ALIGN_CENTER)
+            layout.set_text(_('Click to add\ncentral thought'))        
+            (width, height) = layout.get_pixel_size()
+            context.move_to (geom[2] / 2 - (width / 2), geom[3] / 2 - (height / 2))
+            context.show_layout(layout)
+
+            round = 40
+            ul = (geom[2] / 2 - (width / 2) - round,
+                  geom[3] / 2 - (height / 2) - round)
+            lr = (geom[2] / 2 + (width / 2) + round,
+                  geom[3] / 2 + (height / 2) + round)
+            context.move_to (ul[0], ul[1] + round)
+            context.line_to (ul[0], lr[1] - round)
+            context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0] + round, lr[1])
+            context.line_to (lr[0] - round, lr[1])
+            context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1] - round)
+            context.line_to (lr[0], ul[1] + round)
+            context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0] - round, ul[1])
+            context.line_to (ul[0] + round, ul[1])
+            context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1] + round)
+            context.stroke()
+
+        # Considering possible 2nd, or 3rd stage hints to help
+        # walk someone through creating a map
+        #
+        #elif thought_count == 1:
+        #    (x, y) = self._main_area.thoughts[0].ul
+        #    (x, y) = (x - 5, y - 5)
+        #    context.move_to (x, y)
+        #    context.line_to (x - 95, y - 95)
+        #    context.move_to (x + 2, y)
+        #    context.line_to (x - 20, y)
+        #    context.move_to (x, y + 2)
+        #    context.line_to (x, y - 20)
+        #    context.stroke()            
+        #    layout.set_text (_('Type central thought'))        
+        #    (width, height) = layout.get_pixel_size()
+        #    context.move_to (x - 100 - (width / 2), y - 100 - height)
+        #    context.show_layout(layout)
+        
+        return False
+        
+    def __centre(self):
+        bounds = self.__get_thought_bounds()
+        self._main_area.translation[0] = bounds['x']
+        self._main_area.translation[1] = bounds['y']
+        self._main_area.invalidate()
+        return False
 
     def __zoom_in_cb(self, button):
         self._main_area.scale_fac *= 1.2
@@ -164,14 +232,21 @@ class LabyrinthActivity(activity.Activity):
     def __zoom_original_cb(self, button):
         self._main_area.scale_fac = 1.0
         self._main_area.invalidate()
-
+        
     def __zoom_tofit_cb(self, button):
+        bounds = self.__get_thought_bounds()
+        self._main_area.translation[0] = bounds['x']
+        self._main_area.translation[1] = bounds['y']
+        self._main_area.scale_fac = bounds['scale']
+        self._main_area.invalidate()
+
+    def __get_thought_bounds(self):
         if len(self._main_area.thoughts) == 0:
             self._main_area.scale_fac = 1.0
             self._main_area.translation[0] = 0
             self._main_area.translation[1] = 0
             self._main_area.invalidate()
-            return
+            return {'x':0, 'y':0, 'scale':1.0}
         # Find thoughts extent
         left = right = upper = lower = None
         for t in self._main_area.thoughts:
@@ -190,10 +265,9 @@ class LabyrinthActivity(activity.Activity):
         # Leave 10% space around the edge
         width_scale = float(geom[2]) / (width * 1.1)
         height_scale = float(geom[3]) / (height * 1.1)
-        self._main_area.translation[0] = (geom[2] / 2.0) - (width / 2.0 + left)
-        self._main_area.translation[1] = (geom[3] / 2.0) - (height / 2.0 + upper)
-        self._main_area.scale_fac = min(width_scale, height_scale)
-        self._main_area.invalidate()
+        return {'x':(geom[2] / 2.0) - (width / 2.0 + left),
+                'y':(geom[3] / 2.0) - (height / 2.0 + upper),
+                'scale':min(width_scale, height_scale)}
 
     def __edit_mode_cb(self, button):
         self._mode = MMapArea.MODE_EDITING
