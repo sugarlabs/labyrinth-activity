@@ -205,7 +205,7 @@ class MMapArea (gtk.DrawingArea):
 			
 		ret = False
 		obj = self.find_object_at (coords)
-		if event.button == 2:
+		if event.button == 1 and self.translate == True:
 			self.set_cursor (gtk.gdk.FLEUR)
 			self.original_translation = self.translation
 			self.origin_x = event.x
@@ -283,12 +283,13 @@ class MMapArea (gtk.DrawingArea):
 		self.move_origin = None
 
 		obj = self.find_object_at (coords)
-		if event.button == 2:
-			self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.TRANSFORM_CANVAS, \
-														self.undo_transform_cb,
-														self.scale_fac, self.scale_fac, 
-														self.original_translation,
-														self.translation))
+		#if event.button == 2:
+		#if event.button == 1 and (event.hardware_keycode == 133 or event.hardware_keycode == 134):
+		#	self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.TRANSFORM_CANVAS, \
+		#												self.undo_transform_cb,
+		#												self.scale_fac, self.scale_fac, 
+		#												self.original_translation,
+		#												self.translation))
 
 		if obj:
 			ret = obj.process_button_release (event, self.unending_link, self.mode, coords)
@@ -383,6 +384,9 @@ class MMapArea (gtk.DrawingArea):
 		self.invalidate ()
 
 	def key_press (self, widget, event):
+		# Support for canvas panning keys ('hand' on XO, 'cmd' on Macs)
+		if event.hardware_keycode == 133 or event.hardware_keycode == 134:
+			self.translate = True
 		if not self.do_filter or not self.im_context.filter_keypress (event):
 			if self.editing:
 				if not self.editing.process_key_press (event, self.mode):
@@ -393,6 +397,9 @@ class MMapArea (gtk.DrawingArea):
 		return True
 
 	def key_release (self, widget, event):
+		# Support for canvas panning keys ('hand' on XO, 'cmd' on Macs)
+		if event.hardware_keycode == 133 or event.hardware_keycode == 134:
+			self.translate = False
 		self.im_context.filter_keypress (event)
 		return True
 
@@ -454,8 +461,7 @@ class MMapArea (gtk.DrawingArea):
 			# create the unending link
 			self.create_link (self.editing)
 			self.finish_editing ()
-		elif event.state & gtk.gdk.BUTTON2_MASK:
-			self.translate = True
+		elif event.state & gtk.gdk.BUTTON1_MASK and self.translate:
 			self.translation[0] -= (self.origin_x - event.x) / self.scale_fac
 			self.translation[1] -= (self.origin_y - event.y) / self.scale_fac
 			self.origin_x = event.x
