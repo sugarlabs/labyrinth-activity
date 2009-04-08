@@ -198,8 +198,12 @@ class MMapArea (gtk.DrawingArea):
 			return self.untransform.transform_point(loc_x, loc_y)
 
 	def button_down (self, widget, event):
+<<<<<<< HEAD:src/MMapArea.py
 		if event.button == 2 or \
 		        event.button == 1 and self.translate == True:
+=======
+		if event.button == 2:
+>>>>>>> Make activity GUI more useful:src/MMapArea.py
 			self.set_cursor (gtk.gdk.FLEUR)
 			self.original_translation = self.translation
 			self.origin_x = event.x
@@ -394,8 +398,12 @@ class MMapArea (gtk.DrawingArea):
 			self.move_origin_new = (coords[0], coords[1])
 			self.invalidate ()
 			return True
+<<<<<<< HEAD:src/MMapArea.py
 		elif event.state & gtk.gdk.BUTTON2_MASK or \
                 event.state & gtk.gdk.BUTTON1_MASK and self.translate:
+=======
+		elif event.state & gtk.gdk.BUTTON2_MASK:
+>>>>>>> Make activity GUI more useful:src/MMapArea.py
 			self.translate = True
 			self.translation[0] -= (self.origin_x - event.x) / self.scale_fac
 			self.translation[1] -= (self.origin_y - event.y) / self.scale_fac
