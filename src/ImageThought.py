@@ -51,8 +51,11 @@ class ImageThought (ResizableThought):
 	# tmp files/links in the right places and reference the window.
 	def journal_open_image (self, filename=None):
 		if not filename:
-			chooser = ObjectChooser(_('Choose image'),
-                    what_filter=mime.GENERIC_TYPE_IMAGE)
+            if hasattr(mime, 'GENERIC_TYPE_IMAGE'):
+                chooser = ObjectChooser(_('Choose image'),
+                        what_filter=mime.GENERIC_TYPE_IMAGE)
+            else:
+                chooser = ObjectChooser(_('Choose image'))
 
 			try:
 				result = chooser.run()
