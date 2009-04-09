@@ -67,7 +67,8 @@ class DrawingThought (ResizableThought):
 
 		cwidth = context.get_line_width ()
 		context.set_line_width (2)
-		context.set_line_join(cairo.LINE_JOIN_ROUND)
+		context.set_line_join(cairo.LINE_JOIN_BEVEL)
+		context.set_line_cap(cairo.LINE_CAP_ROUND)
 		if len (self.points) > 0:
 			for p in self.points:
 				if p.style == STYLE_BEGIN:
