@@ -61,6 +61,8 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.copy.get_palette().menu.append(menu_item)
         edit_toolbar.paste.connect('clicked', self.__paste_cb)
 
+        # FIXME: Why is the share item now staying visible, this code
+        # was hiding it just fine before.
         activity_toolbar = toolbox.get_activity_toolbar()
         activity_toolbar.share.props.visible = False
 
