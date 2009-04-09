@@ -36,6 +36,7 @@ STYLE_CONTINUE=0
 STYLE_END=1
 STYLE_BEGIN=2
 ndraw =0
+SMOOTH = 5
 
 class DrawingThought (ResizableThought):
 	class DrawingPoint (object):
@@ -59,6 +60,7 @@ class DrawingThought (ResizableThought):
 		self.text = _("Drawing #%d" % ndraw)
 		self.drawing = 0
 		self.all_okay = True
+		self.coords_smooth = []
 
 	def draw (self, context):
 		ResizableThought.draw(self, context)
@@ -177,6 +179,15 @@ class DrawingThought (ResizableThought):
 
 		if not self.editing:
 			return False
+
+		# Smooth drawing and reduce number of points
+		self.coords_smooth.append(coords)
+		if len(self.coords_smooth) < SMOOTH:
+			return False
+		else:
+			coords = (float(sum([i[0] for i in self.coords_smooth])) / SMOOTH,
+                      float(sum([i[1] for i in self.coords_smooth])) / SMOOTH)
+			self.coords_smooth = []
 
 		if self.drawing == 1:
 			if coords[0] < self.ul[0]+5:
