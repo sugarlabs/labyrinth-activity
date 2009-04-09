@@ -139,7 +139,6 @@ class LabyrinthActivity(activity.Activity):
 
         self._save_file = None
         self._mode = MMapArea.MODE_TEXT
-        self.mods[MMapArea.MODE_TEXT].set_active(True)
 
         self._undo = UndoManager.UndoManager (self,
                                              edit_toolbar.undo.child,
@@ -159,6 +158,7 @@ class LabyrinthActivity(activity.Activity):
         activity_toolbar = toolbox.get_activity_toolbar()
         activity_toolbar.share.props.visible = False
 
+        self.mods[MMapArea.MODE_TEXT].set_active(True)
         toolbox.set_current_toolbar(1)
         self.set_focus_child (self._main_area)
         self.clipboard = gtk.Clipboard()
