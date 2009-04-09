@@ -97,6 +97,7 @@ class LabyrinthActivity(activity.Activity):
 
         tool = ToolButton('link')
         tool.set_tooltip(_('Link/unlink two selected thoughts'))
+        tool.set_accelerator(_('<ctrl>l'))
         tool.connect('clicked', self.__link_cb)
         edit_toolbar.insert(tool, 5)
 
