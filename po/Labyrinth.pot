@@ -25,11 +25,11 @@ msgid "Edit"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:74
-msgid "Select mode"
+msgid "Edit mode"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:75
-msgid "<ctrl>s"
+msgid "<ctrl>e"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:81

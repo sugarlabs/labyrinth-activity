@@ -64,8 +64,8 @@ class LabyrinthActivity(activity.Activity):
         self.mods = [None] * 4
 
         self.mods[0] = RadioToolButton(named_icon='select-mode')
-        self.mods[0].set_tooltip(_('Select mode'))
-        self.mods[0].set_accelerator(_('<ctrl>s'))
+        self.mods[0].set_tooltip(_('Edit mode'))
+        self.mods[0].set_accelerator(_('<ctrl>e'))
         self.mods[0].set_group(None)
         self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
         edit_toolbar.insert(self.mods[0], 0)
