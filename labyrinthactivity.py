@@ -61,13 +61,6 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.copy.get_palette().menu.append(menu_item)
         edit_toolbar.paste.connect('clicked', self.__paste_cb)
 
-        # FIXME: Why is the share item now staying visible, this code
-        # was hiding it just fine before.
-        activity_toolbar = toolbox.get_activity_toolbar()
-        activity_toolbar.share.props.visible = False
-
-        self.clipboard = gtk.Clipboard()
-
         self.mods = [None] * 4
 
         self.mods[0] = RadioToolButton(named_icon='select-mode')
@@ -151,7 +144,6 @@ class LabyrinthActivity(activity.Activity):
                                              edit_toolbar.undo.child,
                                              edit_toolbar.redo.child)
         self._undo.block ()
-
         self._main_area = MMapArea.MMapArea (self._undo)
         self._main_area.connect ("doc_save", self.__doc_save_cb)
         self._main_area.connect ("set_focus", self.__main_area_focus_cb)
@@ -159,13 +151,16 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.connect ("expose_event", self.__expose)
         self._main_area.set_mode (self._mode)
         self.set_canvas(self._main_area)
-
-        self.set_focus_child (self._main_area)
-
         self._undo.unblock()
 
-        toolbox.set_current_toolbar(1)
         self.show_all()
+
+        activity_toolbar = toolbox.get_activity_toolbar()
+        activity_toolbar.share.props.visible = False
+
+        toolbox.set_current_toolbar(1)
+        self.set_focus_child (self._main_area)
+        self.clipboard = gtk.Clipboard()
                 
     def __expose(self, widget, event):
         """Create skeleton map at start
