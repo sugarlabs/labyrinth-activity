@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-04-03 21:51+0200\n"
+"POT-Creation-Date: 2009-04-09 04:49+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,239 +16,331 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/Browser.py:212
-msgid "Translation by Don Scorgie"
+#: activity/activity.info:2
+msgid "Labyrinth"
 msgstr ""
 
-#: ../src/Browser.py:234
-msgid "The map cannot be deleted right now. Is it open?"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53
+msgid "Edit"
 msgstr ""
 
-#: ../src/Browser.py:236
-msgid "The map has no associated filename."
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:74
+msgid "Select mode"
 msgstr ""
 
-#: ../src/Browser.py:239
-msgid "Cannot delete this map"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:75
+msgid "<ctrl>s"
 msgstr ""
 
-#: ../src/Browser.py:246
-msgid "Do you really want to delete this Map?"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:81
+msgid "Text mode"
 msgstr ""
 
-#: ../src/Browser.py:271
-msgid "Open File"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:82
+msgid "<ctrl>t"
 msgstr ""
 
-#: ../src/Browser.py:275
-msgid "MAPZ Compressed Map (*.mapz)"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:89
+msgid "Drawing mode"
 msgstr ""
 
-#: ../src/Browser.py:306
-msgid "Map Name"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:90
+msgid "<ctrl>d"
 msgstr ""
 
-#: ../src/Browser.py:313
-msgid "Last Modified"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:96
+msgid "Image add mode"
 msgstr ""
 
-#: ../src/MainWindow.py:113
-msgid "Choose background color"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:97
+msgid "<ctrl>i"
 msgstr ""
 
-#: ../src/MainWindow.py:120
-msgid "Choose foreground color"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:106
+msgid "Link/unlink two selected thoughts"
 msgstr ""
 
-#: ../src/MainWindow.py:152 ../src/MainWindow.py:485
-msgid "Untitled Map"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:115
+msgid "Erase selected thought(s)"
 msgstr ""
 
-#: ../src/MainWindow.py:250
-msgid "File"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:124
+msgid "View"
 msgstr ""
 
-#: ../src/MainWindow.py:251
-msgid "Export as Image"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:127
+msgid "Zoom in"
 msgstr ""
 
-#: ../src/MainWindow.py:252
-msgid "Export your map as an image"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:132
+msgid "Zoom out"
 msgstr ""
 
-#: ../src/MainWindow.py:253
-msgid "Export Map..."
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:137
+msgid "Fit to window"
 msgstr ""
 
-#: ../src/MainWindow.py:254
-msgid "Export your map as XML"
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:142
+msgid "Original size"
 msgstr ""
 
-#: ../src/MainWindow.py:256
-msgid "Close the current window"
-msgstr ""
-
-#: ../src/MainWindow.py:257
-msgid "_Edit"
-msgstr ""
-
-#: ../src/MainWindow.py:266
-msgid "(Un)Link Thoughts"
-msgstr ""
-
-#: ../src/MainWindow.py:267
-msgid "(Un)Link the selected thoughts"
-msgstr ""
-
-#: ../src/MainWindow.py:268
-msgid "_Mode"
-msgstr ""
-
-#: ../src/MainWindow.py:269
-msgid "_Delete Selected Elements"
-msgstr ""
-
-#: ../src/MainWindow.py:270
-msgid "Delete the selected element(s)"
-msgstr ""
-
-#: ../src/MainWindow.py:276
-msgid "_Edit Mode"
-msgstr ""
-
-#: ../src/MainWindow.py:277
-msgid "Turn on edit mode"
-msgstr ""
-
-#: ../src/MainWindow.py:278
-msgid "_Add Image"
-msgstr ""
-
-#: ../src/MainWindow.py:279
-msgid "Add an image to selected thought"
-msgstr ""
-
-#: ../src/MainWindow.py:280
-msgid "_Drawing Mode"
-msgstr ""
-
-#: ../src/MainWindow.py:281
-msgid "Make a pretty drawing"
-msgstr ""
-
-#: ../src/MainWindow.py:283
-msgid "_View Extended"
-msgstr ""
-
-#: ../src/MainWindow.py:284
-msgid "View extended info for thoughts"
-msgstr ""
-
-#: ../src/MainWindow.py:285
-msgid "_Use Bezier Curves"
-msgstr ""
-
-#: ../src/MainWindow.py:286
-msgid "Use bezier curves as links"
-msgstr ""
-
-#: ../src/MainWindow.py:548
-msgid "Save File As"
-msgstr ""
-
-#: ../src/MainWindow.py:647
-msgid "All Files"
-msgstr ""
-
-#: ../src/MainWindow.py:648
-msgid "PNG Image (*.png)"
-msgstr ""
-
-#: ../src/MainWindow.py:649
-msgid "JPEG Image (*.jpg, *.jpeg)"
-msgstr ""
-
-#: ../src/MainWindow.py:650
-msgid "SVG Vector Image (*.svg)"
-msgstr ""
-
-#: ../src/MainWindow.py:651
-msgid "PDF Portable Document (*.pdf)"
-msgstr ""
-
-#: ../src/MainWindow.py:687
-msgid "Unknown file format"
-msgstr ""
-
-#: ../src/MainWindow.py:688
-#, python-format
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:188
 msgid ""
-"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
-"'.svg'."
+"Click to add\n"
+"central thought"
 msgstr ""
 
-#: ../src/DrawingThought.py:67
-#, python-format
-msgid "Drawing #%d"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:54
+msgid "Choose image"
 msgstr ""
 
-#: ../src/ImageThought.py:64
-msgid "Choose image to insert"
-msgstr ""
-
-#: ../src/ImageThought.py:316
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:227
 msgid "Error loading file"
 msgstr ""
 
-#: ../src/ImageThought.py:317
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:228
 #, python-format
 msgid "%s could not be found.  Associated thought will be empty."
 msgstr ""
 
-#: ../data/labyrinth.glade.h:1
-msgid "<b>Export Map</b>"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:261
+msgid "Choose Color"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:2
-msgid "Complete Map"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:274
+msgid "Set Color"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:3
-msgid "Export Map as Image"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/DrawingThought.py:59
+#, python-format
+msgid "Drawing #%d"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:4
-msgid "Height"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:5
-msgid "Labyrinth Maps"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:225
+msgid "Translation by Don Scorgie"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:6
-msgid "Visible Area"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:7
-msgid "Width"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:249
+msgid "The map has no associated filename."
 msgstr ""
 
-#: ../data/labyrinth.glade.h:8
-msgid "_File"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:252
+msgid "Cannot delete this map"
 msgstr ""
 
-#: ../data/labyrinth.glade.h:9
-msgid "_Help"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:259
+msgid "Do you really want to delete this Map?"
 msgstr ""
 
-#: ../data/labyrinth.desktop.in.h:1
-msgid "Labyrinth Mind-mapping"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:284
+msgid "Open File"
 msgstr ""
 
-#: ../data/labyrinth.desktop.in.h:2
-msgid "Map your mind"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
 msgstr ""
 
-#: ../data/labyrinth.desktop.in.h:3
-msgid "Mind-mapping"
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:319
+msgid "Map Name"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Browser.py:326
+msgid "Last Modified"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:163
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:229
+msgid "File"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:230
+msgid "Export as Image"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:232
+msgid "Export Map..."
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:235
+msgid "Close the current window"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:236
+msgid "_Edit"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:237
+msgid "_View"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:249
+msgid "_Mode"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:250
+msgid "_Delete"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:259
+msgid "_Add Image"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:263
+msgid "Add Resource"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:264
+msgid "Add a resource"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:273
+msgid "_Outline"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:275
+msgid "_Main"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:277
+msgid "_Format"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:303
+msgid "Thoughts"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:576
+msgid "Save File As"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:670
+msgid "All Files"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr ""
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
 msgstr ""
