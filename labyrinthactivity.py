@@ -75,8 +75,8 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.insert(self.mods[0], 0)
 
         self.mods[1] = RadioToolButton(named_icon='text-mode')
-        self.mods[1].set_tooltip(_('Edit mode'))
-        self.mods[1].set_accelerator(_('<ctrl>e'))
+        self.mods[1].set_tooltip(_('Text mode'))
+        self.mods[1].set_accelerator(_('<ctrl>t'))
         self.mods[1].set_group(self.mods[0])
         self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
         edit_toolbar.insert(self.mods[1], 1)
@@ -109,7 +109,7 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.insert(separator, 6)
 
         tool = ToolButton('edit-delete')
-        tool.set_tooltip(_('Delete the selected element(s)'))
+        tool.set_tooltip(_('Erase selected thought(s)'))
         tool.connect('clicked', self.__delete_cb)
         edit_toolbar.insert(tool, 7)
 
