@@ -26,6 +26,7 @@ import gettext
 _ = gettext.gettext
 import math
 import logging
+import cairo
 
 from BaseThought import *
 import utils
@@ -64,6 +65,7 @@ class DrawingThought (ResizableThought):
 
 		cwidth = context.get_line_width ()
 		context.set_line_width (2)
+		context.set_line_join(cairo.LINE_JOIN_ROUND)
 		if len (self.points) > 0:
 			for p in self.points:
 				if p.style == STYLE_BEGIN:
