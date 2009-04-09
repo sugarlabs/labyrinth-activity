@@ -57,6 +57,7 @@ class LabyrinthActivity(activity.Activity):
 
         menu_item = MenuItem('Cut') 
         menu_item.connect('activate', self.__cut_cb)
+        menu_item.show()
         edit_toolbar.copy.get_palette().menu.append(menu_item)
         edit_toolbar.paste.connect('clicked', self.__paste_cb)
 
@@ -115,6 +116,7 @@ class LabyrinthActivity(activity.Activity):
 
         separator = gtk.SeparatorToolItem()
         edit_toolbar.insert(separator, 8)
+        edit_toolbar.show()
 
         view_toolbar = gtk.Toolbar()
         toolbox.add_toolbar(_('View'), view_toolbar)
