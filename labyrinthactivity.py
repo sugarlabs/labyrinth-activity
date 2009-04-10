@@ -203,24 +203,6 @@ class LabyrinthActivity(activity.Activity):
             context.line_to (ul[0] + round, ul[1])
             context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1] + round)
             context.stroke()
-
-        # Considering possible 2nd, or 3rd stage hints to help
-        # walk someone through creating a map
-        #
-        #elif thought_count == 1:
-        #    (x, y) = self._main_area.thoughts[0].ul
-        #    (x, y) = (x - 5, y - 5)
-        #    context.move_to (x, y)
-        #    context.line_to (x - 95, y - 95)
-        #    context.move_to (x + 2, y)
-        #    context.line_to (x - 20, y)
-        #    context.move_to (x, y + 2)
-        #    context.line_to (x, y - 20)
-        #    context.stroke()            
-        #    layout.set_text (_('Type central thought'))        
-        #    (width, height) = layout.get_pixel_size()
-        #    context.move_to (x - 100 - (width / 2), y - 100 - height)
-        #    context.show_layout(layout)
         
         return False
         
