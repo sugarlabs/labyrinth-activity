@@ -119,11 +119,13 @@ class LabyrinthActivity(activity.Activity):
 
         self._zoom_in = ToolButton('zoom-in')
         self._zoom_in.set_tooltip(_('Zoom in'))
+        self._zoom_in.set_accelerator(_('<ctrl>i'))
         self._zoom_in.connect('clicked', self.__zoom_in_cb)
         view_toolbar.insert(self._zoom_in, -1)
 
         self._zoom_out = ToolButton('zoom-out')
         self._zoom_out.set_tooltip(_('Zoom out'))
+        self._zoom_out.set_accelerator(_('<ctrl>o'))
         self._zoom_out.connect('clicked', self.__zoom_out_cb)
         view_toolbar.insert(self._zoom_out, -1)
 
