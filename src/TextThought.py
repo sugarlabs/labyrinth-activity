@@ -341,6 +341,7 @@ class TextThought (ResizableThought):
 		else:
 			r, g ,b = utils.gtk_to_cairo_color(utils.default_colors["text"])
 		context.set_source_rgb (r, g, b)
+		self.layout.set_alignment(pango.ALIGN_CENTER)
 		context.move_to (textx, texty)
 		context.show_layout (self.layout)
 		if self.editing:
