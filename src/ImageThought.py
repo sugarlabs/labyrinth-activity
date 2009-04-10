@@ -133,10 +133,6 @@ class ImageThought (ResizableThought):
 		if ResizableThought.process_button_down(self, event, coords):
 			return True
 
-		if event.button == 1 and self.editing and not self.pic:
-			self.journal_open_image()
-			return True
-
 		return False
 
 	def process_button_release (self, event, transformed):
