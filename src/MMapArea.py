@@ -996,9 +996,8 @@ class MMapArea (gtk.DrawingArea):
 		elif event.keyval == gtk.keysyms.Escape:
 			if self.focus and self.focus.creating:
 				self.undo.forget_action()
-				self.focus = None
-			else:
-				self.unselect_all ()
+			self.unselect_all ()
+			self.focus = None
 		elif event.keyval == gtk.keysyms.a and event.state & gtk.gdk.CONTROL_MASK:
 			self.unselect_all ()
 			for t in self.thoughts:
