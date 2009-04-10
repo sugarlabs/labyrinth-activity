@@ -1243,6 +1243,8 @@ class MMapArea (gtk.DrawingArea):
 			self.hookup_im_context (thought)
 			# Creating links adds an undo action.  Block it here
 			self.undo.block ()
+			if not self.current_root:
+				self.current_root.append(self.primary)
 			for x in self.current_root:
 				self.create_link (x, None, thought)
 			for x in self.selected:
