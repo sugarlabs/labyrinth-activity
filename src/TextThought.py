@@ -328,12 +328,10 @@ class TextThought (ResizableThought):
 		self.end_index = self.index
 
 	def draw (self, context):
+		self.recalc_edges ()
 		ResizableThought.draw(self, context)
-
 		if self.creating:
 			return
-		if not self.layout:
-			self.recalc_edges ()
 
 		(textx, texty) = (self.min_x, self.min_y)
 		if self.am_primary:
