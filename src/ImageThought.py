@@ -46,11 +46,13 @@ class ImageThought (ResizableThought):
 		self.pic_location = coords
 		self.button_press = False
 		self.all_okay = True
+		self.object_chooser_active = False
 
 	# FIXME: Work in progress, needs at least activity self to create
 	# tmp files/links in the right places and reference the window.
 	def journal_open_image (self, filename=None):
 		if not filename:
+			self.object_chooser_active = True
 			if hasattr(mime, 'GENERIC_TYPE_IMAGE'):
 				chooser = ObjectChooser(_('Choose image'),
 						what_filter=mime.GENERIC_TYPE_IMAGE)
@@ -73,6 +75,7 @@ class ImageThought (ResizableThought):
 			finally:
 				chooser.destroy()
 				del chooser
+			self.object_chooser_active = False
 		else:
 			fname = filename
 
@@ -156,6 +159,8 @@ class ImageThought (ResizableThought):
 		return ResizableThought.process_button_release(self, event, transformed)
 
 	def handle_motion (self, event, coords):
+		if self.object_chooser_active:
+			return False
 		if ResizableThought.handle_motion(self, event, coords):
 			self.recalc_edges(False, gtk.gdk.INTERP_NEAREST)
 			return True
