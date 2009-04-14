@@ -75,7 +75,7 @@ try:
 	# Sugar specific tweak
 	xo_col = get_color()
 	rf, gf, bf, af = Color(xo_col.get_fill_color()).get_rgba()
-	rs, gs, bs, as = Color(xo_col.get_stroke_color()).get_rgba()
+	rs, gs, bs, as_ = Color(xo_col.get_stroke_color()).get_rgba()
 
 	# Use white or black text for best contrast
 	if rf + gf + bf < 0.5:
