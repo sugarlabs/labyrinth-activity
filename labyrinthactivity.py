@@ -19,9 +19,9 @@ import sys
 import os
 import logging
 from gettext import gettext as _
-import tarfile
 import tempfile
 import xml.dom.minidom as dom
+from zipfile import ZipFile
 
 import gobject
 import gtk
@@ -141,7 +141,6 @@ class LabyrinthActivity(activity.Activity):
         tool.connect('clicked', self.__zoom_original_cb)
         view_toolbar.insert(tool, -1)
 
-        self._save_file = None
         self._mode = MMapArea.MODE_TEXT
 
         self._undo = UndoManager.UndoManager (self,
@@ -149,7 +148,6 @@ class LabyrinthActivity(activity.Activity):
                                              edit_toolbar.redo.child)
         self._undo.block ()
         self._main_area = MMapArea.MMapArea (self._undo)
-        self._main_area.connect ("doc_save", self.__doc_save_cb)
         self._main_area.connect ("set_focus", self.__main_area_focus_cb)
         self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
         self._main_area.connect ("expose_event", self.__expose)
@@ -286,19 +284,16 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.grab_focus ()
 
     def read_file(self, file_path):
-        tar_file = tarfile.open(file_path)
-        map_name = tar_file.getnames()[0]
-        tar_file.extractall(tempfile.gettempdir())
-        tar_file.close()
+        zip = ZipFile(file_path, 'r')
 
-        f = file (os.path.join(tempfile.gettempdir(), map_name), 'r')
-        doc = dom.parse (f)
+        doc = dom.parseString (zip.read('MANIFEST'))
         top_element = doc.documentElement
+
         self.set_title(top_element.getAttribute ("title"))
         self._mode = int (top_element.getAttribute ("mode"))
 
         self._main_area.set_mode (self._mode)
-        self._main_area.load_thyself (top_element, doc)
+        self._main_area.load_thyself (top_element, doc, zip)
         if top_element.hasAttribute("scale_factor"):
             self._main_area.scale_fac = float (top_element.getAttribute ("scale_factor"))
         if top_element.hasAttribute("translation"):
@@ -308,35 +303,19 @@ class LabyrinthActivity(activity.Activity):
 
         self.mods[self._mode].set_active(True)
 
+        zip.close()
+
     def write_file(self, file_path):
         logging.debug('write_file')
-        self._main_area.save_thyself ()
 
-        if self._save_file is None:
-            # FIXME: Create an empty file because the Activity superclass
-            # always requires one
-            fd, self._save_file = tempfile.mkstemp(suffix='.map')
-            del fd
+        zip = ZipFile(file_path, 'w')
 
-        tf = tarfile.open (file_path, "w")
-        tf.add (self._save_file, os.path.split(self._save_file)[1])
-        for t in self._main_area.thoughts:
-            if isinstance(t, ImageThought.ImageThought):
-                tf.add (t.filename, 'images/' + os.path.split(t.filename)[1])
-                
-        tf.close()
+        self._main_area.update_save(zip)
+        manifest = self.serialize_to_xml(self._main_area.save,
+                self._main_area.element)
+        zip.writestr('MANIFEST', manifest)
 
-        os.unlink(self._save_file)
-
-    def __doc_save_cb (self, widget, doc, top_element):
-        logging.debug('doc_save_cb')
-        save_string = self.serialize_to_xml(doc, top_element)
-
-        fd, self._save_file = tempfile.mkstemp(suffix='.map')
-        del fd
-
-        self.save_map(self._save_file, save_string)
-        #self.emit ('file_saved', self._save_file, self)
+        zip.close()
 
     def serialize_to_xml(self, doc, top_element):
         top_element.setAttribute ("title", self.props.title)
@@ -350,11 +329,6 @@ class LabyrinthActivity(activity.Activity):
         top_element.setAttribute ("translation", str(self._main_area.translation))
         string = doc.toxml ()
         return string.encode ("utf-8" )
-
-    def save_map(self, filename, string):
-        f = file (filename, 'w')
-        f.write (string)
-        f.close ()
 
     def __link_cb(self, widget):
         self._main_area.link_menu_cb()

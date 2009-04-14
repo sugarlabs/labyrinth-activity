@@ -85,12 +85,6 @@ class MMapArea (gtk.DrawingArea):
 	__gsignals__ = dict (title_changed		= (gobject.SIGNAL_RUN_FIRST,
 											   gobject.TYPE_NONE,
 											   (gobject.TYPE_STRING, )),
-						 doc_save			= (gobject.SIGNAL_RUN_FIRST,
-											   gobject.TYPE_NONE,
-											   (gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT)),
-						 doc_delete         = (gobject.SIGNAL_RUN_FIRST,
-						 					   gobject.TYPE_NONE,
-						 					   ()),
 						 change_mode        = (gobject.SIGNAL_RUN_LAST,
 						 					   gobject.TYPE_NONE,
 						 					   (gobject.TYPE_INT, )),					 					   
@@ -1012,10 +1006,10 @@ class MMapArea (gtk.DrawingArea):
 		self.invalidate ()
 		return True
 
-	def load_thought (self, node, type):
+	def load_thought (self, node, type, zip):
 		thought = self.create_new_thought (None, type, loading = True)
 		thought.creating = False
-		thought.load (node)
+		thought.load (node, zip)
 
 	def load_link (self, node):
 		link = Link (self.save)
@@ -1025,16 +1019,16 @@ class MMapArea (gtk.DrawingArea):
 		element = link.get_save_element ()
 		self.element.appendChild (element)
 
-	def load_thyself (self, top_element, doc):
+	def load_thyself (self, top_element, doc, zip):
 		for node in top_element.childNodes:
 			if node.nodeName == "thought":
-				self.load_thought (node, MODE_TEXT)
+				self.load_thought (node, MODE_TEXT, zip)
 			elif node.nodeName == "image_thought":
-				self.load_thought (node, MODE_IMAGE)
+				self.load_thought (node, MODE_IMAGE, zip)
 			elif node.nodeName == "drawing_thought":
-				self.load_thought (node, MODE_DRAW)
+				self.load_thought (node, MODE_DRAW, zip)
 			elif node.nodeName == "res_thought":
-				self.load_thought (node, MODE_RESOURCE)
+				self.load_thought (node, MODE_RESOURCE, zip)
 			elif node.nodeName == "link":
 				self.load_link (node)
 			else:
@@ -1085,18 +1079,11 @@ class MMapArea (gtk.DrawingArea):
 		for l in del_links:
 			self.delete_link (l)
 
-	def prepare_save(self):
+	def update_save(self, zip):
 		for t in self.thoughts:
-			t.update_save ()
+			t.update_save (zip)
 		for l in self.links:
 			l.update_save ()
-
-	def save_thyself (self):
-		self.prepare_save()
-		if len(self.thoughts) > 0:
-			self.emit ("doc_save", self.save, self.element)
-		else:
-			self.emit ("doc_delete")
 
 	def text_selection_cb (self, thought, start, end, text):
 		self.emit ("text_selection_changed", start, end, text)

@@ -26,6 +26,9 @@ import gettext
 _ = gettext.gettext
 import cairo
 import os
+import logging
+import tempfile
+import cStringIO
 
 from sugar import mime
 
@@ -50,49 +53,37 @@ class ImageThought (ResizableThought):
 
 	# FIXME: Work in progress, needs at least activity self to create
 	# tmp files/links in the right places and reference the window.
-	def journal_open_image (self, filename=None):
-		if not filename:
-			self.object_chooser_active = True
-			if hasattr(mime, 'GENERIC_TYPE_IMAGE'):
-				chooser = ObjectChooser(_('Choose image'),
-						what_filter=mime.GENERIC_TYPE_IMAGE)
-			else:
-				chooser = ObjectChooser(_('Choose image'))
-
-			try:
-				result = chooser.run()
-				if result == gtk.RESPONSE_ACCEPT and chooser.get_selected_object():
-					jobject = chooser.get_selected_object()
-				else:
-					return False
-
-				if jobject and jobject.file_path:
-					fname = os.path.join(get_activity_root(), 'tmp',
-							os.path.basename(jobject.file_path))
-					os.rename(jobject.file_path, fname)
-				else:
-					return False
-			finally:
-				chooser.destroy()
-				del chooser
-			self.object_chooser_active = False
+	def journal_open_image (self):
+		self.object_chooser_active = True
+		if hasattr(mime, 'GENERIC_TYPE_IMAGE'):
+			chooser = ObjectChooser(_('Choose image'),
+					what_filter=mime.GENERIC_TYPE_IMAGE)
 		else:
-			fname = filename
-
-		print "fname =",fname
+			chooser = ObjectChooser(_('Choose image'))
 
 		try:
-			self.orig_pic = gtk.gdk.pixbuf_new_from_file (fname)
-		except:
-			try:
-				# lets see if file was imported and is already extracted
-				fname = utils.get_save_dir() + 'images/' + utils.strip_path_from_file_name(filename)
-				self.orig_pic = gtk.gdk.pixbuf_new_from_file (fname)
-			except:
+			result = chooser.run()
+			if result == gtk.RESPONSE_ACCEPT and chooser.get_selected_object():
+				jobject = chooser.get_selected_object()
+			else:
 				return False
 
-		self.filename = fname
-		self.text = fname[fname.rfind('/')+1:fname.rfind('.')]
+			if jobject and jobject.file_path:
+				logging.debug("journal_open_image: fname=%s" % jobject.file_path)
+				try:
+					self.orig_pic = gtk.gdk.pixbuf_new_from_file (jobject.file_path)
+					self.filename = os.path.basename(jobject.file_path)
+				except Exception, e:
+					logging.error("journal_open_image: %s" % e)
+					return False
+			else:
+				return False
+		finally:
+			chooser.destroy()
+			del chooser
+		self.object_chooser_active = False
+
+		self.text = self.filename[0:self.filename.rfind('.')]
 		self.recalc_edges(True)
 
 		return True
@@ -167,7 +158,7 @@ class ImageThought (ResizableThought):
 
 		return False
 
-	def update_save (self):
+	def update_save (self, zip):
 		text = self.extended_buffer.get_text ()
 		if text:
 			self.extended_buffer.update_save()
@@ -197,9 +188,12 @@ class ImageThought (ResizableThought):
 				self.element.removeAttribute ("primary_root")
 			except xml.dom.NotFoundErr:
 				pass
-		return
 
-	def load (self, node):
+		arcname = self.filename.encode('cp437')
+		if not [i for i in zip.namelist() if i == arcname]:
+			zip.writestr(arcname, pixbuf2str(self.orig_pic))
+
+	def load (self, node, zip):
 		tmp = node.getAttribute ("ul-coords")
 		self.ul = utils.parse_coords (tmp)
 		tmp = node.getAttribute ("lr-coords")
@@ -223,20 +217,30 @@ class ImageThought (ResizableThought):
 				print "Unknown: "+n.nodeName
 		margin = utils.margin_required (utils.STYLE_NORMAL)
 		self.pic_location = (self.ul[0]+margin[0], self.ul[1]+margin[1])
-		self.okay = self.journal_open_image (self.filename)
+		self.orig_pic = str2pixbuf(zip.read(self.filename.encode('cp437')))
 		self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
-		if not self.okay:
-			dialog = gtk.MessageDialog (None, gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
-										gtk.MESSAGE_WARNING, gtk.BUTTONS_CLOSE,
-										_("Error loading file"))
-			dialog.format_secondary_text (_("%s could not be found.  Associated thought will be empty."%self.filename))
-			dialog.run ()
-			dialog.hide ()
-			self.pic = None
-			self.orig_pic = None
-		else:
-			self.recalc_edges()
-		return
+		self.recalc_edges()
 	
 	def enter (self):
 		self.editing = True
+
+def pixbuf2str(pixbuf):
+    def push(data, buffer):
+        buffer.write(data)
+
+    buffer = cStringIO.StringIO()
+    pixbuf.save_to_callback(push, 'png', user_data=buffer)
+
+    return buffer.getvalue()
+
+def str2pixbuf(data):
+	fd, path = tempfile.mkstemp()
+
+	f = os.fdopen(fd, 'w')
+	f.write(data)
+	f.close()
+
+	out = gtk.gdk.pixbuf_new_from_file(path)
+	os.unlink(path)
+
+	return out

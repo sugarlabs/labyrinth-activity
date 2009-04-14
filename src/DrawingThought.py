@@ -334,7 +334,7 @@ class DrawingThought (ResizableThought):
 		map(lambda p : p.move_by(x,y), self.points)
 		ResizableThought.move_content_by(self, x, y)
 
-	def update_save (self):
+	def update_save (self, zip):
 		next = self.element.firstChild
 		while next:
 			m = next.nextSibling
@@ -383,7 +383,7 @@ class DrawingThought (ResizableThought):
 			elem.setAttribute ("color", p.color.to_string())
 		return
 
-	def load (self, node):
+	def load (self, node, zip):
 		tmp = node.getAttribute ("ul-coords")
 		self.ul = utils.parse_coords (tmp)
 		tmp = node.getAttribute ("lr-coords")
