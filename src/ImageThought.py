@@ -37,8 +37,8 @@ from sugar.activity.activity import get_activity_root
 from sugar.graphics.objectchooser import ObjectChooser
 
 class ImageThought (ResizableThought):
-	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color):
-		super (ImageThought, self).__init__(coords, save, "image_thought", undo, background_color, None)
+	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color, foreground_color):
+		super (ImageThought, self).__init__(coords, save, "image_thought", undo, background_color, foreground_color)
 
 		self.identity = thought_number
 		self.pic = None

@@ -547,7 +547,6 @@ class MMapArea (gtk.DrawingArea):
 		thought.select ()
 		if len(self.selected) == 1:
 			self.emit ("thought_selection_changed", thought.background_color, thought.foreground_color)
-			# XXX suppress exceptions in DrawingThought.py
 			self.background_color = thought.background_color
 			self.foreground_color = thought.foreground_color
 			try:
@@ -731,7 +730,7 @@ class MMapArea (gtk.DrawingArea):
 		if type == MODE_TEXT:
 			thought = TextThought.TextThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
 		elif type == MODE_IMAGE:
-			thought = ImageThought.ImageThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color)
+			thought = ImageThought.ImageThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
 		elif type == MODE_DRAW:
 			thought = DrawingThought.DrawingThought (coords, self.pango_context, self.nthoughts, self.save, self.undo,	\
 													 loading,self.background_color, self.foreground_color)
