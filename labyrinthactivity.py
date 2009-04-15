@@ -21,7 +21,6 @@ import logging
 from gettext import gettext as _
 import tempfile
 import xml.dom.minidom as dom
-from zipfile import ZipFile
 
 import gobject
 import gtk
