@@ -790,7 +790,7 @@ class TextThought (ResizableThought):
 		context.set_source_rgb (0,0,0)
 		context.stroke ()
 
-	def update_save (self, zip):
+	def update_save (self):
 		next = self.element.firstChild
 		while next:
 			m = next.nextSibling
@@ -886,7 +886,7 @@ class TextThought (ResizableThought):
 		self.bindex = self.b_f_i (self.index)
 		self.text = tmp
 
-	def load (self, node, zip):
+	def load (self, node, tar):
 		self.index = int (node.getAttribute ("cursor"))
 		self.end_index = self.index
 		tmp = node.getAttribute ("ul-coords")

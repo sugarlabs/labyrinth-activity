@@ -1006,10 +1006,10 @@ class MMapArea (gtk.DrawingArea):
 		self.invalidate ()
 		return True
 
-	def load_thought (self, node, type, zip):
+	def load_thought (self, node, type, tar):
 		thought = self.create_new_thought (None, type, loading = True)
 		thought.creating = False
-		thought.load (node, zip)
+		thought.load (node, tar)
 
 	def load_link (self, node):
 		link = Link (self.save)
@@ -1019,16 +1019,16 @@ class MMapArea (gtk.DrawingArea):
 		element = link.get_save_element ()
 		self.element.appendChild (element)
 
-	def load_thyself (self, top_element, doc, zip):
+	def load_thyself (self, top_element, doc, tar):
 		for node in top_element.childNodes:
 			if node.nodeName == "thought":
-				self.load_thought (node, MODE_TEXT, zip)
+				self.load_thought (node, MODE_TEXT, tar)
 			elif node.nodeName == "image_thought":
-				self.load_thought (node, MODE_IMAGE, zip)
+				self.load_thought (node, MODE_IMAGE, tar)
 			elif node.nodeName == "drawing_thought":
-				self.load_thought (node, MODE_DRAW, zip)
+				self.load_thought (node, MODE_DRAW, tar)
 			elif node.nodeName == "res_thought":
-				self.load_thought (node, MODE_RESOURCE, zip)
+				self.load_thought (node, MODE_RESOURCE, tar)
 			elif node.nodeName == "link":
 				self.load_link (node)
 			else:
@@ -1079,11 +1079,15 @@ class MMapArea (gtk.DrawingArea):
 		for l in del_links:
 			self.delete_link (l)
 
-	def update_save(self, zip):
+	def update_save(self):
 		for t in self.thoughts:
-			t.update_save (zip)
+			t.update_save ()
 		for l in self.links:
 			l.update_save ()
+
+	def save_thyself(self, tar):
+		for t in self.thoughts:
+			t.save(tar)
 
 	def text_selection_cb (self, thought, start, end, text):
 		self.emit ("text_selection_changed", start, end, text)

@@ -186,10 +186,13 @@ class BaseThought (gobject.GObject):
 	def draw (self, context):
 		pass
 
-	def load (self, node, zip):
+	def load (self, node, tar):
 		pass
 
-	def update_save (self, zip):
+	def update_save (self):
+		pass
+
+	def save (self, tar):
 		pass
 
 	def copy_text (self, clip):

@@ -32,6 +32,7 @@ from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.menuitem import MenuItem
+from port.tarball import Tarball
 
 # labyrinth sources are shipped inside the 'src' subdirectory
 sys.path.append(os.path.join(activity.get_bundle_path(), 'src'))
@@ -284,16 +285,16 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.grab_focus ()
 
     def read_file(self, file_path):
-        zip = ZipFile(file_path, 'r')
+        tar = Tarball(file_path)
 
-        doc = dom.parseString (zip.read('MANIFEST'))
+        doc = dom.parseString (tar.read(tar.getnames()[0]))
         top_element = doc.documentElement
 
         self.set_title(top_element.getAttribute ("title"))
         self._mode = int (top_element.getAttribute ("mode"))
 
         self._main_area.set_mode (self._mode)
-        self._main_area.load_thyself (top_element, doc, zip)
+        self._main_area.load_thyself (top_element, doc, tar)
         if top_element.hasAttribute("scale_factor"):
             self._main_area.scale_fac = float (top_element.getAttribute ("scale_factor"))
         if top_element.hasAttribute("translation"):
@@ -303,19 +304,20 @@ class LabyrinthActivity(activity.Activity):
 
         self.mods[self._mode].set_active(True)
 
-        zip.close()
+        tar.close()
 
     def write_file(self, file_path):
         logging.debug('write_file')
 
-        zip = ZipFile(file_path, 'w')
+        tar = Tarball(file_path, 'w')
 
-        self._main_area.update_save(zip)
+        self._main_area.update_save()
         manifest = self.serialize_to_xml(self._main_area.save,
                 self._main_area.element)
-        zip.writestr('MANIFEST', manifest)
+        tar.write('MANIFEST', manifest)
+        self._main_area.save_thyself(tar)
 
-        zip.close()
+        tar.close()
 
     def serialize_to_xml(self, doc, top_element):
         top_element.setAttribute ("title", self.props.title)

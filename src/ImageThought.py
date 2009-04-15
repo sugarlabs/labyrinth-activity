@@ -72,7 +72,7 @@ class ImageThought (ResizableThought):
 				logging.debug("journal_open_image: fname=%s" % jobject.file_path)
 				try:
 					self.orig_pic = gtk.gdk.pixbuf_new_from_file (jobject.file_path)
-					self.filename = os.path.basename(jobject.file_path)
+					self.filename = os.path.join('images', os.path.basename(jobject.file_path))
 				except Exception, e:
 					logging.error("journal_open_image: %s" % e)
 					return False
@@ -158,7 +158,7 @@ class ImageThought (ResizableThought):
 
 		return False
 
-	def update_save (self, zip):
+	def update_save (self):
 		text = self.extended_buffer.get_text ()
 		if text:
 			self.extended_buffer.update_save()
@@ -189,16 +189,17 @@ class ImageThought (ResizableThought):
 			except xml.dom.NotFoundErr:
 				pass
 
-		arcname = self.filename.encode('cp437')
-		if not [i for i in zip.namelist() if i == arcname]:
-			zip.writestr(arcname, pixbuf2str(self.orig_pic))
+	def save (self, tar):
+		if not [i for i in tar.getnames() if i == self.filename]:
+			tar.write(self.filename, self.orig_pic)
 
-	def load (self, node, zip):
+	def load (self, node, tar):
 		tmp = node.getAttribute ("ul-coords")
 		self.ul = utils.parse_coords (tmp)
 		tmp = node.getAttribute ("lr-coords")
 		self.lr = utils.parse_coords (tmp)
-		self.filename = node.getAttribute ("file")
+		self.filename = os.path.join('images', 
+				os.path.basename(node.getAttribute ("file")))
 		self.identity = int (node.getAttribute ("identity"))
 		try:
 			tmp = node.getAttribute ("background-color")
@@ -217,30 +218,9 @@ class ImageThought (ResizableThought):
 				print "Unknown: "+n.nodeName
 		margin = utils.margin_required (utils.STYLE_NORMAL)
 		self.pic_location = (self.ul[0]+margin[0], self.ul[1]+margin[1])
-		self.orig_pic = str2pixbuf(zip.read(self.filename.encode('cp437')))
+		self.orig_pic = tar.read_pixbuf(self.filename)
 		self.lr = (self.pic_location[0]+self.width+margin[2], self.pic_location[1]+self.height+margin[3])
 		self.recalc_edges()
 	
 	def enter (self):
 		self.editing = True
-
-def pixbuf2str(pixbuf):
-    def push(data, buffer):
-        buffer.write(data)
-
-    buffer = cStringIO.StringIO()
-    pixbuf.save_to_callback(push, 'png', user_data=buffer)
-
-    return buffer.getvalue()
-
-def str2pixbuf(data):
-	fd, path = tempfile.mkstemp()
-
-	f = os.fdopen(fd, 'w')
-	f.write(data)
-	f.close()
-
-	out = gtk.gdk.pixbuf_new_from_file(path)
-	os.unlink(path)
-
-	return out
