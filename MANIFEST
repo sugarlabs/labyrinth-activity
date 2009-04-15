@@ -79,7 +79,7 @@ src/Links.py
 src/labyrinth.py
 src/TextThought.py
 src/TrayIcon.py
-src/PeriodicSaveThread.py
+
 src/Makefile.am
 activity/activity.info
 activity/activity-labyrinth.svg
@@ -115,7 +115,7 @@ ChangeLog
 
 
 
-icons/add-image.svg
+
 icons/edit-mode.svg
 icons/draw-mode.svg
 
@@ -123,3 +123,10 @@ icons/image-mode.svg
 icons/select-mode.svg
 icons/text-mode.svg
 icons/link.svg
+port/__init__.py
+port/NEWS
+port/COPYING
+port/AUTHORS
+port/tarball.py
+port/TODO
+port/README
