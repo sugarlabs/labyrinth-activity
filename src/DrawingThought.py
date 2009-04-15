@@ -383,7 +383,7 @@ class DrawingThought (ResizableThought):
 			elem.setAttribute ("color", p.color.to_string())
 		return
 
-	def load (self, node):
+	def load (self, node, tar):
 		tmp = node.getAttribute ("ul-coords")
 		self.ul = utils.parse_coords (tmp)
 		tmp = node.getAttribute ("lr-coords")

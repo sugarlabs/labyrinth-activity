@@ -1,0 +1,13 @@
+About
+-----
+
+A set of sugar components/libraries/etc to simplify writing activities.
+
+Cornerstone purposes for this project:
+* Total backwards compatibility for sugar-port API
+* Run on all sugar platforms beginning from 0.82 
+
+Get it
+------
+
+http://wiki.sugarlabs.org/go/Development_Team/sugar-port

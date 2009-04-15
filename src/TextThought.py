@@ -886,7 +886,7 @@ class TextThought (ResizableThought):
 		self.bindex = self.b_f_i (self.index)
 		self.text = tmp
 
-	def load (self, node):
+	def load (self, node, tar):
 		self.index = int (node.getAttribute ("cursor"))
 		self.end_index = self.index
 		tmp = node.getAttribute ("ul-coords")
