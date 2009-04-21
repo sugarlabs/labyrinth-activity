@@ -1,0 +1,130 @@
+# German translation of labyrinth.
+# Copyright (C) 2009, Sugarlabs
+# This file is distributed under the same license as the labyrinth package.
+# Fabian Affolter <fab@fedoraproject.org>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: labyrinth\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-09 04:49+0100\n"
+"PO-Revision-Date: 2009-04-20 10:46+0100\n"
+"Last-Translator: Fabian Affolter <fab@fedoraproject.org>\n"
+"Language-Team: German <fedora-trans-de@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+
+#: activity/activity.info:2
+msgid "Labyrinth"
+msgstr "Labyrinth"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53
+msgid "Edit"
+msgstr "Bearbeiten"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:74
+msgid "Edit mode"
+msgstr "Bearbeitungsmodus"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:75
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:81
+msgid "Text mode"
+msgstr "Text-Modus"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:82
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:89
+msgid "Drawing mode"
+msgstr "Zeichnungsmodus"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:90
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:96
+#, fuzzy
+msgid "Image add mode"
+msgstr "Bildhinzufügenmodus"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:97
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:106
+#, fuzzy
+msgid "Link/unlink two selected thoughts"
+msgstr "Zwei gewählte Gedanken verbinden/von einander lösen"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:115
+msgid "Erase selected thought(s)"
+msgstr "Ausgewählte Gedanken löschen"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:124
+msgid "View"
+msgstr "Ansicht"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:127
+msgid "Zoom in"
+msgstr "Vergrössern"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:132
+msgid "Zoom out"
+msgstr "Verkleinern"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:137
+msgid "Fit to window"
+msgstr "An Fenster anpassen"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:142
+msgid "Original size"
+msgstr "Originalgrösse"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:188
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Klicke zum Hinzufügen\n"
+"des zentralen Gedanken"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:54
+msgid "Choose image"
+msgstr "Bild auswählen"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:227
+msgid "Error loading file"
+msgstr "Fehler beim Laden des Bildes"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:228
+#, python-format
+msgid "%s could not be found.  Associated thought will be empty."
+msgstr "%s kann nicht gefunden werden. Verknüpfte Gedanken werden leer sein."
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:261
+msgid "Choose Color"
+msgstr "Farbe wählen"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:274
+msgid "Set Color"
+msgstr "Farbe setzen"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/DrawingThought.py:59
+#, python-format
+msgid "Drawing #%d"
+msgstr "Zeichnung #%d"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Text bearbeiten"
+
+#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URI bearbeiten"
+
