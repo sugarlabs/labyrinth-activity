@@ -117,28 +117,28 @@ class LabyrinthActivity(activity.Activity):
         view_toolbar = gtk.Toolbar()
         toolbox.add_toolbar(_('View'), view_toolbar)
 
-        tool = ToolButton('zoom-in')
-        tool.set_tooltip(_('Zoom in'))
-        tool.set_accelerator(_('<ctrl>1'))
-        tool.connect('clicked', self.__zoom_in_cb)
-        view_toolbar.insert(tool, -1)
-
-        tool = ToolButton('zoom-out')
-        tool.set_tooltip(_('Zoom out'))
-        tool.set_accelerator(_('<ctrl>2'))
-        tool.connect('clicked', self.__zoom_out_cb)
-        view_toolbar.insert(tool, -1)
-
         tool = ToolButton('zoom-best-fit')
         tool.set_tooltip(_('Fit to window'))
-        tool.set_accelerator(_('<ctrl>3'))
+        tool.set_accelerator(_('<ctrl>9'))
         tool.connect('clicked', self.__zoom_tofit_cb)
         view_toolbar.insert(tool, -1)
 
         tool = ToolButton('zoom-original')
         tool.set_tooltip(_('Original size'))
-        tool.set_accelerator(_('<ctrl>4'))
+        tool.set_accelerator(_('<ctrl>0'))
         tool.connect('clicked', self.__zoom_original_cb)
+        view_toolbar.insert(tool, -1)
+
+        tool = ToolButton('zoom-out')
+        tool.set_tooltip(_('Zoom out'))
+        tool.set_accelerator(_('<ctrl>minus'))
+        tool.connect('clicked', self.__zoom_out_cb)
+        view_toolbar.insert(tool, -1)
+
+        tool = ToolButton('zoom-in')
+        tool.set_tooltip(_('Zoom in'))
+        tool.set_accelerator(_('<ctrl>equal'))
+        tool.connect('clicked', self.__zoom_in_cb)
         view_toolbar.insert(tool, -1)
 
         self._mode = MMapArea.MODE_TEXT
