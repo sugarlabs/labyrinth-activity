@@ -17,6 +17,7 @@
 
 import sys
 import os
+import time
 import logging
 from gettext import gettext as _
 import tempfile
@@ -25,12 +26,15 @@ import xml.dom.minidom as dom
 import gobject
 import gtk
 import pango
+import pangocairo
+import cairo
 
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.menuitem import MenuItem
+from sugar.datastore import datastore
 from port.tarball import Tarball
 
 # labyrinth sources are shipped inside the 'src' subdirectory
@@ -48,6 +52,13 @@ class LabyrinthActivity(activity.Activity):
 
         toolbox = activity.ActivityToolbox(self)
         self.set_toolbox(toolbox)
+
+        activity_toolbar = toolbox.get_activity_toolbar()
+        keep_palette = activity_toolbar.keep.get_palette()
+        menu_item = MenuItem('Portable Document Format (PDF)')
+        menu_item.connect('activate', self.__export_pdf_cb)
+        keep_palette.menu.append(menu_item)
+        menu_item.show()
 
         edit_toolbar = activity.EditToolbar()
         toolbox.add_toolbar(_('Edit'), edit_toolbar)
@@ -279,6 +290,37 @@ class LabyrinthActivity(activity.Activity):
 
     def __paste_cb (self, event):
         self._main_area.paste_clipboard (self.clipboard)
+
+    def __export_pdf_cb (self, event):
+        print "############# export pdf callback #############"
+        maxx, maxy = self._main_area.get_max_area()
+        #x, y, width, height, bitdepth = self._main_area.window.get_geometry()
+        true_width = int(maxx)
+        true_height = int(maxy)
+        
+        # Create the new journal entry
+        fileObject = datastore.create()
+        act_meta = self.metadata
+        fileObject.metadata['title'] = act_meta['title'] + ' (PDF)'
+        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
+        fileObject.metadata['mime_type'] = 'application/pdf'
+        
+        # TODO: add text thoughts into fulltext metadata
+        # fileObject.metadata['fulltext'] = ...
+        
+        #fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.file_path = os.path.join(self.get_activity_root(),
+                                            'instance', '%i' % time.time())
+        filename = fileObject.file_path
+        surface = cairo.PDFSurface(filename, true_width, true_height)
+        cairo_context = cairo.Context(surface)
+        context = pangocairo.CairoContext(cairo_context)
+        self._main_area.export(context, true_width, true_height, True)
+        surface.finish()
+        datastore.write(fileObject, transfer_ownership=True)
+        fileObject.destroy()
+        del fileObject
+        print "############# pdf save complete #############"
 
     def __main_area_focus_cb (self, arg, event, extended = False):
         self._main_area.grab_focus ()
