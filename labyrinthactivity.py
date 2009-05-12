@@ -292,9 +292,7 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.paste_clipboard (self.clipboard)
 
     def __export_pdf_cb (self, event):
-        print "############# export pdf callback #############"
         maxx, maxy = self._main_area.get_max_area()
-        #x, y, width, height, bitdepth = self._main_area.window.get_geometry()
         true_width = int(maxx)
         true_height = int(maxy)
         
@@ -320,7 +318,6 @@ class LabyrinthActivity(activity.Activity):
         datastore.write(fileObject, transfer_ownership=True)
         fileObject.destroy()
         del fileObject
-        print "############# pdf save complete #############"
 
     def __main_area_focus_cb (self, arg, event, extended = False):
         self._main_area.grab_focus ()
