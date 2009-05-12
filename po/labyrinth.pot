@@ -20,8 +20,14 @@ msgstr ""
 msgid "Labyrinth"
 msgstr ""
 
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53
 msgid "Edit"
+msgstr ""
+
+msgid "Cut"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:74
@@ -60,6 +66,9 @@ msgstr ""
 msgid "Link/unlink two selected thoughts"
 msgstr ""
 
+msgid "<ctrl>l"
+msgstr ""
+
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:115
 msgid "Erase selected thought(s)"
 msgstr ""
@@ -72,16 +81,28 @@ msgstr ""
 msgid "Zoom in"
 msgstr ""
 
+msgid "<ctrl>equal"
+msgstr ""
+
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:132
 msgid "Zoom out"
+msgstr ""
+
+msgid "<ctrl>minus"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:137
 msgid "Fit to window"
 msgstr ""
 
+msgid "<ctrl>9"
+msgstr ""
+
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:142
 msgid "Original size"
+msgstr ""
+
+msgid "<ctrl>0"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:188

@@ -55,7 +55,7 @@ class LabyrinthActivity(activity.Activity):
 
         activity_toolbar = toolbox.get_activity_toolbar()
         keep_palette = activity_toolbar.keep.get_palette()
-        menu_item = MenuItem('Portable Document Format (PDF)')
+        menu_item = MenuItem(_('Portable Document Format (PDF)'))
         menu_item.connect('activate', self.__export_pdf_cb)
         keep_palette.menu.append(menu_item)
         menu_item.show()
@@ -66,7 +66,7 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
         edit_toolbar.copy.connect('clicked', self.__copy_cb)
 
-        menu_item = MenuItem('Cut') 
+        menu_item = MenuItem(_('Cut')) 
         menu_item.connect('activate', self.__cut_cb)
         menu_item.show()
         edit_toolbar.copy.get_palette().menu.append(menu_item)
@@ -308,7 +308,7 @@ class LabyrinthActivity(activity.Activity):
         # TODO: add text thoughts into fulltext metadata
         # fileObject.metadata['fulltext'] = ...
         
-        #fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.metadata['icon-color'] = act_meta['icon-color']
         fileObject.file_path = os.path.join(self.get_activity_root(),
                                             'instance', '%i' % time.time())
         filename = fileObject.file_path
