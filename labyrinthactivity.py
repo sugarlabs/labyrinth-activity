@@ -180,7 +180,7 @@ class LabyrinthActivity(activity.Activity):
         """Create skeleton map at start
         """
         thought_count = len(self._main_area.thoughts)
-        if thought_count > 1:
+        if thought_count > 0:
             return False
 
         context = self._main_area.window.cairo_create()
@@ -191,29 +191,28 @@ class LabyrinthActivity(activity.Activity):
         context.set_dash([10.0, 5.0], 0.0)
         geom = list(self._main_area.window.get_geometry())
         geom[3] =  geom[3] - ((self.window.get_geometry()[3] - geom[3]) / 2)
-            
-        if thought_count == 0:
-            layout.set_alignment(pango.ALIGN_CENTER)
-            layout.set_text(_('Click to add\ncentral thought'))        
-            (width, height) = layout.get_pixel_size()
-            context.move_to (geom[2] / 2 - (width / 2), geom[3] / 2 - (height / 2))
-            context.show_layout(layout)
 
-            round = 40
-            ul = (geom[2] / 2 - (width / 2) - round,
-                  geom[3] / 2 - (height / 2) - round)
-            lr = (geom[2] / 2 + (width / 2) + round,
-                  geom[3] / 2 + (height / 2) + round)
-            context.move_to (ul[0], ul[1] + round)
-            context.line_to (ul[0], lr[1] - round)
-            context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0] + round, lr[1])
-            context.line_to (lr[0] - round, lr[1])
-            context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1] - round)
-            context.line_to (lr[0], ul[1] + round)
-            context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0] - round, ul[1])
-            context.line_to (ul[0] + round, ul[1])
-            context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1] + round)
-            context.stroke()
+        layout.set_alignment(pango.ALIGN_CENTER)
+        layout.set_text(_('Click to add\ncentral thought'))        
+        (width, height) = layout.get_pixel_size()
+        context.move_to (geom[2] / 2 - (width / 2), geom[3] / 2 - (height / 2))
+        context.show_layout(layout)
+
+        round = 40
+        ul = (geom[2] / 2 - (width / 2) - round,
+              geom[3] / 2 - (height / 2) - round)
+        lr = (geom[2] / 2 + (width / 2) + round,
+              geom[3] / 2 + (height / 2) + round)
+        context.move_to (ul[0], ul[1] + round)
+        context.line_to (ul[0], lr[1] - round)
+        context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0] + round, lr[1])
+        context.line_to (lr[0] - round, lr[1])
+        context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1] - round)
+        context.line_to (lr[0], ul[1] + round)
+        context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0] - round, ul[1])
+        context.line_to (ul[0] + round, ul[1])
+        context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1] + round)
+        context.stroke()
         
         return False
         
