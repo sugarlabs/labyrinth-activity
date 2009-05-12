@@ -155,7 +155,15 @@ class Link (gobject.GObject):
 		cwidth = context.get_line_width ()
 		context.set_line_width (self.strength)
 		context.move_to (self.start[0]+move_x, self.start[1]+move_y)
-		context.line_to (self.end[0]+move_x, self.end[1]+move_y)
+
+		if utils.use_bezier_curves:
+			dx = self.end[0] - self.start[0]
+			x2 = self.start[0] + dx / 2.0
+			x3 = self.end[0] - dx / 2.0
+			context.curve_to(x2+move_x, self.start[1]+move_y, x3+move_x, self.end[1]+move_y, self.end[0]+move_x, self.end[1]+move_y)
+		else:
+			context.line_to (self.end[0]+move_x, self.end[1]+move_y)
+
 		context.stroke ()
 		context.set_line_width (cwidth)
 		if rem:
