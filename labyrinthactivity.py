@@ -312,7 +312,7 @@ class LabyrinthActivity(activity.Activity):
         surface = cairo.PDFSurface(filename, true_width, true_height)
         cairo_context = cairo.Context(surface)
         context = pangocairo.CairoContext(cairo_context)
-        self._main_area.export(context, true_width, true_height, True)
+        self._main_area.export(context, true_width, true_height, False)
         surface.finish()
         datastore.write(fileObject, transfer_ownership=True)
         fileObject.destroy()
