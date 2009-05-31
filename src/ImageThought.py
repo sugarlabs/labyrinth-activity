@@ -103,10 +103,12 @@ class ImageThought (ResizableThought):
 			if hasattr(context, "set_source_pixbuf"):
 				context.set_source_pixbuf (self.pic, self.pic_location[0]+move_x, self.pic_location[1]+move_y)
 			elif hasattr(context, "set_source_surface"):
-				pixel_array = utils.pixbuf_to_cairo (self.pic.get_pixels_array())
-				image_surface = cairo.ImageSurface.create_for_data(pixel_array, cairo.FORMAT_ARGB32, self.width, self.height, -1)
+				raw_pixels = self.pic.get_pixels_array()
+				pixel_array = utils.pixbuf_to_cairo (raw_pixels)
+				image_surface = cairo.ImageSurface.create_for_data(pixel_array, cairo.FORMAT_ARGB32, len(raw_pixels[0]), len(raw_pixels), -1)
 				context.set_source_surface (image_surface, self.pic_location[0]+move_x, self.pic_location[1]+move_y)
-			context.rectangle (self.pic_location[0]+move_x, self.pic_location[1]+move_y, self.width, self.height)
+                
+			context.rectangle (self.pic_location[0]+move_x, self.pic_location[1]+move_y, len(raw_pixels[0]), len(raw_pixels))
 			context.fill ()
 		context.set_source_rgb (0,0,0)
 
