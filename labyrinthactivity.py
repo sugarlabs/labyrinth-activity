@@ -55,7 +55,7 @@ class LabyrinthActivity(activity.Activity):
 
         activity_toolbar = toolbox.get_activity_toolbar()
         keep_palette = activity_toolbar.keep.get_palette()
-        menu_item = MenuItem(_('Portable Document Format (PDF)'))
+        menu_item = MenuItem(_('Keep to PDF'))
         menu_item.connect('activate', self.__export_pdf_cb)
         keep_palette.menu.append(menu_item)
         menu_item.show()
