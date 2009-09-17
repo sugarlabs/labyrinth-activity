@@ -37,6 +37,16 @@ from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
 from port.tarball import Tarball
 
+try:
+    # >= 0.86 toolbars
+    from sugar.graphics.toolbarbox import ToolbarButton, ToolbarBox
+    from sugar.activity.widgets import ActivityToolbarButton
+    from sugar.activity.widgets import StopButton
+except ImportError:
+    # <= 0.84 toolbars
+    pass
+
+
 # labyrinth sources are shipped inside the 'src' subdirectory
 sys.path.append(os.path.join(activity.get_bundle_path(), 'src'))
 
@@ -45,118 +55,182 @@ import MMapArea
 import ImageThought
 import utils
 
+class EditToolbar(activity.EditToolbar):
+    def __init__(self, _parent):
+        activity.EditToolbar.__init__(self)
+        
+        self._parent = _parent
+        
+        self.undo.connect('clicked', self.__undo_cb)
+        self.redo.connect('clicked', self.__redo_cb)
+        self.copy.connect('clicked', self.__copy_cb)
+        self.paste.connect('clicked', self.__paste_cb)
+
+        menu_item = MenuItem(_('Cut')) 
+        menu_item.connect('activate', self.__cut_cb)
+        menu_item.show()
+        self.copy.get_palette().menu.append(menu_item)
+        
+        self.clipboard = gtk.Clipboard()
+
+    def __undo_cb(self, button):
+        self._parent._undo.undo_action(None)
+
+    def __redo_cb(self, button):
+        self._parent._undo.redo_action(None)
+
+    def __cut_cb (self, event):
+        self._parent._main_area.cut_clipboard(self.clipboard)
+
+    def __copy_cb (self, event):
+        self._parent._main_area.copy_clipboard(self.clipboard)
+
+    def __paste_cb (self, event):
+        self._parent._main_area.paste_clipboard(self.clipboard)
 
 class LabyrinthActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
 
-        toolbox = activity.ActivityToolbox(self)
-        self.set_toolbox(toolbox)
+        try:
+            # Use new >= 0.86 toolbar design
+            toolbar_box = ToolbarBox()
+            activity_button = ActivityToolbarButton(self)
+            toolbar_box.toolbar.insert(activity_button, 0)
 
-        activity_toolbar = toolbox.get_activity_toolbar()
-        keep_palette = activity_toolbar.keep.get_palette()
-        menu_item = MenuItem(_('Keep to PDF'))
-        menu_item.connect('activate', self.__export_pdf_cb)
-        keep_palette.menu.append(menu_item)
-        menu_item.show()
+            edit_toolbar = ToolbarButton()
+            edit_toolbar.props.page = EditToolbar(self)
+            edit_toolbar.props.icon_name = 'toolbar-edit'
+            edit_toolbar.props.label = _('Edit'),
+            toolbar_box.toolbar.insert(edit_toolbar, -1)
 
-        edit_toolbar = activity.EditToolbar()
-        toolbox.add_toolbar(_('Edit'), edit_toolbar)
-        edit_toolbar.undo.child.connect('clicked', self.__undo_cb)
-        edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
-        edit_toolbar.copy.connect('clicked', self.__copy_cb)
+            self._undo = UndoManager.UndoManager (self,
+                                         edit_toolbar.props.page.undo.child,
+                                         edit_toolbar.props.page.redo.child)
+                    
+            tool = ToolbarButton()
+            #tool.props.page = activity.EditToolbar()
+            tool.props.icon_name = 'toolbar-view'
+            tool.props.label = _('View'),
+            toolbar_box.toolbar.insert(tool, -1)
 
-        menu_item = MenuItem(_('Cut')) 
-        menu_item.connect('activate', self.__cut_cb)
-        menu_item.show()
-        edit_toolbar.copy.get_palette().menu.append(menu_item)
-        edit_toolbar.paste.connect('clicked', self.__paste_cb)
+            separator = gtk.SeparatorToolItem()
+            separator.props.draw = False
+            separator.set_expand(True)
+            separator.show()
+            toolbar_box.toolbar.insert(separator, -1)
 
-        self.mods = [None] * 4
+            tool = StopButton(self)
+            toolbar_box.toolbar.insert(tool, -1)
 
-        self.mods[0] = RadioToolButton(named_icon='select-mode')
-        self.mods[0].set_tooltip(_('Edit mode'))
-        self.mods[0].set_accelerator(_('<ctrl>e'))
-        self.mods[0].set_group(None)
-        self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
-        edit_toolbar.insert(self.mods[0], 0)
+            toolbar_box.show_all()
+            self.set_toolbar_box(toolbar_box)
+            
+        except NameError:
+            # Use old <= 0.84 toolbar design
+            toolbox = activity.ActivityToolbox(self)
+            self.set_toolbox(toolbox)
 
-        self.mods[1] = RadioToolButton(named_icon='text-mode')
-        self.mods[1].set_tooltip(_('Text mode'))
-        self.mods[1].set_accelerator(_('<ctrl>t'))
-        self.mods[1].set_group(self.mods[0])
-        self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
-        edit_toolbar.insert(self.mods[1], 1)
+            activity_toolbar = toolbox.get_activity_toolbar()
+            keep_palette = activity_toolbar.keep.get_palette()
+            menu_item = MenuItem(_('Keep to PDF'))
+            menu_item.connect('activate', self.__export_pdf_cb)
+            keep_palette.menu.append(menu_item)
+            menu_item.show()
+                    
+            edit_toolbar = EditToolbar(self)
+            toolbox.add_toolbar(_('Edit'), edit_toolbar)
 
-        self.mods[2] = RadioToolButton(named_icon='draw-mode')
-        self.mods[2].set_group(self.mods[0])
-        self.mods[2].set_tooltip(_('Drawing mode'))
-        self.mods[2].set_accelerator(_('<ctrl>d'))
-        self.mods[2].connect('clicked', self.__mode_cb, MMapArea.MODE_DRAW)
-        edit_toolbar.insert(self.mods[2], 2)
+            self._undo = UndoManager.UndoManager (self,
+                                                 edit_toolbar.undo.child,
+                                                 edit_toolbar.redo.child)
 
-        self.mods[3] = RadioToolButton(named_icon='image-mode')
-        self.mods[3].set_group(self.mods[0])
-        self.mods[3].set_tooltip(_('Image add mode'))
-        self.mods[3].set_accelerator(_('<ctrl>i'))
-        self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
-        edit_toolbar.insert(self.mods[3], 3)
+            self.mods = [None] * 4
 
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(False)
-        edit_toolbar.insert(separator, 4)
+            self.mods[0] = RadioToolButton(named_icon='select-mode')
+            self.mods[0].set_tooltip(_('Edit mode'))
+            self.mods[0].set_accelerator(_('<ctrl>e'))
+            self.mods[0].set_group(None)
+            self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
+            edit_toolbar.insert(self.mods[0], 0)
 
-        tool = ToolButton('link')
-        tool.set_tooltip(_('Link/unlink two selected thoughts'))
-        tool.set_accelerator(_('<ctrl>l'))
-        tool.connect('clicked', self.__link_cb)
-        edit_toolbar.insert(tool, 5)
+            self.mods[1] = RadioToolButton(named_icon='text-mode')
+            self.mods[1].set_tooltip(_('Text mode'))
+            self.mods[1].set_accelerator(_('<ctrl>t'))
+            self.mods[1].set_group(self.mods[0])
+            self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
+            edit_toolbar.insert(self.mods[1], 1)
 
-        separator = gtk.SeparatorToolItem()
-        separator.set_draw(False)
-        edit_toolbar.insert(separator, 6)
+            self.mods[2] = RadioToolButton(named_icon='draw-mode')
+            self.mods[2].set_group(self.mods[0])
+            self.mods[2].set_tooltip(_('Drawing mode'))
+            self.mods[2].set_accelerator(_('<ctrl>d'))
+            self.mods[2].connect('clicked', self.__mode_cb, MMapArea.MODE_DRAW)
+            edit_toolbar.insert(self.mods[2], 2)
 
-        tool = ToolButton('edit-delete')
-        tool.set_tooltip(_('Erase selected thought(s)'))
-        tool.connect('clicked', self.__delete_cb)
-        edit_toolbar.insert(tool, 7)
+            self.mods[3] = RadioToolButton(named_icon='image-mode')
+            self.mods[3].set_group(self.mods[0])
+            self.mods[3].set_tooltip(_('Image add mode'))
+            self.mods[3].set_accelerator(_('<ctrl>i'))
+            self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
+            edit_toolbar.insert(self.mods[3], 3)
 
-        separator = gtk.SeparatorToolItem()
-        edit_toolbar.insert(separator, 8)
-        edit_toolbar.show()
+            separator = gtk.SeparatorToolItem()
+            separator.set_draw(False)
+            edit_toolbar.insert(separator, 4)
 
-        view_toolbar = gtk.Toolbar()
-        toolbox.add_toolbar(_('View'), view_toolbar)
+            tool = ToolButton('link')
+            tool.set_tooltip(_('Link/unlink two selected thoughts'))
+            tool.set_accelerator(_('<ctrl>l'))
+            tool.connect('clicked', self.__link_cb)
+            edit_toolbar.insert(tool, 5)
 
-        tool = ToolButton('zoom-best-fit')
-        tool.set_tooltip(_('Fit to window'))
-        tool.set_accelerator(_('<ctrl>9'))
-        tool.connect('clicked', self.__zoom_tofit_cb)
-        view_toolbar.insert(tool, -1)
+            separator = gtk.SeparatorToolItem()
+            separator.set_draw(False)
+            edit_toolbar.insert(separator, 6)
 
-        tool = ToolButton('zoom-original')
-        tool.set_tooltip(_('Original size'))
-        tool.set_accelerator(_('<ctrl>0'))
-        tool.connect('clicked', self.__zoom_original_cb)
-        view_toolbar.insert(tool, -1)
+            tool = ToolButton('edit-delete')
+            tool.set_tooltip(_('Erase selected thought(s)'))
+            tool.connect('clicked', self.__delete_cb)
+            edit_toolbar.insert(tool, 7)
 
-        tool = ToolButton('zoom-out')
-        tool.set_tooltip(_('Zoom out'))
-        tool.set_accelerator(_('<ctrl>minus'))
-        tool.connect('clicked', self.__zoom_out_cb)
-        view_toolbar.insert(tool, -1)
+            separator = gtk.SeparatorToolItem()
+            edit_toolbar.insert(separator, 8)
+            edit_toolbar.show()
 
-        tool = ToolButton('zoom-in')
-        tool.set_tooltip(_('Zoom in'))
-        tool.set_accelerator(_('<ctrl>equal'))
-        tool.connect('clicked', self.__zoom_in_cb)
-        view_toolbar.insert(tool, -1)
+            view_toolbar = gtk.Toolbar()
+            toolbox.add_toolbar(_('View'), view_toolbar)
+
+            tool = ToolButton('zoom-best-fit')
+            tool.set_tooltip(_('Fit to window'))
+            tool.set_accelerator(_('<ctrl>9'))
+            tool.connect('clicked', self.__zoom_tofit_cb)
+            view_toolbar.insert(tool, -1)
+
+            tool = ToolButton('zoom-original')
+            tool.set_tooltip(_('Original size'))
+            tool.set_accelerator(_('<ctrl>0'))
+            tool.connect('clicked', self.__zoom_original_cb)
+            view_toolbar.insert(tool, -1)
+
+            tool = ToolButton('zoom-out')
+            tool.set_tooltip(_('Zoom out'))
+            tool.set_accelerator(_('<ctrl>minus'))
+            tool.connect('clicked', self.__zoom_out_cb)
+            view_toolbar.insert(tool, -1)
+
+            tool = ToolButton('zoom-in')
+            tool.set_tooltip(_('Zoom in'))
+            tool.set_accelerator(_('<ctrl>equal'))
+            tool.connect('clicked', self.__zoom_in_cb)
+            view_toolbar.insert(tool, -1)
+
+            activity_toolbar = toolbox.get_activity_toolbar()
+            activity_toolbar.share.props.visible = False
+            toolbox.set_current_toolbar(1)
 
         self._mode = MMapArea.MODE_TEXT
-
-        self._undo = UndoManager.UndoManager (self,
-                                             edit_toolbar.undo.child,
-                                             edit_toolbar.redo.child)
+        
         self._undo.block ()
         self._main_area = MMapArea.MMapArea (self._undo)
         self._main_area.connect ("set_focus", self.__main_area_focus_cb)
@@ -168,13 +242,11 @@ class LabyrinthActivity(activity.Activity):
 
         self.show_all()
 
-        activity_toolbar = toolbox.get_activity_toolbar()
-        activity_toolbar.share.props.visible = False
-
-        self.mods[MMapArea.MODE_TEXT].set_active(True)
-        toolbox.set_current_toolbar(1)
+        #TODO:
+        # Disabled while I'm fixing up new toolbars!
+        
+        #self.mods[MMapArea.MODE_TEXT].set_active(True)
         self.set_focus_child (self._main_area)
-        self.clipboard = gtk.Clipboard()
                 
     def __expose(self, widget, event):
         """Create skeleton map at start
@@ -274,21 +346,6 @@ class LabyrinthActivity(activity.Activity):
     def __mode_cb(self, button, mode):
         self._mode = mode
         self._main_area.set_mode (self._mode)
-
-    def __undo_cb(self, button):
-        self._undo.undo_action(None)
-
-    def __redo_cb(self, button):
-        self._undo.redo_action(None)
-
-    def __cut_cb (self, event):
-        self._main_area.cut_clipboard (self.clipboard)
-
-    def __copy_cb (self, event):
-        self._main_area.copy_clipboard (self.clipboard)
-
-    def __paste_cb (self, event):
-        self._main_area.paste_clipboard (self.clipboard)
 
     def __export_pdf_cb (self, event):
         maxx, maxy = self._main_area.get_max_area()
