@@ -173,7 +173,7 @@ class LabyrinthActivity(activity.Activity):
         activity.Activity.__init__(self, handle)
 
         try:
-        # Use new >= 0.86 toolbar design
+            # Use new >= 0.86 toolbar design
             toolbar_box = ToolbarBox()
             activity_button = ActivityToolbarButton(self)
             toolbar_box.toolbar.insert(activity_button, 0)
@@ -203,10 +203,16 @@ class LabyrinthActivity(activity.Activity):
             toolbar_box.toolbar.insert(tool, -1)
 
             separator = gtk.SeparatorToolItem()
+            toolbar_box.toolbar.insert(separator, -1)
+
+            separator = gtk.SeparatorToolItem()
             separator.props.draw = False
             separator.set_expand(True)
             separator.show()
             toolbar_box.toolbar.insert(separator, -1)
+            
+            target_toolbar = toolbar_box.toolbar
+            tool_offset = 4
 
             tool = StopButton(self)
             toolbar_box.toolbar.insert(tool, -1)
@@ -228,6 +234,12 @@ class LabyrinthActivity(activity.Activity):
                     
             edit_toolbar = EditToolbar(self)
             toolbox.add_toolbar(_('Edit'), edit_toolbar)
+            separator = gtk.SeparatorToolItem()
+            edit_toolbar.insert(separator, 0)
+            edit_toolbar.show()
+
+            target_toolbar = edit_toolbar
+            tool_offset = 0
 
             self._undo = UndoManager.UndoManager (self,
                                                  edit_toolbar.undo.child,
@@ -241,59 +253,6 @@ class LabyrinthActivity(activity.Activity):
             self.set_canvas(self._main_area)
             self._undo.unblock()
 
-            self.mods = [None] * 4
-
-            self.mods[0] = RadioToolButton(named_icon='select-mode')
-            self.mods[0].set_tooltip(_('Edit mode'))
-            self.mods[0].set_accelerator(_('<ctrl>e'))
-            self.mods[0].set_group(None)
-            self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
-            edit_toolbar.insert(self.mods[0], 0)
-
-            self.mods[1] = RadioToolButton(named_icon='text-mode')
-            self.mods[1].set_tooltip(_('Text mode'))
-            self.mods[1].set_accelerator(_('<ctrl>t'))
-            self.mods[1].set_group(self.mods[0])
-            self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
-            edit_toolbar.insert(self.mods[1], 1)
-
-            self.mods[2] = RadioToolButton(named_icon='draw-mode')
-            self.mods[2].set_group(self.mods[0])
-            self.mods[2].set_tooltip(_('Drawing mode'))
-            self.mods[2].set_accelerator(_('<ctrl>d'))
-            self.mods[2].connect('clicked', self.__mode_cb, MMapArea.MODE_DRAW)
-            edit_toolbar.insert(self.mods[2], 2)
-
-            self.mods[3] = RadioToolButton(named_icon='image-mode')
-            self.mods[3].set_group(self.mods[0])
-            self.mods[3].set_tooltip(_('Image add mode'))
-            self.mods[3].set_accelerator(_('<ctrl>i'))
-            self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
-            edit_toolbar.insert(self.mods[3], 3)
-
-            separator = gtk.SeparatorToolItem()
-            separator.set_draw(False)
-            edit_toolbar.insert(separator, 4)
-
-            tool = ToolButton('link')
-            tool.set_tooltip(_('Link/unlink two selected thoughts'))
-            tool.set_accelerator(_('<ctrl>l'))
-            tool.connect('clicked', self.__link_cb)
-            edit_toolbar.insert(tool, 5)
-
-            separator = gtk.SeparatorToolItem()
-            separator.set_draw(False)
-            edit_toolbar.insert(separator, 6)
-
-            tool = ToolButton('edit-delete')
-            tool.set_tooltip(_('Erase selected thought(s)'))
-            tool.connect('clicked', self.__delete_cb)
-            edit_toolbar.insert(tool, 7)
-
-            separator = gtk.SeparatorToolItem()
-            edit_toolbar.insert(separator, 8)
-            edit_toolbar.show()
-
             view_toolbar = ViewToolbar(self._main_area)
             toolbox.add_toolbar(_('View'), view_toolbar)
 
@@ -301,16 +260,55 @@ class LabyrinthActivity(activity.Activity):
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
 
-        self._mode = MMapArea.MODE_TEXT
-        self._main_area.set_mode (self._mode)
-        
-        self.show_all()
+        self.mods = [None] * 4
 
-        #TODO:
-        # Disabled while I'm fixing up new toolbars!
-        #self.mods[MMapArea.MODE_TEXT].set_active(True)
-        
-        self.set_focus_child (self._main_area)
+        self.mods[0] = RadioToolButton(named_icon='select-mode')
+        self.mods[0].set_tooltip(_('Edit mode'))
+        self.mods[0].set_accelerator(_('<ctrl>e'))
+        self.mods[0].set_group(None)
+        self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
+        target_toolbar.insert(self.mods[0], tool_offset)
+
+        self.mods[1] = RadioToolButton(named_icon='text-mode')
+        self.mods[1].set_tooltip(_('Text mode'))
+        self.mods[1].set_accelerator(_('<ctrl>t'))
+        self.mods[1].set_group(self.mods[0])
+        self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
+        target_toolbar.insert(self.mods[1], tool_offset + 1)
+
+        self.mods[2] = RadioToolButton(named_icon='draw-mode')
+        self.mods[2].set_group(self.mods[0])
+        self.mods[2].set_tooltip(_('Drawing mode'))
+        self.mods[2].set_accelerator(_('<ctrl>d'))
+        self.mods[2].connect('clicked', self.__mode_cb, MMapArea.MODE_DRAW)
+        target_toolbar.insert(self.mods[2], tool_offset + 2)
+
+        self.mods[3] = RadioToolButton(named_icon='image-mode')
+        self.mods[3].set_group(self.mods[0])
+        self.mods[3].set_tooltip(_('Image add mode'))
+        self.mods[3].set_accelerator(_('<ctrl>i'))
+        self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
+        target_toolbar.insert(self.mods[3], tool_offset + 3)
+
+        separator = gtk.SeparatorToolItem()
+        target_toolbar.insert(separator, tool_offset + 4)
+
+        tool = ToolButton('link')
+        tool.set_tooltip(_('Link/unlink two selected thoughts'))
+        tool.set_accelerator(_('<ctrl>l'))
+        tool.connect('clicked', self.__link_cb)
+        target_toolbar.insert(tool, tool_offset + 5)
+
+        tool = ToolButton('edit-delete')
+        tool.set_tooltip(_('Erase selected thought(s)'))
+        tool.connect('clicked', self.__delete_cb)
+        target_toolbar.insert(tool, tool_offset + 6)
+
+        self.show_all()
+        self._mode = MMapArea.MODE_TEXT
+        self._main_area.set_mode(self._mode)
+        self.mods[MMapArea.MODE_TEXT].set_active(True)        
+        self.set_focus_child(self._main_area)        
                 
     def __expose(self, widget, event):
         """Create skeleton map at start
