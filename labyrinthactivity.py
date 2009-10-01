@@ -88,12 +88,92 @@ class EditToolbar(activity.EditToolbar):
     def __paste_cb (self, event):
         self._parent._main_area.paste_clipboard(self.clipboard)
 
+class ViewToolbar(gtk.Toolbar):
+    def __init__(self, main_area):
+        gtk.Toolbar.__init__(self)
+    
+        self._main_area = main_area
+        
+        tool = ToolButton('zoom-best-fit')
+        tool.set_tooltip(_('Fit to window'))
+        tool.set_accelerator(_('<ctrl>9'))
+        tool.connect('clicked', self.__zoom_tofit_cb)
+        self.insert(tool, -1)
+
+        tool = ToolButton('zoom-original')
+        tool.set_tooltip(_('Original size'))
+        tool.set_accelerator(_('<ctrl>0'))
+        tool.connect('clicked', self.__zoom_original_cb)
+        self.insert(tool, -1)
+
+        tool = ToolButton('zoom-out')
+        tool.set_tooltip(_('Zoom out'))
+        tool.set_accelerator(_('<ctrl>minus'))
+        tool.connect('clicked', self.__zoom_out_cb)
+        self.insert(tool, -1)
+
+        tool = ToolButton('zoom-in')
+        tool.set_tooltip(_('Zoom in'))
+        tool.set_accelerator(_('<ctrl>equal'))
+        tool.connect('clicked', self.__zoom_in_cb)
+        self.insert(tool, -1)
+        
+        self.show_all()
+        
+    def __zoom_in_cb(self, button):
+        self._main_area.scale_fac *= 1.2
+        self._main_area.invalidate()
+
+    def __zoom_out_cb(self, button):
+        self._main_area.scale_fac /= 1.2
+        self._main_area.invalidate()
+
+    def __zoom_original_cb(self, button):
+        self._main_area.scale_fac = 1.0
+        self._main_area.invalidate()
+        
+    def __zoom_tofit_cb(self, button):
+        bounds = self.__get_thought_bounds()
+        self._main_area.translation[0] = bounds['x']
+        self._main_area.translation[1] = bounds['y']
+        self._main_area.scale_fac = bounds['scale']
+        self._main_area.invalidate()
+
+    def __get_thought_bounds(self):
+        if len(self._main_area.thoughts) == 0:
+            self._main_area.scale_fac = 1.0
+            self._main_area.translation[0] = 0
+            self._main_area.translation[1] = 0
+            self._main_area.invalidate()
+            return {'x':0, 'y':0, 'scale':1.0}
+        # Find thoughts extent
+        left = right = upper = lower = None
+        for t in self._main_area.thoughts:
+            if right == None or t.lr[0] > right:
+                right = t.lr[0]
+            if lower == None or t.lr[1] > lower:
+                lower = t.lr[1]
+            if left == None or  t.ul[0] < left:
+                left = t.ul[0]
+            if upper == None or t.ul[1] < upper:
+                upper = t.ul[1]
+        width = right - left
+        height = lower - upper
+        geom = self._main_area.window.get_geometry()
+        overlap = (width - geom[2], height - geom[3])
+        # Leave 10% space around the edge
+        width_scale = float(geom[2]) / (width * 1.1)
+        height_scale = float(geom[3]) / (height * 1.1)
+        return {'x':(geom[2] / 2.0) - (width / 2.0 + left),
+                'y':(geom[3] / 2.0) - (height / 2.0 + upper),
+                'scale':min(width_scale, height_scale)}
+
 class LabyrinthActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
 
         try:
-            # Use new >= 0.86 toolbar design
+        # Use new >= 0.86 toolbar design
             toolbar_box = ToolbarBox()
             activity_button = ActivityToolbarButton(self)
             toolbar_box.toolbar.insert(activity_button, 0)
@@ -108,8 +188,16 @@ class LabyrinthActivity(activity.Activity):
                                          edit_toolbar.props.page.undo.child,
                                          edit_toolbar.props.page.redo.child)
                     
+            self._undo.block ()
+            self._main_area = MMapArea.MMapArea(self._undo)
+            self._main_area.connect("set_focus", self.__main_area_focus_cb)
+            self._main_area.connect("button-press-event", self.__main_area_focus_cb)
+            self._main_area.connect("expose_event", self.__expose)
+            self.set_canvas(self._main_area)
+            self._undo.unblock()
+
             tool = ToolbarButton()
-            #tool.props.page = activity.EditToolbar()
+            tool.props.page = ViewToolbar(self._main_area)
             tool.props.icon_name = 'toolbar-view'
             tool.props.label = _('View'),
             toolbar_box.toolbar.insert(tool, -1)
@@ -125,7 +213,7 @@ class LabyrinthActivity(activity.Activity):
 
             toolbar_box.show_all()
             self.set_toolbar_box(toolbar_box)
-            
+        
         except NameError:
             # Use old <= 0.84 toolbar design
             toolbox = activity.ActivityToolbox(self)
@@ -144,6 +232,14 @@ class LabyrinthActivity(activity.Activity):
             self._undo = UndoManager.UndoManager (self,
                                                  edit_toolbar.undo.child,
                                                  edit_toolbar.redo.child)
+
+            self._undo.block ()
+            self._main_area = MMapArea.MMapArea (self._undo)
+            self._main_area.connect ("set_focus", self.__main_area_focus_cb)
+            self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
+            self._main_area.connect ("expose_event", self.__expose)
+            self.set_canvas(self._main_area)
+            self._undo.unblock()
 
             self.mods = [None] * 4
 
@@ -198,54 +294,22 @@ class LabyrinthActivity(activity.Activity):
             edit_toolbar.insert(separator, 8)
             edit_toolbar.show()
 
-            view_toolbar = gtk.Toolbar()
+            view_toolbar = ViewToolbar(self._main_area)
             toolbox.add_toolbar(_('View'), view_toolbar)
-
-            tool = ToolButton('zoom-best-fit')
-            tool.set_tooltip(_('Fit to window'))
-            tool.set_accelerator(_('<ctrl>9'))
-            tool.connect('clicked', self.__zoom_tofit_cb)
-            view_toolbar.insert(tool, -1)
-
-            tool = ToolButton('zoom-original')
-            tool.set_tooltip(_('Original size'))
-            tool.set_accelerator(_('<ctrl>0'))
-            tool.connect('clicked', self.__zoom_original_cb)
-            view_toolbar.insert(tool, -1)
-
-            tool = ToolButton('zoom-out')
-            tool.set_tooltip(_('Zoom out'))
-            tool.set_accelerator(_('<ctrl>minus'))
-            tool.connect('clicked', self.__zoom_out_cb)
-            view_toolbar.insert(tool, -1)
-
-            tool = ToolButton('zoom-in')
-            tool.set_tooltip(_('Zoom in'))
-            tool.set_accelerator(_('<ctrl>equal'))
-            tool.connect('clicked', self.__zoom_in_cb)
-            view_toolbar.insert(tool, -1)
 
             activity_toolbar = toolbox.get_activity_toolbar()
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
 
         self._mode = MMapArea.MODE_TEXT
-        
-        self._undo.block ()
-        self._main_area = MMapArea.MMapArea (self._undo)
-        self._main_area.connect ("set_focus", self.__main_area_focus_cb)
-        self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
-        self._main_area.connect ("expose_event", self.__expose)
         self._main_area.set_mode (self._mode)
-        self.set_canvas(self._main_area)
-        self._undo.unblock()
-
+        
         self.show_all()
 
         #TODO:
         # Disabled while I'm fixing up new toolbars!
-        
         #self.mods[MMapArea.MODE_TEXT].set_active(True)
+        
         self.set_focus_child (self._main_area)
                 
     def __expose(self, widget, event):
@@ -294,54 +358,6 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.translation[1] = bounds['y']
         self._main_area.invalidate()
         return False
-
-    def __zoom_in_cb(self, button):
-        self._main_area.scale_fac *= 1.2
-        self._main_area.invalidate()
-
-    def __zoom_out_cb(self, button):
-        self._main_area.scale_fac /= 1.2
-        self._main_area.invalidate()
-
-    def __zoom_original_cb(self, button):
-        self._main_area.scale_fac = 1.0
-        self._main_area.invalidate()
-        
-    def __zoom_tofit_cb(self, button):
-        bounds = self.__get_thought_bounds()
-        self._main_area.translation[0] = bounds['x']
-        self._main_area.translation[1] = bounds['y']
-        self._main_area.scale_fac = bounds['scale']
-        self._main_area.invalidate()
-
-    def __get_thought_bounds(self):
-        if len(self._main_area.thoughts) == 0:
-            self._main_area.scale_fac = 1.0
-            self._main_area.translation[0] = 0
-            self._main_area.translation[1] = 0
-            self._main_area.invalidate()
-            return {'x':0, 'y':0, 'scale':1.0}
-        # Find thoughts extent
-        left = right = upper = lower = None
-        for t in self._main_area.thoughts:
-            if right == None or t.lr[0] > right:
-                right = t.lr[0]
-            if lower == None or t.lr[1] > lower:
-                lower = t.lr[1]
-            if left == None or  t.ul[0] < left:
-                left = t.ul[0]
-            if upper == None or t.ul[1] < upper:
-                upper = t.ul[1]
-        width = right - left
-        height = lower - upper
-        geom = self._main_area.window.get_geometry()
-        overlap = (width - geom[2], height - geom[3])
-        # Leave 10% space around the edge
-        width_scale = float(geom[2]) / (width * 1.1)
-        height_scale = float(geom[3]) / (height * 1.1)
-        return {'x':(geom[2] / 2.0) - (width / 2.0 + left),
-                'y':(geom[3] / 2.0) - (height / 2.0 + upper),
-                'scale':min(width_scale, height_scale)}
 
     def __mode_cb(self, button, mode):
         self._mode = mode
