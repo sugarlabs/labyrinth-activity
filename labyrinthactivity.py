@@ -32,7 +32,6 @@ import cairo
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.radiotoolbutton import RadioToolButton
-from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
 from port.tarball import Tarball
