@@ -310,7 +310,7 @@ class LabyrinthActivity(activity.Activity):
         self.set_focus_child(self._main_area)        
                 
     def __expose(self, widget, event):
-        """Create skeleton map at start
+        """Create canvas hint message at start
         """
         thought_count = len(self._main_area.thoughts)
         if thought_count > 0:
