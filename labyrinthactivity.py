@@ -187,13 +187,7 @@ class LabyrinthActivity(activity.Activity):
                                          edit_toolbar.props.page.undo.child,
                                          edit_toolbar.props.page.redo.child)
                     
-            self._undo.block ()
-            self._main_area = MMapArea.MMapArea(self._undo)
-            self._main_area.connect("set_focus", self.__main_area_focus_cb)
-            self._main_area.connect("button-press-event", self.__main_area_focus_cb)
-            self._main_area.connect("expose_event", self.__expose)
-            self.set_canvas(self._main_area)
-            self._undo.unblock()
+            self.__build_main_canvas_area()
 
             tool = ToolbarButton()
             tool.props.page = ViewToolbar(self._main_area)
@@ -244,13 +238,7 @@ class LabyrinthActivity(activity.Activity):
                                                  edit_toolbar.undo.child,
                                                  edit_toolbar.redo.child)
 
-            self._undo.block ()
-            self._main_area = MMapArea.MMapArea (self._undo)
-            self._main_area.connect ("set_focus", self.__main_area_focus_cb)
-            self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
-            self._main_area.connect ("expose_event", self.__expose)
-            self.set_canvas(self._main_area)
-            self._undo.unblock()
+            self.__build_main_canvas_area()
 
             view_toolbar = ViewToolbar(self._main_area)
             toolbox.add_toolbar(_('View'), view_toolbar)
@@ -308,7 +296,16 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.set_mode(self._mode)
         self.mods[MMapArea.MODE_TEXT].set_active(True)        
         self.set_focus_child(self._main_area)        
-                
+
+    def __build_main_canvas_area(self):
+        self._undo.block ()
+        self._main_area = MMapArea.MMapArea (self._undo)
+        self._main_area.connect ("set_focus", self.__main_area_focus_cb)
+        self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
+        self._main_area.connect ("expose_event", self.__expose)
+        self.set_canvas(self._main_area)
+        self._undo.unblock()
+
     def __expose(self, widget, event):
         """Create canvas hint message at start
         """
