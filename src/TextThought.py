@@ -717,7 +717,6 @@ class TextThought (ResizableThought):
 			elif event.type == gtk.gdk._2BUTTON_PRESS:
 				self.index = len(self.text)
 				self.end_index = 0						# and mark all
-				self.selection_changed ()
 				self.double_click = True
 		elif event.button == 2:
 			x = int ((coords[0] - self.min_x)*pango.SCALE)
@@ -736,6 +735,8 @@ class TextThought (ResizableThought):
 		self.current_attrs = []
 		self.recalc_edges()
 		self.emit ("update_view")
+
+		self.selection_changed()
 
 	def process_button_release (self, event, transformed):
 		if self.orig_size:

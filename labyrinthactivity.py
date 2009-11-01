@@ -71,6 +71,8 @@ class EditToolbar(activity.EditToolbar):
         self.copy.get_palette().menu.append(menu_item)
         
         self.clipboard = gtk.Clipboard()
+        
+        self.copy.child.set_sensitive(False)
 
     def __undo_cb(self, button):
         self._parent._undo.undo_action(None)
@@ -177,15 +179,15 @@ class LabyrinthActivity(activity.Activity):
             activity_button = ActivityToolbarButton(self)
             toolbar_box.toolbar.insert(activity_button, 0)
 
-            edit_toolbar = ToolbarButton()
-            edit_toolbar.props.page = EditToolbar(self)
-            edit_toolbar.props.icon_name = 'toolbar-edit'
-            edit_toolbar.props.label = _('Edit'),
-            toolbar_box.toolbar.insert(edit_toolbar, -1)
+            self.edit_toolbar = ToolbarButton()
+            self.edit_toolbar.props.page = EditToolbar(self)
+            self.edit_toolbar.props.icon_name = 'toolbar-edit'
+            self.edit_toolbar.props.label = _('Edit'),
+            toolbar_box.toolbar.insert(self.edit_toolbar, -1)
 
             self._undo = UndoManager.UndoManager (self,
-                                         edit_toolbar.props.page.undo.child,
-                                         edit_toolbar.props.page.redo.child)
+                                         self.edit_toolbar.props.page.undo.child,
+                                         self.edit_toolbar.props.page.redo.child)
                     
             self.__build_main_canvas_area()
 
@@ -225,18 +227,18 @@ class LabyrinthActivity(activity.Activity):
             keep_palette.menu.append(menu_item)
             menu_item.show()
                     
-            edit_toolbar = EditToolbar(self)
-            toolbox.add_toolbar(_('Edit'), edit_toolbar)
+            self.edit_toolbar = EditToolbar(self)
+            toolbox.add_toolbar(_('Edit'), self.edit_toolbar)
             separator = gtk.SeparatorToolItem()
-            edit_toolbar.insert(separator, 0)
-            edit_toolbar.show()
+            self.edit_toolbar.insert(separator, 0)
+            self.edit_toolbar.show()
 
-            target_toolbar = edit_toolbar
+            target_toolbar = self.edit_toolbar
             tool_offset = 0
 
             self._undo = UndoManager.UndoManager (self,
-                                                 edit_toolbar.undo.child,
-                                                 edit_toolbar.redo.child)
+                                                 self.edit_toolbar.undo.child,
+                                                 self.edit_toolbar.redo.child)
 
             self.__build_main_canvas_area()
 
@@ -303,8 +305,19 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.connect ("set_focus", self.__main_area_focus_cb)
         self._main_area.connect ("button-press-event", self.__main_area_focus_cb)
         self._main_area.connect ("expose_event", self.__expose)
+        self._main_area.connect ("text_selection_changed", self.__text_selection_cb)
+        self._main_area.connect ("thought_selection_changed", self.__thought_selected_cb)
         self.set_canvas(self._main_area)
         self._undo.unblock()
+
+    def __text_selection_cb(self, thought, start, end, text):
+        if start != end:
+            self.edit_toolbar.props.page.copy.child.set_sensitive(True)
+        else:
+            self.edit_toolbar.props.page.copy.child.set_sensitive(False)
+            
+    def __thought_selected_cb(self, arg, background_color, foreground_color):
+        self.edit_toolbar.props.page.copy.child.set_sensitive(False)
 
     def __expose(self, widget, event):
         """Create canvas hint message at start
