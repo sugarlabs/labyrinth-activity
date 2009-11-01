@@ -311,12 +311,17 @@ class LabyrinthActivity(activity.Activity):
         self._undo.unblock()
 
     def __text_selection_cb(self, thought, start, end, text):
+        """Update state of copy button based on text selection
+        """
         if start != end:
             self.edit_toolbar.props.page.copy.child.set_sensitive(True)
         else:
             self.edit_toolbar.props.page.copy.child.set_sensitive(False)
-            
+    
+    # TODO: implement copy/paste for a thought object or objects
     def __thought_selected_cb(self, arg, background_color, foreground_color):
+        """Disable copy button if whole thought object is selected
+        """
         self.edit_toolbar.props.page.copy.child.set_sensitive(False)
 
     def __expose(self, widget, event):
