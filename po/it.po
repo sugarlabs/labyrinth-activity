@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-07-24 11:56-0400\n"
+"PO-Revision-Date: 2009-11-02 06:16-0400\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
@@ -27,7 +27,7 @@ msgstr "Modifica"
 
 #: labyrinthactivity.py:78
 msgid "Edit mode"
-msgstr "Modalità Modifica"
+msgstr "Modalità modifica"
 
 #: labyrinthactivity.py:79
 msgid "<ctrl>e"
