@@ -55,7 +55,7 @@ class LabyrinthActivity(activity.Activity):
 
         activity_toolbar = toolbox.get_activity_toolbar()
         keep_palette = activity_toolbar.keep.get_palette()
-        menu_item = MenuItem('Portable Document Format (PDF)')
+        menu_item = MenuItem(_('Keep to PDF'))
         menu_item.connect('activate', self.__export_pdf_cb)
         keep_palette.menu.append(menu_item)
         menu_item.show()
@@ -66,7 +66,7 @@ class LabyrinthActivity(activity.Activity):
         edit_toolbar.redo.child.connect('clicked', self.__redo_cb)
         edit_toolbar.copy.connect('clicked', self.__copy_cb)
 
-        menu_item = MenuItem('Cut') 
+        menu_item = MenuItem(_('Cut')) 
         menu_item.connect('activate', self.__cut_cb)
         menu_item.show()
         edit_toolbar.copy.get_palette().menu.append(menu_item)
@@ -180,7 +180,7 @@ class LabyrinthActivity(activity.Activity):
         """Create skeleton map at start
         """
         thought_count = len(self._main_area.thoughts)
-        if thought_count > 1:
+        if thought_count > 0:
             return False
 
         context = self._main_area.window.cairo_create()
@@ -191,29 +191,28 @@ class LabyrinthActivity(activity.Activity):
         context.set_dash([10.0, 5.0], 0.0)
         geom = list(self._main_area.window.get_geometry())
         geom[3] =  geom[3] - ((self.window.get_geometry()[3] - geom[3]) / 2)
-            
-        if thought_count == 0:
-            layout.set_alignment(pango.ALIGN_CENTER)
-            layout.set_text(_('Click to add\ncentral thought'))        
-            (width, height) = layout.get_pixel_size()
-            context.move_to (geom[2] / 2 - (width / 2), geom[3] / 2 - (height / 2))
-            context.show_layout(layout)
 
-            round = 40
-            ul = (geom[2] / 2 - (width / 2) - round,
-                  geom[3] / 2 - (height / 2) - round)
-            lr = (geom[2] / 2 + (width / 2) + round,
-                  geom[3] / 2 + (height / 2) + round)
-            context.move_to (ul[0], ul[1] + round)
-            context.line_to (ul[0], lr[1] - round)
-            context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0] + round, lr[1])
-            context.line_to (lr[0] - round, lr[1])
-            context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1] - round)
-            context.line_to (lr[0], ul[1] + round)
-            context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0] - round, ul[1])
-            context.line_to (ul[0] + round, ul[1])
-            context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1] + round)
-            context.stroke()
+        layout.set_alignment(pango.ALIGN_CENTER)
+        layout.set_text(_('Click to add\ncentral thought'))        
+        (width, height) = layout.get_pixel_size()
+        context.move_to (geom[2] / 2 - (width / 2), geom[3] / 2 - (height / 2))
+        context.show_layout(layout)
+
+        round = 40
+        ul = (geom[2] / 2 - (width / 2) - round,
+              geom[3] / 2 - (height / 2) - round)
+        lr = (geom[2] / 2 + (width / 2) + round,
+              geom[3] / 2 + (height / 2) + round)
+        context.move_to (ul[0], ul[1] + round)
+        context.line_to (ul[0], lr[1] - round)
+        context.curve_to (ul[0], lr[1], ul[0], lr[1], ul[0] + round, lr[1])
+        context.line_to (lr[0] - round, lr[1])
+        context.curve_to (lr[0], lr[1], lr[0], lr[1], lr[0], lr[1] - round)
+        context.line_to (lr[0], ul[1] + round)
+        context.curve_to (lr[0], ul[1], lr[0], ul[1], lr[0] - round, ul[1])
+        context.line_to (ul[0] + round, ul[1])
+        context.curve_to (ul[0], ul[1], ul[0], ul[1], ul[0], ul[1] + round)
+        context.stroke()
         
         return False
         
@@ -292,9 +291,7 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.paste_clipboard (self.clipboard)
 
     def __export_pdf_cb (self, event):
-        print "############# export pdf callback #############"
         maxx, maxy = self._main_area.get_max_area()
-        #x, y, width, height, bitdepth = self._main_area.window.get_geometry()
         true_width = int(maxx)
         true_height = int(maxy)
         
@@ -308,19 +305,18 @@ class LabyrinthActivity(activity.Activity):
         # TODO: add text thoughts into fulltext metadata
         # fileObject.metadata['fulltext'] = ...
         
-        #fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.metadata['icon-color'] = act_meta['icon-color']
         fileObject.file_path = os.path.join(self.get_activity_root(),
                                             'instance', '%i' % time.time())
         filename = fileObject.file_path
         surface = cairo.PDFSurface(filename, true_width, true_height)
         cairo_context = cairo.Context(surface)
         context = pangocairo.CairoContext(cairo_context)
-        self._main_area.export(context, true_width, true_height, True)
+        self._main_area.export(context, true_width, true_height, False)
         surface.finish()
         datastore.write(fileObject, transfer_ownership=True)
         fileObject.destroy()
         del fileObject
-        print "############# pdf save complete #############"
 
     def __main_area_focus_cb (self, arg, event, extended = False):
         self._main_area.grab_focus ()
