@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-11-02 06:30-0400\n"
+"PO-Revision-Date: 2009-11-02 06:42-0400\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
@@ -59,7 +59,7 @@ msgstr "<ctrl>i"
 
 #: labyrinthactivity.py:110
 msgid "Link/unlink two selected thoughts"
-msgstr "Connetti/disconnetti due pensieri selezionati"
+msgstr "Connetti/disconnetti i due concetti selezionati"
 
 #: labyrinthactivity.py:111
 msgid "<ctrl>l"
@@ -67,7 +67,7 @@ msgstr "<ctrl>l"
 
 #: labyrinthactivity.py:120
 msgid "Erase selected thought(s)"
-msgstr "Elimina i pensiero/i selezionato/i "
+msgstr "Elimina i concetto/i selezionato/i "
 
 #: labyrinthactivity.py:129
 msgid "View"
@@ -111,7 +111,7 @@ msgid ""
 "central thought"
 msgstr ""
 "Seleziona per aggiungere\n"
-"pensiero base"
+"concetto base"
 
 #: src/DrawingThought.py:60
 #, python-format
@@ -241,7 +241,7 @@ msgstr "_Add Image"
 
 #: src/MainWindow.py:260
 msgid "Add an image to selected thought"
-msgstr "Aggiungi una immagine all'idea selezionata"
+msgstr "Aggiungi una immagine al concetto selezionato"
 
 #: src/MainWindow.py:261
 msgid "_Drawing Mode"
@@ -281,7 +281,7 @@ msgstr "_Extended Information"
 
 #: src/MainWindow.py:272
 msgid "Show extended information for thoughts"
-msgstr "Mostra informazioni estese per le idee"
+msgstr "Mostra informazioni estese per i concetti"
 
 #: src/MainWindow.py:273
 msgid "_Outline"
@@ -289,7 +289,7 @@ msgstr "_Outline"
 
 #: src/MainWindow.py:274
 msgid "Show outline of thought hierarchy"
-msgstr "Mostra la struttura della gerarchia di idee"
+msgstr "Mostra la struttura della gerarchia di concetti"
 
 #: src/MainWindow.py:275
 msgid "_Main"
