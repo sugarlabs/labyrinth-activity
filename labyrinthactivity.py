@@ -314,15 +314,21 @@ class LabyrinthActivity(activity.Activity):
         """Update state of copy button based on text selection
         """
         if start != end:
-            self.edit_toolbar.props.page.copy.child.set_sensitive(True)
+            self.__change_copy_state(True)
         else:
-            self.edit_toolbar.props.page.copy.child.set_sensitive(False)
+            self.__change_copy_state(False)
     
     # TODO: implement copy/paste for a thought object or objects
     def __thought_selected_cb(self, arg, background_color, foreground_color):
         """Disable copy button if whole thought object is selected
         """
-        self.edit_toolbar.props.page.copy.child.set_sensitive(False)
+        self.__change_copy_state(False)
+
+    def __change_copy_state(self, state):
+        try:
+            self.edit_toolbar.props.page.copy.child.set_sensitive(state)
+        except AttributeError:
+            self.edit_toolbar.copy.child.set_sensitive(state)
 
     def __expose(self, widget, event):
         """Create canvas hint message at start
