@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-11-02 06:42-0400\n"
+"POT-Creation-Date: 2009-11-03 00:31-0500\n"
+"PO-Revision-Date: 2009-11-09 02:50-0400\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
@@ -21,9 +21,17 @@ msgstr ""
 msgid "Labyrinth"
 msgstr "Labirinto"
 
+#: labyrinthactivity.py:58
+msgid "Keep to PDF"
+msgstr "Memorizza in PDF"
+
 #: labyrinthactivity.py:64
 msgid "Edit"
 msgstr "Modifica"
+
+#: labyrinthactivity.py:69
+msgid "Cut"
+msgstr "Taglia"
 
 #: labyrinthactivity.py:78
 msgid "Edit mode"
@@ -105,7 +113,7 @@ msgstr "Zoom avanti"
 msgid "<ctrl>equal"
 msgstr "<ctrl>equal"
 
-#: labyrinthactivity.py:197
+#: labyrinthactivity.py:196
 msgid ""
 "Click to add\n"
 "central thought"
@@ -352,11 +360,11 @@ msgstr ""
 msgid "Choose image"
 msgstr "Scegli immagine"
 
-#: src/Links.py:261
+#: src/Links.py:269
 msgid "Choose Color"
 msgstr "Scegli Colore"
 
-#: src/Links.py:274
+#: src/Links.py:282
 msgid "Set Color"
 msgstr "Seleziona Colore"
 
