@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-03 00:31-0500\n"
-"PO-Revision-Date: 2009-11-09 02:50-0400\n"
+"PO-Revision-Date: 2009-11-09 04:02-0400\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
@@ -217,11 +217,11 @@ msgstr "_Toolbar"
 
 #: src/MainWindow.py:247
 msgid "Link Thoughts"
-msgstr "Collega le Idee"
+msgstr "Collega i Concetti"
 
 #: src/MainWindow.py:248
 msgid "Link the selected thoughts"
-msgstr "Collega leidee selezionate"
+msgstr "Collega i concetti selezionati"
 
 #: src/MainWindow.py:249
 msgid "_Mode"
@@ -269,7 +269,7 @@ msgstr "Aggiungi una risorsa"
 
 #: src/MainWindow.py:266
 msgid "Use _Curves"
-msgstr "Use _Curves"
+msgstr "Utilizza _Curves"
 
 #: src/MainWindow.py:267
 msgid "Use curves as links"
@@ -317,7 +317,7 @@ msgstr "Mostra la barra di formattazione"
 
 #: src/MainWindow.py:303
 msgid "Thoughts"
-msgstr "Idee"
+msgstr "Concetti"
 
 #: src/MainWindow.py:576
 msgid "Save File As"
