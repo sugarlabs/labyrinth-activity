@@ -73,6 +73,7 @@ class EditToolbar(activity.EditToolbar):
         self.clipboard = gtk.Clipboard()
         
         self.copy.child.set_sensitive(False)
+        self.paste.child.set_sensitive(False)
 
     def __undo_cb(self, button):
         self._parent._undo.undo_action(None)
@@ -317,18 +318,31 @@ class LabyrinthActivity(activity.Activity):
             self.__change_copy_state(True)
         else:
             self.__change_copy_state(False)
+            
+        if self._mode == MMapArea.MODE_TEXT and len(self._main_area.selected) and \
+				   self._main_area.selected[0].editing:
+            self.__change_paste_state(True)
+        else:
+            self.__change_paste_state(False)
     
-    # TODO: implement copy/paste for a thought object or objects
+    # TODO: implement copy/paste for a whole thought or thoughts
     def __thought_selected_cb(self, arg, background_color, foreground_color):
         """Disable copy button if whole thought object is selected
         """
         self.__change_copy_state(False)
+        self.__change_paste_state(False)
 
     def __change_copy_state(self, state):
         try:
             self.edit_toolbar.props.page.copy.child.set_sensitive(state)
         except AttributeError:
             self.edit_toolbar.copy.child.set_sensitive(state)
+
+    def __change_paste_state(self, state):
+        try:
+            self.edit_toolbar.props.page.paste.child.set_sensitive(state)
+        except AttributeError:
+            self.edit_toolbar.paste.child.set_sensitive(state)
 
     def __expose(self, widget, event):
         """Create canvas hint message at start
