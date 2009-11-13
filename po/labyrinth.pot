@@ -20,7 +20,7 @@ msgstr ""
 msgid "Labyrinth"
 msgstr ""
 
-msgid "Keep to PDF"
+msgid "Portable Document Format (PDF)"
 msgstr ""
 
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53

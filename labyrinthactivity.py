@@ -187,7 +187,7 @@ class LabyrinthActivity(activity.Activity):
             separator.show()
             
             tool = ToolButton('pdf-export')
-            tool.set_tooltip(_('Keep to PDF'))
+            tool.set_tooltip(_('Portable Document Format (PDF)'))
             tool.connect('clicked', self.__export_pdf_cb)
             activity_button.props.page.insert(tool, -1)
             tool.show()
@@ -235,7 +235,7 @@ class LabyrinthActivity(activity.Activity):
 
             activity_toolbar = toolbox.get_activity_toolbar()
             keep_palette = activity_toolbar.keep.get_palette()
-            menu_item = MenuItem(_('Keep to PDF'))
+            menu_item = MenuItem(_('Portable Document Format (PDF)'))
             menu_item.connect('activate', self.__export_pdf_cb)
             keep_palette.menu.append(menu_item)
             menu_item.show()
