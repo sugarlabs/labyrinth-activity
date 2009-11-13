@@ -181,6 +181,17 @@ class LabyrinthActivity(activity.Activity):
             activity_button = ActivityToolbarButton(self)
             toolbar_box.toolbar.insert(activity_button, 0)
 
+            separator = gtk.SeparatorToolItem()
+            separator.props.draw = True
+            activity_button.props.page.insert(separator, -1)
+            separator.show()
+            
+            tool = ToolButton('pdf-export')
+            tool.set_tooltip(_('Keep to PDF'))
+            tool.connect('clicked', self.__export_pdf_cb)
+            activity_button.props.page.insert(tool, -1)
+            tool.show()
+
             self.edit_toolbar = ToolbarButton()
             self.edit_toolbar.props.page = EditToolbar(self)
             self.edit_toolbar.props.icon_name = 'toolbar-edit'
