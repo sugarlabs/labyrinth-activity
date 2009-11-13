@@ -23,6 +23,9 @@ msgstr ""
 msgid "Portable Document Format (PDF)"
 msgstr ""
 
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
 #: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53
 msgid "Edit"
 msgstr ""

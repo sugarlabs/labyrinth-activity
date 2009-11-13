@@ -192,6 +192,12 @@ class LabyrinthActivity(activity.Activity):
             activity_button.props.page.insert(tool, -1)
             tool.show()
 
+            tool = ToolButton('png-export')
+            tool.set_tooltip(_('Portable Network Graphic (PNG)'))
+            tool.connect('clicked', self.__export_png_cb)
+            activity_button.props.page.insert(tool, -1)
+            tool.show()
+
             self.edit_toolbar = ToolbarButton()
             self.edit_toolbar.props.page = EditToolbar(self)
             self.edit_toolbar.props.icon_name = 'toolbar-edit'
@@ -235,8 +241,14 @@ class LabyrinthActivity(activity.Activity):
 
             activity_toolbar = toolbox.get_activity_toolbar()
             keep_palette = activity_toolbar.keep.get_palette()
+            
             menu_item = MenuItem(_('Portable Document Format (PDF)'))
             menu_item.connect('activate', self.__export_pdf_cb)
+            keep_palette.menu.append(menu_item)
+            menu_item.show()
+
+            menu_item = MenuItem(_('Portable Network Graphic (PNG)'))
+            menu_item.connect('activate', self.__export_png_cb)
             keep_palette.menu.append(menu_item)
             menu_item.show()
                     
@@ -431,6 +443,43 @@ class LabyrinthActivity(activity.Activity):
         context = pangocairo.CairoContext(cairo_context)
         self._main_area.export(context, true_width, true_height, False)
         surface.finish()
+        datastore.write(fileObject, transfer_ownership=True)
+        fileObject.destroy()
+        del fileObject
+
+    def __export_png_cb (self, event):
+        x, y, w, h, bitdepth = self._main_area.window.get_geometry()
+        cmap = self._main_area.window.get_colormap()
+        maxx, maxy = self._main_area.get_max_area()
+        true_width = int(maxx)
+        true_height = int(maxy)
+        
+        # Create the new journal entry
+        fileObject = datastore.create()
+        act_meta = self.metadata
+        fileObject.metadata['title'] = act_meta['title'] + ' (PNG)'
+        fileObject.metadata['title_set_by_user'] = act_meta['title_set_by_user']
+        fileObject.metadata['mime_type'] = 'image/png'
+        
+        fileObject.metadata['icon-color'] = act_meta['icon-color']
+        fileObject.file_path = os.path.join(self.get_activity_root(),
+                                            'instance', '%i' % time.time())
+        filename = fileObject.file_path
+        pixmap = gtk.gdk.Pixmap(None, true_width, true_height, bitdepth)
+        pixmap.set_colormap(cmap)
+        self._main_area.export(pixmap.cairo_create(), true_width, true_height, False)
+        pb = gtk.gdk.Pixbuf.get_from_drawable(
+                                          gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB,
+                                                         True,
+                                                         8,
+                                                         true_width,
+                                                         true_height),
+                                          pixmap,
+                                          gtk.gdk.colormap_get_system(),
+                                          0, 0, 0, 0,
+                                          true_width,
+                                          true_height)
+        pb.save(filename, 'png')
         datastore.write(fileObject, transfer_ownership=True)
         fileObject.destroy()
         del fileObject
