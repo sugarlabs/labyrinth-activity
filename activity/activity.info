@@ -1,6 +1,6 @@
 [Activity]
 name = Labyrinth
-activity_version = 7
+activity_version = 8
 service_name = org.gnome.Labyrinth
 icon = activity-labyrinth
 class = labyrinthactivity.LabyrinthActivity
