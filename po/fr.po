@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-08-31 13:43-0400\n"
+"POT-Creation-Date: 2010-01-15 00:32-0500\n"
+"PO-Revision-Date: 2010-02-25 00:02+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
@@ -15,97 +15,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr "Labyrinthe"
 
-#: labyrinthactivity.py:64
-msgid "Edit"
-msgstr "Éditer"
-
-#: labyrinthactivity.py:78
-msgid "Edit mode"
-msgstr "Mode  édition"
-
-#: labyrinthactivity.py:79
-msgid "<ctrl>e"
-msgstr "<ctrl>e"
-
-#: labyrinthactivity.py:85
-msgid "Text mode"
-msgstr "Mode texte"
-
-#: labyrinthactivity.py:86
-msgid "<ctrl>t"
-msgstr "<ctrl>t"
-
-#: labyrinthactivity.py:93
-msgid "Drawing mode"
-msgstr "Mode dessin"
-
-#: labyrinthactivity.py:94
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
+#: labyrinthactivity.py:68
+msgid "Cut"
+msgstr "Couper"
 
 #: labyrinthactivity.py:100
-msgid "Image add mode"
-msgstr "Mode ajout d'image"
-
-#: labyrinthactivity.py:101
-msgid "<ctrl>i"
-msgstr "<ctrl>i"
-
-#: labyrinthactivity.py:110
-msgid "Link/unlink two selected thoughts"
-msgstr "Associer/Dissocier deux idées sélectionnées"
-
-#: labyrinthactivity.py:111
-msgid "<ctrl>l"
-msgstr "<ctrl>l"
-
-#: labyrinthactivity.py:120
-msgid "Erase selected thought(s)"
-msgstr "Supprimer la ou les idées sélectionnées"
-
-#: labyrinthactivity.py:129
-msgid "View"
-msgstr "Vue"
-
-#: labyrinthactivity.py:132
 msgid "Fit to window"
 msgstr "Plein écran"
 
-#: labyrinthactivity.py:133
+#: labyrinthactivity.py:101
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:138
+#: labyrinthactivity.py:106
 msgid "Original size"
 msgstr "Taille originale"
 
-#: labyrinthactivity.py:139
+#: labyrinthactivity.py:107
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:144
+#: labyrinthactivity.py:112
 msgid "Zoom out"
 msgstr "Zoom arrière"
 
-#: labyrinthactivity.py:145
+#: labyrinthactivity.py:113
 msgid "<ctrl>minus"
 msgstr "<ctrl>moins"
 
-#: labyrinthactivity.py:150
+#: labyrinthactivity.py:118
 msgid "Zoom in"
 msgstr "Zoom avant"
 
-#: labyrinthactivity.py:151
+#: labyrinthactivity.py:119
 msgid "<ctrl>equal"
 msgstr "<ctrl>égale"
 
-#: labyrinthactivity.py:197
+#: labyrinthactivity.py:190 labyrinthactivity.py:245
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:196 labyrinthactivity.py:250
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:204 labyrinthactivity.py:256
+msgid "Edit"
+msgstr "Éditer"
+
+#: labyrinthactivity.py:216 labyrinthactivity.py:271
+msgid "View"
+msgstr "Vue"
+
+#: labyrinthactivity.py:280
+msgid "Edit mode"
+msgstr "Mode édition"
+
+#: labyrinthactivity.py:281
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:287
+msgid "Text mode"
+msgstr "Mode texte"
+
+#: labyrinthactivity.py:288
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:295
+msgid "Drawing mode"
+msgstr "Mode dessin"
+
+#: labyrinthactivity.py:296
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:302
+msgid "Image add mode"
+msgstr "Mode ajout d'image"
+
+#: labyrinthactivity.py:303
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:311
+msgid "Link/unlink two selected thoughts"
+msgstr "Associer/Dissocier deux idées sélectionnées"
+
+#: labyrinthactivity.py:312
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:317
+msgid "Erase selected thought(s)"
+msgstr "Supprimer la ou les idées sélectionnées"
+
+#: labyrinthactivity.py:388
 msgid ""
 "Click to add\n"
 "central thought"
@@ -137,7 +149,7 @@ msgstr "Aucun nom de fichier associé à la carte."
 
 #: src/Browser.py:252
 msgid "Cannot delete this map"
-msgstr "Suppression de la carte impossible."
+msgstr "Suppression de la carte impossible"
 
 #: src/Browser.py:259
 msgid "Do you really want to delete this Map?"
@@ -352,13 +364,16 @@ msgstr ""
 msgid "Choose image"
 msgstr "Choisir une image"
 
-#: src/Links.py:261
+#: src/Links.py:269
 msgid "Choose Color"
 msgstr "Choisir une couleur"
 
-#: src/Links.py:274
+#: src/Links.py:282
 msgid "Set Color"
 msgstr "Définir une couleur"
+
+#~ msgid "Keep to PDF"
+#~ msgstr "Sauvegarder en PDF"
 
 #~ msgid "Error loading file"
 #~ msgstr "Erreur de chargement du fichier"
