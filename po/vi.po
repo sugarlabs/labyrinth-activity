@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-09-25 10:12-0400\n"
+"POT-Creation-Date: 2010-01-15 00:32-0500\n"
+"PO-Revision-Date: 2010-03-07 16:44+0200\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: vi\n"
@@ -15,97 +15,109 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr "Cung mê"
 
-#: labyrinthactivity.py:64
-msgid "Edit"
-msgstr "Sửa"
-
-#: labyrinthactivity.py:78
-msgid "Edit mode"
-msgstr "Chế độ Sửa"
-
-#: labyrinthactivity.py:79
-msgid "<ctrl>e"
-msgstr "<ctrl>s"
-
-#: labyrinthactivity.py:85
-msgid "Text mode"
-msgstr "Chế độ Chữ"
-
-#: labyrinthactivity.py:86
-msgid "<ctrl>t"
-msgstr "<ctrl>c"
-
-#: labyrinthactivity.py:93
-msgid "Drawing mode"
-msgstr "Chế độ Vẽ"
-
-#: labyrinthactivity.py:94
-msgid "<ctrl>d"
-msgstr "<ctrl>v"
+#: labyrinthactivity.py:68
+msgid "Cut"
+msgstr "Cắt"
 
 #: labyrinthactivity.py:100
-msgid "Image add mode"
-msgstr "Chế độ Thêm ảnh"
-
-#: labyrinthactivity.py:101
-msgid "<ctrl>i"
-msgstr "<ctrl>n"
-
-#: labyrinthactivity.py:110
-msgid "Link/unlink two selected thoughts"
-msgstr "(Bỏ) liên kết hai ý nghĩ được chọn"
-
-#: labyrinthactivity.py:111
-msgid "<ctrl>l"
-msgstr "<ctrl>l"
-
-#: labyrinthactivity.py:120
-msgid "Erase selected thought(s)"
-msgstr "Xoá (các) ý nghĩ được chọn"
-
-#: labyrinthactivity.py:129
-msgid "View"
-msgstr "Xem"
-
-#: labyrinthactivity.py:132
 msgid "Fit to window"
 msgstr "Vừa khít cửa sổ"
 
-#: labyrinthactivity.py:133
+#: labyrinthactivity.py:101
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:138
+#: labyrinthactivity.py:106
 msgid "Original size"
 msgstr "Kích cỡ gốc"
 
-#: labyrinthactivity.py:139
+#: labyrinthactivity.py:107
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:144
+#: labyrinthactivity.py:112
 msgid "Zoom out"
 msgstr "Thu nhỏ"
 
-#: labyrinthactivity.py:145
+#: labyrinthactivity.py:113
 msgid "<ctrl>minus"
 msgstr "<ctrl>trừ"
 
-#: labyrinthactivity.py:150
+#: labyrinthactivity.py:118
 msgid "Zoom in"
 msgstr "Phóng to"
 
-#: labyrinthactivity.py:151
+#: labyrinthactivity.py:119
 msgid "<ctrl>equal"
 msgstr "<ctrl>bằng"
 
-#: labyrinthactivity.py:197
+#: labyrinthactivity.py:190 labyrinthactivity.py:245
+msgid "Portable Document Format (PDF)"
+msgstr "Định dạng Tài liệu Di động (PDF)"
+
+#: labyrinthactivity.py:196 labyrinthactivity.py:250
+msgid "Portable Network Graphic (PNG)"
+msgstr "Đồ họa Mạng Di động (PNG)"
+
+#: labyrinthactivity.py:204 labyrinthactivity.py:256
+msgid "Edit"
+msgstr "Sửa"
+
+#: labyrinthactivity.py:216 labyrinthactivity.py:271
+msgid "View"
+msgstr "Xem"
+
+#: labyrinthactivity.py:280
+msgid "Edit mode"
+msgstr "Chế độ Sửa"
+
+#: labyrinthactivity.py:281
+msgid "<ctrl>e"
+msgstr "<ctrl>s"
+
+#: labyrinthactivity.py:287
+msgid "Text mode"
+msgstr "Chế độ Chữ"
+
+#: labyrinthactivity.py:288
+msgid "<ctrl>t"
+msgstr "<ctrl>c"
+
+#: labyrinthactivity.py:295
+msgid "Drawing mode"
+msgstr "Chế độ Vẽ"
+
+#: labyrinthactivity.py:296
+msgid "<ctrl>d"
+msgstr "<ctrl>v"
+
+#: labyrinthactivity.py:302
+msgid "Image add mode"
+msgstr "Chế độ Thêm ảnh"
+
+#: labyrinthactivity.py:303
+msgid "<ctrl>i"
+msgstr "<ctrl>n"
+
+#: labyrinthactivity.py:311
+msgid "Link/unlink two selected thoughts"
+msgstr "(Bỏ) liên kết hai ý nghĩ được chọn"
+
+#: labyrinthactivity.py:312
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:317
+msgid "Erase selected thought(s)"
+msgstr "Xoá (các) ý nghĩ được chọn"
+
+#: labyrinthactivity.py:388
 msgid ""
 "Click to add\n"
 "central thought"
@@ -352,10 +364,10 @@ msgstr ""
 msgid "Choose image"
 msgstr "Chọn ảnh"
 
-#: src/Links.py:261
+#: src/Links.py:269
 msgid "Choose Color"
 msgstr "Chọn màu"
 
-#: src/Links.py:274
+#: src/Links.py:282
 msgid "Set Color"
 msgstr "Đặt màu"
