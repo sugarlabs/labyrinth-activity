@@ -21,7 +21,6 @@
 #
 
 import math
-
 import time
 import gtk
 import pango
@@ -35,6 +34,7 @@ import xml.dom.minidom as dom
 
 import Links
 import TextThought
+import LabelThought
 import ImageThought
 import DrawingThought
 import ResourceThought
@@ -53,6 +53,7 @@ MODE_TEXT		= 1
 MODE_IMAGE		= 2
 MODE_DRAW		= 3
 MODE_RESOURCE	= 4
+MODE_LABEL		= 5
 
 VIEW_LINES = 0
 VIEW_BEZIER = 1
@@ -534,7 +535,8 @@ class MMapArea (gtk.DrawingArea):
 		else:
 			map(lambda x : x.unselect(), self.selected)
 			self.selected = [thought]
-		self.current_root = []
+		if thought.can_be_parent():
+			self.current_root = []
 		for x in self.selected:
 			if x.can_be_parent():
 				self.current_root.append(x)
@@ -723,6 +725,8 @@ class MMapArea (gtk.DrawingArea):
 
 		if type == MODE_TEXT:
 			thought = TextThought.TextThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
+		elif type == MODE_LABEL:
+			thought = LabelThought.LabelThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
 		elif type == MODE_IMAGE:
 			thought = ImageThought.ImageThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
 		elif type == MODE_DRAW:
@@ -1022,6 +1026,8 @@ class MMapArea (gtk.DrawingArea):
 		for node in top_element.childNodes:
 			if node.nodeName == "thought":
 				self.load_thought (node, MODE_TEXT, tar)
+			elif node.nodeName == "label_thought":
+				self.load_thought (node, MODE_LABEL, tar)
 			elif node.nodeName == "image_thought":
 				self.load_thought (node, MODE_IMAGE, tar)
 			elif node.nodeName == "drawing_thought":
@@ -1167,6 +1173,9 @@ class MMapArea (gtk.DrawingArea):
 	def link_menu_cb (self):
 		if len (self.selected) != 2:
 			return
+		if not self.selected[0].can_be_parent() or \
+			not self.selected[1].can_be_parent():
+				return
 		lnk = None
 		for l in self.links:
 			if l.connects (self.selected[0], self.selected[1]):
@@ -1225,9 +1234,10 @@ class MMapArea (gtk.DrawingArea):
 
 		if not thought:
 			return True
-		if not self.primary:
-			self.make_primary (thought)
-			self.select_thought (thought, None)
+		if not self.primary and \
+			thought.can_be_parent():
+				self.make_primary (thought)
+				self.select_thought (thought, None)
 		else:
 			self.emit ("change_buffer", thought.extended_buffer)
 			self.hookup_im_context (thought)
@@ -1235,8 +1245,10 @@ class MMapArea (gtk.DrawingArea):
 			self.undo.block ()
 			if not self.current_root:
 				self.current_root.append(self.primary)
-			for x in self.current_root:
-				self.create_link (x, None, thought)
+			if thought.can_be_parent():
+				for x in self.current_root:
+					if x.can_be_parent():
+						self.create_link (x, None, thought)
 			for x in self.selected:
 				x.unselect ()
 			self.selected = [thought]

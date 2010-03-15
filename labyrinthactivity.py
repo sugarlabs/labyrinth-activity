@@ -274,7 +274,7 @@ class LabyrinthActivity(activity.Activity):
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
 
-        self.mods = [None] * 4
+        self.mods = [None] * 6
 
         self.mods[0] = RadioToolButton(named_icon='select-mode')
         self.mods[0].set_tooltip(_('Edit mode'))
@@ -304,19 +304,26 @@ class LabyrinthActivity(activity.Activity):
         self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
         target_toolbar.insert(self.mods[3], tool_offset + 3)
 
+        self.mods[5] = RadioToolButton(named_icon='label-mode')
+        self.mods[5].set_tooltip(_('Label mode'))
+        self.mods[5].set_accelerator(_('<ctrl>a'))
+        self.mods[5].set_group(self.mods[0])
+        self.mods[5].connect('clicked', self.__mode_cb, MMapArea.MODE_LABEL)
+        target_toolbar.insert(self.mods[5], tool_offset + 4)
+
         separator = gtk.SeparatorToolItem()
-        target_toolbar.insert(separator, tool_offset + 4)
+        target_toolbar.insert(separator, tool_offset + 5)
 
         tool = ToolButton('link')
         tool.set_tooltip(_('Link/unlink two selected thoughts'))
         tool.set_accelerator(_('<ctrl>l'))
         tool.connect('clicked', self.__link_cb)
-        target_toolbar.insert(tool, tool_offset + 5)
+        target_toolbar.insert(tool, tool_offset + 6)
 
         tool = ToolButton('edit-delete')
         tool.set_tooltip(_('Erase selected thought(s)'))
         tool.connect('clicked', self.__delete_cb)
-        target_toolbar.insert(tool, tool_offset + 6)
+        target_toolbar.insert(tool, tool_offset + 7)
 
         self.show_all()
         self._mode = MMapArea.MODE_TEXT

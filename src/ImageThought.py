@@ -100,7 +100,7 @@ class ImageThought (ResizableThought):
 		utils.export_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_NORMAL,
 									  (move_x, move_y))
 		if self.pic:
-            raw_pixels = self.pic.get_pixels_array()
+			raw_pixels = self.pic.get_pixels_array()
 			if hasattr(context, "set_source_pixbuf"):
 				context.set_source_pixbuf (self.pic, self.pic_location[0]+move_x, self.pic_location[1]+move_y)
 			elif hasattr(context, "set_source_surface"):
