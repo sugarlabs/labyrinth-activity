@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-15 00:32-0500\n"
-"PO-Revision-Date: 2010-01-18 15:02+0200\n"
-"Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
+"PO-Revision-Date: 2010-03-25 22:31+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
@@ -115,7 +115,7 @@ msgstr "<ctrl>l"
 
 #: labyrinthactivity.py:317
 msgid "Erase selected thought(s)"
-msgstr "Elimina i concetto/i selezionato/i "
+msgstr "Elimina i concetto/i selezionato/i"
 
 #: labyrinthactivity.py:388
 msgid ""
@@ -333,7 +333,7 @@ msgstr "Tutti i File"
 
 #: src/MainWindow.py:671
 msgid "PNG Image (*.png)"
-msgstr "Immagine PNG  (*.png)"
+msgstr "Immagine PNG (*.png)"
 
 #: src/MainWindow.py:672
 msgid "JPEG Image (*.jpg, *.jpeg)"
@@ -341,7 +341,7 @@ msgstr "Immagine JPEG (*.jpg, *.jpeg)"
 
 #: src/MainWindow.py:673
 msgid "SVG Vector Image (*.svg)"
-msgstr "Immagine Vettoriale SVG  (*.svg)"
+msgstr "Immagine Vettoriale SVG (*.svg)"
 
 #: src/MainWindow.py:674
 msgid "PDF Portable Document (*.pdf)"
@@ -357,7 +357,7 @@ msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."
 msgstr ""
-"Il tipo di file '%s' non è supportato. Per favore utilizza uno dei suffissi "
+"Il tipo di file '%s' non è supportato.  Per favore utilizza uno dei suffissi "
 "'.png', '.jpg' o '.svg'."
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
