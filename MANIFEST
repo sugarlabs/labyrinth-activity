@@ -357,3 +357,13 @@ locale/tzo/LC_MESSAGES/org.gnome.Labyrinth.mo
 po/kos.po
 po/sq.po
 po/tzo.po
+.project
+.pydevproject
+src/LabelThought.py
+icons/label-mode.svg
+po/tvl.po
+po/fil.po
+locale/tvl/activity.linfo
+locale/tvl/LC_MESSAGES/org.gnome.Labyrinth.mo
+locale/fil/activity.linfo
+locale/fil/LC_MESSAGES/org.gnome.Labyrinth.mo
