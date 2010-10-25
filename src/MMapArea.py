@@ -175,7 +175,7 @@ class MMapArea (gtk.DrawingArea):
 		utils.default_colors["base"] = utils.gtk_to_cairo_color(style.base[gtk.STATE_NORMAL])
 		# Match the fixed white canvas colour (makes thought focus visible)
 		self.background_color = style.white
-		self.foreground_color = style.text[gtk.STATE_NORMAL]
+		self.foreground_color = style.black
 		utils.default_colors["bg"] = utils.gtk_to_cairo_color(style.bg[gtk.STATE_NORMAL])
 		utils.default_colors["fg"] = utils.gtk_to_cairo_color(style.fg[gtk.STATE_NORMAL])
 		
