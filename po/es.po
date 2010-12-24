@@ -2,110 +2,182 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-07-29 02:09-0400\n"
-"Last-Translator: Victor Alfonso Parada Suarez <deathvaps@gmail.com>\n"
+"POT-Creation-Date: 2010-05-21 00:31-0400\n"
+"PO-Revision-Date: 2010-07-27 18:10+0200\n"
+"Last-Translator: jasg <jorgesaldivar@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.3\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr "Laberinto"
 
-#: labyrinthactivity.py:64
-msgid "Edit"
-msgstr "Editar"
-
-#: labyrinthactivity.py:78
-msgid "Edit mode"
-msgstr "Modo de edición"
-
-#: labyrinthactivity.py:79
-msgid "<ctrl>e"
-msgstr "<ctrl>e"
-
-#: labyrinthactivity.py:85
-msgid "Text mode"
-msgstr "Modo de texto"
-
-#: labyrinthactivity.py:86
-msgid "<ctrl>t"
-msgstr "<ctrl>t"
-
-#: labyrinthactivity.py:93
-msgid "Drawing mode"
-msgstr "Modo de dibujo"
-
-#: labyrinthactivity.py:94
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
+#: labyrinthactivity.py:68
+msgid "Cut"
+msgstr "Cortar"
 
 #: labyrinthactivity.py:100
-msgid "Image add mode"
-msgstr "Modo de añadir imágenes"
-
-#: labyrinthactivity.py:101
-msgid "<ctrl>i"
-msgstr "<ctrl>i"
-
-#: labyrinthactivity.py:110
-msgid "Link/unlink two selected thoughts"
-msgstr "Unir/desunir dos pensamientos seleccionados"
-
-#: labyrinthactivity.py:111
-msgid "<ctrl>l"
-msgstr "<ctrl>l"
-
-#: labyrinthactivity.py:120
-msgid "Erase selected thought(s)"
-msgstr "Borrar pensamiento(s) seleccionado(s)"
-
-#: labyrinthactivity.py:129
-msgid "View"
-msgstr "Ver"
-
-#: labyrinthactivity.py:132
 msgid "Fit to window"
 msgstr "Ajustar a la ventana"
 
-#: labyrinthactivity.py:133
+#: labyrinthactivity.py:101
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:138
+#: labyrinthactivity.py:106
 msgid "Original size"
 msgstr "Tamaño original"
 
-#: labyrinthactivity.py:139
+#: labyrinthactivity.py:107
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:144
+#: labyrinthactivity.py:112
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: labyrinthactivity.py:145
+#: labyrinthactivity.py:113
 msgid "<ctrl>minus"
 msgstr "<ctrl>menos"
 
-#: labyrinthactivity.py:150
+#: labyrinthactivity.py:118
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: labyrinthactivity.py:151
+#: labyrinthactivity.py:119
 msgid "<ctrl>equal"
 msgstr "<ctrl>igual"
 
-#: labyrinthactivity.py:197
+#: labyrinthactivity.py:190 labyrinthactivity.py:245
+msgid "Portable Document Format (PDF)"
+msgstr "Formato Portátil de Documento (PDF)"
+
+#: labyrinthactivity.py:196 labyrinthactivity.py:250
+msgid "Portable Network Graphic (PNG)"
+msgstr "Gráfico Portátil de Red (PNG)"
+
+#: labyrinthactivity.py:204 labyrinthactivity.py:256
+msgid "Edit"
+msgstr "Editar"
+
+#: labyrinthactivity.py:216 labyrinthactivity.py:271
+msgid "View"
+msgstr "Ver"
+
+#: labyrinthactivity.py:280
+msgid "Edit mode"
+msgstr "Modo de edición"
+
+#: labyrinthactivity.py:281
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:287
+msgid "Text mode"
+msgstr "Modo de texto"
+
+#: labyrinthactivity.py:288
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:295
+msgid "Drawing mode"
+msgstr "Modo de dibujo"
+
+#: labyrinthactivity.py:296
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:302
+msgid "Image add mode"
+msgstr "Modo de añadir imágenes"
+
+#: labyrinthactivity.py:303
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:308
+msgid "Label mode"
+msgstr "Modo de etiquetar"
+
+#: labyrinthactivity.py:309
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:318
+msgid "Link/unlink two selected thoughts"
+msgstr "Unir/desunir dos pensamientos seleccionados"
+
+#: labyrinthactivity.py:319
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:324
+msgid "Erase selected thought(s)"
+msgstr "Borrar pensamiento(s) seleccionado(s)"
+
+#: labyrinthactivity.py:395
 msgid ""
 "Click to add\n"
 "central thought"
@@ -141,7 +213,7 @@ msgstr "No se puede eliminar este mapa"
 
 #: src/Browser.py:259
 msgid "Do you really want to delete this Map?"
-msgstr "Estas seguro que deseas eliminar este mapa?"
+msgstr "¿Estas seguro que deseas eliminar este mapa?"
 
 #: src/Browser.py:284
 msgid "Open File"
@@ -241,7 +313,7 @@ msgstr "_Agregar Imagen"
 
 #: src/MainWindow.py:260
 msgid "Add an image to selected thought"
-msgstr "añadir imagen entre la seleccionada"
+msgstr "Añadir imagen entre la seleccionada"
 
 #: src/MainWindow.py:261
 msgid "_Drawing Mode"
@@ -257,7 +329,7 @@ msgstr "Añadir Recursos"
 
 #: src/MainWindow.py:264
 msgid "Add a resource"
-msgstr "añadir un recurso"
+msgstr "Añadir un recurso"
 
 #: src/MainWindow.py:266
 msgid "Use _Curves"
@@ -352,11 +424,11 @@ msgstr ""
 msgid "Choose image"
 msgstr "Escoger imagen"
 
-#: src/Links.py:261
+#: src/Links.py:269
 msgid "Choose Color"
 msgstr "Elegir Color"
 
-#: src/Links.py:274
+#: src/Links.py:282
 msgid "Set Color"
 msgstr "Configurar Color"
 
