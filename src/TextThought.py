@@ -25,6 +25,7 @@ import pango
 import utils
 import os
 import xml.dom
+import logging
 
 from BaseThought import *
 import UndoManager
@@ -71,6 +72,7 @@ class TextThought (ResizableThought):
 		self.all_okay = True
 
 	def index_from_bindex (self, bindex):
+		logging.debug("Metodo: index_from_bindex")
 		if bindex == 0:
 			return 0
 		index = 0
@@ -79,6 +81,7 @@ class TextThought (ResizableThought):
 		return index
 
 	def bindex_from_index (self, index):
+		logging.debug("Metodo: bindex_from_index")
 		if index == 0:
 			return 0
 		bind = 0
@@ -93,6 +96,7 @@ class TextThought (ResizableThought):
 		return bind
 
 	def attrs_changed (self):
+		logging.debug("Metodo: attrs_changed")
 		bold = False
 		italics = False
 		underline = False
@@ -105,7 +109,7 @@ class TextThought (ResizableThought):
 		while 1:
 			at = it.get_attrs()
 			for x in at:
-				self.attrlist.insert(x)
+				self.attrlist.change(x)
 			if it.next() == False:
 				break
 		if self.preedit:
@@ -199,9 +203,11 @@ class TextThought (ResizableThought):
 		return show_text
 
 	def recalc_text_edges (self):
+		logging.debug("Metodo: recalc_text_edges")
 		if (not hasattr(self, "layout")):
 			return
 		del self.layout
+		
 		show_text = self.attrs_changed ()
 		
 		r,g,b = utils.selected_colors["fill"]
@@ -245,18 +251,25 @@ class TextThought (ResizableThought):
 		"""
 
 	def recalc_edges (self):
+		logging.debug("Metodo: recalc_edges")
 		self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
 		if not self.creating:
 			self.recalc_text_edges()
 
-	def commit_text (self, context, string, mode, font_name):
-		self.set_font(font_name)
+	def commit_text (self, context, string, mode, font_combo_box, font_sizes_combo_box):
+		logging.debug("Metodo: commit_text")
+		font_name = font_combo_box.get_active_text()
+		font_size = font_sizes_combo_box.get_active_text()
+		self.set_font(font_name, font_size)
 		self.add_text (string)
 		self.recalc_edges ()
 		self.emit ("title_changed", self.text)
 		self.emit ("update_view")
 
 	def add_text (self, string):
+		logging.debug("Metodo: add_text")
+		logging.debug("Index s: %s, e: %s", str(self.index), str(self.end_index))
+		logging.debug("Texto: %s", str(self.text))
 		if self.index > self.end_index:
 			left = self.text[:self.end_index]
 			right = self.text[self.index:]
@@ -273,11 +286,13 @@ class TextThought (ResizableThought):
 			bright = self.bytes[self.b_f_i (self.end_index):]
 			change = self.index - self.end_index + len(string)
 		else:
+			logging.debug("Son iguales")
 			left = self.text[:self.index]
 			right = self.text[self.index:]
 			bleft = self.bytes[:self.b_f_i(self.index)]
 			bright = self.bytes[self.b_f_i(self.index):]
 			change = len(string)
+			logging.debug("L: %s, R: %s, BL: %s, BR: %s", str(left), str(right), str(bleft), str(bright))
 
 		it = self.attributes.get_iterator()
 		changes= []
@@ -326,13 +341,16 @@ class TextThought (ResizableThought):
 		self.bytes = bleft + str(len(string)) + bright
 		self.bindex = self.b_f_i (self.index)
 		self.end_index = self.index
+		logging.debug("String : %s", str(string))
+		logging.debug("Index Again s: %s, e: %s, bi:%s", str(self.index), str(self.end_index), str(self.bindex))
 
 	def draw (self, context):
+		logging.debug("Metodo: draw")
 		self.recalc_edges ()
 		ResizableThought.draw(self, context)
 		if self.creating:
 			return
-
+		
 		(textx, texty) = (self.min_x, self.min_y)
 		if self.am_primary:
 			r, g, b = utils.primary_colors["text"]
@@ -361,6 +379,7 @@ class TextThought (ResizableThought):
 		context.stroke ()
 
 	def process_key_press (self, event, mode):
+		logging.debug("Metodo: process_key_press")
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 		shift = event.state & modifiers == gtk.gdk.SHIFT_MASK
 		handled = True
@@ -407,6 +426,7 @@ class TextThought (ResizableThought):
 			handled = False
 
 		if clear_attrs:
+			logging.debug("ACABO DE BORRAR LA LISTA DE ATRIBUTOS Y REMPLACE POR UNA LISTA VACIA")
 			del self.current_attrs
 			self.current_attrs = []
 
@@ -419,6 +439,7 @@ class TextThought (ResizableThought):
 		return handled
 
 	def undo_text_action (self, action, mode):
+		logging.debug("Metodo: undo_text_action")
 		self.undo.block ()
 		if action.undo_type == UndoManager.DELETE_LETTER or action.undo_type == UndoManager.DELETE_WORD:
 			real_mode = not mode
@@ -449,6 +470,7 @@ class TextThought (ResizableThought):
 		self.undo.unblock ()
 
 	def delete_char (self):
+		logging.debug("Metodo: delete_char")
 		if self.index == self.end_index == len (self.text):
 			return
 		if self.index > self.end_index:
@@ -525,6 +547,7 @@ class TextThought (ResizableThought):
 		self.end_index = self.index
 
 	def backspace_char (self):
+		logging.debug("Metodo: backspace_char")
 		if self.index == self.end_index == 0:
 			return
 		if self.index > self.end_index:
@@ -606,6 +629,7 @@ class TextThought (ResizableThought):
 			self.index = 0
 
 	def move_index_back (self, mod):
+		logging.debug("Metodo: move_index_back")
 		if self.index <= 0:
 			self.index = 0
 			return
@@ -614,6 +638,7 @@ class TextThought (ResizableThought):
 			self.end_index = self.index
 
 	def move_index_forward (self, mod):
+		logging.debug("Metodo: move_index_forward")
 		if self.index >= len(self.text):
 			self.index = len(self.text)
 			return
@@ -622,6 +647,7 @@ class TextThought (ResizableThought):
 			self.end_index = self.index
 
 	def move_index_up (self, mod):
+		logging.debug("Metodo: move_index_up")
 		tmp = self.text.decode ()
 		lines = tmp.splitlines ()
 		if len (lines) == 1:
@@ -656,6 +682,7 @@ class TextThought (ResizableThought):
 			self.end_index = self.index
 
 	def move_index_down (self, mod):
+		logging.debug("Metodo: move_index_down")
 		tmp = self.text.decode ()
 		lines = tmp.splitlines ()
 		if len (lines) == 1:
@@ -680,6 +707,7 @@ class TextThought (ResizableThought):
 			self.end_index = self.index
 
 	def move_index_horizontal(self, mod, home=False):
+		logging.debug("Metodo: move_index_horizontal")
 		lines = self.text.splitlines ()
 		loc = 0
 		line = 0
@@ -695,6 +723,7 @@ class TextThought (ResizableThought):
 			line += 1
 
 	def process_button_down (self, event, coords):
+		logging.debug("Metodo: process_button_down")
 		if ResizableThought.process_button_down(self, event, coords):
 			return True
 
@@ -733,12 +762,15 @@ class TextThought (ResizableThought):
 			
 		del self.current_attrs
 		self.current_attrs = []
+		logging.debug("ACABO DE BORRAR LA LISTA DE ARGUMENTOS Y REMPLACE POR UNA LISTA VACIA")
+		logging.debug("Index %s, End Index %s", str(self.index), str(self.end_index))
 		self.recalc_edges()
 		self.emit ("update_view")
 
 		self.selection_changed()
 
 	def process_button_release (self, event, transformed):
+		logging.debug("Metodo: process_button_release")
 		if self.orig_size:
 			if self.creating:
 				orig_size = self.width >= MIN_SIZE or self.height >= MIN_SIZE
@@ -754,10 +786,12 @@ class TextThought (ResizableThought):
 		return ResizableThought.process_button_release(self, event, transformed)
 
 	def selection_changed (self):
+		logging.debug("Metodo: selection_changed")
 		(start, end) = (min(self.index, self.end_index), max(self.index, self.end_index))
 		self.emit ("text_selection_changed", start, end, self.text[start:end])
 
 	def handle_motion (self, event, transformed):
+		logging.debug("Metodo: handle_motion")
 		if ResizableThought.handle_motion(self, event, transformed):
 			self.recalc_edges()
 			return True
@@ -781,6 +815,7 @@ class TextThought (ResizableThought):
 		return False
 
 	def export (self, context, move_x, move_y):
+		logging.debug("Metodo: export")
 		utils.export_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_NORMAL,
 									  (move_x, move_y))
 
@@ -864,6 +899,7 @@ class TextThought (ResizableThought):
 				break
 
 	def rebuild_byte_table (self):
+		logging.debug("Metodo: rebuild_byte_table")
 		# Build the Byte table
 		del self.bytes
 		self.bytes = ''
@@ -965,6 +1001,7 @@ class TextThought (ResizableThought):
 		self.emit ("update_view")
 
 	def delete_surroundings(self, imcontext, offset, n_chars, mode):
+		logging.debug("Metodo: delete_surroundings")
 		# TODO: Add in Attr stuff
 		orig = len(self.text)
 		left = self.text[:offset]
@@ -1034,6 +1071,7 @@ class TextThought (ResizableThought):
 		self.emit ("update_view")
 
 	def preedit_changed (self, imcontext, mode):
+		logging.debug("Metodo: preedit_changed")
 		self.preedit = imcontext.get_preedit_string ()
 		if self.preedit[0] == '':
 			self.preedit = None
@@ -1041,6 +1079,7 @@ class TextThought (ResizableThought):
 		self.emit ("update_view")
 
 	def retrieve_surroundings (self, imcontext, mode):
+		logging.debug("Metodo: retrieve_surroundings")
 		imcontext.set_surrounding (self.text, -1, self.bindex)
 		return True
 
@@ -1069,6 +1108,7 @@ class TextThought (ResizableThought):
 		self.undo.unblock()
 		
 	def create_attribute(self, attribute, start, end):
+		logging.debug("Metodo: create_attribute, atributo %s para lo indice: %s,%s", str(attribute), str(start), str(end))
 		if attribute == 'bold':
 			return pango.AttrWeight(pango.WEIGHT_BOLD, start, end)
 		elif attribute == 'italic':
@@ -1077,6 +1117,7 @@ class TextThought (ResizableThought):
 			return pango.AttrUnderline(pango.UNDERLINE_SINGLE, start, end)
 		
 	def set_attribute(self, active, attribute):
+		logging.debug("Metodo: set_attribute")
 		if not self.editing:
 			return
 
@@ -1093,10 +1134,10 @@ class TextThought (ResizableThought):
 
 		if not active:
 			attr = pango.AttrStyle(pstyle, init, end)
-			if index == end_index:			
-				self.current_attrs.change(attr)
-			else:
-				self.attributes.change(attr)
+			#if index == end_index:			
+			#	self.current_attrs.change(attr)
+			#else:
+			self.attributes.change(attr)
 
 			tmp = []
 			attr = None
@@ -1146,13 +1187,17 @@ class TextThought (ResizableThought):
 														self.attributes.copy()))
 		else:
 			if index == end_index:
+				logging.debug("Los indices son iguales")
 				attr = self.create_attribute(attribute, index, end_index)
 				self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR,
 															self.undo_attr_cb,
 															attr))
-				self.current_attrs.change(attr)
+				self.current_attrs.append(attr)
+				#self.attributes.insert(attr)
 			else:
+				logging.debug("Los indices no son iguales")
 				attr = self.create_attribute(attribute, init, end)
+				logging.debug("Cree el atributo: %s para los indices (%s,%s)", str(attribute), str(init), str(end))
 				old_attrs = self.attributes.copy()
 				self.attributes.change(attr)
 				self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR_SELECTION,
@@ -1162,30 +1207,45 @@ class TextThought (ResizableThought):
 		self.recalc_edges()
 
 	def set_bold (self, active):
+		logging.debug("Metodo: set_bold")
 		self.set_attribute(active, 'bold')
 			
 	def set_italics (self, active):
+		logging.debug("Metodo: set_italics")
 		self.set_attribute(active, 'italic')
 
 	def set_underline (self, active):
+		logging.debug("Metodo: set_underline")
 		self.set_attribute(active, 'underline')
 
-	def set_font (self, font_name):
+	def set_font (self, font_name, font_size):
+		logging.debug("Metodo: set_font")
+		
 		if not self.editing:
 			return
 		start = min(self.index, self.end_index)
 		end = max(self.index, self.end_index)
-
-		pango_font = pango.FontDescription (font_name)
+		
+		#logging.debug("Index s: %s, e: %s", str(self.index), str(self.end_index))
+		logging.debug("Fuente %s", str(font_name))
+		
+		pango_font = pango.FontDescription(font_name+" "+font_size)
+		
+		logging.debug("Fuente dp del FontDescription: %s", pango_font.to_string())
+		
 		attr = pango.AttrFontDesc (pango_font, start, end)
+		
+		logging.debug("Info Fuente desc: %s, si: %s, ei: %s", str(attr.desc), str(attr.start_index), str(attr.end_index))
 
 		if start == end:
 			self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR,
 													  self.undo_attr_cb,
 													  attr))
 			try:
+				logging.debug("Voy a usar un metodo que no existe para este tipo de objeto, veremos que sale!")
 				self.current_attrs.change(attr)
 			except AttributeError:
+				logging.debug("Como evidentemente el metodo no existia, voy a usar append")
 				self.current_attrs.append(attr)
 		else:
 			old_attrs = self.attributes.copy()
@@ -1197,18 +1257,21 @@ class TextThought (ResizableThought):
 		self.recalc_edges()
 
 	def inside(self, inside):
+		logging.debug("Metodo: inside")
 		if self.editing:
 			self.emit ("change_mouse_cursor", gtk.gdk.XTERM)
 		else:
 			ResizableThought.inside(self, inside)
 
 	def enter(self):
+		logging.debug("Metodo: enter")
 		if self.editing:
 			return
 		self.orig_text = self.text
 		self.editing = True
 
 	def leave(self):
+		logging.debug("Metodo: leave")
 		if not self.editing:
 			return
 		ResizableThought.leave(self)

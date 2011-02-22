@@ -31,7 +31,10 @@ import cairo
 
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
+from sugar.graphics.toolcombobox import ToolComboBox
+from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.radiotoolbutton import RadioToolButton
+from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics.menuitem import MenuItem
 from sugar.datastore import datastore
 from port.tarball import Tarball
@@ -53,6 +56,8 @@ import UndoManager
 import MMapArea
 import ImageThought
 import utils
+
+EMPTY = -800 
 
 class EditToolbar(activity.EditToolbar):
     def __init__(self, _parent):
@@ -170,6 +175,173 @@ class ViewToolbar(gtk.Toolbar):
                 'y':(geom[3] / 2.0) - (height / 2.0 + upper),
                 'scale':min(width_scale, height_scale)}
 
+class TextAttributesToolbar(gtk.Toolbar):
+    def __init__(self, main_area):
+        gtk.Toolbar.__init__(self)
+    
+        self._main_area = main_area
+    
+        self.fonts_combo_box = ToolComboBox(self.__get_fonts_combo_box())
+        self.fonts_combo_box.combo.connect('changed', self.__fonts_cb)
+        self.insert(self.fonts_combo_box, -1)
+        
+        self.font_sizes_combo_box = ToolComboBox(self.__get_font_sizes_combo_box())
+        self.font_sizes_combo_box.combo.connect('changed', self.__font_sizes_cb)
+        self.insert(self.font_sizes_combo_box, -1)
+        
+        self.bold = ToolButton('bold-text')
+        self.bold.set_tooltip(_('Bold'))
+        self.bold.connect('clicked', self.__bold_cb)
+        self.insert(self.bold, -1)
+        
+        self.italics = ToolButton('italics-text')
+        self.italics.set_tooltip(_('Italics'))
+        self.italics.connect('clicked', self.__italics_cb)
+        self.insert(self.italics, -1)
+        
+        self.underline = ToolButton('underline-text')
+        self.underline.set_tooltip(_('Underline'))
+        self.underline.connect('clicked', self.__underline_cb)
+        self.insert(self.underline, -1)
+        
+        self.foreground_color = ColorToolButton()
+        self.foreground_color.connect('color-set', self.__foreground_color_cb)
+        self.insert(self.foreground_color, -1)
+        
+        self.show_all()
+    
+    def __get_fonts_combo_box(self):
+        context = self._main_area.pango_context
+        fonts_combo_box = gtk.combo_box_new_text()
+        fonts = context.list_families()
+        index_tnr = -1
+        for index, font in enumerate(fonts):
+            pango_font = pango.FontDescription(font.get_name())
+            font_name = pango_font.to_string()
+            fonts_combo_box.append_text(font_name)
+            if font_name == 'Times New' or font_name == 'Times New Roman':
+                index_tnr = index
+        if index_tnr == -1:
+            fonts_combo_box.set_active(0)
+        else:
+            fonts_combo_box.set_active(index_tnr)
+            
+        return fonts_combo_box
+    
+    def __get_font_sizes_combo_box(self):
+        font_sizes_combo_box = gtk.combo_box_new_text()
+        self.__font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20', \
+                             '22', '24', '26', '28', '36', '48', '72']
+        for index, size in enumerate(self.__font_sizes):
+            font_sizes_combo_box.append_text(size)
+            if size == '11':
+                font_sizes_combo_box.set_active(index)
+        return font_sizes_combo_box 
+    
+    def __attribute_values(self):
+        attributes = {"bold":True,"italics":True,"underline":True,"font":""}
+        it = self._main_area.selected[0].attributes.get_iterator()
+        start_index = self._main_area.selected[0].index
+        end_index = self._main_area.selected[0].end_index
+        while(1):
+            found = False
+            r = it.range()
+            if start_index == end_index:
+                if r[0] <= start_index and r[1] > start_index:
+                    found = True
+            elif start_index < end_index:
+                if r[0] > end_index:
+                    break
+                if start_index == end_index and \
+                    r[0] < start_index and \
+                    r[1] > start_index:
+                    found = True
+                elif start_index != end_index and r[0] <= start_index and \
+                   r[1] >= end_index:
+                    found = True
+            else:
+                if r[0] > start_index:
+                    break
+                if start_index == end_index and \
+                    r[0] < start_index and \
+                    r[1] > start_index:
+                    found = True
+                elif start_index != end_index and r[0] <= end_index and \
+                   r[1] >= start_index:
+                    found = True
+
+            if found:
+                attr = it.get_attrs()
+                for x in attr:
+                    if x.type == pango.ATTR_WEIGHT and \
+                       x.value == pango.WEIGHT_BOLD:
+                        attributes["bold"] = False
+                    elif x.type == pango.ATTR_STYLE and \
+                         x.value == pango.STYLE_ITALIC:
+                        attributes["italics"] = False
+                    elif x.type == pango.ATTR_UNDERLINE and \
+                         x.value == pango.UNDERLINE_SINGLE:
+                        attributes["underline"] = False
+                    elif x.type == pango.ATTR_FONT_DESC:
+                        logging.debug("La fuente es: %s", x.desc)
+                        attributes["font"] = x.desc
+            if it.next() == False:
+                break
+        
+        return attributes
+    
+    def __fonts_cb(self, combo_box):
+        font_name = combo_box.get_active_text()
+        font_size = self.font_sizes_combo_box.combo.get_active_text()
+        start_index = self._main_area.selected[0].index
+        end_index = self._main_area.selected[0].end_index
+        #if start_index != end_index: 
+        self._main_area.set_font(font_name,font_size)
+        self._main_area.font_name = font_name
+    
+    def __font_sizes_cb(self, combo_box):
+        font_size = combo_box.get_active_text()
+        font_name = self.fonts_combo_box.combo.get_active_text()
+        start_index = self._main_area.selected[0].index
+        end_index = self._main_area.selected[0].end_index
+        #if start_index != end_index: 
+        self._main_area.set_font(font_name,font_size)
+        self._main_area.font_name = font_size
+    
+    def __bold_cb(self, button):
+        value = self.__attribute_values()["bold"]
+        self._main_area.set_bold(value)
+        
+    def __italics_cb(self, button):
+        value = self.__attribute_values()["italics"]
+        self._main_area.set_italics(value)
+    
+    def __underline_cb(self, button):
+        value = self.__attribute_values()["underline"]
+        self._main_area.set_underline(value)
+        
+    def __foreground_color_cb(self, button):
+        color = button.get_color()
+        self._main_area.set_foreground_color(color)
+        
+    def change_active_font(self):
+        current_font = str(self.__attribute_values()["font"])
+        for index, size in enumerate(self.__font_sizes):
+            index_size = current_font.find(size) 
+            if index_size != -1:
+                current_font_name = current_font[:int(index_size)].rstrip()
+                current_font_size = current_font[int(index_size):]
+                index_cfs = index
+        fonts = self._main_area.pango_context.list_families()
+        for index, font in enumerate(fonts):
+            pango_font = pango.FontDescription(font.get_name())
+            font_name = pango_font.to_string()            
+            if font_name == current_font_name:
+                index_cf = index
+                break
+        self.fonts_combo_box.combo.set_active(index_cf)
+        self.font_sizes_combo_box.combo.set_active(index_cfs)
+
 class LabyrinthActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
@@ -216,6 +388,13 @@ class LabyrinthActivity(activity.Activity):
             tool.props.label = _('View'),
             toolbar_box.toolbar.insert(tool, -1)
 
+            self.text_format_toolbar = ToolbarButton()
+            self.text_format_toolbar.props.page = TextAttributesToolbar(self._main_area)
+            self.text_format_toolbar.props.icon_name = 'toolbar-text'
+            self.text_format_toolbar.props.label = _('Text'),
+            toolbar_box.toolbar.insert(self.text_format_toolbar, -1)
+            self._main_area.set_text_attributes(self.text_format_toolbar)
+
             separator = gtk.SeparatorToolItem()
             toolbar_box.toolbar.insert(separator, -1)
 
@@ -226,7 +405,7 @@ class LabyrinthActivity(activity.Activity):
             toolbar_box.toolbar.insert(separator, -1)
             
             target_toolbar = toolbar_box.toolbar
-            tool_offset = 4
+            tool_offset = 5
 
             tool = StopButton(self)
             toolbar_box.toolbar.insert(tool, -1)
@@ -274,7 +453,7 @@ class LabyrinthActivity(activity.Activity):
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
 
-        self.mods = [None] * 6
+        self.mods = [None] * 5
 
         self.mods[0] = RadioToolButton(named_icon='select-mode')
         self.mods[0].set_tooltip(_('Edit mode'))
@@ -304,26 +483,26 @@ class LabyrinthActivity(activity.Activity):
         self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
         target_toolbar.insert(self.mods[3], tool_offset + 3)
 
-        self.mods[5] = RadioToolButton(named_icon='label-mode')
-        self.mods[5].set_tooltip(_('Label mode'))
-        self.mods[5].set_accelerator(_('<ctrl>a'))
-        self.mods[5].set_group(self.mods[0])
-        self.mods[5].connect('clicked', self.__mode_cb, MMapArea.MODE_LABEL)
-        target_toolbar.insert(self.mods[5], tool_offset + 4)
+        self.mods[4] = RadioToolButton(named_icon='label-mode')
+        self.mods[4].set_tooltip(_('Label mode'))
+        self.mods[4].set_accelerator(_('<ctrl>a'))
+        self.mods[4].set_group(self.mods[0])
+        self.mods[4].connect('clicked', self.__mode_cb, MMapArea.MODE_LABEL)
+        target_toolbar.insert(self.mods[4], tool_offset + 4)
 
-        separator = gtk.SeparatorToolItem()
-        target_toolbar.insert(separator, tool_offset + 5)
+        #separator = gtk.SeparatorToolItem()
+        #target_toolbar.insert(separator, tool_offset + 5)
 
         tool = ToolButton('link')
         tool.set_tooltip(_('Link/unlink two selected thoughts'))
         tool.set_accelerator(_('<ctrl>l'))
         tool.connect('clicked', self.__link_cb)
-        target_toolbar.insert(tool, tool_offset + 6)
+        target_toolbar.insert(tool, tool_offset + 5)
 
         tool = ToolButton('edit-delete')
         tool.set_tooltip(_('Erase selected thought(s)'))
         tool.connect('clicked', self.__delete_cb)
-        target_toolbar.insert(tool, tool_offset + 7)
+        target_toolbar.insert(tool, tool_offset + 6)
 
         self.show_all()
         self._mode = MMapArea.MODE_TEXT
@@ -347,6 +526,7 @@ class LabyrinthActivity(activity.Activity):
         """
         if start != end:
             self.__change_copy_state(True)
+            self.text_format_toolbar.props.page.change_active_font()
         else:
             self.__change_copy_state(False)
             

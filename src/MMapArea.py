@@ -28,6 +28,7 @@ import gobject
 import gettext
 import copy
 import cairo
+import logging
 _ = gettext.gettext
 
 import xml.dom.minidom as dom
@@ -152,6 +153,7 @@ class MMapArea (gtk.DrawingArea):
 		self.move_action = None
 		self.current_root = []
 		self.rotation = 0
+		self.text_attributes = {}
 
 		self.set_events (gtk.gdk.KEY_PRESS_MASK |
 						 gtk.gdk.KEY_RELEASE_MASK |
@@ -171,6 +173,8 @@ class MMapArea (gtk.DrawingArea):
 		self.font_name = style.font_desc.to_string()
 		utils.default_font = self.font_name
 		
+		self.font_size = utils.default_font 
+		
 		utils.default_colors["text"] = utils.gtk_to_cairo_color(style.text[gtk.STATE_NORMAL])
 		utils.default_colors["base"] = utils.gtk_to_cairo_color(style.base[gtk.STATE_NORMAL])
 		# Match the fixed white canvas colour (makes thought focus visible)
@@ -183,6 +187,10 @@ class MMapArea (gtk.DrawingArea):
 		utils.selected_colors["bg"] = utils.gtk_to_cairo_color(style.bg[gtk.STATE_SELECTED])
 		utils.selected_colors["fg"] = utils.gtk_to_cairo_color(style.fg[gtk.STATE_SELECTED])
 		utils.selected_colors["fill"] = utils.gtk_to_cairo_color(style.base[gtk.STATE_SELECTED])
+
+	def set_text_attributes(self, text_attributes):
+		self.font_combo_box = text_attributes.props.page.fonts_combo_box.combo
+		self.font_sizes_combo_box = text_attributes.props.page.font_sizes_combo_box.combo 
 
 	def transform_coords(self, loc_x, loc_y):
 		if hasattr(self, "transform"):
@@ -325,17 +333,27 @@ class MMapArea (gtk.DrawingArea):
 		self.invalidate ()
 
 	def key_press (self, widget, event):
+		logging.debug("Se presiono una tecla")
 		# Support for canvas panning keys ('hand' on XO, 'cmd' on Macs)
 		if event.hardware_keycode == 133 or event.hardware_keycode == 134:
 			self.translate = True
+		logging.debug("Evento: %s", str(event))
+		logging.debug("do_filter %s", str(self.do_filter))
+		#valor_retorno = self.im_context.filter_keypress (event)
+		#logging.debug("filter_keypress me retorna %s", str(valor_retorno))
 		if not self.do_filter or not self.im_context.filter_keypress (event):
+			logging.debug("Antes de preguntar si tengo focus")
 			if self.focus:
 				if self.focus.creating or \
 						not self.focus.process_key_press (event, self.mode):
+					logging.debug("Me voy a global_key_handler, dento de self.focus")
 					return self.global_key_handler (event)
+				logging.debug("Retorno True dentro de self.focus")
 				return True
 			if len(self.selected) != 1 or not self.selected[0].process_key_press (event, self.mode):
+				logging.debug("Me voy a global_key_handler")
 				return self.global_key_handler (event)
+		logging.debug("Termine la funcion y me voy")
 		return True
 
 	def key_release (self, widget, event):
@@ -474,7 +492,8 @@ class MMapArea (gtk.DrawingArea):
 			self.commit_handler = None
 		if thought:
 			try:
-				self.commit_handler = self.im_context.connect ("commit", thought.commit_text, self.mode, self.font_name)
+				logging.debug("Conectando con commit_text")
+				self.commit_handler = self.im_context.connect ("commit", thought.commit_text, self.mode, self.font_combo_box, self.font_sizes_combo_box)
 				self.delete_handler = self.im_context.connect ("delete-surrounding", thought.delete_surroundings, self.mode)
 				self.preedit_changed_handler = self.im_context.connect ("preedit-changed", thought.preedit_changed, self.mode)
 				self.preedit_end_handler = self.im_context.connect ("preedit-end", thought.preedit_end, self.mode)
@@ -486,6 +505,7 @@ class MMapArea (gtk.DrawingArea):
 				self.do_filter = False
 		else:
 			self.do_filter = False
+		logging.debug("Estoy saliendo de hookup_im_context con do_filter=%s", str(self.do_filter))
 
 	def unselect_all (self):
 		self.hookup_im_context ()
@@ -1221,10 +1241,11 @@ class MMapArea (gtk.DrawingArea):
 		if len(self.selected) > 1:
 			self.invalidate()
 
-	def set_font(self, font_name):
+	def set_font(self, font_name, font_size):
 		if len (self.selected) == 1 and hasattr(self.selected[0], "set_font"):
-			self.selected[0].set_font(font_name)
+			self.selected[0].set_font(font_name, font_size)
 			self.font_name = font_name
+			self.font_size = font_size
 			self.invalidate()
 
 	def embody_thought(self, event):

@@ -72,6 +72,8 @@ selected_colors = {
 
 default_font = None
 
+default_font_size = 10
+
 try:
 	# Sugar specific tweak
 	xo_col = get_color()
