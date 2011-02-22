@@ -333,27 +333,17 @@ class MMapArea (gtk.DrawingArea):
 		self.invalidate ()
 
 	def key_press (self, widget, event):
-		logging.debug("Se presiono una tecla")
 		# Support for canvas panning keys ('hand' on XO, 'cmd' on Macs)
 		if event.hardware_keycode == 133 or event.hardware_keycode == 134:
 			self.translate = True
-		logging.debug("Evento: %s", str(event))
-		logging.debug("do_filter %s", str(self.do_filter))
-		#valor_retorno = self.im_context.filter_keypress (event)
-		#logging.debug("filter_keypress me retorna %s", str(valor_retorno))
-		if not self.do_filter or not self.im_context.filter_keypress (event):
-			logging.debug("Antes de preguntar si tengo focus")
+		if not self.do_filter or not self.im_context.filter_keypress (event):			
 			if self.focus:
 				if self.focus.creating or \
-						not self.focus.process_key_press (event, self.mode):
-					logging.debug("Me voy a global_key_handler, dento de self.focus")
+						not self.focus.process_key_press (event, self.mode):					
 					return self.global_key_handler (event)
-				logging.debug("Retorno True dentro de self.focus")
 				return True
 			if len(self.selected) != 1 or not self.selected[0].process_key_press (event, self.mode):
-				logging.debug("Me voy a global_key_handler")
 				return self.global_key_handler (event)
-		logging.debug("Termine la funcion y me voy")
 		return True
 
 	def key_release (self, widget, event):
@@ -491,9 +481,9 @@ class MMapArea (gtk.DrawingArea):
 			self.im_context.disconnect (self.retrieve_handler)
 			self.commit_handler = None
 		if thought:
-			try:
-				logging.debug("Conectando con commit_text")
-				self.commit_handler = self.im_context.connect ("commit", thought.commit_text, self.mode, self.font_combo_box, self.font_sizes_combo_box)
+			try:				
+				self.commit_handler = self.im_context.connect ("commit", thought.commit_text, self.mode, self.font_combo_box, \
+															   self.font_sizes_combo_box)
 				self.delete_handler = self.im_context.connect ("delete-surrounding", thought.delete_surroundings, self.mode)
 				self.preedit_changed_handler = self.im_context.connect ("preedit-changed", thought.preedit_changed, self.mode)
 				self.preedit_end_handler = self.im_context.connect ("preedit-end", thought.preedit_end, self.mode)
@@ -504,8 +494,7 @@ class MMapArea (gtk.DrawingArea):
 			except AttributeError:
 				self.do_filter = False
 		else:
-			self.do_filter = False
-		logging.debug("Estoy saliendo de hookup_im_context con do_filter=%s", str(self.do_filter))
+			self.do_filter = False		
 
 	def unselect_all (self):
 		self.hookup_im_context ()

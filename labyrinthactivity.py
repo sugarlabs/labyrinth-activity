@@ -282,8 +282,7 @@ class TextAttributesToolbar(gtk.Toolbar):
                     elif x.type == pango.ATTR_UNDERLINE and \
                          x.value == pango.UNDERLINE_SINGLE:
                         attributes["underline"] = False
-                    elif x.type == pango.ATTR_FONT_DESC:
-                        logging.debug("La fuente es: %s", x.desc)
+                    elif x.type == pango.ATTR_FONT_DESC:                        
                         attributes["font"] = x.desc
             if it.next() == False:
                 break
