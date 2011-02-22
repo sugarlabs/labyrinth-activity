@@ -342,6 +342,50 @@ class TextAttributesToolbar(gtk.Toolbar):
         self.fonts_combo_box.combo.set_active(index_cf)
         self.font_sizes_combo_box.combo.set_active(index_cfs)
 
+class ThoughtsToolbar(gtk.Toolbar):
+    def __init__(self, parent):
+        gtk.Toolbar.__init__(self)
+
+        self._parent = parent
+
+        self._parent.mods[1] = RadioToolButton(named_icon='text-mode')
+        self._parent.mods[1].set_tooltip(_('Text mode'))
+        self._parent.mods[1].set_accelerator(_('<ctrl>t'))
+        self._parent.mods[1].set_group(None)
+        self._parent.mods[1].connect('clicked', self._parent.mode_cb, MMapArea.MODE_TEXT)
+        self.insert(self._parent.mods[1], -1)
+
+        self._parent.mods[2] = RadioToolButton(named_icon='image-mode')
+        self._parent.mods[2].set_group(self._parent.mods[1])
+        self._parent.mods[2].set_tooltip(_('Image add mode'))
+        self._parent.mods[2].set_accelerator(_('<ctrl>i'))
+        self._parent.mods[2].connect('clicked', self._parent.mode_cb, MMapArea.MODE_IMAGE)
+        self.insert(self._parent.mods[2], -1)
+
+        self._parent.mods[3] = RadioToolButton(named_icon='draw-mode')
+        self._parent.mods[3].set_group(self._parent.mods[1])
+        self._parent.mods[3].set_tooltip(_('Drawing mode'))
+        self._parent.mods[3].set_accelerator(_('<ctrl>d'))
+        self._parent.mods[3].connect('clicked', self._parent.mode_cb, MMapArea.MODE_DRAW)
+        self.insert(self._parent.mods[3], -1)
+
+        self._parent.mods[5] = RadioToolButton(named_icon='label-mode')
+        self._parent.mods[5].set_tooltip(_('Label mode'))
+        self._parent.mods[5].set_accelerator(_('<ctrl>a'))
+        self._parent.mods[5].set_group(self._parent.mods[1])
+        self._parent.mods[5].connect('clicked', self._parent.mode_cb, MMapArea.MODE_LABEL)
+        self.insert(self._parent.mods[5], -1)
+        
+        bakground_color = ColorToolButton()
+        bakground_color.connect('color-set', self.__background_color_cb)
+        self.insert(bakground_color, -1)
+        
+        self.show_all()
+        
+    def __background_color_cb(self, button):
+        color = button.get_color()
+        self._parent._main_area.set_background_color(color)
+        
 class LabyrinthActivity(activity.Activity):
     def __init__(self, handle):
         activity.Activity.__init__(self, handle)
@@ -391,12 +435,19 @@ class LabyrinthActivity(activity.Activity):
             self.text_format_toolbar = ToolbarButton()
             self.text_format_toolbar.props.page = TextAttributesToolbar(self._main_area)
             self.text_format_toolbar.props.icon_name = 'toolbar-text'
-            self.text_format_toolbar.props.label = _('Text'),
+            self.text_format_toolbar.props.label = _('Text')
             toolbar_box.toolbar.insert(self.text_format_toolbar, -1)
             self._main_area.set_text_attributes(self.text_format_toolbar)
 
             separator = gtk.SeparatorToolItem()
             toolbar_box.toolbar.insert(separator, -1)
+            
+            self.mods = [None] * 6
+            self.thought_toolbar = ToolbarButton()
+            self.thought_toolbar.props.page = ThoughtsToolbar(self)
+            self.thought_toolbar.props.icon_name = 'thought'
+            self.thought_toolbar.props.label = _('Thought Type')
+            toolbar_box.toolbar.insert(self.thought_toolbar, -1)
 
             separator = gtk.SeparatorToolItem()
             separator.props.draw = False
@@ -405,7 +456,7 @@ class LabyrinthActivity(activity.Activity):
             toolbar_box.toolbar.insert(separator, -1)
             
             target_toolbar = toolbar_box.toolbar
-            tool_offset = 5
+            tool_offset = 6
 
             tool = StopButton(self)
             toolbar_box.toolbar.insert(tool, -1)
@@ -453,42 +504,12 @@ class LabyrinthActivity(activity.Activity):
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
 
-        self.mods = [None] * 5
 
-        self.mods[0] = RadioToolButton(named_icon='select-mode')
+        self.mods[0] = ToolButton('select-mode')
         self.mods[0].set_tooltip(_('Edit mode'))
         self.mods[0].set_accelerator(_('<ctrl>e'))
-        self.mods[0].set_group(None)
-        self.mods[0].connect('clicked', self.__mode_cb, MMapArea.MODE_NULL)
+        self.mods[0].connect('clicked', self.mode_cb, MMapArea.MODE_NULL)
         target_toolbar.insert(self.mods[0], tool_offset)
-
-        self.mods[1] = RadioToolButton(named_icon='text-mode')
-        self.mods[1].set_tooltip(_('Text mode'))
-        self.mods[1].set_accelerator(_('<ctrl>t'))
-        self.mods[1].set_group(self.mods[0])
-        self.mods[1].connect('clicked', self.__mode_cb, MMapArea.MODE_TEXT)
-        target_toolbar.insert(self.mods[1], tool_offset + 1)
-
-        self.mods[2] = RadioToolButton(named_icon='draw-mode')
-        self.mods[2].set_group(self.mods[0])
-        self.mods[2].set_tooltip(_('Drawing mode'))
-        self.mods[2].set_accelerator(_('<ctrl>d'))
-        self.mods[2].connect('clicked', self.__mode_cb, MMapArea.MODE_DRAW)
-        target_toolbar.insert(self.mods[2], tool_offset + 2)
-
-        self.mods[3] = RadioToolButton(named_icon='image-mode')
-        self.mods[3].set_group(self.mods[0])
-        self.mods[3].set_tooltip(_('Image add mode'))
-        self.mods[3].set_accelerator(_('<ctrl>i'))
-        self.mods[3].connect('clicked', self.__mode_cb, MMapArea.MODE_IMAGE)
-        target_toolbar.insert(self.mods[3], tool_offset + 3)
-
-        self.mods[4] = RadioToolButton(named_icon='label-mode')
-        self.mods[4].set_tooltip(_('Label mode'))
-        self.mods[4].set_accelerator(_('<ctrl>a'))
-        self.mods[4].set_group(self.mods[0])
-        self.mods[4].connect('clicked', self.__mode_cb, MMapArea.MODE_LABEL)
-        target_toolbar.insert(self.mods[4], tool_offset + 4)
 
         #separator = gtk.SeparatorToolItem()
         #target_toolbar.insert(separator, tool_offset + 5)
@@ -497,12 +518,12 @@ class LabyrinthActivity(activity.Activity):
         tool.set_tooltip(_('Link/unlink two selected thoughts'))
         tool.set_accelerator(_('<ctrl>l'))
         tool.connect('clicked', self.__link_cb)
-        target_toolbar.insert(tool, tool_offset + 5)
+        target_toolbar.insert(tool, tool_offset + 1)
 
         tool = ToolButton('edit-delete')
         tool.set_tooltip(_('Erase selected thought(s)'))
         tool.connect('clicked', self.__delete_cb)
-        target_toolbar.insert(tool, tool_offset + 6)
+        target_toolbar.insert(tool, tool_offset + 2)
 
         self.show_all()
         self._mode = MMapArea.MODE_TEXT
@@ -602,7 +623,7 @@ class LabyrinthActivity(activity.Activity):
         self._main_area.invalidate()
         return False
 
-    def __mode_cb(self, button, mode):
+    def mode_cb(self, button, mode):
         self._mode = mode
         self._main_area.set_mode (self._mode)
 
@@ -692,7 +713,7 @@ class LabyrinthActivity(activity.Activity):
             (x,y) = utils.parse_coords(tmp)
             self._main_area.translation = [x,y]
 
-        self.mods[self._mode].set_active(True)
+        self.thought_toolbar.props.page.mods[self._mode].set_active(True)
 
         tar.close()
 
