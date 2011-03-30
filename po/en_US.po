@@ -22,12 +22,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 00:31-0400\n"
-"PO-Revision-Date: 2010-12-28 06:00+0200\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: 2011-03-04 04:32+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en_US\n"
@@ -35,117 +39,137 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr "Labyrinth"
 
-#: labyrinthactivity.py:68
+#: labyrinthactivity.py:73
 msgid "Cut"
 msgstr "Cut"
 
-#: labyrinthactivity.py:100
+#: labyrinthactivity.py:105
 msgid "Fit to window"
 msgstr "Fit to window"
 
-#: labyrinthactivity.py:101
+#: labyrinthactivity.py:106
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:111
 msgid "Original size"
 msgstr "Original size"
 
-#: labyrinthactivity.py:107
+#: labyrinthactivity.py:112
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:117
 msgid "Zoom out"
 msgstr "Zoom out"
 
-#: labyrinthactivity.py:113
+#: labyrinthactivity.py:118
 msgid "<ctrl>minus"
 msgstr "<ctrl>minus"
 
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:123
 msgid "Zoom in"
 msgstr "Zoom in"
 
-#: labyrinthactivity.py:119
+#: labyrinthactivity.py:124
 msgid "<ctrl>equal"
 msgstr "<ctrl>equal"
 
-#: labyrinthactivity.py:190 labyrinthactivity.py:245
-msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr "Bold"
 
-#: labyrinthactivity.py:196 labyrinthactivity.py:250
-msgid "Portable Network Graphic (PNG)"
-msgstr "Portable Network Graphic (PNG)"
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr "Italics"
 
-#: labyrinthactivity.py:204 labyrinthactivity.py:256
-msgid "Edit"
-msgstr "Edit"
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr "Underline"
 
-#: labyrinthactivity.py:216 labyrinthactivity.py:271
-msgid "View"
-msgstr "View"
-
-#: labyrinthactivity.py:280
-msgid "Edit mode"
-msgstr "Edit mode"
-
-#: labyrinthactivity.py:281
-msgid "<ctrl>e"
-msgstr "<ctrl>e"
-
-#: labyrinthactivity.py:287
+#: labyrinthactivity.py:351
 msgid "Text mode"
 msgstr "Text mode"
 
-#: labyrinthactivity.py:288
+#: labyrinthactivity.py:352
 msgid "<ctrl>t"
 msgstr "<ctrl>t"
 
-#: labyrinthactivity.py:295
-msgid "Drawing mode"
-msgstr "Drawing mode"
-
-#: labyrinthactivity.py:296
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
-
-#: labyrinthactivity.py:302
+#: labyrinthactivity.py:359
 msgid "Image add mode"
 msgstr "Image add mode"
 
-#: labyrinthactivity.py:303
+#: labyrinthactivity.py:360
 msgid "<ctrl>i"
 msgstr "<ctrl>i"
 
-#: labyrinthactivity.py:308
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "Drawing mode"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:372
 msgid "Label mode"
 msgstr "Label mode"
 
-#: labyrinthactivity.py:309
+#: labyrinthactivity.py:373
 msgid "<ctrl>a"
 msgstr "<ctrl>a"
 
-#: labyrinthactivity.py:318
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "Edit"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "View"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr "Text"
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr "Thought Type"
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "Edit mode"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
 msgstr "Link/unlink two selected thoughts"
 
-#: labyrinthactivity.py:319
+#: labyrinthactivity.py:518
 msgid "<ctrl>l"
 msgstr "<ctrl>l"
 
-#: labyrinthactivity.py:324
+#: labyrinthactivity.py:523
 msgid "Erase selected thought(s)"
 msgstr "Erase selected thought(s)"
 
-#: labyrinthactivity.py:395
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
