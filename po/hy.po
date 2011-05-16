@@ -18,359 +18,386 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 00:31-0400\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: 2011-05-16 15:48+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.6.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
-msgstr ""
+msgstr "Լաբիրինթոս"
 
-#: labyrinthactivity.py:68
+#: labyrinthactivity.py:73
 msgid "Cut"
-msgstr ""
+msgstr "Կտրել"
 
-#: labyrinthactivity.py:100
+#: labyrinthactivity.py:105
 msgid "Fit to window"
-msgstr ""
-
-#: labyrinthactivity.py:101
-msgid "<ctrl>9"
-msgstr ""
+msgstr "Բերել պատուհանի չափերին"
 
 #: labyrinthactivity.py:106
-msgid "Original size"
-msgstr ""
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:107
-msgid "<ctrl>0"
-msgstr ""
+#: labyrinthactivity.py:111
+msgid "Original size"
+msgstr "Սկզբնական չափսը"
 
 #: labyrinthactivity.py:112
-msgid "Zoom out"
-msgstr ""
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:113
-msgid "<ctrl>minus"
-msgstr ""
+#: labyrinthactivity.py:117
+msgid "Zoom out"
+msgstr "Փոքրացնել տեսամասշտաբը"
 
 #: labyrinthactivity.py:118
+msgid "<ctrl>minus"
+msgstr "<ctrl>մինւս"
+
+#: labyrinthactivity.py:123
 msgid "Zoom in"
-msgstr ""
+msgstr "Մեծացնել տեսամասշտաբը"
 
-#: labyrinthactivity.py:119
+#: labyrinthactivity.py:124
 msgid "<ctrl>equal"
-msgstr ""
+msgstr "<ctrl>հավասար"
 
-#: labyrinthactivity.py:190 labyrinthactivity.py:245
-msgid "Portable Document Format (PDF)"
-msgstr ""
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr "Թավ"
 
-#: labyrinthactivity.py:196 labyrinthactivity.py:250
-msgid "Portable Network Graphic (PNG)"
-msgstr ""
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr "Շեղատառ"
 
-#: labyrinthactivity.py:204 labyrinthactivity.py:256
-msgid "Edit"
-msgstr ""
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr "Ընդգծված"
 
-#: labyrinthactivity.py:216 labyrinthactivity.py:271
-msgid "View"
-msgstr ""
-
-#: labyrinthactivity.py:280
-msgid "Edit mode"
-msgstr ""
-
-#: labyrinthactivity.py:281
-msgid "<ctrl>e"
-msgstr ""
-
-#: labyrinthactivity.py:287
+#: labyrinthactivity.py:351
 msgid "Text mode"
-msgstr ""
+msgstr "Տեքստային ռեժիմ"
 
-#: labyrinthactivity.py:288
+#: labyrinthactivity.py:352
 msgid "<ctrl>t"
-msgstr ""
+msgstr "<ctrl>t"
 
-#: labyrinthactivity.py:295
-msgid "Drawing mode"
-msgstr ""
-
-#: labyrinthactivity.py:296
-msgid "<ctrl>d"
-msgstr ""
-
-#: labyrinthactivity.py:302
+#: labyrinthactivity.py:359
 msgid "Image add mode"
-msgstr ""
+msgstr "Պատկերի բեռնման ռեժիմ"
 
-#: labyrinthactivity.py:303
+#: labyrinthactivity.py:360
 msgid "<ctrl>i"
-msgstr ""
+msgstr "<ctrl>i"
 
-#: labyrinthactivity.py:308
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "Գծագրության ռեժիմ"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:372
 msgid "Label mode"
-msgstr ""
+msgstr "Պիտակի ռեժիմ"
 
-#: labyrinthactivity.py:309
+#: labyrinthactivity.py:373
 msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr "Տեղափոխելի փաստաթղթային ձեւաչափ (PDF)"
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr "Տեղափոխելի ցանցային գրաֆիկ (PNG)"
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "Խմբագրել"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "Դիտել"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr "Տեքստ"
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
 msgstr ""
 
-#: labyrinthactivity.py:318
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "Խմբագրման ռեժիմ"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
-msgstr ""
+msgstr "Ընտրված երկու միտքը միացնել/անջատել"
 
-#: labyrinthactivity.py:319
+#: labyrinthactivity.py:518
 msgid "<ctrl>l"
-msgstr ""
+msgstr "<ctrl>l"
 
-#: labyrinthactivity.py:324
+#: labyrinthactivity.py:523
 msgid "Erase selected thought(s)"
-msgstr ""
+msgstr "Ջնջել ընտրված միտքը (մտքերը)"
 
-#: labyrinthactivity.py:395
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
+"Սեղմեք՝ կենտրոնական միտք\n"
+"ավելացնելու համար"
 
 #: src/DrawingThought.py:60
 #, python-format
 msgid "Drawing #%d"
-msgstr ""
+msgstr "Գծում է #%d"
 
 #: src/Browser.py:194
 #, python-format
 msgid "Unable to display help: %s"
-msgstr ""
+msgstr "Օգնությունն էկրանին ցույց տալ չի կարող. %s"
 
 #: src/Browser.py:225
 msgid "Translation by Don Scorgie"
-msgstr ""
+msgstr "Թարգմանությունը՝ Դոն Սկորգիի"
 
 #: src/Browser.py:247
 msgid "The map cannot be deleted right now. Is it open?"
-msgstr ""
+msgstr "Քարտեզն այս պահին հնարավոր չէ ջնջել: Արդյոք այն բա՞ց է:"
 
 #: src/Browser.py:249
 msgid "The map has no associated filename."
-msgstr ""
+msgstr "Քարտեզն ասոցիացված ֆայլանուն չունի:"
 
 #: src/Browser.py:252
 msgid "Cannot delete this map"
-msgstr ""
+msgstr "Այս քարտեզը ջնջել չի հաջողվում:"
 
 #: src/Browser.py:259
 msgid "Do you really want to delete this Map?"
-msgstr ""
+msgstr "Իրո՞ք ցանկանում եք ջնջել այս Քարտեզը:"
 
 #: src/Browser.py:284
 msgid "Open File"
-msgstr ""
+msgstr "Բացել ֆայլը"
 
 #: src/Browser.py:288
 msgid "MAPZ Compressed Map (*.mapz)"
-msgstr ""
+msgstr "MAPZ Սեղմած քարտեզ (*.mapz)"
 
 #: src/Browser.py:319
 msgid "Map Name"
-msgstr ""
+msgstr "Քարտեզի անվանումը"
 
 #: src/Browser.py:326
 msgid "Last Modified"
-msgstr ""
+msgstr "Վերջին փոփոխությունը"
 
 #: src/ResourceThought.py:128
 msgid "Edit Text"
-msgstr ""
+msgstr "Խմբագրել տեքստը"
 
 #: src/ResourceThought.py:133
 msgid "Edit URI"
-msgstr ""
+msgstr "Խմբագրել URI-ը"
 
 #: src/MainWindow.py:163 src/MainWindow.py:517
 msgid "Untitled Map"
-msgstr ""
+msgstr "Անվերնագիր քարտեզ"
 
 #: src/MainWindow.py:229
 msgid "File"
-msgstr ""
+msgstr "Ֆայլ"
 
 #: src/MainWindow.py:230
 msgid "Export as Image"
-msgstr ""
+msgstr "Արտահանել իբրեւ պատկեր"
 
 #: src/MainWindow.py:231
 msgid "Export your map as an image"
-msgstr ""
+msgstr "Արտահանել Ձեր քարտեզն իբրեւ պատկեր"
 
 #: src/MainWindow.py:232
 msgid "Export Map..."
-msgstr ""
+msgstr "Արտահանել քարտեզը..."
 
 #: src/MainWindow.py:233
 msgid "Export your map as XML"
-msgstr ""
+msgstr "Արտահանել Ձեր քարտեզն իբրեւ XML"
 
 #: src/MainWindow.py:235
 msgid "Close the current window"
-msgstr ""
+msgstr "Փակել ընթացիկ պատուհանը"
 
 #: src/MainWindow.py:236
 msgid "_Edit"
-msgstr ""
+msgstr "_Խմբագրել"
 
 #: src/MainWindow.py:237
 msgid "_View"
-msgstr ""
+msgstr "_Դիտել"
 
 #: src/MainWindow.py:238
 msgid "_Toolbar"
-msgstr ""
+msgstr "_Գործիքաձող"
 
 #: src/MainWindow.py:247
 msgid "Link Thoughts"
-msgstr ""
+msgstr "Կապել մտքերը միմյանց"
 
 #: src/MainWindow.py:248
 msgid "Link the selected thoughts"
-msgstr ""
+msgstr "Կապել ընտրված մտքերը"
 
 #: src/MainWindow.py:249
 msgid "_Mode"
-msgstr ""
+msgstr "_Ռեժիմ"
 
 #: src/MainWindow.py:250
 msgid "_Delete"
-msgstr ""
+msgstr "_Ջնջել"
 
 #: src/MainWindow.py:251
 msgid "Delete the selected element(s)"
-msgstr ""
+msgstr "Ջնջել ընտրված տարրերը"
 
 #: src/MainWindow.py:257
 msgid "_Edit Mode"
-msgstr ""
+msgstr "_Խմբագրման ռեժիմ"
 
 #: src/MainWindow.py:258
 msgid "Turn on edit mode"
-msgstr ""
+msgstr "Միացնել խմբագրման ռեժիմը"
 
 #: src/MainWindow.py:259
 msgid "_Add Image"
-msgstr ""
+msgstr "_Պատկեր ավելացնել"
 
 #: src/MainWindow.py:260
 msgid "Add an image to selected thought"
-msgstr ""
+msgstr "Ընտրված մտքին պատկեր ավելացնել"
 
 #: src/MainWindow.py:261
 msgid "_Drawing Mode"
-msgstr ""
+msgstr "_Գծագրման ռեժիմ"
 
 #: src/MainWindow.py:262
 msgid "Make a pretty drawing"
-msgstr ""
+msgstr "Գեղեցիկ նկար գծել"
 
 #: src/MainWindow.py:263
 msgid "Add Resource"
-msgstr ""
+msgstr "Ավելացնել Ռեսուրսը"
 
 #: src/MainWindow.py:264
 msgid "Add a resource"
-msgstr ""
+msgstr "Ռեսուրս ավելացնել"
 
 #: src/MainWindow.py:266
 msgid "Use _Curves"
-msgstr ""
+msgstr "Օգտագործել _կորագծեր"
 
 #: src/MainWindow.py:267
 msgid "Use curves as links"
-msgstr ""
+msgstr "Կորագծերն օգտագործել իբրեւ միացում"
 
 #: src/MainWindow.py:268
 msgid "Use _Lines"
-msgstr ""
+msgstr "Օգտագործել _գծեր"
 
 #: src/MainWindow.py:269
 msgid "Use straight lines as links"
-msgstr ""
+msgstr "Ուղիղ գխերն օգտագործել իբրեւ կապ"
 
 #: src/MainWindow.py:271
 msgid "_Extended Information"
-msgstr ""
+msgstr "_Ընդլայնված տեղեկատվություն"
 
 #: src/MainWindow.py:272
 msgid "Show extended information for thoughts"
-msgstr ""
+msgstr "Ցույց տալ մտքերին վերաբերող ընդլայնված տեղեկատվությունը"
 
 #: src/MainWindow.py:273
 msgid "_Outline"
-msgstr ""
+msgstr "_Ուրվագծել"
 
 #: src/MainWindow.py:274
 msgid "Show outline of thought hierarchy"
-msgstr ""
+msgstr "Ցույց տալ մտքերի հիերարխիայի ուրվագիծը"
 
 #: src/MainWindow.py:275
 msgid "_Main"
-msgstr ""
+msgstr "_Գլխավոր"
 
 #: src/MainWindow.py:276
 msgid "Show main toolbar"
-msgstr ""
+msgstr "Ցույց տալ հիմնական գործիքաձողը"
 
 #: src/MainWindow.py:277
 msgid "_Format"
-msgstr ""
+msgstr "_Ձեւաչափ"
 
 #: src/MainWindow.py:278
 msgid "Show format toolbar"
-msgstr ""
+msgstr "Ձույց տալ ձեւավորման գործիքաձողը"
 
 #: src/MainWindow.py:303
 msgid "Thoughts"
-msgstr ""
+msgstr "Մտքեր"
 
 #: src/MainWindow.py:576
 msgid "Save File As"
-msgstr ""
+msgstr "Ֆայլը պահել իբրեւ"
 
 #: src/MainWindow.py:670
 msgid "All Files"
-msgstr ""
+msgstr "Բոլոր ֆայլերը"
 
 #: src/MainWindow.py:671
 msgid "PNG Image (*.png)"
-msgstr ""
+msgstr "PNG պատկեր (*.png)"
 
 #: src/MainWindow.py:672
 msgid "JPEG Image (*.jpg, *.jpeg)"
-msgstr ""
+msgstr "JPEG պատկեր (*.jpg, *.jpeg)"
 
 #: src/MainWindow.py:673
 msgid "SVG Vector Image (*.svg)"
-msgstr ""
+msgstr "SVG Վեկտորային պատկեր (*.svg)"
 
 #: src/MainWindow.py:674
 msgid "PDF Portable Document (*.pdf)"
-msgstr ""
+msgstr "PDF Տեղափոխելի փաստաթուղթ (*.pdf)"
 
 #: src/MainWindow.py:710
 msgid "Unknown file format"
-msgstr ""
+msgstr "Ֆայլի անծանոթ ձեւաչափ"
 
 #: src/MainWindow.py:711
 #, python-format
@@ -378,15 +405,17 @@ msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."
 msgstr ""
+"'%s' ֆայլային տեսակը չի սպասարկվում: Խնդրեմ, օգտագործեք '.png', '.jpg' կամ "
+"'.svg' վերջածանցը:"
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
 msgid "Choose image"
-msgstr ""
+msgstr "Ընտրել պատկերը"
 
 #: src/Links.py:269
 msgid "Choose Color"
-msgstr ""
+msgstr "Ընտրել գույնը"
 
 #: src/Links.py:282
 msgid "Set Color"
-msgstr ""
+msgstr "Սահմանել գույնը"
