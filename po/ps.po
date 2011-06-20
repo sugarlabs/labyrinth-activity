@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-06-20 15:51+0200\n"
+"PO-Revision-Date: 2011-06-20 16:51+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ps\n"
@@ -58,6 +58,7 @@ msgid "Fit to window"
 msgstr "کړکۍ سره برابرول"
 
 #: labyrinthactivity.py:106
+#, fuzzy
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
@@ -66,6 +67,7 @@ msgid "Original size"
 msgstr "اصلي کچه"
 
 #: labyrinthactivity.py:112
+#, fuzzy
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
@@ -215,6 +217,7 @@ msgid "Open File"
 msgstr "دوسیه پرانیستل"
 
 #: src/Browser.py:288
+#, fuzzy
 msgid "MAPZ Compressed Map (*.mapz)"
 msgstr "MAPZ Compressed Map (*.mapz)"
 
@@ -252,7 +255,7 @@ msgstr "خپله نقشه د انځور په توګه صادره کړئ"
 
 #: src/MainWindow.py:232
 msgid "Export Map..."
-msgstr "نقشه صادرول"
+msgstr "نقشه صادرول..."
 
 #: src/MainWindow.py:233
 msgid "Export your map as XML"
