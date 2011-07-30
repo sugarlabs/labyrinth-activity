@@ -27,14 +27,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-05-16 15:48+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2011-07-29 19:42+0200\n"
+"Last-Translator:  <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
@@ -143,7 +143,7 @@ msgstr "Տեքստ"
 
 #: labyrinthactivity.py:448
 msgid "Thought Type"
-msgstr ""
+msgstr "Գաղափարի տեսակը"
 
 #: labyrinthactivity.py:508
 msgid "Edit mode"
