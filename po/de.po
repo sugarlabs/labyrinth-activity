@@ -59,7 +59,7 @@ msgstr ""
 "Project-Id-Version: labyrinth\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-07-17 23:56+0200\n"
+"PO-Revision-Date: 2011-08-15 00:32+0200\n"
 "Last-Translator: Markus <m.slg@gmx.de>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "Language: de\n"
@@ -80,7 +80,7 @@ msgstr "Ausschneiden"
 
 #: labyrinthactivity.py:105
 msgid "Fit to window"
-msgstr "An Fenster anpassen"
+msgstr "In Fenster einpassen"
 
 #: labyrinthactivity.py:106
 msgid "<ctrl>9"
@@ -100,7 +100,7 @@ msgstr "Verkleinern"
 
 #: labyrinthactivity.py:118
 msgid "<ctrl>minus"
-msgstr "<ctrl>minus"
+msgstr "<ctrl>-"
 
 #: labyrinthactivity.py:123
 msgid "Zoom in"
@@ -125,7 +125,7 @@ msgstr "Unterstrichen"
 # Can we be consistent here with the other translations like: Bearbeitungsmodus ?
 #: labyrinthactivity.py:351
 msgid "Text mode"
-msgstr "Text-Modus"
+msgstr "Textmodus"
 
 #: labyrinthactivity.py:352
 msgid "<ctrl>t"
@@ -133,19 +133,19 @@ msgstr "<ctrl>t"
 
 #: labyrinthactivity.py:359
 msgid "Image add mode"
-msgstr "Modus Bild-hinzufügen"
+msgstr "Modus Bild-Hinzufügen"
 
 #: labyrinthactivity.py:360
 msgid "<ctrl>i"
-msgstr "<ctrl>i"
+msgstr "<ctrl>h"
 
 #: labyrinthactivity.py:366
 msgid "Drawing mode"
-msgstr "Zeichnungsmodus"
+msgstr "Zeichenmodus"
 
 #: labyrinthactivity.py:367
 msgid "<ctrl>d"
-msgstr "<ctrl>d"
+msgstr "<ctrl>z"
 
 #: labyrinthactivity.py:372
 msgid "Label mode"
@@ -153,15 +153,15 @@ msgstr "Beschriftungsmodus"
 
 #: labyrinthactivity.py:373
 msgid "<ctrl>a"
-msgstr "<ctrl>a"
+msgstr "<ctrl>b"
 
 #: labyrinthactivity.py:405 labyrinthactivity.py:474
 msgid "Portable Document Format (PDF)"
-msgstr "Format des tragbaren Dokumentes (PDF)"
+msgstr "Portable-Document-Format (PDF)"
 
 #: labyrinthactivity.py:411 labyrinthactivity.py:479
 msgid "Portable Network Graphic (PNG)"
-msgstr "Grafik des tragbaren Netzwerks (PNG)"
+msgstr "Portable Network Graphic (PNG)"
 
 #: labyrinthactivity.py:419 labyrinthactivity.py:485
 msgid "Edit"
@@ -177,7 +177,7 @@ msgstr "Text"
 
 #: labyrinthactivity.py:448
 msgid "Thought Type"
-msgstr ""
+msgstr "Gedankentyp"
 
 #: labyrinthactivity.py:508
 msgid "Edit mode"
@@ -189,7 +189,7 @@ msgstr "<ctrl>e"
 
 #: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
-msgstr "Zwei gewählte Gedanken verbinden/von einander trennen"
+msgstr "Zwei ausgewählte Gedanken miteinander verbinden/voneinander lösen"
 
 #: labyrinthactivity.py:518
 msgid "<ctrl>l"
@@ -197,7 +197,7 @@ msgstr "<ctrl>l"
 
 #: labyrinthactivity.py:523
 msgid "Erase selected thought(s)"
-msgstr "Ausgewählte Gedanken löschen"
+msgstr "Ausgewählte(n) Gedanken löschen"
 
 #: labyrinthactivity.py:595
 msgid ""
@@ -205,7 +205,7 @@ msgid ""
 "central thought"
 msgstr ""
 "Klicke zum Hinzufügen\n"
-"des zentralen Gedanken"
+"des zentralen Gedankens."
 
 #: src/DrawingThought.py:60
 #, python-format
@@ -223,7 +223,7 @@ msgstr "Übersetzung durch Don Scorgie"
 
 #: src/Browser.py:247
 msgid "The map cannot be deleted right now. Is it open?"
-msgstr "Die Karte kann jetzt nicht gelöscht werden. Ist sie geöffnet?"
+msgstr "Die Karte kann momentan nicht gelöscht werden. Ist sie geöffnet?"
 
 #: src/Browser.py:249
 msgid "The map has no associated filename."
@@ -231,11 +231,11 @@ msgstr "Dieser Karte ist kein Dateiname zugeordnet."
 
 #: src/Browser.py:252
 msgid "Cannot delete this map"
-msgstr "Kann diese Karte nicht löschen"
+msgstr "Kann diese Karte nicht löschen."
 
 #: src/Browser.py:259
 msgid "Do you really want to delete this Map?"
-msgstr "Diese Karte wirklich löschen?"
+msgstr "Willst du diese Karte wirklich löschen?"
 
 #: src/Browser.py:284
 msgid "Open File"
@@ -279,7 +279,7 @@ msgstr "Exportiere deine Karte als Bild"
 
 #: src/MainWindow.py:232
 msgid "Export Map..."
-msgstr "Exportiere Karte..."
+msgstr "Karte exportieren..."
 
 #: src/MainWindow.py:233
 msgid "Export your map as XML"
@@ -355,11 +355,11 @@ msgstr "Eine Quelle hinzufügen"
 
 #: src/MainWindow.py:266
 msgid "Use _Curves"
-msgstr "Verwende _Bogen"
+msgstr "Verwende _Bögen"
 
 #: src/MainWindow.py:267
 msgid "Use curves as links"
-msgstr "Benutze Bogen als Verbindungen"
+msgstr "Benutze Bögen als Verbindungen"
 
 #: src/MainWindow.py:268
 msgid "Use _Lines"
@@ -439,7 +439,7 @@ msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."
 msgstr ""
-"Der Dateityp \"%s\" wird nicht unterstützt.   Bitte benutze die Endungen "
+"Der Dateityp \"%s\" wird nicht unterstützt.  Bitte benutze die Endungen "
 "\".png\", \".jpg\" oder \".svg\"."
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
