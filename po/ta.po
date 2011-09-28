@@ -22,130 +22,158 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 00:31-0400\n"
-"PO-Revision-Date: 2010-08-03 23:36+0200\n"
-"Last-Translator: தங்கமணி <thangam.arunx@gmail.com>\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: 2011-07-03 14:49+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.1\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr "லபிறின்த்"
 
-#: labyrinthactivity.py:68
+#: labyrinthactivity.py:73
 msgid "Cut"
 msgstr "துண்டி"
 
-#: labyrinthactivity.py:100
+#: labyrinthactivity.py:105
 msgid "Fit to window"
 msgstr "சாரளத்தின் அளவிற்கு பொருத்து"
 
-#: labyrinthactivity.py:101
+#: labyrinthactivity.py:106
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:111
 msgid "Original size"
 msgstr "அசல் அளவு"
 
-#: labyrinthactivity.py:107
+#: labyrinthactivity.py:112
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:117
 msgid "Zoom out"
 msgstr "சிறிதாக்கிக் காட்டு"
 
-#: labyrinthactivity.py:113
+#: labyrinthactivity.py:118
 msgid "<ctrl>minus"
 msgstr "<ctrl> மறை(கழி)"
 
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:123
 msgid "Zoom in"
 msgstr "பெரிதாக்கிக் காட்டு"
 
-#: labyrinthactivity.py:119
+#: labyrinthactivity.py:124
 msgid "<ctrl>equal"
 msgstr "<ctrl> சமன்"
 
-#: labyrinthactivity.py:190 labyrinthactivity.py:245
-msgid "Portable Document Format (PDF)"
-msgstr "ஏற்றத்தக்க ஆவண வடிவம்(PDF)"
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr "கருமையான"
 
-#: labyrinthactivity.py:196 labyrinthactivity.py:250
-msgid "Portable Network Graphic (PNG)"
-msgstr "ஏற்றத்தக்க பிணைய வரைகலை (PNG)"
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr "சாய்ந்த"
 
-#: labyrinthactivity.py:204 labyrinthactivity.py:256
-msgid "Edit"
-msgstr "திருத்து"
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr "அடிகோடிட்ட"
 
-#: labyrinthactivity.py:216 labyrinthactivity.py:271
-msgid "View"
-msgstr "பார்வையிடு"
-
-#: labyrinthactivity.py:280
-msgid "Edit mode"
-msgstr "திருத்தும் நிலை "
-
-#: labyrinthactivity.py:281
-msgid "<ctrl>e"
-msgstr "<ctrl>e"
-
-#: labyrinthactivity.py:287
+#: labyrinthactivity.py:351
 msgid "Text mode"
 msgstr "எழுத்து நிலை"
 
-#: labyrinthactivity.py:288
+#: labyrinthactivity.py:352
 msgid "<ctrl>t"
 msgstr "<ctrl>t"
 
-#: labyrinthactivity.py:295
-msgid "Drawing mode"
-msgstr "வரை நிலை"
-
-#: labyrinthactivity.py:296
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
-
-#: labyrinthactivity.py:302
+#: labyrinthactivity.py:359
 msgid "Image add mode"
 msgstr "படம் சேர்க்கும் நிலை"
 
-#: labyrinthactivity.py:303
+#: labyrinthactivity.py:360
 msgid "<ctrl>i"
 msgstr "<ctrl>i"
 
-#: labyrinthactivity.py:308
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "வரை நிலை"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:372
 msgid "Label mode"
 msgstr "சுருக்க தாள் முறை"
 
-#: labyrinthactivity.py:309
+#: labyrinthactivity.py:373
 msgid "<ctrl>a"
 msgstr "<ctrl>a"
 
-#: labyrinthactivity.py:318
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr "ஏற்றத்தக்க ஆவண வடிவம்(PDF)"
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr "ஏற்றத்தக்க பிணைய வரைகலை (PNG)"
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "திருத்து"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "பார்வையிடு"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr "உரை"
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr "சிந்தனை வகை"
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "திருத்தும் நிலை"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
 msgstr "தெரிவு செய்த இரு எண்ணங்களை தொடர்பு படுத்து/பிரி"
 
-#: labyrinthactivity.py:319
+#: labyrinthactivity.py:518
 msgid "<ctrl>l"
 msgstr "<ctrl>l"
 
-#: labyrinthactivity.py:324
+#: labyrinthactivity.py:523
 msgid "Erase selected thought(s)"
 msgstr "தெரிவு செய்த இரு எண்ணம்(களை) அழி"
 
-#: labyrinthactivity.py:395
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
@@ -156,7 +184,7 @@ msgstr ""
 #: src/DrawingThought.py:60
 #, python-format
 msgid "Drawing #%d"
-msgstr " #%d வரையப்படுகின்றது"
+msgstr "#%d வரையப்படுகின்றது"
 
 #: src/Browser.py:194
 #, python-format
@@ -205,7 +233,7 @@ msgstr "எழுத்தைத் திருத்து"
 
 #: src/ResourceThought.py:133
 msgid "Edit URI"
-msgstr " URIஐ திருத்து"
+msgstr "URIஐ திருத்து"
 
 #: src/MainWindow.py:163 src/MainWindow.py:517
 msgid "Untitled Map"
@@ -269,7 +297,7 @@ msgstr "தெரிவு செய்த உறுப்பு(களை)அ�
 
 #: src/MainWindow.py:257
 msgid "_Edit Mode"
-msgstr "_திருத்தும் நிலை "
+msgstr "_திருத்தும் நிலை"
 
 #: src/MainWindow.py:258
 msgid "Turn on edit mode"
@@ -293,7 +321,7 @@ msgstr "அழகான சித்திரத்தை செய்"
 
 #: src/MainWindow.py:263
 msgid "Add Resource"
-msgstr " வளம் (மூலம்)ங்களைச் சேர்"
+msgstr "வளம் (மூலம்)ங்களைச் சேர்"
 
 #: src/MainWindow.py:264
 msgid "Add a resource"
@@ -313,7 +341,7 @@ msgstr "_ கோடுகளை உபயோகி"
 
 #: src/MainWindow.py:269
 msgid "Use straight lines as links"
-msgstr " நேர் கோடுகளை இணைப்பாக உபயோகி"
+msgstr "நேர் கோடுகளை இணைப்பாக உபயோகி"
 
 #: src/MainWindow.py:271
 msgid "_Extended Information"
