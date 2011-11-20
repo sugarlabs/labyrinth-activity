@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-11-19 02:59+0200\n"
+"PO-Revision-Date: 2011-11-19 08:41+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: quz\n"
@@ -323,7 +323,7 @@ msgstr "_Chinkachiy"
 #  "Eliminar el(los) elemento(s)"
 #: src/MainWindow.py:251
 msgid "Delete the selected element(s)"
-msgstr "Akllasqakunata  chinkachiy"
+msgstr "Akllasqakunata chinkachiy"
 
 #  "_Modo de edición"
 #: src/MainWindow.py:257
