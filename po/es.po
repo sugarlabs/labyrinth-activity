@@ -159,7 +159,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-11-18 23:31+0200\n"
+"PO-Revision-Date: 2011-11-26 07:13+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -340,7 +340,7 @@ msgstr "¿Estas seguro que deseas eliminar este mapa?"
 
 #: src/Browser.py:284
 msgid "Open File"
-msgstr "Abrir archivo"
+msgstr "Abrir Archivo"
 
 #: src/Browser.py:288
 msgid "MAPZ Compressed Map (*.mapz)"
