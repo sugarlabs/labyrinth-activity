@@ -2,124 +2,429 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-09 04:49+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: 2011-12-08 15:42+0200\n"
+"Last-Translator: lkjlkj <agniechka@o2.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.3.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
-msgstr ""
+msgstr "Labirynt"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53
-msgid "Edit"
-msgstr ""
+#: labyrinthactivity.py:73
+msgid "Cut"
+msgstr "Wytnij"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:74
-msgid "Edit mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:75
-msgid "<ctrl>e"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:81
-msgid "Text mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:82
-msgid "<ctrl>t"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:89
-msgid "Drawing mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:90
-msgid "<ctrl>d"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:96
-msgid "Image add mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:97
-msgid "<ctrl>i"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:106
-msgid "Link/unlink two selected thoughts"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:115
-msgid "Erase selected thought(s)"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:124
-msgid "View"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:127
-msgid "Zoom in"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:132
-msgid "Zoom out"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:137
+#: labyrinthactivity.py:105
 msgid "Fit to window"
-msgstr ""
+msgstr "Dostosuj do okna"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:142
+#: labyrinthactivity.py:106
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:111
 msgid "Original size"
-msgstr ""
+msgstr "Oryginalny rozmiar"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:188
+#: labyrinthactivity.py:112
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:117
+msgid "Zoom out"
+msgstr "Zmniejsz"
+
+#: labyrinthactivity.py:118
+msgid "<ctrl>minus"
+msgstr "<ctrl>mniej"
+
+#: labyrinthactivity.py:123
+msgid "Zoom in"
+msgstr "Powiększ"
+
+#: labyrinthactivity.py:124
+msgid "<ctrl>equal"
+msgstr "<ctrl>równy"
+
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr "Pogrubione"
+
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr "Kursywa"
+
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr "Podkreślenie"
+
+#: labyrinthactivity.py:351
+msgid "Text mode"
+msgstr "Tryb pisania"
+
+#: labyrinthactivity.py:352
+msgid "<ctrl>t"
+msgstr "<ctrl>t Tryb pisania"
+
+#: labyrinthactivity.py:359
+msgid "Image add mode"
+msgstr "Tryb dodawania obrazu"
+
+#: labyrinthactivity.py:360
+msgid "<ctrl>i"
+msgstr "<ctrl>i Tryb dodawania obrazu"
+
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "Tryb rysowania"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d Tryb rysowania"
+
+#: labyrinthactivity.py:372
+msgid "Label mode"
+msgstr "Tryb etykietowania"
+
+#: labyrinthactivity.py:373
+msgid "<ctrl>a"
+msgstr "<ctrl>a Wybierz wszystkie pomysły"
+
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr "Przenośny Format Dokumentu (PDF)"
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "Edytuj"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "Widok"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr "Tekst"
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr "Rodzaj pomysłu"
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "Tryb edycji"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e Tryb edycji"
+
+#: labyrinthactivity.py:517
+msgid "Link/unlink two selected thoughts"
+msgstr "Połącz/rozłącz dwa wybrane pomysły"
+
+#: labyrinthactivity.py:518
+msgid "<ctrl>l"
+msgstr "<ctrl>l Połącz / rozłącz dwa wybrane pomysły"
+
+#: labyrinthactivity.py:523
+msgid "Erase selected thought(s)"
+msgstr "Usuń wybrane pomysły"
+
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
+"Kliknij, aby dodać\n"
+"główny pomysł"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:54
-msgid "Choose image"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:227
-msgid "Error loading file"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:228
-#, python-format
-msgid "%s could not be found.  Associated thought will be empty."
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:261
-msgid "Choose Color"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:274
-msgid "Set Color"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/DrawingThought.py:59
+#: src/DrawingThought.py:60
 #, python-format
 msgid "Drawing #%d"
-msgstr ""
+msgstr "Rysowanie #%d"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:128
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Nie można wyświetlić pomocy: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Tłumaczenie: Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Mapa nie może zostać teraz usunięta. Czy jest otwarta?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Mapa nie ma przypisanej nazwy pliku."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Nie można usunąć tej mapy"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Na pewno chcesz skasować tę mapę?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Otwórz Plik"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Skompresowana Mapa (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Nazwa mapy"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Ostatnia modyfikacja"
+
+#: src/ResourceThought.py:128
 msgid "Edit Text"
-msgstr ""
+msgstr "Edytuj Tekst"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:133
+#: src/ResourceThought.py:133
 msgid "Edit URI"
+msgstr "Edytuj URI"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Mapa bez nazwy"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Plik"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Wyeksportuj jako obraz"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Wyeksportuj twoją mapę jako obraz"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Wyeksportuj Mapę..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Wyeksportuj mapę jako XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Zamknij bieżące okno"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Edytuj"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Widok"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Pasek narzędzi"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Połącz pomysły"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Połącz wybrane pomysły"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Tryb"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Usuń"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Usuń wybrane elementy"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Tryb edycji"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Włącz tryb edycji"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Dodaj Obraz"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Dodaj obraz do wybranej myśli"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Tryb rysowania"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Zrób ładny rysunek"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Dodaj zasób"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Dodaj jeden zasób"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Użyj _Krzywych"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Użyj krzywych jako połączeń"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Użyj _Linii"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Użyj linii prostych jako połączeń"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Informacja Rozbudowana"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Pokaż rozbudowaną informację na temat myśli"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Zarys"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Pokaż zarys hierarchii myśli"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Główny"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Pokaż główny pasek narzędzi"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Format"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Pokaż pasek narzędzi dla formatu"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Myśli"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Zapisz plik jako"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Wszystkie pliki"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "Obraz PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Obraz JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Grafika wektorowa SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Przenośny Dokument PDF (*.PDF)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Nieznany format pliku"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
 msgstr ""
+"Pliki w formacie '%s' nie są obsługiwane.  Użyj rozszerzeń '.png', '.jpg' "
+"lub '.svg'."
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Wybierz obraz"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Wybierz kolor"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Ustaw kolor"
