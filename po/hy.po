@@ -27,15 +27,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-07-29 19:42+0200\n"
-"Last-Translator:  <anush.mkrtchyan@ca1492.com>\n"
+"PO-Revision-Date: 2011-12-22 02:52+0200\n"
+"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
@@ -63,15 +63,15 @@ msgstr "<ctrl>0"
 
 #: labyrinthactivity.py:117
 msgid "Zoom out"
-msgstr "Փոքրացնել տեսամասշտաբը"
+msgstr "Հեռվացնել"
 
 #: labyrinthactivity.py:118
 msgid "<ctrl>minus"
-msgstr "<ctrl>մինւս"
+msgstr "<ctrl>մինուս"
 
 #: labyrinthactivity.py:123
 msgid "Zoom in"
-msgstr "Մեծացնել տեսամասշտաբը"
+msgstr "Մոտեցնել"
 
 #: labyrinthactivity.py:124
 msgid "<ctrl>equal"
@@ -123,7 +123,7 @@ msgstr "<ctrl>a"
 
 #: labyrinthactivity.py:405 labyrinthactivity.py:474
 msgid "Portable Document Format (PDF)"
-msgstr "Տեղափոխելի փաստաթղթային ձեւաչափ (PDF)"
+msgstr "Տեղափոխելի փաստաթղթային ձևաչափ (PDF)"
 
 #: labyrinthactivity.py:411 labyrinthactivity.py:479
 msgid "Portable Network Graphic (PNG)"
@@ -189,7 +189,7 @@ msgstr "Թարգմանությունը՝ Դոն Սկորգիի"
 
 #: src/Browser.py:247
 msgid "The map cannot be deleted right now. Is it open?"
-msgstr "Քարտեզն այս պահին հնարավոր չէ ջնջել: Արդյոք այն բա՞ց է:"
+msgstr "Քարտեզն այս պահին հնարավոր չէ ջնջել: Արդյո՞ք այն բաց է:"
 
 #: src/Browser.py:249
 msgid "The map has no associated filename."
@@ -237,7 +237,7 @@ msgstr "Ֆայլ"
 
 #: src/MainWindow.py:230
 msgid "Export as Image"
-msgstr "Արտահանել իբրեւ պատկեր"
+msgstr "Արտահանել իբրև պատկեր"
 
 #: src/MainWindow.py:231
 msgid "Export your map as an image"
@@ -249,7 +249,7 @@ msgstr "Արտահանել քարտեզը..."
 
 #: src/MainWindow.py:233
 msgid "Export your map as XML"
-msgstr "Արտահանել Ձեր քարտեզն իբրեւ XML"
+msgstr "Արտահանել Ձեր քարտեզն իբրև XML"
 
 #: src/MainWindow.py:235
 msgid "Close the current window"
@@ -325,7 +325,7 @@ msgstr "Օգտագործել _կորագծեր"
 
 #: src/MainWindow.py:267
 msgid "Use curves as links"
-msgstr "Կորագծերն օգտագործել իբրեւ միացում"
+msgstr "Կորագծերն օգտագործել իբրև միացում"
 
 #: src/MainWindow.py:268
 msgid "Use _Lines"
@@ -333,7 +333,7 @@ msgstr "Օգտագործել _գծեր"
 
 #: src/MainWindow.py:269
 msgid "Use straight lines as links"
-msgstr "Ուղիղ գխերն օգտագործել իբրեւ կապ"
+msgstr "Ուղիղ գծերն օգտագործել իբրև կապ"
 
 #: src/MainWindow.py:271
 msgid "_Extended Information"
@@ -361,11 +361,11 @@ msgstr "Ցույց տալ հիմնական գործիքաձողը"
 
 #: src/MainWindow.py:277
 msgid "_Format"
-msgstr "_Ձեւաչափ"
+msgstr "_Ձևաչափ"
 
 #: src/MainWindow.py:278
 msgid "Show format toolbar"
-msgstr "Ձույց տալ ձեւավորման գործիքաձողը"
+msgstr "Ձույց տալ ձևավորման գործիքաձողը"
 
 #: src/MainWindow.py:303
 msgid "Thoughts"
@@ -373,7 +373,7 @@ msgstr "Մտքեր"
 
 #: src/MainWindow.py:576
 msgid "Save File As"
-msgstr "Ֆայլը պահել իբրեւ"
+msgstr "Ֆայլը պահել իբրև"
 
 #: src/MainWindow.py:670
 msgid "All Files"
@@ -405,7 +405,7 @@ msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."
 msgstr ""
-"'%s' ֆայլային տեսակը չի սպասարկվում: Խնդրեմ, օգտագործեք '.png', '.jpg' կամ "
+"'%s' ֆայլային տեսակը չի սպասարկվում:  Խնդրեմ, օգտագործեք '.png', '.jpg' կամ "
 "'.svg' վերջածանցը:"
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
