@@ -27,8 +27,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-12-22 02:52+0200\n"
-"Last-Translator: anush.mkrtchyan <anush.mkrtchyan@ca1492.com>\n"
+"PO-Revision-Date: 2011-12-23 03:09+0200\n"
+"Last-Translator: Jasmine <udea_jasmine@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hy\n"
 "MIME-Version: 1.0\n"
@@ -47,7 +47,7 @@ msgstr "Կտրել"
 
 #: labyrinthactivity.py:105
 msgid "Fit to window"
-msgstr "Բերել պատուհանի չափերին"
+msgstr "Հարմարեցնել պատուհանի չափերին"
 
 #: labyrinthactivity.py:106
 msgid "<ctrl>9"
@@ -107,7 +107,7 @@ msgstr "<ctrl>i"
 
 #: labyrinthactivity.py:366
 msgid "Drawing mode"
-msgstr "Գծագրության ռեժիմ"
+msgstr "Նկարելու ռեժիմ"
 
 #: labyrinthactivity.py:367
 msgid "<ctrl>d"
@@ -123,11 +123,11 @@ msgstr "<ctrl>a"
 
 #: labyrinthactivity.py:405 labyrinthactivity.py:474
 msgid "Portable Document Format (PDF)"
-msgstr "Տեղափոխելի փաստաթղթային ձևաչափ (PDF)"
+msgstr "PDF - Տեղափոխելի փաստաթղթային ձևաչափ"
 
 #: labyrinthactivity.py:411 labyrinthactivity.py:479
 msgid "Portable Network Graphic (PNG)"
-msgstr "Տեղափոխելի ցանցային գրաֆիկ (PNG)"
+msgstr "PNG - Տեղափոխելի ցանցային գրաֆիկ"
 
 #: labyrinthactivity.py:419 labyrinthactivity.py:485
 msgid "Edit"
@@ -155,7 +155,7 @@ msgstr "<ctrl>e"
 
 #: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
-msgstr "Ընտրված երկու միտքը միացնել/անջատել"
+msgstr "Ընտրված երկու մտքերը միացնել/անջատել"
 
 #: labyrinthactivity.py:518
 msgid "<ctrl>l"
@@ -181,11 +181,11 @@ msgstr "Գծում է #%d"
 #: src/Browser.py:194
 #, python-format
 msgid "Unable to display help: %s"
-msgstr "Օգնությունն էկրանին ցույց տալ չի կարող. %s"
+msgstr "Չի կարողանում էկրանին ցուցադրել օգնությունը. %s"
 
 #: src/Browser.py:225
 msgid "Translation by Don Scorgie"
-msgstr "Թարգմանությունը՝ Դոն Սկորգիի"
+msgstr "Թարգմանությունը` Դոն Սկորջիի"
 
 #: src/Browser.py:247
 msgid "The map cannot be deleted right now. Is it open?"
@@ -193,7 +193,7 @@ msgstr "Քարտեզն այս պահին հնարավոր չէ ջնջել: Ար�
 
 #: src/Browser.py:249
 msgid "The map has no associated filename."
-msgstr "Քարտեզն ասոցիացված ֆայլանուն չունի:"
+msgstr "Քարտեզը նմանատիպ ֆայլանուն չունի:"
 
 #: src/Browser.py:252
 msgid "Cannot delete this map"
@@ -237,11 +237,11 @@ msgstr "Ֆայլ"
 
 #: src/MainWindow.py:230
 msgid "Export as Image"
-msgstr "Արտահանել իբրև պատկեր"
+msgstr "Արտահանել որպես պատկեր"
 
 #: src/MainWindow.py:231
 msgid "Export your map as an image"
-msgstr "Արտահանել Ձեր քարտեզն իբրեւ պատկեր"
+msgstr "Արտահանել Ձեր քարտեզը որպես պատկեր"
 
 #: src/MainWindow.py:232
 msgid "Export Map..."
@@ -249,7 +249,7 @@ msgstr "Արտահանել քարտեզը..."
 
 #: src/MainWindow.py:233
 msgid "Export your map as XML"
-msgstr "Արտահանել Ձեր քարտեզն իբրև XML"
+msgstr "Արտահանել Ձեր քարտեզը որպես XML"
 
 #: src/MainWindow.py:235
 msgid "Close the current window"
@@ -265,7 +265,7 @@ msgstr "_Դիտել"
 
 #: src/MainWindow.py:238
 msgid "_Toolbar"
-msgstr "_Գործիքաձող"
+msgstr "_Գործիքաշերտ"
 
 #: src/MainWindow.py:247
 msgid "Link Thoughts"
@@ -305,11 +305,11 @@ msgstr "Ընտրված մտքին պատկեր ավելացնել"
 
 #: src/MainWindow.py:261
 msgid "_Drawing Mode"
-msgstr "_Գծագրման ռեժիմ"
+msgstr "_Նկարելու ռեժիմ"
 
 #: src/MainWindow.py:262
 msgid "Make a pretty drawing"
-msgstr "Գեղեցիկ նկար գծել"
+msgstr "Գեղեցիկ նկար ստեղծել"
 
 #: src/MainWindow.py:263
 msgid "Add Resource"
@@ -337,11 +337,11 @@ msgstr "Ուղիղ գծերն օգտագործել իբրև կապ"
 
 #: src/MainWindow.py:271
 msgid "_Extended Information"
-msgstr "_Ընդլայնված տեղեկատվություն"
+msgstr "_Ընդլայնված տեղեկություն"
 
 #: src/MainWindow.py:272
 msgid "Show extended information for thoughts"
-msgstr "Ցույց տալ մտքերին վերաբերող ընդլայնված տեղեկատվությունը"
+msgstr "Ցույց տալ մտքերին վերաբերող ընդլայնված տեղեկությունը"
 
 #: src/MainWindow.py:273
 msgid "_Outline"
@@ -349,7 +349,7 @@ msgstr "_Ուրվագծել"
 
 #: src/MainWindow.py:274
 msgid "Show outline of thought hierarchy"
-msgstr "Ցույց տալ մտքերի հիերարխիայի ուրվագիծը"
+msgstr "Ցուցադրել մտքերի իմաստային հաջորդականության ուրվագիծը"
 
 #: src/MainWindow.py:275
 msgid "_Main"
@@ -373,7 +373,7 @@ msgstr "Մտքեր"
 
 #: src/MainWindow.py:576
 msgid "Save File As"
-msgstr "Ֆայլը պահել իբրև"
+msgstr "Ֆայլը պահել որպես."
 
 #: src/MainWindow.py:670
 msgid "All Files"
