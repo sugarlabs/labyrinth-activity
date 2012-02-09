@@ -43,7 +43,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2010-02-16 07:03+0200\n"
+"PO-Revision-Date: 2011-11-28 07:30+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: sq\n"
@@ -51,7 +51,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
@@ -95,15 +95,15 @@ msgstr "<ctrl>barabartë"
 
 #: labyrinthactivity.py:193
 msgid "Bold"
-msgstr ""
+msgstr "I trash"
 
 #: labyrinthactivity.py:198
 msgid "Italics"
-msgstr ""
+msgstr "Kursiv"
 
 #: labyrinthactivity.py:203
 msgid "Underline"
-msgstr ""
+msgstr "Nënvizo"
 
 #: labyrinthactivity.py:351
 msgid "Text mode"
@@ -156,7 +156,7 @@ msgstr "Shiko"
 
 #: labyrinthactivity.py:437
 msgid "Text"
-msgstr ""
+msgstr "Tekst"
 
 #: labyrinthactivity.py:448
 msgid "Thought Type"
@@ -358,7 +358,7 @@ msgstr "_Informacione të Zgjeruara"
 
 #: src/MainWindow.py:272
 msgid "Show extended information for thoughts"
-msgstr "Tregojnë Informacionet e zgjatur për mendimet"
+msgstr "Tregojnë informacionet e zgjatur për mendimet"
 
 #: src/MainWindow.py:273
 msgid "_Outline"
