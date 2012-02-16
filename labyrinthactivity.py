@@ -219,7 +219,7 @@ class TextAttributesToolbar(gtk.Toolbar):
             pango_font = pango.FontDescription(font.get_name())
             font_name = pango_font.to_string()
             fonts_combo_box.append_text(font_name)
-            if font_name == 'Times New' or font_name == 'Times New Roman':
+            if font_name in ['Times New', 'Times New Roman', 'Sans']:
                 index_tnr = index
         if index_tnr == -1:
             fonts_combo_box.set_active(0)
