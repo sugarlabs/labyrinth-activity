@@ -20,10 +20,8 @@ import os
 import time
 import logging
 from gettext import gettext as _
-import tempfile
 import xml.dom.minidom as dom
 
-import gobject
 import gtk
 import pango
 import pangocairo
@@ -32,7 +30,6 @@ import cairo
 from sugar.activity import activity
 from sugar.graphics.toolbutton import ToolButton
 from sugar.graphics.toolcombobox import ToolComboBox
-from sugar.graphics.toggletoolbutton import ToggleToolButton
 from sugar.graphics.radiotoolbutton import RadioToolButton
 from sugar.graphics.colorbutton import ColorToolButton
 from sugar.graphics.menuitem import MenuItem
@@ -54,7 +51,6 @@ sys.path.append(os.path.join(activity.get_bundle_path(), 'src'))
 
 import UndoManager
 import MMapArea
-import ImageThought
 import utils
 
 EMPTY = -800
