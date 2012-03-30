@@ -51,7 +51,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-02-06 04:59+0200\n"
+"PO-Revision-Date: 2012-03-30 05:39+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: af\n"
@@ -59,7 +59,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.3\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
@@ -256,7 +256,7 @@ msgstr ""
 
 #: src/MainWindow.py:229
 msgid "File"
-msgstr ""
+msgstr "Lêer"
 
 #: src/MainWindow.py:230
 msgid "Export as Image"
