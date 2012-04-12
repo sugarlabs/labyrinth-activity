@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2012-03-27 14:54+0200\n"
+"PO-Revision-Date: 2012-04-12 23:42+0200\n"
 "Last-Translator: Eduardo H. <hoboprimate@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt\n"
@@ -163,7 +163,7 @@ msgstr "<ctrl>e"
 
 #: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
-msgstr "Ligar/desligar dois pensamentos seleccionados"
+msgstr "Ligar/desligar dois pensamentos selecionados"
 
 #: labyrinthactivity.py:518
 msgid "<ctrl>l"
@@ -171,7 +171,7 @@ msgstr "<ctrl>l"
 
 #: labyrinthactivity.py:523
 msgid "Erase selected thought(s)"
-msgstr "Apagar pensamento(s) seleccionado(s)"
+msgstr "Apagar pensamento(s) selecionado(s)"
 
 #: labyrinthactivity.py:595
 msgid ""
@@ -217,7 +217,7 @@ msgstr "Abrir Ficheiro"
 
 #: src/Browser.py:288
 msgid "MAPZ Compressed Map (*.mapz)"
-msgstr ""
+msgstr "Mapa Comprimido MAPZ (*.mapz)"
 
 #: src/Browser.py:319
 msgid "Map Name"
@@ -261,7 +261,7 @@ msgstr "Exporta o teu mapa como XML"
 
 #: src/MainWindow.py:235
 msgid "Close the current window"
-msgstr "Fechar a janela actual"
+msgstr "Fechar a janela atual"
 
 #: src/MainWindow.py:236
 msgid "_Edit"
@@ -281,7 +281,7 @@ msgstr "Ligar Pensamentos"
 
 #: src/MainWindow.py:248
 msgid "Link the selected thoughts"
-msgstr "Liga os pensamentos seleccionados"
+msgstr "Liga os pensamentos selecionados"
 
 #: src/MainWindow.py:249
 msgid "_Mode"
@@ -293,7 +293,7 @@ msgstr "_Apagar"
 
 #: src/MainWindow.py:251
 msgid "Delete the selected element(s)"
-msgstr "Apaga o(s) elemento(s) seleccionado(s)"
+msgstr "Apaga o(s) elemento(s) selecionado(s)"
 
 #: src/MainWindow.py:257
 msgid "_Edit Mode"
@@ -309,7 +309,7 @@ msgstr "_Adicionar Imagem"
 
 #: src/MainWindow.py:260
 msgid "Add an image to selected thought"
-msgstr "Adiciona uma imagem ao pensamento seleccionado"
+msgstr "Adiciona uma imagem ao pensamento selecionado"
 
 #: src/MainWindow.py:261
 msgid "_Drawing Mode"
@@ -397,7 +397,7 @@ msgstr "Imagem JPEG (*.jpg, *.jpeg)"
 
 #: src/MainWindow.py:673
 msgid "SVG Vector Image (*.svg)"
-msgstr "Imagem Vectorial SVG (*.svg)"
+msgstr "Imagem Vetorial SVG (*.svg)"
 
 #: src/MainWindow.py:674
 msgid "PDF Portable Document (*.pdf)"
@@ -413,12 +413,12 @@ msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."
 msgstr ""
-"O tipo de ficheiro '%s' não é suportado.  Por favor use o sufixo '.png', "
+"O tipo de ficheiro '%s' não é suportado.  Por favor utiliza o sufixo '.png', "
 "'.jpg' ou 'svg'."
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
 msgid "Choose image"
-msgstr "Escolha a imagem"
+msgstr "Escolhe a imagem"
 
 #: src/Links.py:269
 msgid "Choose Color"
