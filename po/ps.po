@@ -410,6 +410,7 @@ msgid "Unknown file format"
 msgstr "د نامعلومې بڼې دوسیه"
 
 #: src/MainWindow.py:711
+#, python-format
 #, python-format, fuzzy
 msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "

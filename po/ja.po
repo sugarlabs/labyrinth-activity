@@ -2,119 +2,189 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 00:31-0400\n"
-"PO-Revision-Date: 2009-10-30 00:36-0400\n"
-"Last-Translator: korakurider <korakurider@gmail.com>\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: 2011-12-16 06:04+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.2.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr ""
 
-#: labyrinthactivity.py:64
-msgid "Edit"
-msgstr "編集"
+#: labyrinthactivity.py:73
+msgid "Cut"
+msgstr ""
 
-#: labyrinthactivity.py:78
-msgid "Edit mode"
-msgstr "編集モード"
-
-#: labyrinthactivity.py:79
-msgid "<ctrl>e"
-msgstr "<ctrl>e"
-
-#: labyrinthactivity.py:85
-msgid "Text mode"
-msgstr "テキストモード"
-
-#: labyrinthactivity.py:86
-msgid "<ctrl>t"
-msgstr "<ctrl>t"
-
-#: labyrinthactivity.py:93
-msgid "Drawing mode"
-msgstr "描画モード"
-
-#: labyrinthactivity.py:94
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
-
-#: labyrinthactivity.py:100
-msgid "Image add mode"
-msgstr "画像追加モード"
-
-#: labyrinthactivity.py:101
-msgid "<ctrl>i"
-msgstr "<ctrl>i"
-
-#: labyrinthactivity.py:110
-msgid "Link/unlink two selected thoughts"
-msgstr "選択されている２つのノードをリンクする/切り離す"
-
-#: labyrinthactivity.py:111
-msgid "<ctrl>l"
-msgstr "<ctrl>l"
-
-#: labyrinthactivity.py:120
-msgid "Erase selected thought(s)"
-msgstr "選択されているノードを消去する"
-
-#: labyrinthactivity.py:129
-msgid "View"
-msgstr "表示"
-
-#: labyrinthactivity.py:132
+#: labyrinthactivity.py:105
 msgid "Fit to window"
 msgstr "ウィンドウにあわせる"
 
-#: labyrinthactivity.py:133
+#: labyrinthactivity.py:106
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:138
+#: labyrinthactivity.py:111
 msgid "Original size"
 msgstr "元のサイズ"
 
-#: labyrinthactivity.py:139
+#: labyrinthactivity.py:112
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:144
+#: labyrinthactivity.py:117
 msgid "Zoom out"
 msgstr "縮小"
 
-#: labyrinthactivity.py:145
+#: labyrinthactivity.py:118
 msgid "<ctrl>minus"
-msgstr "<ctrl>minus"
+msgstr "<ctrl>-"
 
-#: labyrinthactivity.py:150
+#: labyrinthactivity.py:123
 msgid "Zoom in"
 msgstr "拡大"
 
-#: labyrinthactivity.py:151
+#: labyrinthactivity.py:124
 msgid "<ctrl>equal"
-msgstr "<ctrl>equal"
+msgstr "<ctrl>="
 
-#: labyrinthactivity.py:197
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:351
+msgid "Text mode"
+msgstr "テキストモード"
+
+#: labyrinthactivity.py:352
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:359
+msgid "Image add mode"
+msgstr "画像追加モード"
+
+#: labyrinthactivity.py:360
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "描画モード"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:372
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:373
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "編集"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "表示"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "編集モード"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:517
+msgid "Link/unlink two selected thoughts"
+msgstr "選択されている２つのノードをリンクする/切り離す"
+
+#: labyrinthactivity.py:518
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:523
+msgid "Erase selected thought(s)"
+msgstr "選択されているノードを消去する"
+
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
-msgstr "ここをクリックして、中心となるノードを追加してください"
+msgstr ""
+"ここをクリックして、中心と\n"
+"なるノードを追加してください"
 
 #: src/DrawingThought.py:60
 #, python-format
 msgid "Drawing #%d"
-msgstr ""
+msgstr "描画中 #%d"
 
 #: src/Browser.py:194
 #, python-format
@@ -123,7 +193,7 @@ msgstr "ヘルプを表示できません: %s"
 
 #: src/Browser.py:225
 msgid "Translation by Don Scorgie"
-msgstr ""
+msgstr "翻訳者: Don Scorgie"
 
 #: src/Browser.py:247
 msgid "The map cannot be deleted right now. Is it open?"
@@ -342,16 +412,16 @@ msgstr "未知のファイル形式"
 msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."
-msgstr "このファイルタイプ '%s' はサポートされていません。拡張子 '.png', '.jpg', '.svg'を使用してください。"
+msgstr "このファイルタイプ '%s' はサポートされていません。 拡張子 '.png', '.jpg', '.svg'を使用してください。"
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
 msgid "Choose image"
 msgstr "画像を選択"
 
-#: src/Links.py:261
+#: src/Links.py:269
 msgid "Choose Color"
 msgstr "色を選択"
 
-#: src/Links.py:274
+#: src/Links.py:282
 msgid "Set Color"
 msgstr "色を設定"

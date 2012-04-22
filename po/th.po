@@ -408,7 +408,8 @@ msgid "Unknown file format"
 msgstr "ไม่ทราบรูปแบบไฟล์"
 
 #: src/MainWindow.py:711
-#, python-format, 
+#, python-format
+#, python-format,
 msgid ""
 "The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
 "'.svg'."

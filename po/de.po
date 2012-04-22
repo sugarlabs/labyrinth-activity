@@ -59,15 +59,15 @@ msgstr ""
 "Project-Id-Version: labyrinth\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-08-15 00:32+0200\n"
-"Last-Translator: Markus <m.slg@gmx.de>\n"
+"PO-Revision-Date: 2011-10-15 04:36+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: German <fedora-trans-de@redhat.com>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 "X-Poedit-Language: German\n"
 
 #: activity/activity.info:2
@@ -205,7 +205,7 @@ msgid ""
 "central thought"
 msgstr ""
 "Klicke zum Hinzufügen\n"
-"des zentralen Gedankens."
+"des zentralen Gedankens"
 
 #: src/DrawingThought.py:60
 #, python-format
@@ -231,7 +231,7 @@ msgstr "Dieser Karte ist kein Dateiname zugeordnet."
 
 #: src/Browser.py:252
 msgid "Cannot delete this map"
-msgstr "Kann diese Karte nicht löschen."
+msgstr "Kann diese Karte nicht löschen"
 
 #: src/Browser.py:259
 msgid "Do you really want to delete this Map?"

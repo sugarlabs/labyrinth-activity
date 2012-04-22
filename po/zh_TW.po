@@ -2,124 +2,426 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#, fuzzy
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-09 04:49+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: 2011-12-31 11:42+0200\n"
+"Last-Translator: lite <litekok@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.3.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
-msgstr ""
+msgstr "迷宮"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:53
-msgid "Edit"
-msgstr ""
+#: labyrinthactivity.py:73
+msgid "Cut"
+msgstr "剪下"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:74
-msgid "Edit mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:75
-msgid "<ctrl>e"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:81
-msgid "Text mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:82
-msgid "<ctrl>t"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:89
-msgid "Drawing mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:90
-msgid "<ctrl>d"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:96
-msgid "Image add mode"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:97
-msgid "<ctrl>i"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:106
-msgid "Link/unlink two selected thoughts"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:115
-msgid "Erase selected thought(s)"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:124
-msgid "View"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:127
-msgid "Zoom in"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:132
-msgid "Zoom out"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:137
+#: labyrinthactivity.py:105
 msgid "Fit to window"
-msgstr ""
+msgstr "符合視窗大小"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:142
+#: labyrinthactivity.py:106
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:111
 msgid "Original size"
-msgstr ""
+msgstr "原始大小"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/labyrinthactivity.py:188
+#: labyrinthactivity.py:112
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:117
+msgid "Zoom out"
+msgstr "縮小"
+
+#: labyrinthactivity.py:118
+msgid "<ctrl>minus"
+msgstr "<ctrl>-"
+
+#: labyrinthactivity.py:123
+msgid "Zoom in"
+msgstr "放大"
+
+#: labyrinthactivity.py:124
+msgid "<ctrl>equal"
+msgstr "<ctrl>="
+
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr "粗體"
+
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr "斜體"
+
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr "下劃線"
+
+#: labyrinthactivity.py:351
+msgid "Text mode"
+msgstr "文字模式"
+
+#: labyrinthactivity.py:352
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:359
+msgid "Image add mode"
+msgstr "新增圖片模式"
+
+#: labyrinthactivity.py:360
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "繪製模式"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:372
+msgid "Label mode"
+msgstr "標記模式"
+
+#: labyrinthactivity.py:373
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr "可攜式文件格式 (PDF)"
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr "無損壓縮格式 (PNG)"
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "編輯"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "檢視"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr "文字"
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr "思考類型"
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "編輯模式"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:517
+msgid "Link/unlink two selected thoughts"
+msgstr "連接/不連接兩個選擇的思路"
+
+#: labyrinthactivity.py:518
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:523
+msgid "Erase selected thought(s)"
+msgstr "擦掉選擇的思路"
+
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
+"點選增加\n"
+"中心思路"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:54
-msgid "Choose image"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:227
-msgid "Error loading file"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ImageThought.py:228
-#, python-format
-msgid "%s could not be found.  Associated thought will be empty."
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:261
-msgid "Choose Color"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/Links.py:274
-msgid "Set Color"
-msgstr ""
-
-#: /home/garycmartin/Activities/Labyrinth.activity/src/DrawingThought.py:59
+#: src/DrawingThought.py:60
 #, python-format
 msgid "Drawing #%d"
-msgstr ""
+msgstr "繪製 #%d"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:128
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "無法顯示協助: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "由 Yuan CHAO 翻譯"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "地圖無法刪除，是否目前為開啟狀態？"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "地圖沒有相關連的檔名。"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "無法删除此地圖"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "您確定要刪除此地圖嗎？"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "開啟檔案"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ 壓縮地圖 (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "地圖名稱"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "最後修改時間"
+
+#: src/ResourceThought.py:128
 msgid "Edit Text"
-msgstr ""
+msgstr "編輯文字"
 
-#: /home/garycmartin/Activities/Labyrinth.activity/src/ResourceThought.py:133
+#: src/ResourceThought.py:133
 msgid "Edit URI"
-msgstr ""
+msgstr "編輯 URI"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "未命名地圖"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "檔案"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "匯出為圖片"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "將您的地圖匯出為圖片"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "匯出圖片..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "將您的地圖匯出為XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "關閉當前視窗"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "編輯 (_E)"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "檢視 (_V)"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "工具列 (_T)"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "連接思路"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "連接選擇的思路"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "模式 (_M)"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "删除 (_D)"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "删除選擇的元件"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "編輯模式 (_E)"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "開啟編輯模式"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "新增圖片 (_A)"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "新增圖片至選擇的思路"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "繪製模式 (_D)"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "作個漂亮的畫"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "新增資源"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "新增資源"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "使用曲線 (_C)"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "使用曲線連接"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "使用線段 (_L)"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "使用線段連接"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "附加訊息 (_E)"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "顯示思路的附加訊息"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "外框 (_O)"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "顯示思路階層的外框"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "主選單 (_M)"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "顯示主選單工具列"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "格式 (_F)"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "顯示格式工具列"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "思路"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "另存新檔"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "所有檔案"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG 圖片 (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG 圖片 (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG 向量圖片 (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF 可攜式文件 (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "未知檔案格式"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr "不支援 %s 檔案類型，請使用 '.png', '.jpg' or '.svg' 等副檔名。"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "選擇圖片"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "選擇顏色"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "設定顏色"

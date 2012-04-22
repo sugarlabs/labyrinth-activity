@@ -10,11 +10,31 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-15 00:32-0500\n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
 "PO-Revision-Date: 2010-03-07 16:44+0200\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,103 +49,132 @@ msgstr ""
 msgid "Labyrinth"
 msgstr "Cung mê"
 
-#: labyrinthactivity.py:68
+#: labyrinthactivity.py:73
 msgid "Cut"
 msgstr "Cắt"
 
-#: labyrinthactivity.py:100
+#: labyrinthactivity.py:105
 msgid "Fit to window"
 msgstr "Vừa khít cửa sổ"
 
-#: labyrinthactivity.py:101
+#: labyrinthactivity.py:106
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:111
 msgid "Original size"
 msgstr "Kích cỡ gốc"
 
-#: labyrinthactivity.py:107
+#: labyrinthactivity.py:112
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:117
 msgid "Zoom out"
 msgstr "Thu nhỏ"
 
-#: labyrinthactivity.py:113
+#: labyrinthactivity.py:118
 msgid "<ctrl>minus"
 msgstr "<ctrl>trừ"
 
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:123
 msgid "Zoom in"
 msgstr "Phóng to"
 
-#: labyrinthactivity.py:119
+#: labyrinthactivity.py:124
 msgid "<ctrl>equal"
 msgstr "<ctrl>bằng"
 
-#: labyrinthactivity.py:190 labyrinthactivity.py:245
-msgid "Portable Document Format (PDF)"
-msgstr "Định dạng Tài liệu Di động (PDF)"
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr ""
 
-#: labyrinthactivity.py:196 labyrinthactivity.py:250
-msgid "Portable Network Graphic (PNG)"
-msgstr "Đồ họa Mạng Di động (PNG)"
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr ""
 
-#: labyrinthactivity.py:204 labyrinthactivity.py:256
-msgid "Edit"
-msgstr "Sửa"
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr ""
 
-#: labyrinthactivity.py:216 labyrinthactivity.py:271
-msgid "View"
-msgstr "Xem"
-
-#: labyrinthactivity.py:280
-msgid "Edit mode"
-msgstr "Chế độ Sửa"
-
-#: labyrinthactivity.py:281
-msgid "<ctrl>e"
-msgstr "<ctrl>s"
-
-#: labyrinthactivity.py:287
+#: labyrinthactivity.py:351
 msgid "Text mode"
 msgstr "Chế độ Chữ"
 
-#: labyrinthactivity.py:288
+#: labyrinthactivity.py:352
 msgid "<ctrl>t"
 msgstr "<ctrl>c"
 
-#: labyrinthactivity.py:295
-msgid "Drawing mode"
-msgstr "Chế độ Vẽ"
-
-#: labyrinthactivity.py:296
-msgid "<ctrl>d"
-msgstr "<ctrl>v"
-
-#: labyrinthactivity.py:302
+#: labyrinthactivity.py:359
 msgid "Image add mode"
 msgstr "Chế độ Thêm ảnh"
 
-#: labyrinthactivity.py:303
+#: labyrinthactivity.py:360
 msgid "<ctrl>i"
 msgstr "<ctrl>n"
 
-#: labyrinthactivity.py:311
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "Chế độ Vẽ"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>v"
+
+#: labyrinthactivity.py:372
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:373
+#, fuzzy
+msgid "<ctrl>a"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr "Định dạng Tài liệu Di động (PDF)"
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr "Đồ họa Mạng Di động (PNG)"
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "Sửa"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "Xem"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "Chế độ Sửa"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>s"
+
+#: labyrinthactivity.py:517
 msgid "Link/unlink two selected thoughts"
 msgstr "(Bỏ) liên kết hai ý nghĩ được chọn"
 
-#: labyrinthactivity.py:312
+#: labyrinthactivity.py:518
 msgid "<ctrl>l"
 msgstr "<ctrl>l"
 
-#: labyrinthactivity.py:317
+#: labyrinthactivity.py:523
 msgid "Erase selected thought(s)"
 msgstr "Xoá (các) ý nghĩ được chọn"
 
-#: labyrinthactivity.py:388
+#: labyrinthactivity.py:595
 msgid ""
 "Click to add\n"
 "central thought"
