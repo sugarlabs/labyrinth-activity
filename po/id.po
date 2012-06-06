@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2011-04-04 11:38+0200\n"
+"PO-Revision-Date: 2012-05-22 03:28+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: id\n"
@@ -43,59 +43,67 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: activity/activity.info:2
 msgid "Labyrinth"
 msgstr ""
 
 #: labyrinthactivity.py:73
+#, fuzzy
 msgid "Cut"
-msgstr ""
+msgstr "Potong"
 
 #: labyrinthactivity.py:105
+#, fuzzy
 msgid "Fit to window"
-msgstr ""
+msgstr "Paskan ke jendela"
 
 #: labyrinthactivity.py:106
 msgid "<ctrl>9"
 msgstr ""
 
 #: labyrinthactivity.py:111
+#, fuzzy
 msgid "Original size"
-msgstr ""
+msgstr "Ukuran asli"
 
 #: labyrinthactivity.py:112
 msgid "<ctrl>0"
 msgstr ""
 
 #: labyrinthactivity.py:117
+#, fuzzy
 msgid "Zoom out"
-msgstr ""
+msgstr "Perkecil"
 
 #: labyrinthactivity.py:118
 msgid "<ctrl>minus"
 msgstr ""
 
 #: labyrinthactivity.py:123
+#, fuzzy
 msgid "Zoom in"
-msgstr ""
+msgstr "Perbesar"
 
 #: labyrinthactivity.py:124
 msgid "<ctrl>equal"
 msgstr ""
 
 #: labyrinthactivity.py:193
+#, fuzzy
 msgid "Bold"
-msgstr ""
+msgstr "Tebal"
 
 #: labyrinthactivity.py:198
+#, fuzzy
 msgid "Italics"
-msgstr ""
+msgstr "Miring"
 
 #: labyrinthactivity.py:203
+#, fuzzy
 msgid "Underline"
-msgstr ""
+msgstr "Garis bawah"
 
 #: labyrinthactivity.py:351
 msgid "Text mode"
@@ -142,20 +150,23 @@ msgid "Edit"
 msgstr "Sunting"
 
 #: labyrinthactivity.py:431 labyrinthactivity.py:500
+#, fuzzy
 msgid "View"
-msgstr ""
+msgstr "Tampilan"
 
 #: labyrinthactivity.py:437
+#, fuzzy
 msgid "Text"
-msgstr ""
+msgstr "Teks"
 
 #: labyrinthactivity.py:448
 msgid "Thought Type"
 msgstr ""
 
 #: labyrinthactivity.py:508
+#, fuzzy
 msgid "Edit mode"
-msgstr ""
+msgstr "_Sunting Mode"
 
 #: labyrinthactivity.py:509
 msgid "<ctrl>e"
@@ -210,8 +221,9 @@ msgid "Do you really want to delete this Map?"
 msgstr ""
 
 #: src/Browser.py:284
+#, fuzzy
 msgid "Open File"
-msgstr ""
+msgstr "Buka Berkas"
 
 #: src/Browser.py:288
 msgid "MAPZ Compressed Map (*.mapz)"
@@ -226,20 +238,23 @@ msgid "Last Modified"
 msgstr ""
 
 #: src/ResourceThought.py:128
+#, fuzzy
 msgid "Edit Text"
-msgstr ""
+msgstr "Sunting Teks"
 
 #: src/ResourceThought.py:133
+#, fuzzy
 msgid "Edit URI"
-msgstr ""
+msgstr "Sunting URI"
 
 #: src/MainWindow.py:163 src/MainWindow.py:517
 msgid "Untitled Map"
 msgstr ""
 
 #: src/MainWindow.py:229
+#, fuzzy
 msgid "File"
-msgstr ""
+msgstr "Berkas"
 
 #: src/MainWindow.py:230
 msgid "Export as Image"
@@ -264,15 +279,17 @@ msgstr ""
 #: src/MainWindow.py:236
 #, fuzzy
 msgid "_Edit"
-msgstr "Sunting"
+msgstr "_Sunting"
 
 #: src/MainWindow.py:237
+#, fuzzy
 msgid "_View"
-msgstr ""
+msgstr "_Tampilan"
 
 #: src/MainWindow.py:238
+#, fuzzy
 msgid "_Toolbar"
-msgstr ""
+msgstr "_Bilah alat"
 
 #: src/MainWindow.py:247
 msgid "Link Thoughts"
@@ -283,20 +300,23 @@ msgid "Link the selected thoughts"
 msgstr ""
 
 #: src/MainWindow.py:249
+#, fuzzy
 msgid "_Mode"
-msgstr ""
+msgstr "_Mode"
 
 #: src/MainWindow.py:250
+#, fuzzy
 msgid "_Delete"
-msgstr ""
+msgstr "_Hapus"
 
 #: src/MainWindow.py:251
 msgid "Delete the selected element(s)"
 msgstr ""
 
 #: src/MainWindow.py:257
+#, fuzzy
 msgid "_Edit Mode"
-msgstr ""
+msgstr "_Sunting Mode"
 
 #: src/MainWindow.py:258
 msgid "Turn on edit mode"
@@ -359,16 +379,18 @@ msgid "Show outline of thought hierarchy"
 msgstr ""
 
 #: src/MainWindow.py:275
+#, fuzzy
 msgid "_Main"
-msgstr ""
+msgstr "_Utama"
 
 #: src/MainWindow.py:276
 msgid "Show main toolbar"
 msgstr ""
 
 #: src/MainWindow.py:277
+#, fuzzy
 msgid "_Format"
-msgstr ""
+msgstr "_Format"
 
 #: src/MainWindow.py:278
 msgid "Show format toolbar"
@@ -383,8 +405,9 @@ msgid "Save File As"
 msgstr ""
 
 #: src/MainWindow.py:670
+#, fuzzy
 msgid "All Files"
-msgstr ""
+msgstr "Semua Berkas"
 
 #: src/MainWindow.py:671
 msgid "PNG Image (*.png)"
