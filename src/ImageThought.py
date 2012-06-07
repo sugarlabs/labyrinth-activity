@@ -123,7 +123,9 @@ class ImageThought (ResizableThought):
 
 		if self.orig_pic and (force or not self.pic or self.pic.get_width() != pic_w
 				or self.pic.get_height() != pic_h):
-			self.pic = self.orig_pic.scale_simple(pic_w, pic_h, scale)
+                        self.pic = self.orig_pic.scale_simple(int(pic_w),
+							      int(pic_h), scale)
+
 
 	def process_button_down (self, event, coords):
 		if ResizableThought.process_button_down(self, event, coords):
