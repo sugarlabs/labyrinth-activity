@@ -1,6 +1,6 @@
 [Activity]
 name = Labyrinth
-activity_version = 12
+activity_version = 13
 bundle_id = org.gnome.Labyrinth
 icon = activity-labyrinth
 exec = sugar-activity labyrinthactivity.LabyrinthActivity
