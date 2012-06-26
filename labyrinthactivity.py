@@ -508,6 +508,10 @@ class LabyrinthActivity(activity.Activity):
             view_toolbar = ViewToolbar(self._main_area)
             toolbox.add_toolbar(_('View'), view_toolbar)
 
+            self.mods = [None] * 6
+            self.thought_toolbar = ThoughtsToolbar(self)
+            toolbox.add_toolbar(_('Thought Type'), self.thought_toolbar)
+
             activity_toolbar = toolbox.get_activity_toolbar()
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
