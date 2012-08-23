@@ -35,7 +35,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2012-04-15 08:03+0200\n"
+"PO-Revision-Date: 2012-05-19 06:21+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ur\n"
@@ -62,8 +62,9 @@ msgid "<ctrl>9"
 msgstr ""
 
 #: labyrinthactivity.py:111
+#, fuzzy
 msgid "Original size"
-msgstr ""
+msgstr "اصل سائز"
 
 #: labyrinthactivity.py:112
 msgid "<ctrl>0"
