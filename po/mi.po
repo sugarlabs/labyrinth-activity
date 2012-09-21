@@ -1,0 +1,400 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.7.0\n"
+
+#: activity/activity.info:2
+msgid "Labyrinth"
+msgstr "Kōwhīwhiwhi"
+
+#: labyrinthactivity.py:73
+msgid "Cut"
+msgstr "Tapahi"
+
+#: labyrinthactivity.py:105
+msgid "Fit to window"
+msgstr "Whakauru ki matapihi"
+
+#: labyrinthactivity.py:106
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:111
+msgid "Original size"
+msgstr "Rahi taketake"
+
+#: labyrinthactivity.py:112
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:117
+msgid "Zoom out"
+msgstr "Topa atu"
+
+#: labyrinthactivity.py:118
+msgid "<ctrl>minus"
+msgstr "<ctrl>tangohia"
+
+#: labyrinthactivity.py:123
+msgid "Zoom in"
+msgstr "Topa mai"
+
+#: labyrinthactivity.py:124
+msgid "<ctrl>equal"
+msgstr "<ctrl>ōrite"
+
+#: labyrinthactivity.py:193
+msgid "Bold"
+msgstr "Taekaha"
+
+#: labyrinthactivity.py:198
+msgid "Italics"
+msgstr "Ngā Tītaha"
+
+#: labyrinthactivity.py:203
+msgid "Underline"
+msgstr "Tāraro"
+
+#: labyrinthactivity.py:351
+msgid "Text mode"
+msgstr "Aratau kupu"
+
+#: labyrinthactivity.py:352
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:359
+msgid "Image add mode"
+msgstr "Aratau tāpiri atahanga"
+
+#: labyrinthactivity.py:360
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:366
+msgid "Drawing mode"
+msgstr "Aratau tātuhi"
+
+#: labyrinthactivity.py:367
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:372
+msgid "Label mode"
+msgstr "Aratau tapanga"
+
+#: labyrinthactivity.py:373
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:405 labyrinthactivity.py:474
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: labyrinthactivity.py:411 labyrinthactivity.py:479
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:485
+msgid "Edit"
+msgstr "Whakatika"
+
+#: labyrinthactivity.py:431 labyrinthactivity.py:500
+msgid "View"
+msgstr "Tiro"
+
+#: labyrinthactivity.py:437
+msgid "Text"
+msgstr "Kupu"
+
+#: labyrinthactivity.py:448
+msgid "Thought Type"
+msgstr "Pato Whakaaro"
+
+#: labyrinthactivity.py:508
+msgid "Edit mode"
+msgstr "Aratau whakatika"
+
+#: labyrinthactivity.py:509
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:517
+msgid "Link/unlink two selected thoughts"
+msgstr "hono/motuhono i ngā whakaaro e rua kua tīpako"
+
+#: labyrinthactivity.py:518
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:523
+msgid "Erase selected thought(s)"
+msgstr "Muku i ngā whakaaro kua tīpako"
+
+#: labyrinthactivity.py:595
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Pāwhiri ki te tāpiri:\n"
+"whakaaro pū"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Tātuhi #%d"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Kāore e taea te whakaatu āwhina: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Whakareo nā Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Kāore e taea te muku i te mahere i tēnei wā. Kei te tuwhera?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Kāore he ingoakōnae pāhono."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Kāore e taea te muku i tēnei mahere"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "E tika ana kia mukua e koe tēnei Mahere?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Kōnae Tuwhera"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Mahere Kōpeke (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Ingoa Mahere"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Kētanga Mutunga"
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Whakatika Kupu"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Whakatika URI"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Mahere Kore Ingoa"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Kōnae"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Kaweake hei Atahanga"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Kaweake tō mahere hei atahanga"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Kaweake Mahere..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Kaweake tō mahere hei XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Katia te matapihi o nāianei"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Whakatika"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Tiro"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Paeutauta"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Hono Whakaaro"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Honohono i ngā whakaaro kua tīpakohia"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Aratau"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Muku"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Muku i ngā huānga kua tīpakohia"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Aratau Whakatika"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Whakakā aratu whakatika"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Tāpiri Atahanga"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Tāpiri i tētahi atahanga ki te whakaaro kua tīpakohia"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Aratau Tātuhi"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Mahia tētahi tātuhi ātaahua"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Tāpiri Rauemi"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Tāpiritia tētahi rauemi"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Whakamahi_Ānau"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Whakamahi ānau hei hononga"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Whakamahi_Rārangi"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Whakamahi rārangi tōtika hei hononga"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Mōhiohio Toro"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Whakaatu i ngā mōhiohio toro mo ngā whakaaro"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Whakahuahua"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Whakaatu whakahuahua o te aroākapanga whakaaro"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Matua"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Whakaatu paeutauta matua"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Hōputu"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Whakaatu paeutauta hōputu"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Ngā Whakaaro"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Tīaki Kōnae Hei"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Kōnae Katoa"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "Atahanga PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Atahanga JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Atahanga Vector SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Tuhinga Pūkoro PDF (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Hōputu kōnae kāore i te mōhiotia"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Kāore te momo kōnae '%s' i te tautokoria.  Tēnā whakamahia te kūmuri '.png', "
+"'.jpg', '.svg' rānei."
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Kōwhiri atahanga"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Kōwhiri Tae"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Tautuhi Tae"
