@@ -158,8 +158,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-24 00:30-0500\n"
-"PO-Revision-Date: 2012-08-06 22:19+0200\n"
+"POT-Creation-Date: 2012-10-03 00:31-0400\n"
+"PO-Revision-Date: 2012-10-13 05:11+0200\n"
 "Last-Translator: AlanJAS <alanjas@hotmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: es\n"
@@ -169,149 +169,153 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
 msgstr "Mapas mentales"
 
-#: labyrinthactivity.py:73
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+"¿Tienes mucho en tu mente? ¡Haz un mapa! Esta actividad te permite crear "
+"mapas mentales, además de palabras, puedes tener dibujos e imágenes."
+
+#: labyrinthactivity.py:70
 msgid "Cut"
 msgstr "Cortar"
 
-#: labyrinthactivity.py:105
+#: labyrinthactivity.py:103
 msgid "Fit to window"
 msgstr "Ajustar a la ventana"
 
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:104
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:111
+#: labyrinthactivity.py:109
 msgid "Original size"
 msgstr "Tamaño original"
 
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:110
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:117
+#: labyrinthactivity.py:115
 msgid "Zoom out"
 msgstr "Reducir"
 
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:116
 msgid "<ctrl>minus"
 msgstr "<ctrl>menos"
 
-#: labyrinthactivity.py:123
+#: labyrinthactivity.py:121
 msgid "Zoom in"
 msgstr "Ampliar"
 
-#: labyrinthactivity.py:124
+#: labyrinthactivity.py:122
 msgid "<ctrl>equal"
 msgstr "<ctrl>igual"
 
 #  self.bold = ToolButton('bold-text')
 # 193
 #         self.bold.set_tooltip(_('Bold'
-#: labyrinthactivity.py:193
+#: labyrinthactivity.py:194
 msgid "Bold"
 msgstr "Resaltado"
 
-#: labyrinthactivity.py:198
+#: labyrinthactivity.py:199
 msgid "Italics"
 msgstr "Itálica"
 
-#: labyrinthactivity.py:203
+#: labyrinthactivity.py:204
 msgid "Underline"
 msgstr "Subrayar"
 
-#: labyrinthactivity.py:351
+#: labyrinthactivity.py:354
 msgid "Text mode"
 msgstr "Modo de texto"
 
-#: labyrinthactivity.py:352
+#: labyrinthactivity.py:355
 msgid "<ctrl>t"
 msgstr "<ctrl>t Modo de texto"
 
-#: labyrinthactivity.py:359
+#: labyrinthactivity.py:363
 msgid "Image add mode"
 msgstr "Modo de añadir imágenes"
 
-#: labyrinthactivity.py:360
+#: labyrinthactivity.py:364
 msgid "<ctrl>i"
 msgstr "<ctrl>i Modo de añadir imagenes"
 
-#: labyrinthactivity.py:366
+#: labyrinthactivity.py:371
 msgid "Drawing mode"
 msgstr "Modo de dibujo"
 
-#: labyrinthactivity.py:367
+#: labyrinthactivity.py:372
 msgid "<ctrl>d"
 msgstr "<ctrl>d Modo de dibujo"
 
-#: labyrinthactivity.py:372
+#: labyrinthactivity.py:378
 msgid "Label mode"
 msgstr "Modo de etiquetar"
 
-#: labyrinthactivity.py:373
+#: labyrinthactivity.py:379
 msgid "<ctrl>a"
 msgstr "<ctrl>a Seleccionar todas las ideas"
 
-#: labyrinthactivity.py:405 labyrinthactivity.py:474
+#: labyrinthactivity.py:413 labyrinthactivity.py:483
 msgid "Portable Document Format (PDF)"
 msgstr "Formato de Documento Portátil (PDF)"
 
-#: labyrinthactivity.py:411 labyrinthactivity.py:479
+#: labyrinthactivity.py:419 labyrinthactivity.py:488
 msgid "Portable Network Graphic (PNG)"
 msgstr "Gráfico Portátil de Red (PNG)"
 
-#: labyrinthactivity.py:419 labyrinthactivity.py:485
+#: labyrinthactivity.py:427 labyrinthactivity.py:494
 msgid "Edit"
 msgstr "Editar"
 
-#: labyrinthactivity.py:431 labyrinthactivity.py:500
+#: labyrinthactivity.py:439 labyrinthactivity.py:509
 msgid "View"
 msgstr "Ver"
 
-#: labyrinthactivity.py:437
+#: labyrinthactivity.py:446
 msgid "Text"
 msgstr "Texto"
 
-#: labyrinthactivity.py:448
+#: labyrinthactivity.py:457 labyrinthactivity.py:513
 msgid "Thought Type"
 msgstr "Tipo de Idea"
 
-#: labyrinthactivity.py:508
+#: labyrinthactivity.py:520
 msgid "Edit mode"
 msgstr "Modo de edición"
 
-#: labyrinthactivity.py:509
+#: labyrinthactivity.py:521
 msgid "<ctrl>e"
 msgstr "<ctrl>e Modo de edición"
 
-#: labyrinthactivity.py:517
+#: labyrinthactivity.py:529
 msgid "Link/unlink two selected thoughts"
 msgstr "Unir/desunir dos pensamientos seleccionados"
 
-#: labyrinthactivity.py:518
+#: labyrinthactivity.py:530
 msgid "<ctrl>l"
 msgstr "<ctrl>l Unir dos o mas ideas seleccionadas"
 
-#: labyrinthactivity.py:523
+#: labyrinthactivity.py:535
 msgid "Erase selected thought(s)"
 msgstr "Borrar pensamiento(s) seleccionado(s)"
 
-#: labyrinthactivity.py:595
+#: labyrinthactivity.py:611
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
 "Clic para agregar\n"
 "pensamiento central"
-
-#: src/DrawingThought.py:60
-#, python-format
-msgid "Drawing #%d"
-msgstr "Dibujando #%d"
 
 #: src/Browser.py:194
 #, python-format
@@ -354,13 +358,22 @@ msgstr "Nombre del mapa"
 msgid "Last Modified"
 msgstr "Última modificación"
 
-#: src/ResourceThought.py:128
-msgid "Edit Text"
-msgstr "Editar Texto"
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Dibujando #%d"
 
-#: src/ResourceThought.py:133
-msgid "Edit URI"
-msgstr "Editar URI"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Escoger imagen"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Elegir Color"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Configurar Color"
 
 #: src/MainWindow.py:163 src/MainWindow.py:517
 msgid "Untitled Map"
@@ -543,17 +556,13 @@ msgstr ""
 "El archivo de tipo '%s' no es soportado.  Por favor use el sufijo '.png', "
 "'.jpg' or '.svg'."
 
-#: src/ImageThought.py:59 src/ImageThought.py:62
-msgid "Choose image"
-msgstr "Escoger imagen"
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Editar Texto"
 
-#: src/Links.py:269
-msgid "Choose Color"
-msgstr "Elegir Color"
-
-#: src/Links.py:282
-msgid "Set Color"
-msgstr "Configurar Color"
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Editar URI"
 
 #~ msgid "Error loading file"
 #~ msgstr "Error cargando archivo"
