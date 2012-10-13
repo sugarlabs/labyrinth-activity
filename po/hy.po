@@ -26,7 +26,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"POT-Creation-Date: 2012-10-03 00:31-0400\n"
 "PO-Revision-Date: 2011-12-23 03:09+0200\n"
 "Last-Translator: Jasmine <udea_jasmine@yahoo.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,146 +37,148 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
 msgstr "Լաբիրինթոս"
 
-#: labyrinthactivity.py:73
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:70
 msgid "Cut"
 msgstr "Կտրել"
 
-#: labyrinthactivity.py:105
+#: labyrinthactivity.py:103
 msgid "Fit to window"
 msgstr "Հարմարեցնել պատուհանի չափերին"
 
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:104
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:111
+#: labyrinthactivity.py:109
 msgid "Original size"
 msgstr "Սկզբնական չափսը"
 
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:110
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:117
+#: labyrinthactivity.py:115
 msgid "Zoom out"
 msgstr "Հեռվացնել"
 
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:116
 msgid "<ctrl>minus"
 msgstr "<ctrl>մինուս"
 
-#: labyrinthactivity.py:123
+#: labyrinthactivity.py:121
 msgid "Zoom in"
 msgstr "Մոտեցնել"
 
-#: labyrinthactivity.py:124
+#: labyrinthactivity.py:122
 msgid "<ctrl>equal"
 msgstr "<ctrl>հավասար"
 
-#: labyrinthactivity.py:193
+#: labyrinthactivity.py:194
 msgid "Bold"
 msgstr "Թավ"
 
-#: labyrinthactivity.py:198
+#: labyrinthactivity.py:199
 msgid "Italics"
 msgstr "Շեղատառ"
 
-#: labyrinthactivity.py:203
+#: labyrinthactivity.py:204
 msgid "Underline"
 msgstr "Ընդգծված"
 
-#: labyrinthactivity.py:351
+#: labyrinthactivity.py:354
 msgid "Text mode"
 msgstr "Տեքստային ռեժիմ"
 
-#: labyrinthactivity.py:352
+#: labyrinthactivity.py:355
 msgid "<ctrl>t"
 msgstr "<ctrl>t"
 
-#: labyrinthactivity.py:359
+#: labyrinthactivity.py:363
 msgid "Image add mode"
 msgstr "Պատկերի բեռնման ռեժիմ"
 
-#: labyrinthactivity.py:360
+#: labyrinthactivity.py:364
 msgid "<ctrl>i"
 msgstr "<ctrl>i"
 
-#: labyrinthactivity.py:366
+#: labyrinthactivity.py:371
 msgid "Drawing mode"
 msgstr "Նկարելու ռեժիմ"
 
-#: labyrinthactivity.py:367
+#: labyrinthactivity.py:372
 msgid "<ctrl>d"
 msgstr "<ctrl>d"
 
-#: labyrinthactivity.py:372
+#: labyrinthactivity.py:378
 msgid "Label mode"
 msgstr "Պիտակի ռեժիմ"
 
-#: labyrinthactivity.py:373
+#: labyrinthactivity.py:379
 msgid "<ctrl>a"
 msgstr "<ctrl>a"
 
-#: labyrinthactivity.py:405 labyrinthactivity.py:474
+#: labyrinthactivity.py:413 labyrinthactivity.py:483
 msgid "Portable Document Format (PDF)"
 msgstr "PDF - Տեղափոխելի փաստաթղթային ձևաչափ"
 
-#: labyrinthactivity.py:411 labyrinthactivity.py:479
+#: labyrinthactivity.py:419 labyrinthactivity.py:488
 msgid "Portable Network Graphic (PNG)"
 msgstr "PNG - Տեղափոխելի ցանցային գրաֆիկ"
 
-#: labyrinthactivity.py:419 labyrinthactivity.py:485
+#: labyrinthactivity.py:427 labyrinthactivity.py:494
 msgid "Edit"
 msgstr "Խմբագրել"
 
-#: labyrinthactivity.py:431 labyrinthactivity.py:500
+#: labyrinthactivity.py:439 labyrinthactivity.py:509
 msgid "View"
 msgstr "Դիտել"
 
-#: labyrinthactivity.py:437
+#: labyrinthactivity.py:446
 msgid "Text"
 msgstr "Տեքստ"
 
-#: labyrinthactivity.py:448
+#: labyrinthactivity.py:457 labyrinthactivity.py:513
 msgid "Thought Type"
 msgstr "Գաղափարի տեսակը"
 
-#: labyrinthactivity.py:508
+#: labyrinthactivity.py:520
 msgid "Edit mode"
 msgstr "Խմբագրման ռեժիմ"
 
-#: labyrinthactivity.py:509
+#: labyrinthactivity.py:521
 msgid "<ctrl>e"
 msgstr "<ctrl>e"
 
-#: labyrinthactivity.py:517
+#: labyrinthactivity.py:529
 msgid "Link/unlink two selected thoughts"
 msgstr "Ընտրված երկու մտքերը միացնել/անջատել"
 
-#: labyrinthactivity.py:518
+#: labyrinthactivity.py:530
 msgid "<ctrl>l"
 msgstr "<ctrl>l"
 
-#: labyrinthactivity.py:523
+#: labyrinthactivity.py:535
 msgid "Erase selected thought(s)"
 msgstr "Ջնջել ընտրված միտքը (մտքերը)"
 
-#: labyrinthactivity.py:595
+#: labyrinthactivity.py:611
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
 "Սեղմեք՝ կենտրոնական միտք\n"
 "ավելացնելու համար"
-
-#: src/DrawingThought.py:60
-#, python-format
-msgid "Drawing #%d"
-msgstr "Գծում է #%d"
 
 #: src/Browser.py:194
 #, python-format
@@ -219,13 +221,22 @@ msgstr "Քարտեզի անվանումը"
 msgid "Last Modified"
 msgstr "Վերջին փոփոխությունը"
 
-#: src/ResourceThought.py:128
-msgid "Edit Text"
-msgstr "Խմբագրել տեքստը"
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Գծում է #%d"
 
-#: src/ResourceThought.py:133
-msgid "Edit URI"
-msgstr "Խմբագրել URI-ը"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Ընտրել պատկերը"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Ընտրել գույնը"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Սահմանել գույնը"
 
 #: src/MainWindow.py:163 src/MainWindow.py:517
 msgid "Untitled Map"
@@ -408,14 +419,10 @@ msgstr ""
 "'%s' ֆայլային տեսակը չի սպասարկվում:  Խնդրեմ, օգտագործեք '.png', '.jpg' կամ "
 "'.svg' վերջածանցը:"
 
-#: src/ImageThought.py:59 src/ImageThought.py:62
-msgid "Choose image"
-msgstr "Ընտրել պատկերը"
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Խմբագրել տեքստը"
 
-#: src/Links.py:269
-msgid "Choose Color"
-msgstr "Ընտրել գույնը"
-
-#: src/Links.py:282
-msgid "Set Color"
-msgstr "Սահմանել գույնը"
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Խմբագրել URI-ը"

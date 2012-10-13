@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"POT-Creation-Date: 2012-10-03 00:31-0400\n"
 "PO-Revision-Date: 2012-07-16 01:17+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,180 +18,181 @@ msgstr ""
 "X-Generator: Pootle 2.0.5\n"
 
 #  "Laberinto"
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
 msgstr "Yuyaykunamanta t'aslara"
 
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
 #  "Cortar"
-#: labyrinthactivity.py:73
+#: labyrinthactivity.py:70
 msgid "Cut"
 msgstr "kuchuy"
 
 #  "Ajustar a la ventana"
-#: labyrinthactivity.py:105
+#: labyrinthactivity.py:103
 msgid "Fit to window"
 msgstr "Qhawanaman mat'iy"
 
 #  "<ctrl>9"
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:104
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
 #  "Tamaño original"
-#: labyrinthactivity.py:111
+#: labyrinthactivity.py:109
 msgid "Original size"
 msgstr "Pachanmanta sayaynin"
 
 #  "<ctrl>0"
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:110
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
 #  "Reducir"
-#: labyrinthactivity.py:117
+#: labyrinthactivity.py:115
 msgid "Zoom out"
 msgstr "Kharuykachaspa huch'uyachiq"
 
 #  "<ctrl>menos"
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:116
 msgid "<ctrl>minus"
 msgstr "<ctrl>pisichaywan (-)"
 
 #  "Ampliar"
-#: labyrinthactivity.py:123
+#: labyrinthactivity.py:121
 msgid "Zoom in"
 msgstr "Achuykachaspa hatunyachiq"
 
 #  "<ctrl>igual"
-#: labyrinthactivity.py:124
+#: labyrinthactivity.py:122
 msgid "<ctrl>equal"
 msgstr "<ctrl>kikinkaqwan(=)"
 
 #  "Resaltado"
-#: labyrinthactivity.py:193
+#: labyrinthactivity.py:194
 msgid "Bold"
 msgstr "Yanachasqa"
 
 #  "Itálica"
-#: labyrinthactivity.py:198
+#: labyrinthactivity.py:199
 msgid "Italics"
 msgstr "Kinrachasqa"
 
 #  "Subrayar"
-#: labyrinthactivity.py:203
+#: labyrinthactivity.py:204
 msgid "Underline"
 msgstr "Ura siq'isqa"
 
 #  "Modo de texto"
-#: labyrinthactivity.py:351
+#: labyrinthactivity.py:354
 msgid "Text mode"
 msgstr "Qillqa hina"
 
 #  "<ctrl>t Modo de texto"
-#: labyrinthactivity.py:352
+#: labyrinthactivity.py:355
 msgid "<ctrl>t"
 msgstr "<ctrl>t"
 
 #  "Modo de añadir imágenes"
-#: labyrinthactivity.py:359
+#: labyrinthactivity.py:363
 msgid "Image add mode"
 msgstr "Wanqi yaparinapaq hina"
 
 #  "<ctrl>i Modo de añadir imagenes"
-#: labyrinthactivity.py:360
+#: labyrinthactivity.py:364
 msgid "<ctrl>i"
 msgstr "<ctrl>i"
 
 #  "Modo de dibujo"
-#: labyrinthactivity.py:366
+#: labyrinthactivity.py:371
 msgid "Drawing mode"
 msgstr "Siq'ichasqa hina"
 
 #  "<ctrl>d Modo de dibujo"
-#: labyrinthactivity.py:367
+#: labyrinthactivity.py:372
 msgid "<ctrl>d"
 msgstr "<ctrl>d"
 
 #  "Modo de etiquetar"
-#: labyrinthactivity.py:372
+#: labyrinthactivity.py:378
 msgid "Label mode"
 msgstr "Sutichaqkuna"
 
 #  "<ctrl>a Seleccionar todas las ideas"
-#: labyrinthactivity.py:373
+#: labyrinthactivity.py:379
 msgid "<ctrl>a"
 msgstr "<ctrl>a"
 
 #  "Formato de Documento Portátil (PDF)"
-#: labyrinthactivity.py:405 labyrinthactivity.py:474
+#: labyrinthactivity.py:413 labyrinthactivity.py:483
 msgid "Portable Document Format (PDF)"
 msgstr "Khipu apaykachanapaq (PDF)"
 
 #  "Gráfico Portátil de Red (PNG)"
-#: labyrinthactivity.py:411 labyrinthactivity.py:479
+#: labyrinthactivity.py:419 labyrinthactivity.py:488
 msgid "Portable Network Graphic (PNG)"
 msgstr "Wanki apaykachanapaq (PNG)"
 
 #  "Editar"
-#: labyrinthactivity.py:419 labyrinthactivity.py:485
+#: labyrinthactivity.py:427 labyrinthactivity.py:494
 msgid "Edit"
 msgstr "Allinchay"
 
 #  "Ver"
-#: labyrinthactivity.py:431 labyrinthactivity.py:500
+#: labyrinthactivity.py:439 labyrinthactivity.py:509
 msgid "View"
 msgstr "Qhaway"
 
 #  "Texto"
-#: labyrinthactivity.py:437
+#: labyrinthactivity.py:446
 msgid "Text"
 msgstr "Qillqa"
 
 #  "Tipo de Idea"
-#: labyrinthactivity.py:448
+#: labyrinthactivity.py:457 labyrinthactivity.py:513
 msgid "Thought Type"
 msgstr "Mayqin yuyaychana"
 
 #  "Modo de edición"
-#: labyrinthactivity.py:508
+#: labyrinthactivity.py:520
 msgid "Edit mode"
 msgstr "Allinchanapaq hina"
 
 #  "<ctrl>e Modo de edición"
-#: labyrinthactivity.py:509
+#: labyrinthactivity.py:521
 msgid "<ctrl>e"
 msgstr "<ctrl>e"
 
 #  "Unir/desunir dos pensamientos seleccionados"
-#: labyrinthactivity.py:517
+#: labyrinthactivity.py:529
 msgid "Link/unlink two selected thoughts"
 msgstr "Iskay akllariqa yuyaykunata huñuy/t'aqay"
 
 #  "<ctrl>l Unir dos o mas ideas seleccionadas"
-#: labyrinthactivity.py:518
+#: labyrinthactivity.py:530
 msgid "<ctrl>l"
 msgstr "<ctrl>l"
 
 #  "Borrar pensamiento(s) seleccionado(s)"
-#: labyrinthactivity.py:523
+#: labyrinthactivity.py:535
 msgid "Erase selected thought(s)"
 msgstr "Akllasqa yuyakunata pichay"
 
 #  "Clic para agregar\n"
 #  "pensamiento central"
-#: labyrinthactivity.py:595
+#: labyrinthactivity.py:611
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
 "Yapanapaqqa yuyaykunata ñit'iy\n"
 "kuraq"
-
-#  "Dibujando #%d"
-#: src/DrawingThought.py:60
-#, python-format
-msgid "Drawing #%d"
-msgstr "Siq'inchaspa #%d"
 
 #  "No se puede mostrar la ayuda: %s"
 #: src/Browser.py:194
@@ -244,15 +245,26 @@ msgstr "T'aslaraq sutin"
 msgid "Last Modified"
 msgstr "Qhipa allinchasqa"
 
-#  "Editar Texto"
-#: src/ResourceThought.py:128
-msgid "Edit Text"
-msgstr "Qillqata allinchay"
+#  "Dibujando #%d"
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Siq'inchaspa #%d"
 
-#  "Editar URI"
-#: src/ResourceThought.py:133
-msgid "Edit URI"
-msgstr "URL nisqata allinchay"
+#  "Escoger imagen"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Wankita akllay"
+
+#  "Elegir Color"
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Llimp'ita akllay"
+
+#  "Configurar Color"
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Llimp'i kamachiy"
 
 #  "Mapa sin titulo"
 #: src/MainWindow.py:163 src/MainWindow.py:517
@@ -480,17 +492,12 @@ msgstr ""
 "Kay hina khipuqa '%s' manam kanmanchu.  Ama hina kaychu, kay hinakunata "
 "churay '.png', '.jpg' or '.svg'."
 
-#  "Escoger imagen"
-#: src/ImageThought.py:59 src/ImageThought.py:62
-msgid "Choose image"
-msgstr "Wankita akllay"
+#  "Editar Texto"
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Qillqata allinchay"
 
-#  "Elegir Color"
-#: src/Links.py:269
-msgid "Choose Color"
-msgstr "Llimp'ita akllay"
-
-#  "Configurar Color"
-#: src/Links.py:282
-msgid "Set Color"
-msgstr "Llimp'i kamachiy"
+#  "Editar URI"
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URL nisqata allinchay"

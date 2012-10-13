@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-24 00:30-0500\n"
+"POT-Creation-Date: 2012-10-03 00:31-0400\n"
 "PO-Revision-Date: 2011-12-31 11:42+0200\n"
 "Last-Translator: lite <litekok@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,146 +45,148 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 2.0.5\n"
 
-#: activity/activity.info:2
+#. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
 msgstr "迷宮"
 
-#: labyrinthactivity.py:73
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:70
 msgid "Cut"
 msgstr "剪下"
 
-#: labyrinthactivity.py:105
+#: labyrinthactivity.py:103
 msgid "Fit to window"
 msgstr "符合視窗大小"
 
-#: labyrinthactivity.py:106
+#: labyrinthactivity.py:104
 msgid "<ctrl>9"
 msgstr "<ctrl>9"
 
-#: labyrinthactivity.py:111
+#: labyrinthactivity.py:109
 msgid "Original size"
 msgstr "原始大小"
 
-#: labyrinthactivity.py:112
+#: labyrinthactivity.py:110
 msgid "<ctrl>0"
 msgstr "<ctrl>0"
 
-#: labyrinthactivity.py:117
+#: labyrinthactivity.py:115
 msgid "Zoom out"
 msgstr "縮小"
 
-#: labyrinthactivity.py:118
+#: labyrinthactivity.py:116
 msgid "<ctrl>minus"
 msgstr "<ctrl>-"
 
-#: labyrinthactivity.py:123
+#: labyrinthactivity.py:121
 msgid "Zoom in"
 msgstr "放大"
 
-#: labyrinthactivity.py:124
+#: labyrinthactivity.py:122
 msgid "<ctrl>equal"
 msgstr "<ctrl>="
 
-#: labyrinthactivity.py:193
+#: labyrinthactivity.py:194
 msgid "Bold"
 msgstr "粗體"
 
-#: labyrinthactivity.py:198
+#: labyrinthactivity.py:199
 msgid "Italics"
 msgstr "斜體"
 
-#: labyrinthactivity.py:203
+#: labyrinthactivity.py:204
 msgid "Underline"
 msgstr "下劃線"
 
-#: labyrinthactivity.py:351
+#: labyrinthactivity.py:354
 msgid "Text mode"
 msgstr "文字模式"
 
-#: labyrinthactivity.py:352
+#: labyrinthactivity.py:355
 msgid "<ctrl>t"
 msgstr "<ctrl>t"
 
-#: labyrinthactivity.py:359
+#: labyrinthactivity.py:363
 msgid "Image add mode"
 msgstr "新增圖片模式"
 
-#: labyrinthactivity.py:360
+#: labyrinthactivity.py:364
 msgid "<ctrl>i"
 msgstr "<ctrl>i"
 
-#: labyrinthactivity.py:366
+#: labyrinthactivity.py:371
 msgid "Drawing mode"
 msgstr "繪製模式"
 
-#: labyrinthactivity.py:367
+#: labyrinthactivity.py:372
 msgid "<ctrl>d"
 msgstr "<ctrl>d"
 
-#: labyrinthactivity.py:372
+#: labyrinthactivity.py:378
 msgid "Label mode"
 msgstr "標記模式"
 
-#: labyrinthactivity.py:373
+#: labyrinthactivity.py:379
 msgid "<ctrl>a"
 msgstr "<ctrl>a"
 
-#: labyrinthactivity.py:405 labyrinthactivity.py:474
+#: labyrinthactivity.py:413 labyrinthactivity.py:483
 msgid "Portable Document Format (PDF)"
 msgstr "可攜式文件格式 (PDF)"
 
-#: labyrinthactivity.py:411 labyrinthactivity.py:479
+#: labyrinthactivity.py:419 labyrinthactivity.py:488
 msgid "Portable Network Graphic (PNG)"
 msgstr "無損壓縮格式 (PNG)"
 
-#: labyrinthactivity.py:419 labyrinthactivity.py:485
+#: labyrinthactivity.py:427 labyrinthactivity.py:494
 msgid "Edit"
 msgstr "編輯"
 
-#: labyrinthactivity.py:431 labyrinthactivity.py:500
+#: labyrinthactivity.py:439 labyrinthactivity.py:509
 msgid "View"
 msgstr "檢視"
 
-#: labyrinthactivity.py:437
+#: labyrinthactivity.py:446
 msgid "Text"
 msgstr "文字"
 
-#: labyrinthactivity.py:448
+#: labyrinthactivity.py:457 labyrinthactivity.py:513
 msgid "Thought Type"
 msgstr "思考類型"
 
-#: labyrinthactivity.py:508
+#: labyrinthactivity.py:520
 msgid "Edit mode"
 msgstr "編輯模式"
 
-#: labyrinthactivity.py:509
+#: labyrinthactivity.py:521
 msgid "<ctrl>e"
 msgstr "<ctrl>e"
 
-#: labyrinthactivity.py:517
+#: labyrinthactivity.py:529
 msgid "Link/unlink two selected thoughts"
 msgstr "連接/不連接兩個選擇的思路"
 
-#: labyrinthactivity.py:518
+#: labyrinthactivity.py:530
 msgid "<ctrl>l"
 msgstr "<ctrl>l"
 
-#: labyrinthactivity.py:523
+#: labyrinthactivity.py:535
 msgid "Erase selected thought(s)"
 msgstr "擦掉選擇的思路"
 
-#: labyrinthactivity.py:595
+#: labyrinthactivity.py:611
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
 "點選增加\n"
 "中心思路"
-
-#: src/DrawingThought.py:60
-#, python-format
-msgid "Drawing #%d"
-msgstr "繪製 #%d"
 
 #: src/Browser.py:194
 #, python-format
@@ -227,13 +229,22 @@ msgstr "地圖名稱"
 msgid "Last Modified"
 msgstr "最後修改時間"
 
-#: src/ResourceThought.py:128
-msgid "Edit Text"
-msgstr "編輯文字"
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "繪製 #%d"
 
-#: src/ResourceThought.py:133
-msgid "Edit URI"
-msgstr "編輯 URI"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "選擇圖片"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "選擇顏色"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "設定顏色"
 
 #: src/MainWindow.py:163 src/MainWindow.py:517
 msgid "Untitled Map"
@@ -414,14 +425,10 @@ msgid ""
 "'.svg'."
 msgstr "不支援 %s 檔案類型，請使用 '.png', '.jpg' or '.svg' 等副檔名。"
 
-#: src/ImageThought.py:59 src/ImageThought.py:62
-msgid "Choose image"
-msgstr "選擇圖片"
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "編輯文字"
 
-#: src/Links.py:269
-msgid "Choose Color"
-msgstr "選擇顏色"
-
-#: src/Links.py:282
-msgid "Set Color"
-msgstr "設定顏色"
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "編輯 URI"
