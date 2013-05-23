@@ -20,9 +20,17 @@
 # Boston, MA  02110-1301  USA
 #
 
+# In order to support an on-screen keyboard, a textview widget is used
+# instead of capturing individual keyboard events. The down side to
+# this is that the maintenance of text attributes is mangled. The good
+# news is that much of the complexity disappears.
+# --Walter Bender <walter@sugarlabs.org> 2013
+
 import gtk
+import gobject
 import pango
 import utils
+import string
 import os
 import xml.dom
 import logging
@@ -37,7 +45,9 @@ UNDO_REMOVE_ATTR=66
 UNDO_REMOVE_ATTR_SELECTION=67
 
 class TextThought (ResizableThought):
-	def __init__ (self, coords, pango_context, thought_number, save, undo, loading, background_color, foreground_color, name="thought"):
+	def __init__ (self, coords, pango_context, thought_number, save, undo,
+		      loading, background_color, foreground_color, name="thought",
+		      fixed=None, parent=None):
 		super (TextThought, self).__init__(coords, save, name, undo, background_color, foreground_color)
 
 		self.index = 0
@@ -56,6 +66,11 @@ class TextThought (ResizableThought):
 		self.current_attrs = []
 		self.double_click = False
 		self.orig_text = None
+		self._parent = parent
+		self._fixed = fixed
+		self.textview = None
+		self._textview_handler = None
+		self._clipboard = None
 
 		if prefs.get_direction () == gtk.TEXT_DIR_LTR:
 			self.pango_context.set_base_dir (pango.DIRECTION_LTR)
@@ -71,7 +86,7 @@ class TextThought (ResizableThought):
 
 		self.all_okay = True
 
-	def index_from_bindex (self, bindex):		
+	def index_from_bindex (self, bindex):
 		if bindex == 0:
 			return 0
 		index = 0
@@ -102,7 +117,7 @@ class TextThought (ResizableThought):
 		self.attrlist = pango.AttrList ()
 		# TODO: splice instead of own method
 		it = self.attributes.get_iterator()
-		
+
 		while 1:
 			at = it.get_attrs()
 			for x in at:
@@ -123,7 +138,7 @@ class TextThought (ResizableThought):
 			self.attrlist.splice(ins_style, self.index, len(ins_text))
 		else:
 			show_text = self.text
-		
+
 		it = self.attributes.get_iterator()
 		while(1):
 			found = False
@@ -199,13 +214,13 @@ class TextThought (ResizableThought):
 		self.emit("update-attrs", bold, italics, underline, pango_font)
 		return show_text
 
-	def recalc_text_edges (self):		
+	def recalc_text_edges (self):
 		if (not hasattr(self, "layout")):
 			return
 		del self.layout
-		
+
 		show_text = self.attrs_changed ()
-		
+		'''
 		r,g,b = utils.selected_colors["fill"]
 		r *= 65536
 		g *= 65536
@@ -215,6 +230,7 @@ class TextThought (ResizableThought):
 		else:
 			bgsel = pango.AttrBackground (int(r), int(g), int(b), self.index, self.end_index)
 		self.attrlist.insert (bgsel)
+		'''
 
 		self.layout = pango.Layout (self.pango_context)
 		self.layout.set_text (show_text)
@@ -246,21 +262,21 @@ class TextThought (ResizableThought):
 			self.ul = (self.lr[0] - margin[0] - margin[2] - text_w, tmp1)
 		"""
 
-	def recalc_edges (self):		
+	def recalc_edges (self):
 		self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
 		if not self.creating:
 			self.recalc_text_edges()
 
-	def commit_text (self, context, string, mode, font_combo_box, font_sizes_combo_box):		
+	def commit_text (self, context, string, mode, font_combo_box, font_sizes_combo_box):
 		font_name = font_combo_box.get_active_text()
-		font_size = font_sizes_combo_box.get_active_text()
+		font_size = utils.default_font_size  # font_sizes_combo_box.get_active_text()
 		self.set_font(font_name, font_size)
 		self.add_text (string)
 		self.recalc_edges ()
 		self.emit ("title_changed", self.text)
 		self.emit ("update_view")
 
-	def add_text (self, string):		
+	def add_text (self, string):
 		if self.index > self.end_index:
 			left = self.text[:self.end_index]
 			right = self.text[self.index:]
@@ -276,12 +292,12 @@ class TextThought (ResizableThought):
 			bleft = self.bytes[:self.b_f_i (self.index)]
 			bright = self.bytes[self.b_f_i (self.end_index):]
 			change = self.index - self.end_index + len(string)
-		else:			
+		else:
 			left = self.text[:self.index]
 			right = self.text[self.index:]
 			bleft = self.bytes[:self.b_f_i(self.index)]
 			bright = self.bytes[self.b_f_i(self.index):]
-			change = len(string)			
+			change = len(string)
 
 		it = self.attributes.get_iterator()
 		changes= []
@@ -317,7 +333,7 @@ class TextThought (ResizableThought):
 						changes.append(x)
 			if it.next() == False:
 				break
-		
+
 		del self.attributes
 		self.attributes = pango.AttrList()
 		for x in changes:
@@ -329,14 +345,14 @@ class TextThought (ResizableThought):
 		self.index += len (string)
 		self.bytes = bleft + str(len(string)) + bright
 		self.bindex = self.b_f_i (self.index)
-		self.end_index = self.index		
+		self.end_index = self.index
 
-	def draw (self, context):		
+	def draw (self, context):
 		self.recalc_edges ()
 		ResizableThought.draw(self, context)
 		if self.creating:
 			return
-		
+
 		(textx, texty) = (self.min_x, self.min_y)
 		if self.am_primary:
 			r, g, b = utils.primary_colors["text"]
@@ -364,14 +380,21 @@ class TextThought (ResizableThought):
 		context.set_source_rgb (0,0,0)
 		context.stroke ()
 
-	def process_key_press (self, event, mode):		
+	def process_key_press (self, event, mode):
+		# Since we are using textviews, we don't use the
+		# keypress code anymore
+		if not self.editing:
+			return False
+		else:
+			return True
+
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 		shift = event.state & modifiers == gtk.gdk.SHIFT_MASK
 		handled = True
 		clear_attrs = True
 		if not self.editing:
 			return False
-			
+
 		if (event.state & modifiers) & gtk.gdk.CONTROL_MASK:
 			if event.keyval == gtk.keysyms.a:
 				self.index = self.bindex = 0
@@ -410,7 +433,7 @@ class TextThought (ResizableThought):
 		else:
 			handled = False
 
-		if clear_attrs:			
+		if clear_attrs:
 			del self.current_attrs
 			self.current_attrs = []
 
@@ -422,7 +445,7 @@ class TextThought (ResizableThought):
 
 		return handled
 
-	def undo_text_action (self, action, mode):		
+	def undo_text_action (self, action, mode):
 		self.undo.block ()
 		if action.undo_type == UndoManager.DELETE_LETTER or action.undo_type == UndoManager.DELETE_WORD:
 			real_mode = not mode
@@ -442,7 +465,7 @@ class TextThought (ResizableThought):
 			self.add_text (action.text)
 			self.rebuild_byte_table ()
 			self.bindex = self.b_f_i (self.index)
-		
+
 		del self.attributes
 		self.attributes = pango.AttrList()
 		map(lambda a : self.attributes.change(a), attrs)
@@ -452,7 +475,7 @@ class TextThought (ResizableThought):
 		self.emit ("grab_focus", False)
 		self.undo.unblock ()
 
-	def delete_char (self):		
+	def delete_char (self):
 		if self.index == self.end_index == len (self.text):
 			return
 		if self.index > self.end_index:
@@ -477,7 +500,7 @@ class TextThought (ResizableThought):
 		changes= []
 		old_attrs = []
 		accounted = -change
-		
+
 		it = self.attributes.get_iterator()
 		while (1):
 			(start,end) = it.range()
@@ -516,11 +539,11 @@ class TextThought (ResizableThought):
 					changes.append(x)
 			if it.next() == False:
 				break
-		
+
 		del self.attributes
 		self.attributes = pango.AttrList()
 		map(lambda a : self.attributes.change(a), changes)
-			
+
 		self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.DELETE_LETTER, self.undo_text_action,
 							self.b_f_i (self.index), local_text, len(local_text), local_bytes, old_attrs,
 							changes))
@@ -528,7 +551,7 @@ class TextThought (ResizableThought):
 		self.bytes = bleft+bright
 		self.end_index = self.index
 
-	def backspace_char (self):		
+	def backspace_char (self):
 		if self.index == self.end_index == 0:
 			return
 		if self.index > self.end_index:
@@ -594,12 +617,11 @@ class TextThought (ResizableThought):
 					changes.append(x)
 			if it.next() == False:
 				break
-		
-		
+
 		del self.attributes
 		self.attributes = pango.AttrList()
 		map(lambda a : self.attributes.change(a), changes)
-			
+
 		self.text = left+right
 		self.bytes = bleft+bright
 		self.end_index = self.index
@@ -609,7 +631,7 @@ class TextThought (ResizableThought):
 		if self.index < 0:
 			self.index = 0
 
-	def move_index_back (self, mod):		
+	def move_index_back (self, mod):
 		if self.index <= 0:
 			self.index = 0
 			return
@@ -617,7 +639,7 @@ class TextThought (ResizableThought):
 		if not mod:
 			self.end_index = self.index
 
-	def move_index_forward (self, mod):		
+	def move_index_forward (self, mod):
 		if self.index >= len(self.text):
 			self.index = len(self.text)
 			return
@@ -625,7 +647,7 @@ class TextThought (ResizableThought):
 		if not mod:
 			self.end_index = self.index
 
-	def move_index_up (self, mod):		
+	def move_index_up (self, mod):
 		tmp = self.text.decode ()
 		lines = tmp.splitlines ()
 		if len (lines) == 1:
@@ -659,7 +681,7 @@ class TextThought (ResizableThought):
 		if not mod:
 			self.end_index = self.index
 
-	def move_index_down (self, mod):		
+	def move_index_down (self, mod):
 		tmp = self.text.decode ()
 		lines = tmp.splitlines ()
 		if len (lines) == 1:
@@ -683,7 +705,7 @@ class TextThought (ResizableThought):
 		if not mod:
 			self.end_index = self.index
 
-	def move_index_horizontal(self, mod, home=False):		
+	def move_index_horizontal(self, mod, home=False):
 		lines = self.text.splitlines ()
 		loc = 0
 		line = 0
@@ -698,12 +720,18 @@ class TextThought (ResizableThought):
 				return
 			line += 1
 
-	def process_button_down (self, event, coords):		
+	def process_button_down (self, event, coords):
+		if not self._parent.move_mode and self.textview is None:
+			self._create_textview()
+		if self.textview is not None:
+			self.textview.grab_focus()
+
 		if ResizableThought.process_button_down(self, event, coords):
 			return True
 
-		if not self.editing:
-			return False
+		# With textview, we are always editing
+		# if not self.editing:
+		# 	return False
 
 		modifiers = gtk.accelerator_get_default_mod_mask ()
 
@@ -722,6 +750,7 @@ class TextThought (ResizableThought):
 				self.index = len(self.text)
 				self.end_index = 0						# and mark all
 				self.double_click = True
+
 		elif event.button == 2:
 			x = int ((coords[0] - self.min_x)*pango.SCALE)
 			y = int ((coords[1] - self.min_y)*pango.SCALE)
@@ -734,15 +763,141 @@ class TextThought (ResizableThought):
 			if os.name != 'nt':
 				clip = gtk.Clipboard (selection="PRIMARY")
 				self.paste_text (clip)
-			
+
 		del self.current_attrs
-		self.current_attrs = []		
+		self.current_attrs = []
 		self.recalc_edges()
 		self.emit ("update_view")
 
 		self.selection_changed()
 
-	def process_button_release (self, event, transformed):		
+	def _create_textview(self):
+		# When the button is pressed inside a text thought,
+		# create a textview (necessary for invoking the
+		# on-screen keyboard) instead of processing the text
+		# by grabbing keyboard events.
+		if self.textview is None:
+			self.textview = gtk.TextView()
+			margin = utils.margin_required (utils.STYLE_NORMAL)
+			x, y, w, h = self.textview_rescale()
+			self.textview.set_size_request(w, h)
+			self._fixed.put(self.textview, x, y)
+		self.textview.set_justification(gtk.JUSTIFY_CENTER)
+
+		font, size = None, None
+		bold, italic, underline = False, False, False
+		# Get current attributes and set them here
+		it = self.attributes.get_iterator()
+		while (1):
+			r = it.range()
+			for x in it.get_attrs():
+				if x.type == pango.ATTR_WEIGHT and x.value == pango.WEIGHT_BOLD:
+					bold = True
+				elif x.type == pango.ATTR_STYLE and x.value == pango.STYLE_ITALIC:
+					italic = True
+				elif x.type == pango.ATTR_UNDERLINE and x.value == pango.UNDERLINE_SINGLE:
+					underline = True
+				elif x.type == pango.ATTR_FONT_DESC:
+					parts = x.desc.to_string ().split()
+					font = string.join(parts[0:-2])
+					size = parts[-1]
+
+			if not it.next():
+				break
+
+		if font is None:
+			font = 'Sans'
+		if size is None:
+			size = utils.default_font_size
+                font_desc = pango.FontDescription(font)
+                font_desc.set_size(
+                    int(int(size) * pango.SCALE * self._parent.scale_fac))
+		if bold:
+			font_desc.set_weight(pango.WEIGHT_BOLD)
+		if italic:
+			font_desc.set_style(pango.STYLE_ITALIC)
+		self.textview.modify_font(font_desc)
+
+		r, g, b = utils.gtk_to_cairo_color(self.foreground_color)
+		rgba = gtk.gdk.Color(
+			int(65535 * r), int(65535 * g), int(65535 * b))
+		self.textview.modify_text(gtk.STATE_NORMAL, rgba)
+
+		self.textview.get_buffer().set_text(self.text)
+                self.textview.show()
+		if self._textview_handler is None:
+			self._textview_handler = self.textview.connect(
+				'focus-out-event', self._textview_focus_out_cb)
+			self.copy_handler = self.textview.connect(
+				'copy-clipboard', self._textview_copy_cb)
+			self.cut_handler = self.textview.connect(
+				'cut-clipboard', self._textview_cut_cb)
+			self.paste_handler = self.textview.connect(
+				'paste-clipboard', self._textview_paste_cb)
+			self.select_handler = self.textview.connect(
+				'select-all', self._textview_select_cb)
+		self.textview.grab_focus()
+		self._fixed.show()
+
+	def textview_rescale(self):
+		tx = self._parent.translation[0] * self._parent.scale_fac
+		ty = self._parent.translation[1] * self._parent.scale_fac
+		margin = utils.margin_required (utils.STYLE_NORMAL)
+		hadj = int(self._parent.hadj)
+		vadj = int(self._parent.vadj)
+		w = int((self.width - margin[0] - margin[2]) \
+				* self._parent.scale_fac)
+		# w = max(w, margin[0] + margin[2])
+		h = int((self.height - margin[1] - margin[3]) \
+				* self._parent.scale_fac)
+		# h = max(h, margin[1] + margin[3])
+		xo = gtk.gdk.screen_width() \
+		    * (1. - self._parent.scale_fac) / 2.
+		yo = gtk.gdk.screen_height() \
+		    * (1. - self._parent.scale_fac) / 1.25  # FIXME
+		x = (self.ul[0] + margin[0]) * self._parent.scale_fac
+		y = (self.ul[1] + margin[1]) * self._parent.scale_fac
+		return int(x + xo - hadj + tx), int(y + yo - vadj + ty), \
+		       int(w), int(h)
+
+        def _textview_copy_cb(self, widget=None, event=None):
+		self.textview.get_buffer().copy_clipboard(self._clipboard)
+		return True
+
+        def _textview_cut_cb(self, widget=None, event=None):
+		self.textview.get_buffer().cut_clipboard(
+			self._clipboard, self.textview.get_editable())
+		self._textview_process()
+		return True
+
+        def _textview_paste_cb(self, widget=None, event=None):
+		self.textview.get_buffer().paste_clipboard(
+			self._clipboard, None, self.textview.get_editable())
+		self._textview_process()
+		return True
+
+        def _textview_select_cb(self, widget=None, event=None):
+		buffer = self.textview.get_buffer()
+		buffer.select_range(buffer.get_start_iter(),
+				    buffer.get_end_iter())
+		return True
+
+        def _textview_focus_out_cb(self, widget=None, event=None):
+		self._textview_process()
+		return False
+
+        def _textview_process(self):
+		self.index = 0
+		self.end_index = len(self.text)
+		self.delete_char()
+		bounds = self.textview.get_buffer().get_bounds()
+		self.add_text(self.textview.get_buffer().get_text(
+				bounds[0], bounds[1], True))
+		self.emit ("title_changed", self.text)
+		self.emit ("update_view")
+		return False
+
+	def process_button_release (self, event, transformed):
 		if self.orig_size:
 			if self.creating:
 				orig_size = self.width >= MIN_SIZE or self.height >= MIN_SIZE
@@ -757,14 +912,21 @@ class TextThought (ResizableThought):
 		self.double_click = False
 		return ResizableThought.process_button_release(self, event, transformed)
 
-	def selection_changed (self):		
-		(start, end) = (min(self.index, self.end_index), max(self.index, self.end_index))
+	def selection_changed (self):
+		# Fix me: We are forcing selection to entire buffer
+		# (start, end) = (min(self.index, self.end_index), max(self.index, self.end_index))
+		start, end = 0, len(self.text)
 		self.emit ("text_selection_changed", start, end, self.text[start:end])
 
-	def handle_motion (self, event, transformed):		
+	def handle_motion (self, event, transformed):
 		if ResizableThought.handle_motion(self, event, transformed):
 			self.recalc_edges()
 			return True
+
+		if self.textview is not None and self.ul is not None:
+			x, y, w, h = self.textview_rescale()
+			self.textview.set_size_request(w, h)
+			self._fixed.move(self.textview, x, y)
 
 		if not self.editing or self.resizing:
 			return False
@@ -784,7 +946,7 @@ class TextThought (ResizableThought):
 
 		return False
 
-	def export (self, context, move_x, move_y):		
+	def export (self, context, move_x, move_y):
 		utils.export_thought_outline (context, self.ul, self.lr, self.background_color, self.am_selected, self.am_primary, utils.STYLE_NORMAL,
 									  (move_x, move_y))
 
@@ -867,7 +1029,7 @@ class TextThought (ResizableThought):
 			if not it.next():
 				break
 
-	def rebuild_byte_table (self):		
+	def rebuild_byte_table (self):
 		# Build the Byte table
 		del self.bytes
 		self.bytes = ''
@@ -941,34 +1103,18 @@ class TextThought (ResizableThought):
 		self.recalc_edges()
 
 	def copy_text (self, clip):
-		if self.end_index > self.index:
-			clip.set_text (self.text[self.index:self.end_index])
-		else:
-			clip.set_text (self.text[self.end_index:self.index])
+		self._clipboard = clip
+		self._textview_copy_cb()
 
 	def cut_text (self, clip):
-		if self.end_index > self.index:
-			clip.set_text (self.text[self.index:self.end_index])
-		else:
-			clip.set_text (self.text[self.end_index:self.index])
-		self.delete_char ()
-		self.recalc_edges ()
-		self.emit ("title_changed", self.text)
-		self.bindex = self.bindex_from_index (self.index)
-		self.emit ("update_view")
+		self._clipboard = clip
+		self._textview_copy_cb()
 
 	def paste_text (self, clip):
-		text = clip.wait_for_text()
-		if not text:
-			return
-		self.add_text (text)
-		self.rebuild_byte_table ()
-		self.recalc_edges ()
-		self.emit ("title_changed", self.text)
-		self.bindex = self.bindex_from_index (self.index)
-		self.emit ("update_view")
+		self._clipboard = clip
+		self._textview_paste_cb()
 
-	def delete_surroundings(self, imcontext, offset, n_chars, mode):		
+	def delete_surroundings(self, imcontext, offset, n_chars, mode):
 		# TODO: Add in Attr stuff
 		orig = len(self.text)
 		left = self.text[:offset]
@@ -979,7 +1125,7 @@ class TextThought (ResizableThought):
 		new = len(self.text)
 		if self.index > len(self.text):
 			self.index = len(self.text)
-			
+
 		change    = old - new
 		changes   = []
 		old_attrs = []
@@ -1025,26 +1171,27 @@ class TextThought (ResizableThought):
 					changes.append(x)
 			if it.next() == False:
 				break
-		
+
 		del self.attributes
 		self.attributes = pango.AttrList()
 		map(lambda x : self.attributes.change(x), changes)
 
 		self.recalc_edges ()
 		self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.DELETE_LETTER, self.undo_text_action,
-							self.b_f_i (offset), local_text, len(local_text), local_bytes, old_attrs, changes))
+							    self.b_f_i (offset), local_text, len(local_text),
+							    local_bytes, old_attrs, changes))
 		self.emit ("title_changed", self.text)
 		self.bindex = self.bindex_from_index (self.index)
 		self.emit ("update_view")
 
-	def preedit_changed (self, imcontext, mode):		
+	def preedit_changed (self, imcontext, mode):
 		self.preedit = imcontext.get_preedit_string ()
 		if self.preedit[0] == '':
 			self.preedit = None
 		self.recalc_edges ()
 		self.emit ("update_view")
 
-	def retrieve_surroundings (self, imcontext, mode):		
+	def retrieve_surroundings (self, imcontext, mode):
 		imcontext.set_surrounding (self.text, -1, self.bindex)
 		return True
 
@@ -1071,18 +1218,18 @@ class TextThought (ResizableThought):
 		self.recalc_edges()
 		self.emit("update_view")
 		self.undo.unblock()
-		
-	def create_attribute(self, attribute, start, end):		
+
+	def create_attribute(self, attribute, start, end):
 		if attribute == 'bold':
 			return pango.AttrWeight(pango.WEIGHT_BOLD, start, end)
 		elif attribute == 'italic':
 			return pango.AttrStyle(pango.STYLE_ITALIC, start, end)
 		elif attribute == 'underline':
 			return pango.AttrUnderline(pango.UNDERLINE_SINGLE, start, end)
-		
-	def set_attribute(self, active, attribute):		
-		if not self.editing:
-			return
+
+	def set_attribute(self, active, attribute):
+		# if not self.editing:
+		# 	return
 
 		if attribute == 'bold':
 			pstyle, ptype, pvalue = (pango.WEIGHT_NORMAL, pango.ATTR_WEIGHT, pango.WEIGHT_BOLD)
@@ -1090,14 +1237,18 @@ class TextThought (ResizableThought):
 			pstyle, ptype, pvalue = (pango.STYLE_NORMAL, pango.ATTR_STYLE, pango.STYLE_ITALIC)
 		elif attribute == 'underline':
 			pstyle, ptype, pvalue = (pango.UNDERLINE_NONE, pango.ATTR_UNDERLINE, pango.UNDERLINE_SINGLE)
-			
+
+		# Always modify whole string
+		self.index = 0
+		self.end_index = len(self.text)
+
 		index, end_index = (self.index, self.end_index)
 		init = min(index, end_index)
 		end = max(index, end_index)
 
 		if not active:
 			attr = pango.AttrStyle(pstyle, init, end)
-			#if index == end_index:			
+			#if index == end_index:
 			#	self.current_attrs.change(attr)
 			#else:
 			self.attributes.change(attr)
@@ -1112,15 +1263,15 @@ class TextThought (ResizableThought):
 						tmp.append(x)
 					self.current_attrs = tmp
 					self.recalc_edges()
-					self.undo.add_undo(UndoManager.UndoAction(self, UNDO_REMOVE_ATTR, \
-																self.undo_attr_cb,\
-																attr))
+					self.undo.add_undo(UndoManager.UndoAction(self, UNDO_REMOVE_ATTR,
+										  self.undo_attr_cb,
+										  attr))
 					return
-				
+
 			it = self.attributes.get_iterator()
 			old_attrs = self.attributes.copy()
 			changed = []
-			
+
 			while True:
 				r = it.range()
 				if r[0] <= init and r[1] >= end:
@@ -1135,7 +1286,7 @@ class TextThought (ResizableThought):
 
 				if not it.next():
 					break
-					
+
 			del self.attributes
 			self.attributes = pango.AttrList()
 			map(lambda x : self.attributes.change(x), changed)
@@ -1145,77 +1296,97 @@ class TextThought (ResizableThought):
 					tmp.append(x)
 			self.current_attrs = tmp
 			self.undo.add_undo(UndoManager.UndoAction(self, UNDO_REMOVE_ATTR_SELECTION,
-														self.undo_attr_cb,
-														old_attrs,
-														self.attributes.copy()))
+								  self.undo_attr_cb,
+								  old_attrs,
+								  self.attributes.copy()))
 		else:
-			if index == end_index:				
+			if index == end_index:
 				attr = self.create_attribute(attribute, index, end_index)
 				self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR,
-															self.undo_attr_cb,
-															attr))
+									  self.undo_attr_cb,
+									  attr))
 				self.current_attrs.append(attr)
 				#self.attributes.insert(attr)
-			else:				
-				attr = self.create_attribute(attribute, init, end)				
+			else:
+				attr = self.create_attribute(attribute, init, end)
 				old_attrs = self.attributes.copy()
 				self.attributes.change(attr)
 				self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR_SELECTION,
-															self.undo_attr_cb,
-															old_attrs,
-															self.attributes.copy()))
+									  self.undo_attr_cb,
+									  old_attrs,
+									  self.attributes.copy()))
 		self.recalc_edges()
+		self.remove_textview()
 
-	def set_bold (self, active):		
+	def set_bold (self, active):
 		self.set_attribute(active, 'bold')
-			
-	def set_italics (self, active):		
+
+	def set_italics (self, active):
 		self.set_attribute(active, 'italic')
 
-	def set_underline (self, active):		
+	def set_underline (self, active):
 		self.set_attribute(active, 'underline')
 
-	def set_font (self, font_name, font_size):				
-		if not self.editing:
-			return
-		
+	def set_font (self, font_name, font_size):
+		# With textview, we are always editing
+		# if not self.editing:
+		# 	return
+
+		# Always modify whole string
+		self.index = 0
+		self.end_index = len(self.text)
+
 		start = min(self.index, self.end_index)
 		end = max(self.index, self.end_index)
-				
-		pango_font = pango.FontDescription(font_name+" "+font_size)			
-		
+
+
+		pango_font = pango.FontDescription('%s %s' % (font_name, str(font_size)))
+
 		attr = pango.AttrFontDesc (pango_font, start, end)
 
 		if start == end:
 			self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR,
-													  self.undo_attr_cb,
-													  attr))
-			try:				
+								  self.undo_attr_cb,
+								  attr))
+			try:
 				self.current_attrs.change(attr)
-			except AttributeError:				
+			except AttributeError:
 				self.current_attrs.append(attr)
 		else:
 			old_attrs = self.attributes.copy()
 			self.attributes.change(attr)
 			self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR_SELECTION,
-													  self.undo_attr_cb,
-													  old_attrs,
-													  self.attributes.copy()))
+								  self.undo_attr_cb,
+								  old_attrs,
+								  self.attributes.copy()))
 		self.recalc_edges()
+		self.remove_textview()
 
-	def inside(self, inside):		
+	def inside(self, inside):
+		# FIXME: with switch to textview, we don't need cursor update
 		if self.editing:
+			if self.textview is not None:
+				self.textview.grab_focus()
 			self.emit ("change_mouse_cursor", gtk.gdk.XTERM)
 		else:
 			ResizableThought.inside(self, inside)
 
-	def enter(self):		
+	def enter(self):
 		if self.editing:
 			return
 		self.orig_text = self.text
 		self.editing = True
 
-	def leave(self):		
+        def remove_textview(self):
+		if self.textview is not None:
+			self._textview_process()
+			self._textview_handler = None
+			self.textview.hide()
+			self.textview.destroy()
+			self.textview = None
+
+	def leave(self):
+		self.remove_textview()
 		if not self.editing:
 			return
 		ResizableThought.leave(self)

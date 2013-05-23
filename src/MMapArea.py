@@ -22,6 +22,7 @@
 
 import math
 import time
+import string
 import gtk
 import pango
 import gobject
@@ -84,30 +85,32 @@ class MMapArea (gtk.DrawingArea):
 	   It is responsible for processing signals and such from the whole area and \
 	   passing these on to the correct child.  It also informs things when to draw'''
 
-	__gsignals__ = dict (title_changed		= (gobject.SIGNAL_RUN_FIRST,
-											   gobject.TYPE_NONE,
-											   (gobject.TYPE_STRING, )),
-						 change_mode        = (gobject.SIGNAL_RUN_LAST,
-						 					   gobject.TYPE_NONE,
-						 					   (gobject.TYPE_INT, )),					 					   
-						 change_buffer      = (gobject.SIGNAL_RUN_LAST,
-						 					   gobject.TYPE_NONE,
-						 					   (gobject.TYPE_OBJECT, )),
-						 text_selection_changed  = (gobject.SIGNAL_RUN_FIRST,
-						 					   gobject.TYPE_NONE,
-						 					   (gobject.TYPE_INT, gobject.TYPE_INT, gobject.TYPE_STRING)),
-						 thought_selection_changed = (gobject.SIGNAL_RUN_FIRST,
-						 						gobject.TYPE_NONE,
-						 						(gobject.TYPE_PYOBJECT, gobject.TYPE_PYOBJECT)),
-						 set_focus				 = (gobject.SIGNAL_RUN_FIRST,
-						 							gobject.TYPE_NONE,
-						 							(gobject.TYPE_PYOBJECT, gobject.TYPE_BOOLEAN)),
-						 set_attrs				 = (gobject.SIGNAL_RUN_LAST,
-						 							gobject.TYPE_NONE,
-						 							(gobject.TYPE_BOOLEAN, gobject.TYPE_BOOLEAN, gobject.TYPE_BOOLEAN, pango.FontDescription)),
-						 link_selected		= (gobject.SIGNAL_RUN_FIRST,
-											   gobject.TYPE_NONE,
-											   ()))
+	__gsignals__ = dict (
+        title_changed = (gobject.SIGNAL_RUN_FIRST,
+                         gobject.TYPE_NONE, (gobject.TYPE_STRING, )),
+        change_mode = (gobject.SIGNAL_RUN_LAST,
+                       gobject.TYPE_NONE,
+                       (gobject.TYPE_INT, )),
+        change_buffer = (gobject.SIGNAL_RUN_LAST,
+                         gobject.TYPE_NONE,
+                         (gobject.TYPE_OBJECT, )),
+        text_selection_changed = (gobject.SIGNAL_RUN_FIRST,
+                                  gobject.TYPE_NONE,
+                                  (gobject.TYPE_INT, gobject.TYPE_INT,
+                                   gobject.TYPE_STRING)),
+        thought_selection_changed = (gobject.SIGNAL_RUN_FIRST,
+                                     gobject.TYPE_NONE,
+                                     (gobject.TYPE_PYOBJECT,
+                                      gobject.TYPE_PYOBJECT)),
+        set_focus = (gobject.SIGNAL_RUN_FIRST, gobject.TYPE_NONE,
+				     (gobject.TYPE_PYOBJECT, gobject.TYPE_BOOLEAN)),
+        set_attrs = (gobject.SIGNAL_RUN_LAST,
+                     gobject.TYPE_NONE,
+                     (gobject.TYPE_BOOLEAN, gobject.TYPE_BOOLEAN,
+                      gobject.TYPE_BOOLEAN, pango.FontDescription)),
+        link_selected = (gobject.SIGNAL_RUN_FIRST,
+						 gobject.TYPE_NONE,
+						 ()))
 
 	def __init__(self, undo):
 		super (MMapArea, self).__init__()
@@ -146,7 +149,15 @@ class MMapArea (gtk.DrawingArea):
 		self.connect ("scroll_event", self.scroll)
 		self.commit_handler = None
 		self.title_change_handler = None
+		self.drag_mode = False
+		self._dragging = False
+		self.sw = None
+		self.hadj = 0
+		self.vadj = 0
+		self.origin_x = None
+		self.origin_y = None
 		self.moving = False
+		self.move_mode = False
 		self.move_origin = None
 		self.move_origin_new = None
 		self.focus = None
@@ -170,11 +181,17 @@ class MMapArea (gtk.DrawingArea):
 		w.realize()
 		style = w.get_style()
 		self.pango_context.set_font_description(style.font_desc)
-		self.font_name = style.font_desc.to_string()
+
+		# FIXME: rude hack to remove fontsize from font name
+		parts = style.font_desc.to_string().split()
+		try:
+			float(parts[-1])
+			self.font_name = string.join(parts[0:-2])
+		except ValueError:
+			self.font_name = style.font_desc.to_string()
+
 		utils.default_font = self.font_name
-		
-		self.font_size = utils.default_font 
-		
+		self.font_size = utils.default_font_size
 		utils.default_colors["text"] = utils.gtk_to_cairo_color(style.text[gtk.STATE_NORMAL])
 		utils.default_colors["base"] = utils.gtk_to_cairo_color(style.base[gtk.STATE_NORMAL])
 		# Match the fixed white canvas colour (makes thought focus visible)
@@ -189,8 +206,11 @@ class MMapArea (gtk.DrawingArea):
 		utils.selected_colors["fill"] = utils.gtk_to_cairo_color(style.base[gtk.STATE_SELECTED])
 
 	def set_text_attributes(self, text_attributes):
+		return
+	'''
 		self.font_combo_box = text_attributes.props.page.fonts_combo_box.combo
-		self.font_sizes_combo_box = text_attributes.props.page.font_sizes_combo_box.combo 
+		self.font_sizes_combo_box = utils.default_font_size  #text_attributes.props.page.font_sizes_combo_box.combo
+	'''
 
 	def transform_coords(self, loc_x, loc_y):
 		if hasattr(self, "transform"):
@@ -201,6 +221,13 @@ class MMapArea (gtk.DrawingArea):
 			return self.untransform.transform_point(loc_x, loc_y)
 
 	def button_down (self, widget, event):
+		if self.drag_mode:
+			self.set_cursor(gtk.gdk.HAND2)
+			self.origin_x = event.x
+			self.origin_y = event.y
+			self._dragging = True
+			return
+
 		if event.button == 2 or \
 		        event.button == 1 and self.translate == True:
 			self.set_cursor (gtk.gdk.FLEUR)
@@ -213,8 +240,11 @@ class MMapArea (gtk.DrawingArea):
 		obj = self.find_object_at (coords)
 
 		if obj:
-			if event.button == 3:
-				self.moving = not (event.state & gtk.gdk.CONTROL_MASK)
+			if event.button == 3 or self.move_mode:
+				if self.move_mode:
+					self.moving = True
+				else:
+					self.moving = not (event.state & gtk.gdk.CONTROL_MASK)
 				if self.moving:
 					self.set_cursor(gtk.gdk.FLEUR)
 					self.move_origin = (coords[0], coords[1])
@@ -252,6 +282,10 @@ class MMapArea (gtk.DrawingArea):
 		self.invalidate ((old_coords[0], old_coords[1], new_coords[0], new_coords[1]))
 
 	def button_release (self, widget, event):
+		if self._dragging:
+			self.set_cursor(gtk.gdk.LEFT_PTR)
+			self._dragging = False
+
 		coords = self.transform_coords (event.get_coords()[0], event.get_coords()[1])
 
 		if self.is_bbox_selecting:
@@ -272,8 +306,10 @@ class MMapArea (gtk.DrawingArea):
 			self.undo.add_undo (self.move_action)
 			self.move_action = None
 
-		self.moving = False
-		self.move_origin = None
+		was_moving = False
+		if self.moving:
+			was_moving = True
+			self.stop_moving()
 
 		obj = self.find_object_at (coords)
 
@@ -295,6 +331,9 @@ class MMapArea (gtk.DrawingArea):
 				return True
 
 		self.invalidate ()
+
+		if was_moving:
+			self.start_moving(self.move_button)
 		return True
 
 	def undo_transform_cb (self, action, mode):
@@ -354,6 +393,16 @@ class MMapArea (gtk.DrawingArea):
 		return True
 
 	def motion (self, widget, event):
+		if self._dragging:
+			if self.origin_x is None:
+				self.origin_x = event.get_coords()[0]
+				self.origin_y = event.get_coords()[1]
+			dx = self.origin_x - event.get_coords()[0]
+			dy = self.origin_y - event.get_coords()[1]
+			self.origin_x = event.get_coords()[0]
+			self.origin_y = event.get_coords()[1]
+			self._adjust_sw(dx, dy)
+			return True
 		coords = self.transform_coords (event.get_coords()[0], event.get_coords()[1])
 
 		if event.state & gtk.gdk.BUTTON1_MASK and self.is_bbox_selecting:
@@ -482,8 +531,8 @@ class MMapArea (gtk.DrawingArea):
 			self.commit_handler = None
 		if thought:
 			try:				
-				self.commit_handler = self.im_context.connect ("commit", thought.commit_text, self.mode, self.font_combo_box, \
-															   self.font_sizes_combo_box)
+				self.commit_handler = self.im_context.connect ("commit", thought.commit_text, self.mode, None, None)
+				   # self.font_combo_box, self.font_sizes_combo_box)
 				self.delete_handler = self.im_context.connect ("delete-surrounding", thought.delete_surroundings, self.mode)
 				self.preedit_changed_handler = self.im_context.connect ("preedit-changed", thought.preedit_changed, self.mode)
 				self.preedit_end_handler = self.im_context.connect ("preedit-end", thought.preedit_end, self.mode)
@@ -733,7 +782,8 @@ class MMapArea (gtk.DrawingArea):
 			type = self.mode
 
 		if type == MODE_TEXT:
-			thought = TextThought.TextThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
+			# fixed<-_vbox<-_sw<-_main_area
+			thought = TextThought.TextThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color, fixed=self.parent.parent.parent.parent, parent=self)
 		elif type == MODE_LABEL:
 			thought = LabelThought.LabelThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
 		elif type == MODE_IMAGE:
@@ -773,6 +823,9 @@ class MMapArea (gtk.DrawingArea):
 			action = UndoManager.UndoAction (self, UNDO_DELETE_SINGLE, self.undo_deletion, [thought])
 		else:
 			action = None
+
+		if hasattr(thought, 'textview'):
+			thought.remove_textview()
 
 		if thought.element in self.element.childNodes:
 			self.element.removeChild (thought.element)
@@ -1178,6 +1231,59 @@ class MMapArea (gtk.DrawingArea):
 			if l.connects (self.selected[0], self.selected[1]):
 				return True
 		return False
+
+        def drag_menu_cb(self, sw, mode):
+		if len(self.selected) == 1:
+			if hasattr(self.selected[0], 'textview'):
+				self.selected[0].remove_textview()
+		if mode == True:
+			self.sw = sw
+			self.drag_mode = True
+		else:
+			self.drag_mode = False
+
+	def is_dragging(self):
+		return self.drag_mode
+
+	def _adjust_sw(self, dx, dy):
+		if self.sw is None:
+			return
+		if not self.drag_mode:
+			return
+                hadj = self.sw.get_hadjustment()
+		hvalue = hadj.get_value() + dx
+		try:
+			if hvalue < hadj.get_lower():
+				hvalue = hadj.get_lower()
+			elif hvalue > hadj.get_upper():
+				hvalue = hadj.get_upper()
+		except AttributeError:
+			pass
+		hadj.set_value(hvalue)
+		self.sw.set_hadjustment(hadj)
+		vadj = self.sw.get_vadjustment()
+		vvalue = vadj.get_value() + dy
+		try:
+			if vvalue < vadj.get_lower():
+				vvalue = vadj.get_lower()
+			elif vvalue > vadj.get_upper():
+				vvalue = vadj.get_upper()
+		except AttributeError:
+			pass
+                vadj.set_value(vvalue)
+		self.sw.set_vadjustment(vadj)
+
+	def stop_moving(self):
+		self.moving = False
+		self.move_mode = False
+		self.move_origin = None
+
+	def start_moving(self, move_button):
+		if len(self.selected) == 1:
+			if hasattr(self.selected[0], 'textview'):
+				self.selected[0].remove_textview()
+		self.move_mode = True
+		self.move_button = move_button
 
 	def link_menu_cb (self):
 		if len (self.selected) != 2:

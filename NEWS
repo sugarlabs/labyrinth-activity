@@ -133,3 +133,8 @@ v0.0.2
 ------
 
 Initial release
+
+* Add gtk.fixed for positioning textviews (for OSK)
+* Reconfigure toolbars to fit in portrait mode
+* Refresh display when changing screen dimensions (rotation)
+* Replace combo boxes with buttons/palettes (more touch friendly)
