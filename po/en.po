@@ -43,7 +43,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-24 00:31-0400\n"
-"PO-Revision-Date: 2013-05-26 05:21+0200\n"
+"PO-Revision-Date: 2013-05-27 03:30+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: en\n"
@@ -191,9 +191,8 @@ msgid "Move selected thoughs"
 msgstr "Move selected thoughs"
 
 #: labyrinthactivity.py:633
-#, fuzzy
 msgid "<ctrl>m"
-msgstr "<ctrl>9"
+msgstr "<ctrl>m"
 
 #: labyrinthactivity.py:638
 msgid "Scroll the screen"
