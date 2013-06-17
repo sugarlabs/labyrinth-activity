@@ -18,12 +18,11 @@
 import sys
 import os
 import time
-import logging
 from gettext import gettext as _
 import xml.dom.minidom as dom
 
 import gtk
-import gobject
+import gio
 import pango
 import pangocairo
 import cairo
@@ -37,6 +36,7 @@ from sugar.graphics.icon import Icon
 from sugar.datastore import datastore
 from sugar.graphics import style
 from port.tarball import Tarball
+from sugar import env
 
 try:
     from sugar.graphics.toolbarbox import ToolbarBox
@@ -58,6 +58,10 @@ import MMapArea
 import utils
 
 EMPTY = -800
+
+DEFAULT_FONTS = ['Sans', 'Serif', 'Monospace']
+USER_FONTS_FILE_PATH = env.get_profile_path('fonts')
+GLOBAL_FONTS_FILE_PATH = '/etc/sugar_fonts'
 
 
 def stop_editing(main_area):
@@ -312,49 +316,6 @@ class TextAttributesToolbar(gtk.Toolbar):
         self._font_list = ['ABC123', 'Sans', 'Serif', 'Monospace', 'Symbol']
         self._font_sizes = ['8', '9', '10', '11', '12', '14', '16', '20',
                             '22', '24', '26', '28', '36', '48', '72']
-        self._font_black_list = ['abc123',
-                                 'Bitstream Charter',
-                                 'Cantarell',
-                                 'Century Schoolbook L',
-                                 'Courier 10 Pitch',
-                                 'Cursor',
-                                 'DejaVu LGC Sans Mono',
-                                 'DejaVu Sans',
-                                 'DejaVu Sans Condensed',
-                                 'DejaVu Sans Mono',
-                                 'DejaVu Serif',
-                                 'DejaVu Serif Condensed',
-                                 'Droid Sans',
-                                 'Droid Sans Mono',
-                                 'Droid Serif',
-                                 'FreeMono',
-                                 'FreeSans',
-                                 'FreeSerif',
-                                 'Khmer OS Content',
-                                 'Khmer OS System',
-                                 'Liberation Mono',
-                                 'Liberation Sans',
-                                 'Liberation Serif',
-                                 'LKLUG',
-                                 'Nimbus Mono L',
-                                 'Nimbus Roman No9 L',
-                                 'Nimbus Sans L',
-                                 'PT Sans',
-                                 'PT Sans Narrow',
-                                 'Standard Symbols L',
-                                 'STIX',
-                                 'STIX Math',
-                                 'URW Bookman L',
-                                 'URW Chancery L',
-                                 'URW Gothic L',
-                                 'URW Palladio L',
-                                 'Utopia',
-                                 'VL Gothic',
-                                 'VL PGothic',
-                                 'cmex10', 'cmmi10', 'cmr10', 'cmsy10',
-                                 'esint10', 'eufm10', 'msam10', 'msbm10',
-                                 'rsfs10', 'uming', 'wasy10',
-                                 ]
 
         self.font_button =  ToolButton('font-text')
         self.font_button.set_tooltip(_('Select font'))
@@ -424,16 +385,66 @@ class TextAttributesToolbar(gtk.Toolbar):
                 self._font_palette.popdown(immediate=True)
             return
 
+    def _init_font_list(self):
+        self._font_white_list = []
+        self._font_white_list.extend(DEFAULT_FONTS)
+
+        # check if there are a user configuration file
+        if not os.path.exists(USER_FONTS_FILE_PATH):
+            # verify if exists a file in /etc
+            if os.path.exists(GLOBAL_FONTS_FILE_PATH):
+                shutil.copy(GLOBAL_FONTS_FILE_PATH, USER_FONTS_FILE_PATH)
+
+        if os.path.exists(USER_FONTS_FILE_PATH):
+            # get the font names in the file to the white list
+            fonts_file = open(USER_FONTS_FILE_PATH)
+            # get the font names in the file to the white list
+            for line in fonts_file:
+                self._font_white_list.append(line.strip())
+            # monitor changes in the file
+            gio_fonts_file = gio.File(USER_FONTS_FILE_PATH)
+            self.monitor = gio_fonts_file.monitor_file()
+            self.monitor.set_rate_limit(5000)
+            self.monitor.connect('changed', self._reload_fonts)
+
+    def _reload_fonts(self, monitor, gio_file, other_file, event):
+        if event != gio.FILE_MONITOR_EVENT_CHANGES_DONE_HINT:
+            return
+        self._font_white_list = []
+        self._font_white_list.extend(DEFAULT_FONTS)
+        fonts_file = open(USER_FONTS_FILE_PATH)
+        for line in fonts_file:
+            self._font_white_list.append(line.strip())
+        # update the menu
+        for child in self._font_palette.menu.get_children():
+            self._font_palette.menu.remove(child)
+            child = None
+        context = self.get_pango_context()
+        tmp_list = []
+        for family in context.list_families():
+            name = family.get_name()
+            if name in self._font_white_list:
+                tmp_list.append(name)
+        for font in sorted(tmp_list):
+            menu_item = MyMenuItem(image=FontImage(font.replace(' ', '-')),
+                                   text_label=font)
+            menu_item.connect('activate', self.__font_selected_cb, font)
+            self._font_palette.menu.append(menu_item)
+            menu_item.show()
+
+        return False
+
     def _setup_font_palette(self):
+        self._init_font_list()
         context = self._main_area.pango_context
         for family in context.list_families():
             name = pango.FontDescription(family.get_name()).to_string()
             if name not in self._font_list and \
-                    name not in self._font_black_list:
+                    name in self._font_white_list:
                 self._font_list.append(name)
 
         self._font_palette = self.font_button.get_palette()
-        for font in self._font_list:
+        for font in sorted(self._font_list):
             menu_item = MyMenuItem(image=FontImage(font.replace(' ', '-')),
                                    text_label=font)
             menu_item.connect('activate', self.__font_selected_cb, font)
