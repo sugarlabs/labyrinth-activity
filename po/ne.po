@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-03 00:31-0400\n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
 "PO-Revision-Date: 2011-07-21 07:24+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,131 +56,164 @@ msgid ""
 "maps that, in addition to words, can have drawings and images!"
 msgstr ""
 
-#: labyrinthactivity.py:70
+#: labyrinthactivity.py:146
 msgid "Cut"
 msgstr "काट"
 
-#: labyrinthactivity.py:103
-msgid "Fit to window"
-msgstr "सञ्झ्यालमा ठिक्क"
-
-#: labyrinthactivity.py:104
-msgid "<ctrl>9"
-msgstr "<ctrl>९"
-
-#: labyrinthactivity.py:109
-msgid "Original size"
-msgstr "मौलिक आकार"
-
-#: labyrinthactivity.py:110
-msgid "<ctrl>0"
-msgstr "<ctrl>०"
-
-#: labyrinthactivity.py:115
-msgid "Zoom out"
-msgstr "सानो बनाऊ"
-
-#: labyrinthactivity.py:116
-msgid "<ctrl>minus"
-msgstr "<ctrl>माइनस्"
-
-#: labyrinthactivity.py:121
-msgid "Zoom in"
-msgstr "ठूलो बनाऊ"
-
-#: labyrinthactivity.py:122
-msgid "<ctrl>equal"
-msgstr "<ctrl>बराबर"
-
-#: labyrinthactivity.py:194
-msgid "Bold"
-msgstr "बाक्लो"
-
-#: labyrinthactivity.py:199
-msgid "Italics"
-msgstr "छड्के"
-
-#: labyrinthactivity.py:204
-msgid "Underline"
-msgstr "कच"
-
-#: labyrinthactivity.py:354
-msgid "Text mode"
-msgstr "पाठ मोड"
-
-#: labyrinthactivity.py:355
-msgid "<ctrl>t"
-msgstr "<ctrl>t"
-
-#: labyrinthactivity.py:363
-msgid "Image add mode"
-msgstr "चित्र थप्ने मोड"
-
-#: labyrinthactivity.py:364
-msgid "<ctrl>i"
-msgstr "<ctrl>i"
-
-#: labyrinthactivity.py:371
-msgid "Drawing mode"
-msgstr "चित्र बनाउने मोड"
-
-#: labyrinthactivity.py:372
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
-
-#: labyrinthactivity.py:378
-msgid "Label mode"
-msgstr "लेबल मोड"
-
-#: labyrinthactivity.py:379
-msgid "<ctrl>a"
-msgstr "<ctrl>a"
-
-#: labyrinthactivity.py:413 labyrinthactivity.py:483
-msgid "Portable Document Format (PDF)"
-msgstr "पोर्तेवल कागजातको फर्र्मेट(PDF)"
-
-#: labyrinthactivity.py:419 labyrinthactivity.py:488
-msgid "Portable Network Graphic (PNG)"
-msgstr "पोर्तेवल सञ्जाल ग्राफिक्(PNG)"
-
-#: labyrinthactivity.py:427 labyrinthactivity.py:494
-msgid "Edit"
-msgstr "सम्पादन"
-
-#: labyrinthactivity.py:439 labyrinthactivity.py:509
-msgid "View"
-msgstr "दृश्य"
-
-#: labyrinthactivity.py:446
-msgid "Text"
-msgstr "पाठ"
-
-#: labyrinthactivity.py:457 labyrinthactivity.py:513
-msgid "Thought Type"
-msgstr "सोचको प्रकार"
-
-#: labyrinthactivity.py:520
-msgid "Edit mode"
-msgstr "सम्पादन गर्ने मोड"
-
-#: labyrinthactivity.py:521
-msgid "<ctrl>e"
-msgstr "<ctrl>e"
-
-#: labyrinthactivity.py:529
-msgid "Link/unlink two selected thoughts"
-msgstr "दुईवटा छानिएको सोचहरु लिंक गर/ लिंक नगर"
-
-#: labyrinthactivity.py:530
-msgid "<ctrl>l"
-msgstr "<ctrl>l"
-
-#: labyrinthactivity.py:535
+#: labyrinthactivity.py:154
 msgid "Erase selected thought(s)"
 msgstr "छानिएको सोच(s) मेटाऊ"
 
-#: labyrinthactivity.py:611
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "सञ्झ्यालमा ठिक्क"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>९"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "मौलिक आकार"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>०"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "सानो बनाऊ"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>माइनस्"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "ठूलो बनाऊ"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>बराबर"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "बाक्लो"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "छड्के"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "कच"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "पाठ मोड"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "चित्र थप्ने मोड"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "चित्र बनाउने मोड"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "लेबल मोड"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "दुईवटा छानिएको सोचहरु लिंक गर/ लिंक नगर"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>९"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "पोर्तेवल कागजातको फर्र्मेट(PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "पोर्तेवल सञ्जाल ग्राफिक्(PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "दृश्य"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "पाठ"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "सोचको प्रकार"
+
+#: labyrinthactivity.py:938
 msgid ""
 "Click to add\n"
 "central thought"
@@ -434,3 +467,6 @@ msgstr "पाठको सम्पादन गर"
 #: src/ResourceThought.py:133
 msgid "Edit URI"
 msgstr "URI सम्पादन गर"
+
+#~ msgid "Edit mode"
+#~ msgstr "सम्पादन गर्ने मोड"

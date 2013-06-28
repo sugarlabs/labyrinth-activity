@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-03 00:31-0400\n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
 "PO-Revision-Date: 2012-11-16 14:41+0200\n"
 "Last-Translator: FRKS <frks@frks.pl>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,131 +59,164 @@ msgstr ""
 "Masz dużo na głowie? Zamapuj to! Ta aktywność pozwala Ci stworzyć mapę "
 "myśli. Poza słowami możesz także dodawać zdjęcia!"
 
-#: labyrinthactivity.py:70
+#: labyrinthactivity.py:146
 msgid "Cut"
 msgstr "Wytnij"
 
-#: labyrinthactivity.py:103
-msgid "Fit to window"
-msgstr "Dostosuj do okna"
-
-#: labyrinthactivity.py:104
-msgid "<ctrl>9"
-msgstr "<ctrl>9"
-
-#: labyrinthactivity.py:109
-msgid "Original size"
-msgstr "Oryginalny rozmiar"
-
-#: labyrinthactivity.py:110
-msgid "<ctrl>0"
-msgstr "<ctrl>0"
-
-#: labyrinthactivity.py:115
-msgid "Zoom out"
-msgstr "Zmniejsz"
-
-#: labyrinthactivity.py:116
-msgid "<ctrl>minus"
-msgstr "<ctrl>mniej"
-
-#: labyrinthactivity.py:121
-msgid "Zoom in"
-msgstr "Powiększ"
-
-#: labyrinthactivity.py:122
-msgid "<ctrl>equal"
-msgstr "<ctrl>równy"
-
-#: labyrinthactivity.py:194
-msgid "Bold"
-msgstr "Pogrubione"
-
-#: labyrinthactivity.py:199
-msgid "Italics"
-msgstr "Kursywa"
-
-#: labyrinthactivity.py:204
-msgid "Underline"
-msgstr "Podkreślenie"
-
-#: labyrinthactivity.py:354
-msgid "Text mode"
-msgstr "Tryb pisania"
-
-#: labyrinthactivity.py:355
-msgid "<ctrl>t"
-msgstr "<ctrl>t Tryb pisania"
-
-#: labyrinthactivity.py:363
-msgid "Image add mode"
-msgstr "Tryb dodawania obrazu"
-
-#: labyrinthactivity.py:364
-msgid "<ctrl>i"
-msgstr "<ctrl>i Tryb dodawania obrazu"
-
-#: labyrinthactivity.py:371
-msgid "Drawing mode"
-msgstr "Tryb rysowania"
-
-#: labyrinthactivity.py:372
-msgid "<ctrl>d"
-msgstr "<ctrl>d Tryb rysowania"
-
-#: labyrinthactivity.py:378
-msgid "Label mode"
-msgstr "Tryb etykietowania"
-
-#: labyrinthactivity.py:379
-msgid "<ctrl>a"
-msgstr "<ctrl>a Wybierz wszystkie pomysły"
-
-#: labyrinthactivity.py:413 labyrinthactivity.py:483
-msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
-
-#: labyrinthactivity.py:419 labyrinthactivity.py:488
-msgid "Portable Network Graphic (PNG)"
-msgstr "Portable Network Graphic (PNG)"
-
-#: labyrinthactivity.py:427 labyrinthactivity.py:494
-msgid "Edit"
-msgstr "Edytuj"
-
-#: labyrinthactivity.py:439 labyrinthactivity.py:509
-msgid "View"
-msgstr "Widok"
-
-#: labyrinthactivity.py:446
-msgid "Text"
-msgstr "Tekst"
-
-#: labyrinthactivity.py:457 labyrinthactivity.py:513
-msgid "Thought Type"
-msgstr "Rodzaj pomysłu"
-
-#: labyrinthactivity.py:520
-msgid "Edit mode"
-msgstr "Tryb edycji"
-
-#: labyrinthactivity.py:521
-msgid "<ctrl>e"
-msgstr "<ctrl>e Tryb edycji"
-
-#: labyrinthactivity.py:529
-msgid "Link/unlink two selected thoughts"
-msgstr "Połącz/rozłącz dwa wybrane pomysły"
-
-#: labyrinthactivity.py:530
-msgid "<ctrl>l"
-msgstr "<ctrl>l Połącz / rozłącz dwa wybrane pomysły"
-
-#: labyrinthactivity.py:535
+#: labyrinthactivity.py:154
 msgid "Erase selected thought(s)"
 msgstr "Usuń wybrane pomysły"
 
-#: labyrinthactivity.py:611
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Dostosuj do okna"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Oryginalny rozmiar"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Zmniejsz"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>mniej"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Powiększ"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>równy"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Pogrubione"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Kursywa"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Podkreślenie"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Tryb pisania"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t Tryb pisania"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Tryb dodawania obrazu"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i Tryb dodawania obrazu"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Tryb rysowania"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d Tryb rysowania"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Tryb etykietowania"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a Wybierz wszystkie pomysły"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e Tryb edycji"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Połącz/rozłącz dwa wybrane pomysły"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l Połącz / rozłącz dwa wybrane pomysły"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Edytuj"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Widok"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Tekst"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Rodzaj pomysłu"
+
+#: labyrinthactivity.py:938
 msgid ""
 "Click to add\n"
 "central thought"
@@ -437,3 +470,6 @@ msgstr "Edytuj Tekst"
 #: src/ResourceThought.py:133
 msgid "Edit URI"
 msgstr "Edytuj URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Tryb edycji"

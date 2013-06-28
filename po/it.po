@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-03 00:31-0400\n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
 "PO-Revision-Date: 2010-09-29 15:06+0200\n"
 "Last-Translator: Carlo Falciola <cfalciola@yahoo.it>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -56,131 +56,164 @@ msgid ""
 "maps that, in addition to words, can have drawings and images!"
 msgstr ""
 
-#: labyrinthactivity.py:70
+#: labyrinthactivity.py:146
 msgid "Cut"
 msgstr "Taglia"
 
-#: labyrinthactivity.py:103
-msgid "Fit to window"
-msgstr "Dimensione finestra"
-
-#: labyrinthactivity.py:104
-msgid "<ctrl>9"
-msgstr "<ctrl>9"
-
-#: labyrinthactivity.py:109
-msgid "Original size"
-msgstr "Dimensione originale"
-
-#: labyrinthactivity.py:110
-msgid "<ctrl>0"
-msgstr "<ctrl>0"
-
-#: labyrinthactivity.py:115
-msgid "Zoom out"
-msgstr "Zoom indietro"
-
-#: labyrinthactivity.py:116
-msgid "<ctrl>minus"
-msgstr "<ctrl>minus"
-
-#: labyrinthactivity.py:121
-msgid "Zoom in"
-msgstr "Zoom avanti"
-
-#: labyrinthactivity.py:122
-msgid "<ctrl>equal"
-msgstr "<ctrl>equal"
-
-#: labyrinthactivity.py:194
-msgid "Bold"
-msgstr ""
-
-#: labyrinthactivity.py:199
-msgid "Italics"
-msgstr ""
-
-#: labyrinthactivity.py:204
-msgid "Underline"
-msgstr ""
-
-#: labyrinthactivity.py:354
-msgid "Text mode"
-msgstr "Modalità Testo"
-
-#: labyrinthactivity.py:355
-msgid "<ctrl>t"
-msgstr "<ctrl>t"
-
-#: labyrinthactivity.py:363
-msgid "Image add mode"
-msgstr "Modalità aggiungi Immagine"
-
-#: labyrinthactivity.py:364
-msgid "<ctrl>i"
-msgstr "<ctrl>i"
-
-#: labyrinthactivity.py:371
-msgid "Drawing mode"
-msgstr "Modalità Disegno"
-
-#: labyrinthactivity.py:372
-msgid "<ctrl>d"
-msgstr "<ctrl>d"
-
-#: labyrinthactivity.py:378
-msgid "Label mode"
-msgstr "Etichetta modello"
-
-#: labyrinthactivity.py:379
-msgid "<ctrl>a"
-msgstr "<ctrl>a"
-
-#: labyrinthactivity.py:413 labyrinthactivity.py:483
-msgid "Portable Document Format (PDF)"
-msgstr "Portable Document Format (PDF)"
-
-#: labyrinthactivity.py:419 labyrinthactivity.py:488
-msgid "Portable Network Graphic (PNG)"
-msgstr "Portable Network Graphic (PNG)"
-
-#: labyrinthactivity.py:427 labyrinthactivity.py:494
-msgid "Edit"
-msgstr "Modifica"
-
-#: labyrinthactivity.py:439 labyrinthactivity.py:509
-msgid "View"
-msgstr "Vista"
-
-#: labyrinthactivity.py:446
-msgid "Text"
-msgstr ""
-
-#: labyrinthactivity.py:457 labyrinthactivity.py:513
-msgid "Thought Type"
-msgstr ""
-
-#: labyrinthactivity.py:520
-msgid "Edit mode"
-msgstr "Modalità modifica"
-
-#: labyrinthactivity.py:521
-msgid "<ctrl>e"
-msgstr "<ctrl>m"
-
-#: labyrinthactivity.py:529
-msgid "Link/unlink two selected thoughts"
-msgstr "Connetti/disconnetti i due concetti selezionati"
-
-#: labyrinthactivity.py:530
-msgid "<ctrl>l"
-msgstr "<ctrl>l"
-
-#: labyrinthactivity.py:535
+#: labyrinthactivity.py:154
 msgid "Erase selected thought(s)"
 msgstr "Elimina i concetto/i selezionato/i"
 
-#: labyrinthactivity.py:611
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Dimensione finestra"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Dimensione originale"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Zoom indietro"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>minus"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Zoom avanti"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>equal"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Modalità Testo"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Modalità aggiungi Immagine"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Modalità Disegno"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Etichetta modello"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>m"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Connetti/disconnetti i due concetti selezionati"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Modifica"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Vista"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
 msgid ""
 "Click to add\n"
 "central thought"
@@ -434,6 +467,9 @@ msgstr "Modifica Testo"
 #: src/ResourceThought.py:133
 msgid "Edit URI"
 msgstr "Modifica URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Modalità modifica"
 
 #~ msgid "Keep to PDF"
 #~ msgstr "Memorizza in PDF"
