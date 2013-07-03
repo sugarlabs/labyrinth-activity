@@ -17,6 +17,7 @@
 
 import sys
 import os
+import shutil
 import time
 from gettext import gettext as _
 import xml.dom.minidom as dom
