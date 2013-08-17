@@ -43,7 +43,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-24 00:31-0400\n"
-"PO-Revision-Date: 2011-04-02 20:43+0200\n"
+"PO-Revision-Date: 2013-08-17 19:58+0200\n"
 "Last-Translator: samy boutayeb <s.boutayeb@free.fr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: fr\n"
@@ -51,7 +51,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
@@ -111,15 +111,15 @@ msgstr "<ctrl>égale"
 
 #: labyrinthactivity.py:360
 msgid "Select font"
-msgstr ""
+msgstr "Sélectionner la police"
 
 #: labyrinthactivity.py:368
 msgid "Bigger"
-msgstr ""
+msgstr "Augmenter la taille"
 
 #: labyrinthactivity.py:384
 msgid "Smaller"
-msgstr ""
+msgstr "Diminuer la taille"
 
 #: labyrinthactivity.py:391
 msgid "Bold"
@@ -135,11 +135,11 @@ msgstr "Souligné"
 
 #: labyrinthactivity.py:406
 msgid "Set font color"
-msgstr ""
+msgstr "Définir la couleur de la police"
 
 #: labyrinthactivity.py:411
 msgid "Set background color"
-msgstr ""
+msgstr "Définir la couleur d'arrière-plan"
 
 #: labyrinthactivity.py:567
 msgid "Text mode"
@@ -175,7 +175,7 @@ msgstr "<ctrl>a"
 
 #: labyrinthactivity.py:617
 msgid "Select thoughts"
-msgstr ""
+msgstr "Sélectionner les idées"
 
 #: labyrinthactivity.py:619
 msgid "<ctrl>e"
@@ -191,16 +191,15 @@ msgstr "<ctrl>l"
 
 #: labyrinthactivity.py:631
 msgid "Move selected thoughs"
-msgstr ""
+msgstr "Déplacer les idées sélectionnées"
 
 #: labyrinthactivity.py:633
-#, fuzzy
 msgid "<ctrl>m"
-msgstr "<ctrl>9"
+msgstr "<ctrl>m"
 
 #: labyrinthactivity.py:638
 msgid "Scroll the screen"
-msgstr ""
+msgstr "Faire défiler l'écran"
 
 #: labyrinthactivity.py:716 labyrinthactivity.py:772
 msgid "Portable Document Format (PDF)"
