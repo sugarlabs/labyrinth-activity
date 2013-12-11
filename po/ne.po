@@ -35,15 +35,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-24 00:31-0400\n"
-"PO-Revision-Date: 2011-07-21 07:24+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2013-11-27 07:31+0200\n"
+"Last-Translator: Ganesh <ganesh.ghimire@olenepal.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.0.1\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
@@ -55,6 +55,9 @@ msgid ""
 "Do you have a lot on your mind? Map it! This activity lets you create mind "
 "maps that, in addition to words, can have drawings and images!"
 msgstr ""
+"के तपाईँको मस्तिष्कमा धेरै कुराहरू छन्? त्यसको मापन गरौँ ! यो क्रियाकलापले "
+"तपाईँको मस्तिष्क मापन गर्न मद्दत गर्दछ, शब्दहरूमा भन्दा पनि चित्र र "
+"तस्बिरहरूमा !"
 
 #: labyrinthactivity.py:146
 msgid "Cut"
@@ -98,15 +101,15 @@ msgstr "<ctrl>बराबर"
 
 #: labyrinthactivity.py:360
 msgid "Select font"
-msgstr ""
+msgstr "फण्ट चयन गर"
 
 #: labyrinthactivity.py:368
 msgid "Bigger"
-msgstr ""
+msgstr "भन्दा ठूलो"
 
 #: labyrinthactivity.py:384
 msgid "Smaller"
-msgstr ""
+msgstr "भन्दा सानो"
 
 #: labyrinthactivity.py:391
 msgid "Bold"
@@ -122,11 +125,11 @@ msgstr "कच"
 
 #: labyrinthactivity.py:406
 msgid "Set font color"
-msgstr ""
+msgstr "फण्टको रङ चयन गर"
 
 #: labyrinthactivity.py:411
 msgid "Set background color"
-msgstr ""
+msgstr "पृष्ठभूमि रङ सेट गर"
 
 #: labyrinthactivity.py:567
 msgid "Text mode"
@@ -162,7 +165,7 @@ msgstr "<ctrl>a"
 
 #: labyrinthactivity.py:617
 msgid "Select thoughts"
-msgstr ""
+msgstr "Select thoughts"
 
 #: labyrinthactivity.py:619
 msgid "<ctrl>e"
@@ -178,24 +181,23 @@ msgstr "<ctrl>l"
 
 #: labyrinthactivity.py:631
 msgid "Move selected thoughs"
-msgstr ""
+msgstr "Move selected thoughs"
 
 #: labyrinthactivity.py:633
-#, fuzzy
 msgid "<ctrl>m"
-msgstr "<ctrl>९"
+msgstr "<ctrl>m"
 
 #: labyrinthactivity.py:638
 msgid "Scroll the screen"
-msgstr ""
+msgstr "स्क्रिन स्क्रोल गर"
 
 #: labyrinthactivity.py:716 labyrinthactivity.py:772
 msgid "Portable Document Format (PDF)"
-msgstr "पोर्तेवल कागजातको फर्र्मेट(PDF)"
+msgstr "Portable Document Format (PDF)"
 
 #: labyrinthactivity.py:722 labyrinthactivity.py:777
 msgid "Portable Network Graphic (PNG)"
-msgstr "पोर्तेवल सञ्जाल ग्राफिक्(PNG)"
+msgstr "Portable Network Graphic (PNG)"
 
 #: labyrinthactivity.py:731 labyrinthactivity.py:783
 msgid "Edit"
@@ -211,15 +213,15 @@ msgstr "पाठ"
 
 #: labyrinthactivity.py:757
 msgid "Thought Type"
-msgstr "सोचको प्रकार"
+msgstr "Thought Type"
 
 #: labyrinthactivity.py:938
 msgid ""
 "Click to add\n"
 "central thought"
 msgstr ""
-"थप्नलाई क्लिक गर\n"
-"केन्द्रिय सोच"
+"Click to add\n"
+"central thought"
 
 #: src/Browser.py:194
 #, python-format
