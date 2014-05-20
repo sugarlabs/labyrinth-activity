@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-24 00:31-0400\n"
-"PO-Revision-Date: 2014-05-14 04:23+0200\n"
+"PO-Revision-Date: 2014-05-20 19:27+0200\n"
 "Last-Translator: Chris <cjl@laptop.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pbs\n"
@@ -108,7 +108,7 @@ msgstr "Vakja kily'e me'ets'"
 
 #: labyrinthactivity.py:568
 msgid "<ctrl>t"
-msgstr "ctrl>t vakja kily'e me'ets'"
+msgstr "<ctrl>t vakja kily'e me'ets'"
 
 #: labyrinthactivity.py:577
 msgid "Image add mode"
@@ -116,7 +116,7 @@ msgstr "Vakja vania'at meje'eun kutaut"
 
 #: labyrinthactivity.py:578
 msgid "<ctrl>i"
-msgstr "ctrl>i vakja mamejep kutaut"
+msgstr "<ctrl>i vakja mamejep kutaut"
 
 #: labyrinthactivity.py:585
 msgid "Drawing mode"
