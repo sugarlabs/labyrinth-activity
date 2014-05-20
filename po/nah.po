@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-05-24 00:31-0400\n"
-"PO-Revision-Date: 2012-04-28 06:55+0200\n"
-"Last-Translator: Chris <cjl@laptop.org>\n"
+"PO-Revision-Date: 2014-01-15 23:57+0200\n"
+"Last-Translator: usuarionahuatl02 <proyecto.olpc@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: nah\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #. TRANS: "name" option from activity.info file
 msgid "Labyrinth"
-msgstr ""
+msgstr "Tlachichiuali pan mo tsontekon"
 
 #. TRANS: "summary" option from activity.info file
 #. TRANS: "description" option from activity.info file
@@ -27,54 +27,57 @@ msgid ""
 "Do you have a lot on your mind? Map it! This activity lets you create mind "
 "maps that, in addition to words, can have drawings and images!"
 msgstr ""
+"¿Tijpia miyak pan mo nejneuilis? !Xi chiua se tlaixtemolistli! Inin tlamanti "
+"mits kaua ti chiuas tlaixtemolistli, nojkia tlajkuilol, uelis ti "
+"tlaixkopinas uan tlamauisos."
 
 #: labyrinthactivity.py:146
 msgid "Cut"
-msgstr ""
+msgstr "Tsontekis"
 
 #: labyrinthactivity.py:154
 msgid "Erase selected thought(s)"
-msgstr ""
+msgstr "Kixpolos nejneuili tlapejpenijtoj"
 
 #: labyrinthactivity.py:200
 msgid "Fit to window"
-msgstr ""
+msgstr "Kualchichiuas tlaixnexkayotl"
 
 #: labyrinthactivity.py:201
 msgid "<ctrl>9"
-msgstr ""
+msgstr "<ctrl>9"
 
 #: labyrinthactivity.py:206
 msgid "Original size"
-msgstr ""
+msgstr "Iuexka tlen uala"
 
 #: labyrinthactivity.py:207
 msgid "<ctrl>0"
-msgstr ""
+msgstr "<ctrl>0"
 
 #: labyrinthactivity.py:212
 msgid "Zoom out"
-msgstr ""
+msgstr "Tij tomas"
 
 #: labyrinthactivity.py:213
 msgid "<ctrl>minus"
-msgstr ""
+msgstr "<ctrl>menos"
 
 #: labyrinthactivity.py:218
 msgid "Zoom in"
-msgstr ""
+msgstr "Ueilis"
 
 #: labyrinthactivity.py:219
 msgid "<ctrl>equal"
-msgstr ""
+msgstr "<ctrl>igual"
 
 #: labyrinthactivity.py:360
 msgid "Select font"
-msgstr ""
+msgstr "Pejpeni uexka tlen tlajkuilos"
 
 #: labyrinthactivity.py:368
 msgid "Bigger"
-msgstr ""
+msgstr "Axtiuejketl"
 
 #: labyrinthactivity.py:384
 msgid "Smaller"
@@ -82,23 +85,23 @@ msgstr ""
 
 #: labyrinthactivity.py:391
 msgid "Bold"
-msgstr ""
+msgstr "Tlapejpentoj"
 
 #: labyrinthactivity.py:396
 msgid "Italics"
-msgstr ""
+msgstr "Itálica"
 
 #: labyrinthactivity.py:401
 msgid "Underline"
-msgstr ""
+msgstr "Tlauasanis"
 
 #: labyrinthactivity.py:406
 msgid "Set font color"
-msgstr ""
+msgstr "Tlalis tlapali tlen ti tlajkuilos"
 
 #: labyrinthactivity.py:411
 msgid "Set background color"
-msgstr ""
+msgstr "Tlalis tlapali tlen kipixtos ijtik"
 
 #: labyrinthactivity.py:567
 msgid "Text mode"
@@ -106,55 +109,59 @@ msgstr ""
 
 #: labyrinthactivity.py:568
 msgid "<ctrl>t"
-msgstr ""
+msgstr "<ctrl>t"
 
 #: labyrinthactivity.py:577
 msgid "Image add mode"
-msgstr ""
+msgstr "Tlen tlaskiltis tlaixkopinali"
 
 #: labyrinthactivity.py:578
 msgid "<ctrl>i"
-msgstr ""
+msgstr "<ctrl>i"
 
 #: labyrinthactivity.py:585
 msgid "Drawing mode"
-msgstr ""
+msgstr "Tlen ti kopinas"
 
 #: labyrinthactivity.py:586
 msgid "<ctrl>d"
-msgstr ""
+msgstr "<ctrl>d"
 
 #: labyrinthactivity.py:592
 msgid "Label mode"
 msgstr ""
 
 #: labyrinthactivity.py:593
+#, fuzzy
 msgid "<ctrl>a"
-msgstr ""
+msgstr "<ctrl>9"
 
 #: labyrinthactivity.py:617
 msgid "Select thoughts"
 msgstr ""
 
 #: labyrinthactivity.py:619
+#, fuzzy
 msgid "<ctrl>e"
-msgstr ""
+msgstr "<ctrl>9"
 
 #: labyrinthactivity.py:624
 msgid "Link/unlink two selected thoughts"
 msgstr ""
 
 #: labyrinthactivity.py:626
+#, fuzzy
 msgid "<ctrl>l"
-msgstr ""
+msgstr "<ctrl>9"
 
 #: labyrinthactivity.py:631
 msgid "Move selected thoughs"
 msgstr ""
 
 #: labyrinthactivity.py:633
+#, fuzzy
 msgid "<ctrl>m"
-msgstr ""
+msgstr "<ctrl>9"
 
 #: labyrinthactivity.py:638
 msgid "Scroll the screen"
@@ -233,9 +240,9 @@ msgid "Last Modified"
 msgstr ""
 
 #: src/DrawingThought.py:60
-#, python-format
+#, python-format, fuzzy
 msgid "Drawing #%d"
-msgstr ""
+msgstr "Tlen ti kopinas"
 
 #: src/ImageThought.py:59 src/ImageThought.py:62
 msgid "Choose image"
@@ -328,8 +335,9 @@ msgid "Add an image to selected thought"
 msgstr ""
 
 #: src/MainWindow.py:261
+#, fuzzy
 msgid "_Drawing Mode"
-msgstr ""
+msgstr "Tlen ti kopinas"
 
 #: src/MainWindow.py:262
 msgid "Make a pretty drawing"
