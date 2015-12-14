@@ -18,10 +18,13 @@ import os
 import time
 import tarfile
 import cStringIO
-import gtk
 import zipfile
 import tempfile
 import shutil
+
+from gi.repository import Gtk
+from gi.repository import GdkPixbuf
+
 
 class TarballError(Exception):
     """Base Tarball exception."""
@@ -41,7 +44,7 @@ class Tarball:
     Supprted types:
 
         * string
-        * gtk.gdk.Pixbuf
+        * GdkPixbuf.Pixbuf
 
     Write usage:
 
@@ -74,6 +77,7 @@ class Tarball:
     def __init__(self, name=None, mode='r', mtime=None):
         if not mode.startswith('r') or tarfile.is_tarfile(name):
             self.__tar = tarfile.TarFile(name=name, mode=mode)
+
         else:
             # convert for tar
 
@@ -93,6 +97,7 @@ class Tarball:
                 tar.close()
 
                 self.__tar = tarfile.TarFile(name=tmp_name, mode=mode)
+
             finally:
                 tmp_fo.close()
                 os.unlink(tmp_name)
@@ -100,6 +105,7 @@ class Tarball:
 
         if mtime:
             self.mtime = mtime
+
         else:
             self.mtime = time.time()
 
@@ -116,13 +122,14 @@ class Tarball:
         file_o = self.__tar.extractfile(arcname.encode('utf8'))
         if not file_o:
             return None
+
         out = file_o.read()
         file_o.close()
         return out
 
     def read_pixbuf(self, arcname):
         """Returns pixbuf object of given file from tarball."""
-        loader = gtk.gdk.pixbuf_loader_new_with_mime_type('image/png')
+        loader = GdkPixbuf.PixbufLoader.new_with_mime_type('image/png')
         loader.write(self.read(arcname))
         loader.close()
         return loader.get_pixbuf()
@@ -138,8 +145,10 @@ class Tarball:
 
         if isinstance(data, str):
             self.__write_str(info, data)
-        elif isinstance(data, gtk.gdk.Pixbuf):
+
+        elif isinstance(data, GdkPixbuf.Pixbuf):
             self.__write_pixbuf(info, data)
+
         else:
             raise BadDataTypeError()
 

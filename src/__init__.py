@@ -13,5 +13,6 @@ if _check (name):
     
 if UNINSTALLED_LAB:
     SHARED_DATA_DIR = abspath(join(dirname(__file__), '..', 'data'))
+
 else:
-        SHARED_DATA_DIR = join(DATA_DIR, "labyrinth")
+    SHARED_DATA_DIR = join(DATA_DIR, "labyrinth")

@@ -21,18 +21,18 @@
 
 # Generally available prefs for all sorts of interesting stuff
 
-import gtk
+from gi.repository import Gtk
 
 _dirn = None
 
-def init ():
-	global _dirn
-	_dirn = gtk.widget_get_default_direction ()
-	
+def init():
+    global _dirn
+    _dirn = Gtk.Widget.get_default_direction ()
+    
 
-def get_direction ():
-	global _dirn
-	return _dirn
-	
-	
-init ()
+def get_direction():
+    global _dirn
+    return _dirn
+    
+    
+init()

@@ -21,10 +21,12 @@
 # Boston, MA  02110-1301  USA
 #
 
-import gtk
-import pango
 import utils
 import xml.dom
+
+from gi.repository import Gtk
+from gi.repository import Gdk
+from gi.repository import Pango
 
 from BaseThought import *
 from TextThought import TextThought
@@ -51,7 +53,7 @@ class LabelThought (TextThought):
         else:
             r, g ,b = utils.gtk_to_cairo_color(utils.default_colors["text"])
         context.set_source_rgb (r, g, b)
-        self.layout.set_alignment(pango.ALIGN_CENTER)
+        self.layout.set_alignment(Pango.Alignment.CENTER)
         context.move_to (textx, texty)
         context.show_layout (self.layout)
         if self.editing:
@@ -60,10 +62,10 @@ class LabelThought (TextThought):
             else:
                 (strong, weak) = self.layout.get_cursor_pos (self.index)
             (startx, starty, curx,cury) = strong
-            startx /= pango.SCALE
-            starty /= pango.SCALE
-            curx /= pango.SCALE
-            cury /= pango.SCALE
+            startx /= Pango.SCALE
+            starty /= Pango.SCALE
+            curx /= Pango.SCALE
+            cury /= Pango.SCALE
             context.move_to (textx + startx, texty + starty)
             context.line_to (textx + startx, texty + starty + cury)
             context.stroke ()
@@ -115,25 +117,25 @@ class LabelThought (TextThought):
         while (1):
             r = it.range()
             for x in it.get_attrs():
-                if x.type == pango.ATTR_WEIGHT and x.value == pango.WEIGHT_BOLD:
+                if x.type == Pango.Weight and x.value == Pango.Weight.BOLD:
                     elem = doc.createElement ("attribute")
                     self.element.appendChild (elem)
                     elem.setAttribute("start", str(r[0]))
                     elem.setAttribute("end", str(r[1]))
                     elem.setAttribute("type", "bold")
-                elif x.type == pango.ATTR_STYLE and x.value == pango.STYLE_ITALIC:
+                elif x.type == Pango.Style and x.value == Pango.Style.ITALIC:
                     elem = doc.createElement ("attribute")
                     self.element.appendChild (elem)
                     elem.setAttribute("start", str(r[0]))
                     elem.setAttribute("end", str(r[1]))
                     elem.setAttribute("type", "italics")
-                elif x.type == pango.ATTR_UNDERLINE and x.value == pango.UNDERLINE_SINGLE:
+                elif x.type == Pango.Underline and x.value == Pango.Underline.SINGLE:
                     elem = doc.createElement ("attribute")
                     self.element.appendChild (elem)
                     elem.setAttribute("start", str(r[0]))
                     elem.setAttribute("end", str(r[1]))
                     elem.setAttribute("type", "underline")
-                elif x.type == pango.ATTR_FONT_DESC:
+                elif x.type == Pango.AttrFontDesc:
                     elem = doc.createElement ("attribute")
                     self.element.appendChild (elem)
                     elem.setAttribute("start", str(r[0]))
@@ -157,9 +159,9 @@ class LabelThought (TextThought):
         self.identity = int (node.getAttribute ("identity"))
         try:
             tmp = node.getAttribute ("background-color")
-            self.background_color = gtk.gdk.color_parse(tmp)
+            self.background_color = Gdk.Color.parse(tmp)
             tmp = node.getAttribute ("foreground-color")
-            self.foreground_color = gtk.gdk.color_parse(tmp)
+            self.foreground_color = Gdk.Color.parse(tmp)
         except ValueError:
             pass
 
@@ -181,17 +183,23 @@ class LabelThought (TextThought):
                 start = int(n.getAttribute("start"))
                 end = int(n.getAttribute("end"))
 
+                attr = None  ## FIXME: REMOVE THIS
+
+                # FIXME: Apply from start to end
                 if attrType == "bold":
-                    attr = pango.AttrWeight(pango.WEIGHT_BOLD, start, end)
+                    attr = Pango.Weight(Pango.Weight.BOLD)
                 elif attrType == "italics":
-                    attr = pango.AttrStyle(pango.STYLE_ITALIC, start, end)
+                    attr = Pango.Style(Pango.Style.ITALIC)
                 elif attrType == "underline":
-                    attr = pango.AttrUnderline(pango.UNDERLINE_SINGLE, start, end)
+                    attr = Pango.Underline(Pango.Underline.SINGLE)
                 elif attrType == "font":
-                    font_name = str(n.getAttribute("value"))
-                    pango_font = pango.FontDescription (font_name)
-                    attr = pango.AttrFontDesc (pango_font, start, end)
-                self.attributes.change(attr)
+                    #font_name = str(n.getAttribute("value"))
+                    #pango_font = Pango.FontDescription (font_name)
+                    #attr = pango.AttrFontDesc (pango_font, start, end)
+                    pass
+
+                if attr:  ## FIXME: REMOVE THIS
+                    self.attributes.change(attr)
             else:
                 print "Unknown: "+n.nodeName
         self.rebuild_byte_table ()
