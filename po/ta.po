@@ -1,0 +1,481 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-07-03 14:49+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "லபிறின்த்"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "துண்டி"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "தெரிவு செய்த இரு எண்ணம்(களை) அழி"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "சாரளத்தின் அளவிற்கு பொருத்து"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "அசல் அளவு"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "சிறிதாக்கிக் காட்டு"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl> மறை(கழி)"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "பெரிதாக்கிக் காட்டு"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl> சமன்"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "கருமையான"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "சாய்ந்த"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "அடிகோடிட்ட"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "எழுத்து நிலை"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "படம் சேர்க்கும் நிலை"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "வரை நிலை"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "சுருக்க தாள் முறை"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "தெரிவு செய்த இரு எண்ணங்களை தொடர்பு படுத்து/பிரி"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "ஏற்றத்தக்க ஆவண வடிவம்(PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "ஏற்றத்தக்க பிணைய வரைகலை (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "திருத்து"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "பார்வையிடு"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "உரை"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "சிந்தனை வகை"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"மைய எண்ணத்தை \n"
+" ஐ சேர்ப்பதற்கு சொடுக்குக"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "உதவியைக் காட்ட முடியவில்லை : %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "டொன் ஸ்கோர்கியினால் மொழிபெயர்க்கப் பட்டது"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "வரைபடத்தை தற்போது அழிக்க முடியவில்லை. அது திறக்கப்பட்டா உள்ளது?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "இவ் வரைபடத்திற்கு ஒத்தியங்கும் கோவைப் பெயர் இல்லை"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "இந்த வரைபடத்தை அழிக்க முடியவில்லை."
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "இந்த வரைபடத்தை நிஜமாகவே அழிக்க வேண்டுமா?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "கோவையைத் திற"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ இறுக்கப்பட்ட வரைபடம் (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "வரைபடத்தின் பெயர்"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "கடைசியாக மாற்றப்பட்டது"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "#%d வரையப்படுகின்றது"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "படத்தைத் தெரிவு செய்"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "நிறத்தைத் தெரிவு செய்"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "நிறத்தைத் தயார் செய்"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "பெயரிடப்படாத வரைபடம்"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "கோவை"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "படமாக ஏற்றுமதி செய்"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "படமாக வரைபடத்தை ஏற்றுமதி செய்"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "வரைபடத்தை ஏற்றுமதி செய்"
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "வரைபடத்தை XML கோவையாக ஏற்றுமதி செய்"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "தற்போதய சாரளத்தை மூடு"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_திருத்து"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_காட்டு"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "கருவிப் பட்டி"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "யோசனைகளைத் இணை"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "தெரிவு செய்த யோசனைகளைத் இணை"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_ நிலை"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_ அழி"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "தெரிவு செய்த உறுப்பு(களை)அழி"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_திருத்தும் நிலை"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "திருத்தும் நிலை தொடக்கு"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_படம் சேர்"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "தெரிவு செய்த யோசனைக்கு படம் ஒன்றைச் சேர்"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_வரை நிலை"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "அழகான சித்திரத்தை செய்"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "வளம் (மூலம்)ங்களைச் சேர்"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "வளம் ஒன்றைச் சேர்"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "_ வளைவினை உபயோகி"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "வளைவுகளை இணைப்பாக உபயோகி"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "_ கோடுகளை உபயோகி"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "நேர் கோடுகளை இணைப்பாக உபயோகி"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_ விரிவாக்கப்பட்ட தகவல்"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "விரிவாக்கப்பட்ட தகவலை யோசனைக்குக் காட்டு"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_ திட்டவரை"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "யோசனைகளின் படிநிலை திட்டவரையைக் காட்டு"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_ பிரதான"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "பிரதான கருவிப்பட்டியைக் காட்டு"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_வடிவம்"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "வடிவம் மாற்றும் கருவிப்பட்டியைக் காட்டு"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "யோசனைகள்"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "வேறு கோப்பாக சேமி"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "அனைத்துக் கோப்புகளும்"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG படம் (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG படம் (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG நெறியப் படம் (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF பெயரத்தகு கோவை (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "அறியப்படாத கோப்பு வடிவம்"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"'%s' கோப்பு வகை ஒத்திசைவற்றது. _ '.png', '.jpg' அல்லது '.svg' ஆகிய "
+"பின்னிணைப்புகளை உபயோகி"
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "எழுத்தைத் திருத்து"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URIஐ திருத்து"
+
+#~ msgid "Edit mode"
+#~ msgstr "திருத்தும் நிலை"
+
+#~ msgid "Error loading file"
+#~ msgstr "கோப்பை ஏற்றுவதில் தவறு"
+
+#, python-format
+#~ msgid "%s could not be found.  Associated thought will be empty."
+#~ msgstr ""
+#~ "% கண்டுபிடிக்கக் கூடியதாக உள்ளது. இணைக்கப்பட்ட எண்ணங்கள் வெறுமையாய் "
+#~ "இருக்கும்"

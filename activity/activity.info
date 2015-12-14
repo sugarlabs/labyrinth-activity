@@ -1,0 +1,8 @@
+[Activity]
+name = Labyrinth
+summary = Do you have a lot on your mind? Map it! This activity lets you create mind maps that, in addition to words, can have drawings and images!
+activity_version = 16
+bundle_id = org.gnome.Labyrinth
+icon = activity-labyrinth
+exec = sugar-activity labyrinthactivity.LabyrinthActivity
+

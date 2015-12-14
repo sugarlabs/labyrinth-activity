@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2012-03-14 08:40+0200\n"
+"Last-Translator: Meechai <malaku38@hotmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Labyrinth"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "ตัด"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "ลบความคิดที่ท่านเลือก"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "ปรับให้พอดีกับขนาดจอ"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "ขนาดต้นฉบับ"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "ขยายออก"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>minus"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "ขยายเข้า"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>equal"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "ตัวหนา"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "ตัวเอียง"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "ขีดเส้นใต้"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "โหมดตัวอักษร"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "โหมดการเพิ่มภาพ"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "โหมดวาดภาพ"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "โหมดป้ายชื่อ"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "เชื่อมโยง/ยกเลิกการเชื่อมโยง ทั้งสองความคิดที่ท่านเลือก"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "ไฟล์เอกสาร PDF (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "ไฟล์รูปแบบ PNG (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "แก้ไข"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "มุมมอง"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "ข้อความ"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "ประเภทความคิด"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"คลิกเพื่อเพิ่มความคิด \n"
+"ตรงกลาง"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "ไม่สามารถแสดงคำอธิบาย: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "แปลโดย Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "ไม่สามารถลบแผนที่ได้ในขณะนี้ แผนที่ถูกเปิดอยู่หรือไม่?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "แผนที่นี้ไม่มีชื่อไฟล์ที่เกี่ยวข้อง"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "ไม่สามารถลบแผนที่นี้ได้"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "คุณต้องการลบแผนที่นี้หรือไม่?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "เปิดไฟล์"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "บีบอัดแผนที่แบบ MAPZ (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "ชื่อแผนที่"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "แก้ไขล่าสุด"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "การวาด #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "เลือกรูปภาพ"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "เลือกสี"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "กำหนดสี"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "แผนที่ไม่มีชื่อ"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "ไฟล์"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "ส่งออกเป็นรูปภาพ"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "ส่งออกแผนที่ของคุณเป็นรูปภาพ"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "ส่งออกแผนที่..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "ส่งออกแผนที่ของคุณเป็น XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "ปิดหน้าต่างปัจจุบัน"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_แก้ไข"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_มุมมอง"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_แถบเครื่องมือ"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "ความคิดเชื่อมโยง"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "เชื่อมโยงความคิดที่เลือก"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_โหมด"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_ลบ"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "ลบส่วนประกอบที่ถูกเลือก"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_โหมดแก้ไข"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "เปิดโหมดแก้ไข"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_เพิ่มรูปภาพ"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "เพิ่มรูปภาพไปยังความคิดที่ถูกเลือก"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_โหมดวาดภาพ"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "วาดรูปให้สวยงาม"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "เพิ่มทรัพยากร"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "เพิ่มทรัพยากร"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "ใช้ _เส้นโค้ง"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "ใช้เส้นโค้งในการเชื่อมโยง"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "ใช้ _เส้น"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "ใช้เส้นตรงในการเชื่อมโยง"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_ข้อมูลเพิ่มเติม"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "แสดงข้อมูลเพิ่มเติมสำหรับความคิด"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_เส้นขอบ"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "แสดงเส้นขอบของลำดับชั้นของความคิด"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_หลัก"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "แสดงแถบเครื่องมือหลัก"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_รูปแบบ"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "แสดงแถบเครื่องมือจัดรูปแบบ"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "ความคิด"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "บันทึกไฟล์เป็น"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "ไฟล์ทั้งหมด"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "รูปภาพ PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "รูปภาพ JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "รูปภาพ SVG Vector (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "เอกสาร PDF (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "ไม่ทราบรูปแบบไฟล์"
+
+#: src/MainWindow.py:711
+#, python-format
+#, python-format,
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr "ไฟล์ประเภท '%s' ไม่รองรับ  กรุณาใช้ไฟล์ไฟล์ '.png', '.jpg' or '.svg'"
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "แก้ไขข้อความ"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "แก้ไข URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "โหมดแก้ไข"

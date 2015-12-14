@@ -1,0 +1,470 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-12-16 06:04+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr ""
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr ""
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "選択されているノードを消去する"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "ウィンドウにあわせる"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "元のサイズ"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "縮小"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>-"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "拡大"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>="
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "テキストモード"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "画像追加モード"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "描画モード"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "選択されている２つのノードをリンクする/切り離す"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "編集"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "表示"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"ここをクリックして、中心と\n"
+"なるノードを追加してください"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "ヘルプを表示できません: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "翻訳者: Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "現在マップを削除できません。開かれていますか？"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "マップに対応するファイル名がありません。"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "このマップを削除できません"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "本当にこのマップを削除しますか？"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "ファイルを開く"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ 圧縮マップ (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "マップ名"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "最終更新"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "描画中 #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "画像を選択"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "色を選択"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "色を設定"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "名称未設定のマップ"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "ファイル"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "画像としてエキスポート"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "マップを画像としてエキスポートします"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "マップをエキスポートしています..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "マップをXMLとしてエキスポートします"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "現在のウィンドウを閉じる"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "編集"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "表示"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "ツールバー"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "ノードをリンクする"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "選択されているノードをリンクする"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "モード"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "削除"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "選択されている要素を削除する"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "編集モード"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "編集モードをONにする"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "画像を追加"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "画像を選択されているノードに追加"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "描画モード"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "描画できます"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "リソースを追加"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "リソースを追加します"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "曲線を使う"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "リンクに曲線を使います"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "直線を使う"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "リンクに直線を使います"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "拡張情報"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "ノードについての拡張情報を表示します"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "アウトライン"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "ノードの階層構造のアウトラインを表示します"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "メイン"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "メインツールバー"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "フォーマット"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "フォーマットツールバーを表示します"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "ノード"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "名前をつけて保存"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "全てのファイル"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG画像 (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG画像 (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVGベクター画像 (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF文書 (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "未知のファイル形式"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr "このファイルタイプ '%s' はサポートされていません。 拡張子 '.png', '.jpg', '.svg'を使用してください。"
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "テキストを編集"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URIを編集"
+
+#~ msgid "Edit mode"
+#~ msgstr "編集モード"

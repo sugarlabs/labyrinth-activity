@@ -1,0 +1,469 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2013-06-12 15:19+0200\n"
+"Last-Translator: whe <heppew@yahoo.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Doolhof"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+"Heb je veel dingen aan je hoofd? Breng het in kaart! Deze activiteit laat je "
+"mind maps maken, niet alleen woorden, maar ook tekeningen en afbeeldingen!"
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Knip"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Wis geselecteerde gedachte(n)"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Pas in venster"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Oorspronkelijke grootte"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Uitzoomen"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>min"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Inzoomen"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>is"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr "Selecteer lettertype"
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr "Groter"
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr "Kleiner"
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Vet"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Cursief"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Onderstreept"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr "Stel lettertype kleur in"
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr "Stel achtergrond kleur in"
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Tekst toestand"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Afbeelding toevoegen toestand"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Teken toestand"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Label modus"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr "Selecteer gedachten"
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Koppel/ontkoppel twee geselecteerde gedachten"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr "Verplaats geselecteerde gedachten"
+
+#: labyrinthactivity.py:633
+msgid "<ctrl>m"
+msgstr "<ctrl>m"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr "Schuif het venster"
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Overdraagbaar Document Formaat (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Overdraagbaar Netwerk Afbeelding (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Bewerk"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Bekijk"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Tekst"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Gedachte Type"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Klik om toe te voegen\n"
+"centrale gedachte"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Kan niet help tonen: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Vertaling door Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "De kaart kan nu niet verwijderd worden. Is die geopend?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "De kaart heeft geen bijbehorende bestandsnaam."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Kan deze kaart niet verwijderen"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Wil je echt deze Kaart verwijderen?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Open Bestand"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Gecomprimeerde Folder (*mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Folder Naam"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Laatst Gewijzigd"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Tekening #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Kies afbeelding"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Kies Kleur"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Stel Kleur In"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Folder Zonder Naam"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Bestand"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Exporteer als Afbeelding"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Exporteer je folder als een afbeelding"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Exporteer Folder..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Exporteer je folder als XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Sluit dit venster"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Bewerk"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Bekijk"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Werkbalk"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Koppel Gedachten"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Koppel de geselecteerde gedachten"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Modus"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Verwijder"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Verwijder geselecteerde element(en)"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Bewerk Modus"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Zet bewerk modus aan"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Voeg Afbeelding Toe"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Voeg afbeelding toe aan geselecteerde gedachte"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Teken Modus"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Maak een mooie tekening"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Voeg Hulpbron Toe"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Voeg een hulpbron toe"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Gebruik _Bochten"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Gebruik bochten als koppelingen"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Gebruik _Lijnen"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Gebruik rechte lijnen als koppelingen"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Aanvullende Informatie"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Toon aanvullende informatie voor gedachten"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Omlijnen"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Toon omlijning van gedachtenhiërarchie"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Hoofd"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Toon hoofd taakbalk"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Formaat"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Toon formaat taakbalk"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Gedachten"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Bewaar Bestand Als"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Alle Bestanden"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG Afbeelding (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG Afbeelding (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG Vector Afbeelding (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF Overdraagbaar Document (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Onbekend bestandsformaat"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Het bestandstype '%s' is niet ondersteund.  Gebruik de uitgang '.png', "
+"'.jpg' of '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Bewerk Tekst"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Bewerk URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Bewerk toestand"

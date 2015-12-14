@@ -1,0 +1,429 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-03 00:31-0400\n"
+"PO-Revision-Date: 2011-11-26 04:56+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: aym\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#  "Laberinto"
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Amuyaña Lürawinaka"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#  "Cortar"
+#: labyrinthactivity.py:70
+msgid "Cut"
+msgstr "Apaqaña"
+
+#: labyrinthactivity.py:103
+msgid "Fit to window"
+msgstr ""
+
+#  "<ctrl>9"
+#: labyrinthactivity.py:104
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:109
+msgid "Original size"
+msgstr ""
+
+#  "<ctrl>0"
+#: labyrinthactivity.py:110
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#  "Reducir"
+#: labyrinthactivity.py:115
+msgid "Zoom out"
+msgstr "Jisk'aptayaña"
+
+#: labyrinthactivity.py:116
+msgid "<ctrl>minus"
+msgstr ""
+
+#  "Ampliar"
+#: labyrinthactivity.py:121
+msgid "Zoom in"
+msgstr "Jach'aptayaña"
+
+#: labyrinthactivity.py:122
+msgid "<ctrl>equal"
+msgstr ""
+
+#  "Resaltado"
+#: labyrinthactivity.py:194
+msgid "Bold"
+msgstr "Qhananchata"
+
+#  "Itálica"
+#: labyrinthactivity.py:199
+msgid "Italics"
+msgstr "Alt'ata qillqanaka"
+
+#  "Subrayar"
+#: labyrinthactivity.py:204
+msgid "Underline"
+msgstr "Sich'ita qillqanaka"
+
+#: labyrinthactivity.py:354
+msgid "Text mode"
+msgstr ""
+
+#  "<ctrl>t Modo de texto"
+#: labyrinthactivity.py:355
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:363
+msgid "Image add mode"
+msgstr ""
+
+#  "<ctrl>i Modo de añadir imagenes"
+#: labyrinthactivity.py:364
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:371
+msgid "Drawing mode"
+msgstr ""
+
+#  "<ctrl>d Modo de dibujo"
+#: labyrinthactivity.py:372
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:378
+msgid "Label mode"
+msgstr ""
+
+#  "<ctrl>a Seleccionar todas las ideas"
+#: labyrinthactivity.py:379
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:413 labyrinthactivity.py:483
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: labyrinthactivity.py:419 labyrinthactivity.py:488
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
+#  "Editar"
+#: labyrinthactivity.py:427 labyrinthactivity.py:494
+msgid "Edit"
+msgstr "Chiqachaña"
+
+#  "Ver"
+#: labyrinthactivity.py:439 labyrinthactivity.py:509
+msgid "View"
+msgstr "Unjaña"
+
+#  "Texto"
+#: labyrinthactivity.py:446
+msgid "Text"
+msgstr "Qillqawi"
+
+#: labyrinthactivity.py:457 labyrinthactivity.py:513
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:520
+msgid "Edit mode"
+msgstr ""
+
+#  "<ctrl>e Modo de edición"
+#: labyrinthactivity.py:521
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:529
+msgid "Link/unlink two selected thoughts"
+msgstr ""
+
+# "<ctrl>9"
+#: labyrinthactivity.py:530
+#, fuzzy
+msgid "<ctrl>l"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:535
+msgid "Erase selected thought(s)"
+msgstr ""
+
+#: labyrinthactivity.py:611
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr ""
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr ""
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr ""
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr ""
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr ""
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr ""
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr ""
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr ""
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr ""
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr ""
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr ""
+
+#  "Escoger imagen"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Uñjasiwi ajlliña"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr ""
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr ""
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr ""
+
+#  "Archivo"
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Q'ipi"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr ""
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr ""
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr ""
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr ""
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr ""
+
+#  "_Editar"
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Chiqachaña"
+
+#  "_Ver"
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Unjaña"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr ""
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr ""
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr ""
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr ""
+
+#  "_Eliminar"
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Chhaqtayaña"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr ""
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr ""
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr ""
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr ""
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr ""
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr ""
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr ""
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr ""
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr ""
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr ""
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr ""
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr ""
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr ""
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr ""
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr ""
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr ""
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr ""
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr ""
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr ""
+
+#  "_Formato"
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Wakichata"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr ""
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr ""
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr ""
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr ""
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr ""
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr ""
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr ""
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr ""
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr ""
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr ""
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr ""

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+  <!ENTITY fill_color "#000000">
+  <!ENTITY stroke_color "#FFFFFF">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50">
+    <defs>
+        <mask id="Mask" maskUnits="userSpaceOnUse" x="0" y="0" width="50" height="50">
+            <rect x="0" y="0" width="50" height="50" fill="#FFFFFF"/>
+            <line x1="38" y1="3" x2="46" y2="13" stroke-linecap="round" stroke-width="3.0" stroke="black" />
+            <line x1="46" y1="3" x2="38" y2="13" stroke-linecap="round" stroke-width="3.0" stroke="black" />
+            <line x1="42" y1="1" x2="42" y2="15" stroke-linecap="round" stroke-width="3.0" stroke="black" />
+            <line x1="35" y1="8" x2="49" y2="8" stroke-linecap="round" stroke-width="3.0" stroke="black" />
+        </mask>
+    </defs>
+    <path d="M15 28 C25,26 19,15 28,13" mask="url(#Mask)" style="fill:none;;stroke:&stroke_color;;stroke-width:2.5"/>
+    <path d="M15 28 L28,28" mask="url(#Mask)" style="fill:none;;stroke:&stroke_color;;stroke-width:2.5"/>
+    <path d="M15 28 C25,30 19,40 28,43" mask="url(#Mask)" style="fill:none;;stroke:&stroke_color;;stroke-width:2.5"/>
+    <rect x="1" y="23" width="14" height="10" mask="url(#Mask)" style="fill:&stroke_color;;stroke:&stroke_color;;stroke-width:2.0;;stroke-linejoin:round"/>
+    <rect x="28" y="8" width="14" height="10" mask="url(#Mask)" style="fill::&stroke_color;;stroke:&stroke_color;;stroke-width:2.0;;stroke-linejoin:round"/>
+    <rect x="28" y="23" width="14" height="10" mask="url(#Mask)" style="fill:&stroke_color;;stroke:&stroke_color;;stroke-width:2.0;;stroke-linejoin:round"/>
+    <rect x="28" y="38" width="14" height="10" mask="url(#Mask)" style="fill:&stroke_color;;stroke:&stroke_color;;stroke-width:2.0;;stroke-linejoin:round"/>
+    <line x1="38" y1="3" x2="46" y2="13" stroke-width="2" stroke-linecap="round" stroke="&stroke_color;" />
+    <line x1="46" y1="3" x2="38" y2="13" stroke-width="2" stroke-linecap="round" stroke="&stroke_color;" />
+    <line x1="42" y1="1" x2="42" y2="15" stroke-width="2" stroke-linecap="round" stroke="&stroke_color;" />
+    <line x1="35" y1="8" x2="49" y2="8" stroke-width="2" stroke-linecap="round" stroke="&stroke_color;" />
+</svg>

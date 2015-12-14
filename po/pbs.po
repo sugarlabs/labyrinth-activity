@@ -1,0 +1,442 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2014-05-20 19:27+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: pbs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "akejé kuvpu' ligyajau"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+"¿tumei valei pu tigyajau? ¡Nanji ngul'ajau lanuat kichjau ndakejé kupu' tad-"
+"ajau, maiñ riñjá, lania'at kimi xikji'ik sad-ia kutaú."
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Mata'aung"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Mavun tily'ajau make'eik"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Makjaik pu kunjue'p"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Ngutu'ep kutap nduk'ueje'"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Mats'eí"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>maleje'p"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Matsjau mandaí"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>skad-a vakjá"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr "Makeje' ngutue'p kily'e"
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr "mad-uaja'"
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr "Manai'"
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "vud-uts'"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Itálica"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "me'es kily'e"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr "Makeje' ne xikjia' se manamei re kil.y'e"
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr "Kiji'it ne xikjia' kimviu'p"
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Vakja kily'e me'ets'"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t vakja kily'e me'ets'"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Vakja vania'at meje'eun kutaut"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i vakja mamejep kutaut"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "vakjá matsjau make'eik"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d vakja ne makeje'"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Vakjá mamejep kily'e ndanú"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a Makejé mi'ia re l'eje'"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr "Ki'ik tily'ajaú"
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e vakjá ne malejeiñ"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Mavuch'/masa'auí nui ligyajau make'eik"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l mavuch' im re l'eje' make'eik"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr "Maka'aut tigly'ajau make'eik"
+
+#: labyrinthactivity.py:633
+msgid "<ctrl>m"
+msgstr "<ctrl>m"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr "mantsux pu kutau nak'ujuly'"
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "nde'et nguk'uix vania'at mapejé (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "ndanu rabe'en vania'at mapejé ne nikjí (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "malejeiñ"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Manú"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "kily'e me'ets"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Vakjá ligyajau"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"matés se meje'euts'\n"
+"ligyajau kiñkiemejep"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Kad-ep mvania'at ma'u'up ne nabaik:%s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Ndu'uets ne Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Pu ndanu mvu' kad-ep mvania'at malejei' chu'maní. Maseiñ?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Pu ndanú mvu' kad-ap mvankjaik pu ngunjiu' ne nguk'uix makjat"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Kad-ep mvania'at malejei' nanji ndanú mvu'"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "¿lik'iajam kimieng nalejei' nanji ndanú mvu'?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Maseiñ nguk'uix makját"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Ndanú mvu' nicheu' (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Ngunjiu' ne ndanú mvu'"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Statjum ndutsjau"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "lustjau vake'eik #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Makeje' kutaú"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Makeje' xikjia'"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Mamejep masau' xikjia'"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Ndanú mvu' vujú ngunjiu'"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Nguk'uix makjat"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Ma'ujuñ nkjaí kutau"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Ma'ujuñ pu ndanú mvu' nkjai' nda kutau"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Ma'ujuñ ndanú mvu'..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Ma'ujuñ pu ndanú mvu' kipieí nkjaí XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Matseu' pu kunjue'p chu'maní"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_malejeiñ"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Manú"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Ndantsux lumei ri'ip"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Kiñkie' ndasajauts'"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Make'eik kiñkie' ndasajaun"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_vakjá"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_malejei'"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Malejei' ne (re) sad-ia'"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Vakjá ne malejeiñ"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Maleiñ ne vakjá pu malejeiñ"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Mamejep kutaú"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Meje'euts kutau kiñkie' ne makeje'"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Vakjá ne makeje'"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Matsjau nda majauts makeje'"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Meje'eun Ndake'"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Meje'euts' nda ndake'"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Make'_vankajam"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Make' vankajam pu ndasajauts'"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Make'_riñ'eje'"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Ki't re riñ'eje' vate'en njaí ndasajaun"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_vad-ua riñjia valeí"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Ma'u'up vad-ua riñjia valei re ligyajaú"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Kupeix ne niñ'eje'"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Ma'u'up riñ'eje' kiñkie' ne chiki'p"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_lik'iajam make'"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Ma'u'up ne ndantsux lumei ri'ip lik'iajam make'"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_nde'et"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Ma'u'up nde'et ne ndantsux lumei ri'ip"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "ligyajaú"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Makjat nguk'uix nkjaí"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Mi'ia re ngk'uix makjat"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "kutaú PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Kutaú JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Kutaú vectorial SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Nguk'uix li'iajaun' lania'at mapejé PDF (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Nde'et ne nguk'uix makjat lixa'au"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Ne nguk'uix makjat vakjá '%s' kad-ep manajá Vichjaut majau ki't pu sufijo "
+"'.png', '.jpg' or '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Malejeiñ kily'e me'ets"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Malejeiñ URI"

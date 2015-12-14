@@ -1,0 +1,476 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2012-07-04 12:16+0200\n"
+"Last-Translator: jui <appukonrad@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Bludiště"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Vyjmout"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Vymazat vybrané myšlenky (y)"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Přizpůsobit oknu"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Puvodní velikost"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Zmenšit"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>mínus"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Zvětšit"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>rovno"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Tucné"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Kurzíva"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Podtržené"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Textový režim"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Režim vkládání obrázků"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Režim kreslení"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Režim označování"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Spojit/Rozpojit dvě vybrané myšlenky"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Upravit"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Prohlédnout"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Text"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Typ myšlenky"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Klikněte pro přidání \n"
+"ústřední myšlenky"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Nelze zobrazit nápovědu: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Překlad od"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Mapa nyní nelze odstranit. Není otevřená?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Mapa nemá přidružený název souboru."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Nelze smazat tuto mapu"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Opravdu chcete smazat tuto mapu?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Otevřít soubor"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ komprimovaná Mapa (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Jméno mapy"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Poslední změna"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Kreslení #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Vyberat obrázek"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Vybrat barvu"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Nastavit barvu"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Nepojmenovaná mapa"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Soubor"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Exportovat jako obrázek"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Export mapy jako obrázek"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Export Map..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Export mapy ve formátu XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Zavřít aktuální okno"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Úpravy"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Prohlédnout"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Panel nástrojů"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Spojit myšlenky"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Spojit vybrané myšlenky"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Režim"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Smazat"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Smazat vybraný prvek(y)"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Režim úprav"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Zapnutí režimu úprav"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Přidat obrázek"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Přidat obrázek k vybrané myšlence"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Režim kreslení"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Vytvořte hezkou kresbu"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Přidat prostředek"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Přidat zdroj"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Použít _křivky"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Použít křivku jako propojení"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Použít _linky"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Použít přímek jako propojení"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Rozšiřující informace"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Ukázat rozšiřující informace pro myšlenku"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Přehled"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Ukázat přehled myšlenek"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Hlavní"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Zobrazit hlavní panel nástrojů"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Formát"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Zobrazit panelu nástrojů Formátu"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Myšlenky"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Uložit soubor jako"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Všechny soubory"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG obrázek (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG obrázek (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG vektorový obrázek (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF Portable Document (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Neznámý formát souboru"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Typ souboru '%s' není podporovaný.  Prosím použijte přípony '.png', '.jpg', "
+"nebo '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Upravit Text"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Upravit URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Režim úprav"

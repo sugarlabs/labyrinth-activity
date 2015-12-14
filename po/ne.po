@@ -1,0 +1,474 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2013-11-27 07:31+0200\n"
+"Last-Translator: Ganesh <ganesh.ghimire@olenepal.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ne\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "भूलभुलैया"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+"के तपाईँको मस्तिष्कमा धेरै कुराहरू छन्? त्यसको मापन गरौँ ! यो क्रियाकलापले "
+"तपाईँको मस्तिष्क मापन गर्न मद्दत गर्दछ, शब्दहरूमा भन्दा पनि चित्र र "
+"तस्बिरहरूमा !"
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "काट"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "छानिएको सोच(s) मेटाऊ"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "सञ्झ्यालमा ठिक्क"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>९"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "मौलिक आकार"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>०"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "सानो बनाऊ"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>माइनस्"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "ठूलो बनाऊ"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>बराबर"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr "फण्ट चयन गर"
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr "भन्दा ठूलो"
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr "भन्दा सानो"
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "बाक्लो"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "छड्के"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "कच"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr "फण्टको रङ चयन गर"
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr "पृष्ठभूमि रङ सेट गर"
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "पाठ मोड"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "चित्र थप्ने मोड"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "चित्र बनाउने मोड"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "लेबल मोड"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr "Select thoughts"
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "दुईवटा छानिएको सोचहरु लिंक गर/ लिंक नगर"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr "Move selected thoughs"
+
+#: labyrinthactivity.py:633
+msgid "<ctrl>m"
+msgstr "<ctrl>m"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr "स्क्रिन स्क्रोल गर"
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "सम्पादन"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "दृश्य"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "पाठ"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Thought Type"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Click to add\n"
+"central thought"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "सहयोग प्रदर्शन गर्न सकिएन: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "डन स्कोरजीद्वारा अनुवाद गरिएको"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "नक़्शा अहिले मेटाउन सकिएन। त्यो खुल्लाछ कि?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "नक़्शामा कुनैपनि मिलेको फाइलमान छैन।"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "यो नक्सा मेटाउन मिल्दैन"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "यो नक्सा मेटाउने हो?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "फाइल खोल"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ सङ्कुचित म्याप  (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "नक्साको नाम"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "अन्तिममा रूपांतरित गरिएको"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "चित्र #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "चित्र छान"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "रङ छान"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "रङ राख"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "नाम नभएको नक्सा"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "फाइल"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "चित्रको रुपमा निर्यात गर"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "तिम्रो नक्सा चित्रको रुपमा निर्यात गर"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "नक्सा निर्यात गर..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "तिम्रो नक्सा XML को रुपमा निर्यात गर"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "हालको सञ्झ्याल बन्द गर"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_सम्पादन"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_दृश्य"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_उपकरणपट्टी"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "लिङ्क थद्स्हरु"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "चुनिंएको थद्स्हरु लिङ्क गर"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_मोड"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_मेटाउ"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "चयन गरिएको तत्व(हरू)लाई मेटाऊ"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_सम्पादन गर्ने मोड"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "सम्पादन मोड सुरु गर"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_चित्र थप"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "चुनिंएको थ्स्मा एउटा चित्र थप"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_चित्र बनाउने मोड"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "सुन्दर चित्र बनाऊ"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "स्रोत थप"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "एउटा स्रोत थप"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "प्रयोग_वक्ररेखाहरु"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "वक्ररेखाहरु लिङ्कको रुपमा प्रयोग गर्ने"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "प्रयोग_रेखाहरु"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "सिधा रेखा लिङ्कको रुपमा प्रयोग गर्ने"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_हद सुचना"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "थ्सकोलागी हद सुचनाहरु देखाउने"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_रुपरेखा"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "थ्स सोपानक्रमको रुपरेखा देखाउने"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_मुख्य"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "महत्पूर्ण उपकरणपट्टी देखाउ"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_फर्र्मेट"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "फर्र्मेट उपकरणपट्टी देखाउ"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "थ्सहरु"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "फाइल यसरी सेभ गर"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "सबै फाइलहरू"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG चित्र (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG चित्र (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG भेक्टर चित्र (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF पोर्टेवल दकुमेन्ट (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "थाहा नभएको फाइल फर्र्मेट भयो"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"यो फाइलको प्रकार'%s सपोर्टिभ छैन् कृपया आर्को चलाऊनुहोस् suffix '.png', "
+"'.jpg' or '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "पाठको सम्पादन गर"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URI सम्पादन गर"
+
+#~ msgid "Edit mode"
+#~ msgstr "सम्पादन गर्ने मोड"

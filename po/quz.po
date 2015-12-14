@@ -1,0 +1,540 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2012-11-18 21:55+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: quz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#  "Laberinto"
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Yuyaykunamanta t'aslara"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#  "Cortar"
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Kuchuy"
+
+#  "Borrar pensamiento(s) seleccionado(s)"
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Akllasqa yuyakunata pichay"
+
+#  "Ajustar a la ventana"
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Qhawanaman mat'iy"
+
+#  "<ctrl>9"
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#  "Tamaño original"
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Pachanmanta sayaynin"
+
+#  "<ctrl>0"
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#  "Reducir"
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Kharuykachaspa huch'uyachiq"
+
+#  "<ctrl>menos"
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>pisichaywan (-)"
+
+#  "Ampliar"
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Achuykachaspa hatunyachiq"
+
+#  "<ctrl>igual"
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>kikinkaqwan(=)"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#  "Resaltado"
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Yanachasqa"
+
+#  "Itálica"
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Kinrachasqa"
+
+#  "Subrayar"
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Ura siq'isqa"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#  "Modo de texto"
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Qillqa hina"
+
+#  "<ctrl>t Modo de texto"
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#  "Modo de añadir imágenes"
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Wanqi yaparinapaq hina"
+
+#  "<ctrl>i Modo de añadir imagenes"
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#  "Modo de dibujo"
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Siq'ichasqa hina"
+
+#  "<ctrl>d Modo de dibujo"
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#  "Modo de etiquetar"
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Sutichaqkuna"
+
+#  "<ctrl>a Seleccionar todas las ideas"
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#  "<ctrl>e Modo de edición"
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#  "Unir/desunir dos pensamientos seleccionados"
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Iskay akllariqa yuyaykunata huñuy/t'aqay"
+
+#  "<ctrl>l Unir dos o mas ideas seleccionadas"
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+# "<ctrl>9"
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#  "Formato de Documento Portátil (PDF)"
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Khipu apaykachanapaq (PDF)"
+
+#  "Gráfico Portátil de Red (PNG)"
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Wanki apaykachanapaq (PNG)"
+
+#  "Editar"
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Allinchay"
+
+#  "Ver"
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Qhaway"
+
+#  "Texto"
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Qillqa"
+
+#  "Tipo de Idea"
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Mayqin yuyaychana"
+
+#  "Clic para agregar\n"
+#  "pensamiento central"
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Yapanapaqqa yuyaykunata ñit'iy\n"
+"kuraq"
+
+#  "No se puede mostrar la ayuda: %s"
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Yanapayqa mana rikukunchu:%s"
+
+#  "Traduccion por Don Scorgie"
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Qhiswa runakuna t'ikrasqan"
+
+#  "El mapa no se puede eliminar ahora. Esta abierto?"
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "T'aslaraqa manam pichakunmanchu kunanqa. Kichasqachu kachkan?"
+
+#  "El mapa no se a asociado con el nombre del archivo."
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "T'aslaraqa manam khipup sutinwanqa masichakunchu."
+
+#  "No se puede eliminar este mapa"
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Kay t'aslaraqa manam pichakunmanchu"
+
+#  "¿Estas seguro que deseas eliminar este mapa?"
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Kay t'aslarata chinkachinkipunichu?"
+
+#  "Abrir archivo"
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Khiputa kichay"
+
+#  "MAPZ Mapa comprimido (*.mapz)"
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ huch'uyasqa t'aslara (*.mapz)"
+
+#  "Nombre del mapa"
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "T'aslaraq sutin"
+
+#  "Última modificación"
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Qhipa allinchasqa"
+
+#  "Dibujando #%d"
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Siq'inchaspa #%d"
+
+#  "Escoger imagen"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Wankita akllay"
+
+#  "Elegir Color"
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Llimp'ita akllay"
+
+#  "Configurar Color"
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Llimp'i kamachiy"
+
+#  "Mapa sin titulo"
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Mana sutiyuq t'aslara"
+
+#  "Archivo"
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Khipu"
+
+#  "Exportar como imagen"
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Wankita apachiy"
+
+#  "Exportar tu mapa como una imagen"
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "T'aslara hinatam wankita apachiy"
+
+#  "Exportar Mapa..."
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "T'aslarata apachiy..."
+
+#  "Exportar tu mapa como XML"
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "T'aslarataqa XML hinatam apachiy"
+
+#  "Cerrar la ventana actual"
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Kunan kaq qhawanata wisq'ay"
+
+#  "_Editar"
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Allinchay"
+
+#  "_Ver"
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Qhaway"
+
+#  "_Barra de Herramientas"
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Llamk'anakuna"
+
+#  "Entre enlaces"
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Yuyaykunata tinkuchiy"
+
+#  "Seleccionar entre enlaces"
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Tinkuchiskunamanta akllay"
+
+#  "_Modo"
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Hina kaqmanta"
+
+#  "_Eliminar"
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Chinkachiy"
+
+#  "Eliminar el(los) elemento(s)"
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Akllasqakunata chinkachiy"
+
+#  "_Modo de edición"
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Allinchanapaq hina"
+
+#  "Activar el modo de edición"
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Allinchanapaq hina hap'ichiy"
+
+#  "_Agregar Imagen"
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Wankita yapay"
+
+#  "Añadir imagen entre la seleccionada"
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Wankita akllaspa yapay"
+
+#  "_Modo de dibujo"
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Siq'ichasqa hina"
+
+#  "Hacer un bonito dibujo"
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Sumaq siq'ichasqata ruway"
+
+#  "Añadir Recursos"
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Ima kaqkunata yapay"
+
+#  "Añadir un recurso"
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Huk ima kaqta yapay"
+
+#  "Usar _Curvas"
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Q'inquta hap'iy"
+
+#  "Usar curvas de enlace"
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Q'inquchasqa tinkuchiykunata hap'iy"
+
+#  "Usar _Lineas"
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Siq'ikunata _Hap'iy"
+
+#  "Utilice las líneas rectas como enlaces"
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Ch'iqa siq'ikunata hap'iy"
+
+#  "_Información ampliada"
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Aswan mast'arisqa willana"
+
+#  "Mostrar información ampliada de pensamientos"
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Mast'arisqa yuyaykunata rikuchiy"
+
+#  "_Fuera de linea"
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Manañam kaypichu"
+
+#  "Mostrar lineas entre jerarquia"
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Kuraqchasqa siq'ikunata rikuchiy"
+
+#  "_Principal"
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Kuraq"
+
+#  "Mostrar la barra de herramientas principal"
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Kuraq llamk'anakunata rikuchiy"
+
+#  "_Formato"
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Formato nisqa"
+
+#  "Mostrar formato de la barra de herramientas"
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Llamk'anakunap ima kasqankuta rikuchiy"
+
+#  "Pensamientos"
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Yuyaykuna"
+
+#  "Guardar archivo como"
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Khipukunata kay hinata waqaychay"
+
+#  "Todos los archivos"
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Llapan khipukuna"
+
+#  "Imagen PNG (*.png)"
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG Wanki (*.png)"
+
+#  "Imagen JPEG (*.jpg, *.jpeg)"
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG Wanki (*.jpg, *.jpeg)"
+
+#  "Imagen vectorial SVG (*.svg)"
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG Churatakuq Wanki (*.svg)"
+
+#  "Documento Portable PDF (*.pdf)"
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF Apaykachanapaq Khipu (*.pdf)"
+
+#  "Formato de archivo desconocido"
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Mana riqsisqa sutiyuq khipukuna"
+
+#  "El archivo de tipo '%s' no es soportado.  Por favor use el sufijo '.png', "
+#  "'.jpg' or '.svg'."
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Kay hina khipuqa '%s' manam kanmanchu.  Ama hina kaychu, kay hinakunata "
+"churay '.png', '.jpg' or '.svg'."
+
+#  "Editar Texto"
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Qillqata allinchay"
+
+#  "Editar URI"
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URL nisqata allinchay"
+
+#  "Modo de edición"
+#~ msgid "Edit mode"
+#~ msgstr "Allinchanapaq hina"

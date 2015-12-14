@@ -1,0 +1,471 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-02-26 14:52+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Labyrint"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Klipp ut"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Radera valda tankar"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Anpassa till fönstret"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Ursprunglig storlek"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Zooma ut"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>minus"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Zooma in"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>="
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Textläge"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Lägg till bild läge"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Ritläge"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Länka/Bryt länk mellan två valda tankar"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Adobe Reader(PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic(PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Redigera"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Visa"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Klicka för att lägga till\n"
+"central tanke"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Kunde inte visa hjälp: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Översättning av Johannes Strömberg"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Kartan kan inte raderas just nu. Är den öppen?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Denna karta har inget filnamn knutet till sig."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Kan inte radera denna karta"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Vill du verkligen radera denna karta?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Öppna fil"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ komprimerad karta (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Kartnamn"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Senast ändrad"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Ritar #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Välj bild"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Välj färg"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Sätt som färg"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Namnlös karta"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Fil"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Exportera som bild"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Exportera din karta som en bild"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Exportera karta..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Exportera din karta som XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Stäng detta fönster"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Redigera"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Visa"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Verktygsfält"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Länka tankar"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Länka valda tankar"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Läge"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Radera"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Radera valda element"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Redigeringsläge"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Slå på redigeringsläge"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Lägg till bild"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Lägg till en bild till vald tanke"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Ritläge"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Gör en fin teckning"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Lägg till resurs"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Lägg till en resurs"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Använd _Kurvor"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Använd kurvor som länkar"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Använd _Linjer"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Använd räta linjer som länkar"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Utökad information"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Visa utökad information för tankar"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Skiss"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Visa en skiss över tankehierarkin"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Huvud"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Visa huvudverktygsfältet"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Format"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Visa formatverktygsfältet"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Tankar"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Spara fil som"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Alla filtyper"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG bild(*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG bild (*.jpg,*.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG Vektorbild (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF Portabelt dokument (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Okänt filformat"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Filtypen %s stöds inte.  Vänligen använd suffixen '.png','jpg' eller '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Redigera text"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Redigera URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Ändringsläge"

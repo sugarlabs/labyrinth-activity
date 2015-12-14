@@ -1,0 +1,472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Sulochani Dharmawardana <sulochani@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: labyrinth\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-09-28 08:24+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: Sinhalese <sulochani@gmail.com>\n"
+"Language: si\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Labyrinth"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "කපන්න"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "තෝරාගත් අදහස් මකන්න"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "කවුළුවට ගැලපෙන සේ"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "මුල් ප්‍රමාණය"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "කුඩා කරන්න"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>අඩු කිරීම"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "විශාල කරන්න"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>සමාන"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "තදකුරු"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "ඇලකුරු"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "යටි ඉර"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "පෙළ ආකාරය"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "පිංතූර එක් කරන ආකාරය"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "අඳින ආකාරය"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "ලේබල ආකාරය"
+
+#: labyrinthactivity.py:593
+#, fuzzy
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "තෝරාගත් අදහස් සම්බන්ඳ කරන්න/සම්බන්ඳය ඉවත්කරන්න"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "සැකසුම්"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "පෙන්වන්න"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "පෙළ"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"එක් කිරිම සඳහා ක්ලික් කරන්න\n"
+"මධ්‍ය අදහස"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "උදවු පෙන්වීමට නොහැක: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "පරිවර්තනය කළේ"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "සිතියම මේ මොහොතේදී මකා දැමිය නොහැක. එය විවෘත කර ඇද්ද?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "මේ සිතියම හා සබැඳි ගොනු නාමයක් නොමැත"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "මෙම සිතියම මැකිය නොහැක"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "ඔබට සැබැවින්ම මෙම සිතියම මකා දැමීමට අවශ්‍යද?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "ගොනුව විවෘත කරන්න"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ සංකූචිත සිතියම් (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "සිතියම් නාමය"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "අවසාන වෙනස් කිරීම"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "අඳිමින් #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "පිංතූරය තෝරන්න"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "පාට තෝරන්න"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "පාට යොදන්න"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "නම් නොකල සිතියම"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "ගොනුව"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "පින්තූරයක් ලෙස අපනයනය කරන්න"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "ඔබේ සිතියම පින්තූරයක් ලෙස අපනයනය කරන්න"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "සිතියම අපනයනය කරන්න..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "ඔබේ සිතියම XML ආකාරයට අපනයනය කරන්න"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "දැන් පවත්නා කවුළුව වසාදමන්න"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "සැකසුම් (_E)"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "පෙන්වන්න (_V)"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "මෙවලම් තීරුව (_T)"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "සිතුවිලි සමග සබැඳිය ඇති කරන්න"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "තෝරාගත් සිතුවිලි සමග සබැඳිය ඇති කරන්න"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "ආකාර (_M)"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "මකන්න (_D)"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "තෝරාගත් අංග මකාදමන්න"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "සකසන ආකාරය"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "සකසුම් ආකාරය ක්‍රියාත්මක කරන්න"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "පින්තූර එක් කරන්න(_A)"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "තොරාගත් සිතුවිල්ලට පින්තූරයක් එකතු කරන්න"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "අඳින ආකාරය"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "අලංකාර ලෙස අඳින්න"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "සම්පත් එකතු කරන්න"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "සම්පතක් එකතු කරන්න"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "වක්‍ර රේඛා භාවිත කරන්න"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "වක්‍ර රේඛා සබැදියන් ලෙස භාවිතා කරන්න"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "රේඛා භාවිතා කරන්න"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "සරල රේඛා සබැදියන් ලෙස භාවිතා කරන්න"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "වැඩිපුර තොරතුරු"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "වැඩිපුර තොරතුරු සිතීම සඳහා පෙන්වන්න"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "පිට රේඛාව"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "සිතුවිලි සැකැස්මේ මූලික සටහන පෙන්වන්න"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_ප්‍රධාන"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "ප්‍රධාන මෙවලම් තීරුව පෙන්වන්න"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_හැඩතලය"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "හැඩතල මෙවලම් තීරය පෙන්වන්න"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "සිතුවිලි"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "ගොනුව පහත ලෙසට සුරකින්න"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "සියලු ගොනු"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG පින්තූරය (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG පින්තූරය (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG Vector පින්තූරය (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF ගොනුව (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "ගොනුවේ ආකාරය නොදනී"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"මෙම ගොනුවේ '%s' ආකාරය සමග කටයුතු කල නොහැක. කරුණාකර '.png', '.jpg' හෝ '.svg' "
+"වර්ග වලින් එකක් භාවිත කරන්න."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "පෙළ සංස්කරණය කරන්න"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URI සකසන්න"
+
+#~ msgid "Edit mode"
+#~ msgstr "සකසන ආකාරය"

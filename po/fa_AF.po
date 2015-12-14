@@ -1,0 +1,485 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-08-08 03:54+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fa_AF\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "پیچیدگی"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr ""
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "افکار انتخاب شده را پاک کن"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "مناسب به دریچه"
+
+#: labyrinthactivity.py:201
+#, fuzzy
+msgid "<ctrl>9"
+msgstr "e"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "اندازه اصلی"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "o"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "نمایش به شکل دور"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "علامت منفی"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "نمایش به شکل نزدیک"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "مساوی"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "باب متن"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "تصویر باب را اضافه میکند"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "کشیدن باب"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:593
+#, fuzzy
+msgid "<ctrl>a"
+msgstr "e"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "پیوند دهید/ پیوند ندهید دو افکار انتخاب شده را"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "e"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "تنظیم کردن"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "نمایش"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr "برای اضافه کردن مفکوره مرکزی کلیک کنید"
+
+#: src/Browser.py:194
+#, python-format
+#, python-format, fuzzy
+msgid "Unable to display help: %s"
+msgstr "کمک را نمایش داده نمیتواند"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "ترجمه توسط دان اسکارجی"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "نقشه همین حالا حذف شده نمیتواند، آیا این باز است؟"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "نقشه کدام نام سند پیوند یافته ندارد"
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "این نقشه را حذف کرده نمیتواند"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "آیا واقعا میخواهید که این نقشه را حذف نمایید؟"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "سند را بازکن"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "mapz نقشه را فشرده کرد"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "نام نقشه"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "آخرین تعیین گردید"
+
+#: src/DrawingThought.py:60
+#, python-format
+#, python-format, fuzzy
+msgid "Drawing #%d"
+msgstr "در حال کشیدن"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "تصویر را انتخاب کن"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "رنگ را انتخاب کن"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "رنگ را تعیین کن"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "نقشه بدون عنوان"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "سند"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "به حیث تصویر صادر کن"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "نقشه تان را به حیث یک تصویر صادر کن"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "نقشه را صادر کن"
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "نقشه تان را به حیث xml صادر کنید"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "دریچه فعلی را بسته کن"
+
+#: src/MainWindow.py:236
+#, fuzzy
+msgid "_Edit"
+msgstr "تنظیم کردن"
+
+#: src/MainWindow.py:237
+#, fuzzy
+msgid "_View"
+msgstr "نمایش"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "نوار ابزار"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "عقاید را پیوند بده"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "نظریات انتخاب شده را پیوند دهید"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "باب"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "حذف کردن"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "عنصر انتخاب شده را حذف کن"
+
+#: src/MainWindow.py:257
+#, fuzzy
+msgid "_Edit Mode"
+msgstr "باب را تنظیم کن"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "تنظیم باب را روشن کن"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "تصویر را اضافه کن"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "یک تصویر را به مطلب انتخاب شده اضافه کن"
+
+#: src/MainWindow.py:261
+#, fuzzy
+msgid "_Drawing Mode"
+msgstr "کشیدن باب"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "یک رسم زیبا بکشید"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "منبع را اضافه کن"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "یک منبع اضافه کن"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "قوس هارا استعمال کن"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "قوس هارا به حیث پیوند ها استعمال نمایید"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "خطوط را استعمال کن"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "خطوط مستقیم را به حیث پیوند ها استعمال کن"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "معلومات اضافه شده"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "معلومات اضافه شده را برای مطالب نشان بده"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "خلاصه یا طرح کلی"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "سلسله مراتب مطلب طرح کلی را نشان بده"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "اصلی"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "نوار ابزار اصلی را نشان بده"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "قالب بندی"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "نوار ابزار قالب بندی را نشان بده"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "مطالب"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "سند را حفظ کن به حیث"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "تمام اسناد"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "تصویرpng"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "تصویرjpeg"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "تصویر مسیرsvg"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "سند قابل حمل pdf"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "قالب بندی سند نا شناخته"
+
+#: src/MainWindow.py:711
+#, python-format
+#, python-format, fuzzy
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"نوع سند حمایت نشده میباشد/ لطفا پسوند png / jpg یا svg را استعمال نمایید"
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "متن را تنظیم کن"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "url را تنظیم کن"
+
+#~ msgid "Edit mode"
+#~ msgstr "باب را تنظیم کن"
+
+#~ msgid "Error loading file"
+#~ msgstr "بار گیری اشتباه سند"
+
+#, python-format
+#~ msgid "%s could not be found.  Associated thought will be empty."
+#~ msgstr "نمیتواند که پیدا گردد، مفکوره پیوند یافته خالی خواهد بود"

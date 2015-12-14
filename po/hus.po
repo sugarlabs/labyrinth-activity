@@ -1,0 +1,446 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-08-29 03:33+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: hus\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Yuniníl bél"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Kotoy"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Pakuw an tsalap(chik) axi k'wajatits(chik)"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Ki ts'ejkakay ti met'níb"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Tin puwél in t'okat wal"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Ki we'médha'"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>wé'kats"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Ki ts'ikwemédha'"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl> jununúl"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Lej tejwa'mél"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Italix"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Alal k´itsodh"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Alwa' aytal an dhuchlab"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t Alwa' aytal an dhuchlab"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "In aytal jant'odha' ti ne'ets a punk'unchal an k'ot'bixtalábchik"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>In aytal jant'odha' ti ne'ets a punk'unchal an k'ot'bixtalábchik"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "In aytal jant'odha' ti ne'ets ka t'ipoy"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d In aytal jant'odha' ti ne'ets ka t'ipoyat"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "In aytal jant'odha' ti ne'ets ka exlandháj"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a Ka takuy tin yanél an tsalap"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e In aytal an jalk'uxtaláb"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Tamkuy/ka pílmédha' tsáb i tsalap axi takudhits"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>I Tamkuy tsáb wa yánakej i takudh tsalap"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "T'ipoxtaláb k'al an exbadh dhuchlab axi andháb (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "T'ipoxt'aláb andhom k'al an tsolóm (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Jalk'uy"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Tsu'uw"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Dhuchlab"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "In alwá' an Tsalap"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Klik abal ka punk'unchiy\n"
+"an ts'ejel tsalap"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Yab ejtowáb ka tejwa'medháj an tolmixtaláb:%s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Wenk'odh k'al a Yejtsej Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "An t'iplab tsabál ibáj ejtowáb ka pakuwat xowé'. K'wajat japidh?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "An t'iplab wal tsabál yab mulkunenek k'al in bijíl ti dhuchlab."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Yab ejtowáb ka tixk'aj axé' xi t'iplab wal tsabál"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr ""
+"¿A tsalpayámalits alwa' abal a lé' ka tixk'a' axé' xi t'iplab wal tsabál?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Japiy an dhuchlab"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Tsiptimédhach wal tsabál (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "In bijíl an wal tsabál"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Taltal jalk'uxtaláb"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "T'ipláts#%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Takuy an t'iplab"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Takuyat in mukuxtal"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Tejwa'medháj in mukuxtal"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Wal tsabál axi yab in kwa'al in bij"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Dhuchlab"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Ki abna' jant'ini' i t'iplab"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Ka abnáj a wal tsabálil jant'ini' jún i t'iplab"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Ka abnáj an Wal t'iplab..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Ka abnáj a wal tsabálil jant'ini' XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Ka mapuy axi xowé' an met'nib"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "Ka jalk'uy"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "Ka tsu'uw"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "Nik'adh eyendhanélchik"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Tin ts'ejel junkúx"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Tin ts'ejél junkúx ki takuy"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "In aytal"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "Pakuw"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Pakuw an(an) eyendhanél(chik)"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "In aytal an jalk'uxtaláb"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Ki t'ójondha' in aytal an jalk'uxtaláb"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "Ki punk'unchiy i t'iplab"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Ki punk'unchiy i t'iplab ju'táj ti k'wajat takudhits"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "In aytal an t'iplab"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Ki ts'ejka' jún i alabél t'iplab"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Punk'uy an ayendha'nél"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Ki punk'unchiy jún i eyendhanél"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Ki eyendha'_Kutsbaxtalábchik"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Ki eyendha' an kutsmaxtaláb axi k'al an junkux"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Ka eyendha' _Kits'labchik"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Ka eyendha' an bolidh kits'labchik ejtíl i junkuxtaláb"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Alwa' oxchixtaláb"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Ka tejwa'médha' an púlik olchixtaláb k'al al tsalapchik"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_ Eléb ju'táj ti kits'odh"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Ki aliy an kits'odhtalábchik ju'táj ti bijidhits"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Ok'oxits"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Ki tejwa'médha' an nik'adh eyendhanél ok'oxits"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_ T 'ipoxtaláb"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Tejwa'médha' an t'ipoxtaláb axi pél i nik'adh eyendhanél"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Tsalapchik"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Dhaya' an dhuchlab ejtíl"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Patal an dhuchlabchik"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "T 'iplab PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Tiplab JPEG (*.jpg,*.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Tiplab vectorial SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Beldhach exbadh dhuchlab PDF (*.pdf )"
+
+# la palabra exladh no debe llevar acento en donde suene mas fuerte,en tének se utiliza el acento para alargamiento de vocal.
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "T'ipoxtaláb in k'ál an yab exladh dhuchlab"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"An lej dhuchlab '%s' yab ts'ejkakadh.Ka eyendha' expidh axi bijidh ' .png', "
+"'.jpg' or'.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Jalk'uy an dhuchlab"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Jalkúy an URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "In aytal an jalk'uxtaláb"

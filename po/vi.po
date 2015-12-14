@@ -1,0 +1,473 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2010-03-07 16:44+0200\n"
+"Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Cung mê"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Cắt"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Xoá (các) ý nghĩ được chọn"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Vừa khít cửa sổ"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Kích cỡ gốc"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Thu nhỏ"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>trừ"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Phóng to"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>bằng"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Chế độ Chữ"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>c"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Chế độ Thêm ảnh"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>n"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Chế độ Vẽ"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>v"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:593
+#, fuzzy
+msgid "<ctrl>a"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>s"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "(Bỏ) liên kết hai ý nghĩ được chọn"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Định dạng Tài liệu Di động (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Đồ họa Mạng Di động (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Sửa"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Xem"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Nhấn vào để thêm\n"
+"ý nghĩ trung tâm"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Không thể hiển thị trợ giúp: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Bản dịch của Nhóm Việt hoá Phần mềm Tự do"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Bản đồ này không thể được xoá ngay bây giờ. Nó vẫn mở không?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Bản đồ không có tên tập tin tương ứng."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Không thể xoá bản đồ này"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Bạn thực sự muốn xoá bản đồ này không?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Mở tập tin"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "Bản đồ đã nén MAPZ (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Tên bản đồ"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Sửa đổi cuối"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Bản vẽ #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Chọn ảnh"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Chọn màu"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Đặt màu"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Bản đồ không tên"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Tập tin"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Xuất dạng ảnh"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Xuất bản đồ dưới dạng một hình ảnh"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Xuất bản đồ..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Xuất bản đồ dưới dạng mã XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Đóng cửa sổ hiện thời"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Sửa"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Xem"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Thanh công cụ"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Liên kết ý nghĩ"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Liên kết những ý nghĩ được chọn"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Chế độ"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Xoá"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Xoá những phần tử được chọn"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "Chế độ _Sửa"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Bật chế độ chỉnh sửa"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "Thêm ả_nh"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Thêm một hình ảnh vào một ý nghĩ được chọn"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "Chế độ _Vẽ"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Vẽ một hình đẹp"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Thêm tài nguyên"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Thêm một tài nguyên"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Dùng _cong"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Sử dụng đường cong làm liên kết"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Dùng đườn_g"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Sử dụng đường thẳng làm liên kết"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "Thông tin _mở rộng"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Hiển thị thông tin đã mở rộng về ý nghĩ"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Nét chính"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Hiển thị những nết chính của một hệ đẳng cấp ý nghĩ"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Chính"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Hiển thị thanh công cụ chính"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "Định _dạng"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Hiển thị thanh công cụ định dạng"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Ý nghĩ"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Lưu tập tin dạng"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Mọi tập tin"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "Ảnh PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Ảnh JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Ảnh véc-tơ SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Tài liệu di động PDF (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Không nhận ra định dạng tập tin"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Dạng tập tin « %s » không được hỗ trợ.  Hãy sử dụng hậu tố « .png », « .jpg "
+"» hay « .svg »."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Sửa chú giải"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Sửa URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Chế độ Sửa"

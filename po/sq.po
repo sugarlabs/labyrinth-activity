@@ -1,0 +1,481 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-11-28 07:30+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: sq\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Labirint"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Pres"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Fshij mendimin e zgjedhur(a)"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Në gjëndje të dritares"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Madhësia origjinale"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Largo"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>minus"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Afro"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>barabartë"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "I trash"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Kursiv"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Nënvizo"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Pamje tekstit"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr ""
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Pamje vizatimi"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:593
+#, fuzzy
+msgid "<ctrl>a"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Lidhi/ndaj dy mendime të zgjedhura"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Formati i Dokumentit Portativ (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Rrjet Portativ Grafik (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Ndrysho"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Shiko"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Tekst"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Kliko për të shtuar\n"
+"mendimin qendror"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "E pamundur për ta shfaqur ndihmën: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Përkthimi nga Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Harta e nuk mund te fshihet tani. A është e hapur?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Harta nuk ka lidhur asnjë emër dosje."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Nuk mund të fshini kete hartë"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "A me të vërtetë doni të fshini këtë hartë?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Hape Dosjen"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Harta kompresuar (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Emri Hartës"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr ""
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Vizatim #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Zgjedhni imazhin"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Zgjedhni Ngjyrën"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Vendos Ngjyrën"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Hartë e patitulluar"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Dosje"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Eksporto si Imazh"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Eksport hartën si një imazh"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Eksporto Hartën..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Eksporto hartën si XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Mbylle dritaren aktuale"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Ndrysho"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Shiko"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Veglat"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Lidhni Mendimet"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Lidhë e mendimet e zgjedhur"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Formë"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Fshij"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Fshij elementin(et) e zgjedhur"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Formë Ndryshimit"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Ndez formë e ndryshimit"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Shto Imazh"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Shtoni një imazh për mendimet e zgjedhura"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Formë Vizatimi"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Bëni një vizatim të bukur"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Shto Burim"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Shto burim"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Përdor_Kthesa"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Përdor kthesat si lidhje"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Përdor_Lidhjet"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Përdor linjat e drejta si lidhje"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Informacione të Zgjeruara"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Tregojnë informacionet e zgjatur për mendimet"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Skicë"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Shfaqje skicën e mendimit hierarkis"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Kryesor"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Trego veglat kryesore"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Format"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr ""
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Mendimet"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Ruaj Dosjen Si"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Gjitha Dosjet"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "Imazh PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Imazh JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG Imazh Vektorjal (*svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF Document portativ (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Dosje me format të panjohur"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Lloji i Dosjes '%s' është pa mbështetje.  Ju lutem përdorni prapashtesën "
+"'.png.','.jpg' ose '.svg '."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Ndrysho Tekstin"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Ndrysho URL-në"
+
+#~ msgid "Edit mode"
+#~ msgstr "Pamje ndryshuese"

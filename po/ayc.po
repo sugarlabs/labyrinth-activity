@@ -1,0 +1,470 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2013-08-20 14:40+0200\n"
+"Last-Translator: EdgarQuispeChambi <quispedgar@yahoo.es>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ayc\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#  "Laberinto"
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Amuyaña Lürawinaka"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+"¿P'iqimana wali lup'iñanïtati? ¡Maya rixita lup'ma! Akïri wakichäwixa "
+"p'iqiru rixita amuyayasi, arunakata sipana, rixitanaka amuyasmawa."
+
+#  "Cortar"
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Apaqaña"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Chhijllata amuyäwinaka apsuña"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Wakichataru khuskhachaña"
+
+#  "<ctrl>9"
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Qallta taña"
+
+#  "<ctrl>0"
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#  "Reducir"
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Jisk'aptayaña"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>pisi"
+
+#  "Ampliar"
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Jach'aptayaña"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>khuskha"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr "Qillqa thaqaña"
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr "Jila"
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr "Sullka"
+
+#  "Resaltado"
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Qhananchata"
+
+#  "Itálica"
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Alt'ata qillqanaka"
+
+#  "Subrayar"
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Sich'ita qillqanaka"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr "Qillqa samipa wakichi"
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr "manqhäxa samipa wakichi"
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Qillqäwi wakichatampi"
+
+#  "<ctrl>t Modo de texto"
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Rixitanaka yapxataña wakichäwi"
+
+#  "<ctrl>i Modo de añadir imagenes"
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Rixita wakichatampi"
+
+#  "<ctrl>d Modo de dibujo"
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Sutinchaña wakichatampi"
+
+#  "<ctrl>a Seleccionar todas las ideas"
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr "amuyt'anaka thaqaña"
+
+#  "<ctrl>e Modo de edición"
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Paya amuyäwi chhijllata Machaña/jaljtayaña"
+
+# "<ctrl>9"
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr "amuyt'anaka thaqata apsuña"
+
+# "<ctrl>9"
+#: labyrinthactivity.py:633
+msgid "<ctrl>m"
+msgstr "<ctrl>9 wakichata"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr "Wakichata uñjaña apsuña"
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Qillqatanaka Imaña Wakichata (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Gráfico Portátil de Red (PNG) sata wakichata"
+
+#  "Editar"
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Chiqachaña"
+
+#  "Ver"
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Unjaña"
+
+#  "Texto"
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Qillqawi"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Amuyu kasta"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Yapxatañataki limt'aña\n"
+"wakisiri amuyäwi"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Yanapaña janiwa uñasiyañjamati: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Don Scorgie aru jaqukipata"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Rixitaxa janiwa apsuñjamäkiti. Qhanaskicha?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Rixitaxa imata wakichata sutipampi janiwa chikachayasiti."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Akïri rixitaxa janiwa apsuñjamati"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "¿Akïri rixita apsuña munapuntati?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Imata wakichata uñantaña"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ jisk'aptaya imaña rixita (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Rixitana sutipa"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Qhipa chiqachata"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Rixkämiru #%d"
+
+#  "Escoger imagen"
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Uñjasiwi ajlliña"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Samichaña thaqaña"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Samichaña wakichaña"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Jani sutini rixita"
+
+#  "Archivo"
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Q'ipi"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Rixita wakichasa apayaña"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Rixitama maya rixita wakichasa apayaña"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Rixita apayaña..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Rixitama wakichasa apayaña XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Jichha wakichäwita mistuña"
+
+#  "_Editar"
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Chiqachaña"
+
+#  "_Ver"
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Unjaña"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Wakichäwinaka qhantayañanaka limiñanaka"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Mayachatanaka taypi"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Mayachatanaka taypita chhijllaña"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Wakichatampi"
+
+#  "_Eliminar"
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Chhaqtayaña"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Yänaka apsuña"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Chiqachaña wakichatampi"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Chiqachaña wakichata qhantayaña"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Rixita yapxataña"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Chhijllata taypiru rixita yapxataña"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Rixiña wakichatampi"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Maya suma rixita jiruña"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Wakichatanaka yapxataña"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Maya wakichata yapxataña"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Q'iwinaka_Apnaqaña"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Mayachaña q'iwinaka apnaqaña"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Chiqanaka_Apnaqaña"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Mayachañataki chiqa sixsutanaka apnaqma"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Yatiyäwinaka wakichata"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Amuyäwinaka yatiyäwinaka wakichata uñachayaña"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Chiqa sixsutata anqäxana"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Wakisiritjama chiqa sixsutanaka uñachayaña"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Wakisiri"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Wakisiri wakichatanaka qhantayaña uñachayaña"
+
+#  "_Formato"
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Wakichata"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Wakichatanaka qhantayaña wakichäwinaka uñachayaña"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Amuyäwinaka"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Wakichata akhama sutimpi imaña"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Taqi wakichata imatanaka"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "Rixita PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Rixita JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Chiqa sixsutanaka rixinaka SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Imaña wakichatanaka PDF (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Jani uñtata wakichata imata"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Akïri kasta imata wakichata '%s' janiwa suma katuqatati. Mira suma akïri aru "
+"sapha katma '.png', '.jpg' or '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Qillqata chiqachaña"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "URI wakichata chiqachaña"
+
+#~ msgid "Edit mode"
+#~ msgstr "Chiqachaña wakichatampi"

@@ -1,0 +1,2074 @@
+2008-09-25 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix issue 126.
+
+2008-08-10 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix issue 125.
+
+2008-08-10 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	Set default size something lower so it works with netbook dimensions.
+
+2008-07-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/utils.py
+	* src/MainWindow.py
+	* src/MMapArea.py
+	o fix issue 86 by setting gnome theme default font
+
+2008-07-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* ChangeLog
+	o add missing entries
+
+2008-07-16 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MMapArea.py
+	o fix background setting setted to foreground
+	o set gdk color as default not the tuple
+
+2008-07-16 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MMapArea.py
+	o set "text" and "base" styles as foreground and backgroundcolor for widgets
+	with text like it is described in the documentation
+
+2008-07-16 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/TextThought.py
+	o fix if statement to use correct foreground var
+
+2008-07-15 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/TextThought.py
+	o fix  issue 96  exception if text foreground color isn't set
+
+2008-07-14 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MMapArea.py
+	* src/MainWindow.py
+	* src/TextThought.py
+	o fix AttributeErrors
+	o remember last selected font, fixes  issue 119 
+
+2008-05-15 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* help/C/figures/lab_alignment.png
+	Add the alignment image.
+
+2008-05-15 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/ResourceThought.py
+	Fix webpage loading on Fedora distributions. A protocol
+	must be given to load the page by the webbrowser module.
+	* help/C/labyrinth.xml
+	Add more help.
+
+2008-05-13 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/ResourceThought.py
+	Allow editing of URIs.
+	* src/Links.py
+	Deselect links with Escape.
+
+2008-05-12 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* help/C/labyrinth.xml
+	A paragraph about links. Remove top links for each
+	section.
+
+2008-05-12 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* help/C/figures
+	* help/C/figures/lab_browser_start.png
+	* help/C/figures/lab_map_start.png
+	* help/C/labyrinth.xml
+	More help.
+
+2008-05-12 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/Browser.py
+	* help/de
+	* help/de/de.po
+	* help/Makefile.am
+	* Makefile.am
+	* data/labyrinth.glade
+	Make help visible to users. Start german translation of help.
+
+2008-05-06 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	Fix Issue 115.
+
+2008-04-29 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/ResourceThought.py
+	* src/MainWindow.py
+	Fix severe bug on resource thought creation.
+
+2008-04-29 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/ResourceThought.py
+	Allow editing of a resource thought through right click.
+
+2008-04-20 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/ResourceThought.py
+	* src/TextThought.py
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* src/utils.py
+	* data/labyrinth-ui.xml
+	* data/labyrinth.glade
+	Add resource thoughts, tackling issue 101.
+
+2008-04-19 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/labyrinth.py
+	Minor cleanups like indentation.
+
+2008-04-19 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	Small refactorizations.
+
+2008-04-14 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* help/
+	Initial import of user manual.
+
+2008-04-13 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/Browser.py
+	* src/MainWindow.py
+	Address some problems with the sidebar (Issue 94) such as
+	auto-showing and expanding.
+
+2008-04-13 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Implemented issue 100. However it feels rather strange, so
+	it should be tested with users.
+
+2008-04-11 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/DrawingThought.py
+	* src/Links.py
+	* src/TextBufferMarkup.py
+	* src/UndoManager.py
+	Refactorizations.
+
+2008-04-11 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/Links.py
+	Add link colors through context menu.
+
+2008-04-11 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	* src/MainWindow.py
+	Fixed outline treeview bugs and simplified its code.
+
+2008-04-11 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Use a 1-pixel-wide border line for selection box.
+
+2008-04-11 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MainWindow.py
+	Fix exception on maximizing loaded map by calling maximize on
+	the gtk window not on the labyrinth window object.
+
+2008-04-10 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix bug and issue 109.
+
+2008-04-10 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* data/labyrinth-ui.xml
+	* data/labyrinth.glade
+	Use Glade for the MapWindow. Added general alignment widgets.
+
+2008-04-09 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Move multiple thoughts (fix issue 93). Introduced escape key
+	deselecting all thoughts.
+
+2008-04-08 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* src/Browser.py
+	Save line/bezier state.
+
+2008-04-08 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/UndoManager.py
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* src/ImageThought.py
+	Add undo/redo to context sensitive menu. Use an image item for
+	change image.
+
+2008-04-07 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/DrawingThought.py
+	* src/BaseThought.py
+	* src/MMapArea.py
+	* src/ImageThought.py
+	* src/TextThought.py
+	Started working on popup menus. Added image changing through
+	popup menu.
+
+2008-04-06 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix bug and update model on thought deletion.
+
+2008-04-06 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	* src/BaseThought.py
+	* src/MMapArea.py
+	* data/labyrinth-ui.xml
+	Add thought outline (activate throught view -> outline) for
+	a11y.
+
+2008-04-05 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix critical bug and use default system font.
+
+2008-04-05 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* data/labyrinth-ui.xml
+	* data/labyrinth.glade
+	Restructured menu bar according to the GNOME HIG.
+
+2008-04-05 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	* src/TextThought.py
+	Fix theme colors. Use theme colors for text selection. Reduce
+	code.
+
+2008-04-04 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/Links.py
+	Use theme colors for links too.
+
+2008-04-04 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/utils.py
+	* src/MMapArea.py
+	* src/TextThought.py
+	Use Gtk theme colors and select according to GNOME's HIG.
+
+2008-04-04 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	Update link positions on bezier/line switch.
+	* po/labyrinth.pot
+	* po/de.po
+	Updated german translation.
+
+2008-04-03 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/utils.py
+	* src/MainWindow.py
+	* src/BaseThought.py
+	* src/Links.py
+	* src/MMapArea.py
+	* data/labyrinth-ui.xml
+	Add bezier curves as stated in the ideas. It can be activated in the
+	edit menu.
+
+2008-04-03 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Add alignment of thoughts, thus implementing Issue 87.
+
+2008-04-03 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MapList.py
+	Refactoring of method _at_col_set_value.
+
+2008-04-03 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* po/labyrinth.po
+	* po/de.po
+	* src/Browser.py
+	Translator credits.
+	* src/utils.py
+	* src/ImageThough.py
+	* src/DrawingThought.py
+	Simplifications.
+
+2008-04-03 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* po/es.po
+	* po/LINGUAS
+	Added spanish translation by Peter Gordon.
+
+2008-04-02 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/TextThought.py
+	Fix issue 92.
+	* po/de.po
+	Updated german translation.
+
+2008-04-02 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/TextThought.py
+	Refactoring leads to -200 loc.
+	
+2008-04-02 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MapList.py
+	* src/MainWindow.py
+	Differentiate between index in MapList and index in browser (column
+	id). Column id is used as map index. Do not give an untitled map a
+	number. Calculate new column id from biggest existing column id.
+	Remove map title to map relation because it isn't used.
+	* src/Browser.py
+	Remove space in string.
+
+2008-04-01 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Critical bug fixed. Couldn't deselect after selecting with box.
+	
+2008-03-31 Martin Schaaf <mascha@ma-scha.de>
+
+	* debian/chnagelog
+	Add all entries from the rc versions.
+	* configure.ac
+	Bump to 0.5.0dev version.
+
+2008-03-31 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* data/labyrinth.glade
+	* src/MainWindow.py
+	Beautify drop dead ugly export dialog.
+	* src/utils.py
+	Simplification.
+
+2008-03-29 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Inherit color from parent node.
+
+2008-03-29 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/TextThought.py
+	o set attribute to none or normal on unsetting (there is more work
+	todo)
+
+2008-03-28 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix Issue 80 doing correct undo move.
+	* po/de.po
+	* po/labyrinth.pot
+	Update german translation.
+
+2008-03-28 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/labyrinth.py
+	o check for pygtk version before gtk is imported like it is said in
+	the pygtk FAQ, fixes Issue 82
+
+2008-03-28 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/Makefile.am
+	o add missing file for distribution creation
+
+2008-03-27 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MapList.py
+	o fix renaming of thought
+	* src/Browser.py
+	o raise a AttributeError instead of a deprecated String
+
+2008-03-27 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fix problem when selecting through an object thus creating a link.
+	* ChangeLog
+	Correct changelog date of Martin's last entry.
+
+2008-03-27 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/TextThought.py
+	* src/MMapArea.py
+	* src/BaseThought.py
+	* src/MainWindow.py
+	* src/TextBufferMarkup.py
+	o add font selection support for thoughts, fixes issue 79
+	o change attributes instead of inserting, fixes hopefully issue 53
+
+2008-03-26  Don Scorgie  <Don@Scorgie.org>
+
+	* src/Browser.py: 
+	Only remember browser window size
+	using gconf when not running
+	under Windows (gconf isn't available
+	there.  We need another solution)
+	
+
+2008-03-25 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/utils.py
+	* src/MapList.py
+	* src/MainWindow.py
+	* src/Browser.py
+	* src/ImageThought.py
+	Export maps with images as tarball.
+
+2008-03-25 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/ImageThought.py
+	* src/TextThought.py
+	* src/DrawingThought.py
+	* src/utils.py
+	o show a bigger border if a thought has extended info, fixes issue 33
+
+2008-03-24 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/Browser.py
+	Allow resizing.
+
+2008-03-24 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Add bounding box selection.
+
+2008-03-24 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	More optimizations for issue 55. Partial redraw is done on editing and
+	selecting and off-screen clipping has been simplified.
+
+2008-03-23 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/Links.py
+	Fixes issue 62. Links are not selected if not clicked. 
+
+2008-03-23 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Off-screen clipping works for other scale factors too, but only in
+	horizontal direction.
+
+2008-03-23 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Fixed bug introduced with last revision.
+
+2008-03-23 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MMapArea.py
+	Don't draw off-screen thoughts. It is still a bit whacky and not working for
+	scales other than 1.0.
+
+2008-03-23 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/Browser.py
+	o remember map sort order, fixes issue 75
+	o catch exception if map is empty on file_save_cb
+
+2008-03-23 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/PeriodicSaveThread.py
+	* src/MainwindowThread.py
+	o save open maps every 60 seconds, fixing issue 64
+
+2008-03-23 Martin Schaaf <mascha@ma-scha.de>
+
+	* debian/changelog
+	* configure.ac
+	o pump to version 0.4.0rc4
+	* src/ImageThought.py
+	* src/utils.py
+	o convert pixel array from pixbuf rgb order to cairo rgb order on exporting
+
+2008-03-22 Martin Schaaf <mascha@ma-scha.de>
+
+	* debian/changelog
+	* configure.ac
+	o pump to version 0.4.0rc3
+	* src/ImageThought.py
+	o ignore if an image isn't exportable
+
+2008-03-22 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* debian/control
+	Add python-gconf dependency.
+
+2008-03-22 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MapList.py
+	* src/Browser.py
+	Save configuration via gconf.
+
+2008-03-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/ImageThought.py
+	o export also bitmaps to cairo surface (pdf, svg), but there is a small color problem
+
+2008-03-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* debian/control
+	o add newer standard version
+	* src/ImageThought.py
+	o fix exception by only replace whole text if a parent node exist
+
+2008-03-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* debian/*
+	o add debian package management support
+	* configure.ac
+	o set version to 0.4.0rc2
+
+2008-03-21 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MainWindow.py
+	Add export to pdf.
+
+2008-03-21 Matthias Vogelgesang <matthias.vogelgesang@gmail.com>
+
+	* src/MapList.py
+	* src/Browser.py
+	Save and load browser size, fixing issue 18
+
+2008-03-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/DrawingThought.py
+	* src/MainWindow.py
+	* src/utils.py
+	* src/ImageThought.py
+	* src/TextThought.py
+	o add svg export (patch by Matthias Vogelgesang)
+
+2008-03-21  Don Scorgie  <Don@Scorgie.org>
+
+	* src/TextThought.py: 
+	* src/BaseThought.py:
+	* src/Links.py:
+	* src/DrawingThought.py:
+	Fix potential exception on map opening
+
+	* src/DrawingThought.py:
+	Give all points their own unique colour
+
+	* src/MMapArea.py:
+	Update the colour selectors when loading
+	a map
+
+2008-03-21 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/DrawingThought.py
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* src/Browser.py
+	* src/ImageThought.py
+	* src/TextThought.py
+	* data/labyrinth-ui.xml
+	* data/labyrinth.glade
+	o add import/export of maps (patch by Matthias Vogelgesang)
+	* Authors
+	o added Matthias Vogelgesang and me
+
+2008-03-20 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MMapArea.py
+	o check for attribute transform on coord transformation
+	* src/MainWindow.py
+	o fix color update if a thought is selected that doesn't have background or foreground colors
+
+2008-03-18 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MMapArea.py
+	* src/MainWindow.py
+	o update color button when selecting thought (patch by Matthias Vogelgesang)
+
+2008-03-03 Martin Schaaf <mascha@ma-scha.de>
+
+	* ChangeLog
+	o add missing entries
+
+2008-02-18  Don Scorgie  <Don@Scorgie.org>
+
+	* src/MMapArea.py: 
+	Fix backspace and delete when not
+	editing
+
+2008-02-14 Martin Schaaf <mascha@ma-scha.de>
+
+	* /svn_ignore
+	add eclipse files to svn ignore 	
+
+2008-02-14 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/Links.py
+	set line witdth after link drawing back to original size 	
+
+2008-02-14 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	* src/*Thought.py
+	* src/utils.py
+	* src/Links.py
+	add foreground and background color selection/setting support  	
+
+2008-02-04 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	o allow deletion of links
+	o add some checks before deletion
+	o catch attribute error exceptions in some cases where not only thoughts are expected  	
+
+2008-02-04 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MMapArea.py
+	o test for link element in child nodes, fixes bug introduced with
+	  last commit for element checking in dom tree 	
+
+2008-02-04 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MainWindow.py
+	* src/MMapArea.py
+	o catch AttributeError in get_selection_bounds when it is called with link object
+	o fix todo to check if a link exists before its deletion
+	o only delete thoughts by selcting Edit/DeleteThoughts (fixes issue 66)
+	o revert the last fix for link edit and add a better one 	
+
+2008-02-03 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MainWindow.py
+	o set edit menu entries insensitive, when they cannot be used with the selected object 	
+
+2008-01-31 Martin Schaaf <mascha@ma-scha.de>
+
+	* src/MapList.py:
+	o fix for Issue 68 - delete map corrupts open list 	
+
+2007-05-21 Don Scorgie <Don@Scorgie.org>
+
+	* src/MapList.py:
+	Oops.  Broke creating new maps.  Fixed.
+	
+2007-05-16 Don Scorgie <Don@Scorgie.org>
+
+	* data/labyrinth.glade:
+	* src/Browser.py:
+	Remove Quit button from toolbar (as per HIG)
+	Fixes issue #44	(patch from Jean-François Fortin Tam)
+
+
+2007-05-15 Don Scorgie <Don@Scorgie.org>
+
+	* src/MapList.py:
+	* src/Browser.py:
+	Add searching in Browser window (issue #58)
+	Add "Last Modified" column and allow sorting by it and name (issue #59)
+	
+	* src/MainWindow.py:
+	* data/labyrinth-ui.xml:
+	Add undo / redo to toolbar as an experiment (issue #60)
+	Increase size of initial window slightly to fit better
+
+	* src/MainWindow.py:
+	Use gtk+ built-in zooming actions (issue #63)
+	
+	* src/MainWindow.py:
+	* src/Browser.py:
+	Don't ellipsize text in Browser while still space available (issue #61)
+	
+	* src/MainWindow.py:
+	Attempt to reduce "over" movement when scrolling (slightly but not a huge 
+	amount better)
+	
+	* src/Links.py:
+	Fix disappearing thoughts when links selection code fails
+	(It still fails, but less so now) Partial fix for issue #62
+	
+	* src/MMapArea.py:
+	Add initial thought navigation using arrow keys
+
+
+2007-04-17 Don Scorgie <Don@Scorgie.org>
+
+	* src/TextThought.py:
+	Fix thought boundaries when using attributes
+	Don't process (control) key presses when not editing
+	-Later- Fix byte table rebuilding in the presence of "undecipherable" 
+	characters as Python puts it.  Basically, add a try-except block to
+	ensure the character is correctly tested
+	
+
+2007-04-06 Don Scorgie <Don@Scorgie.org>
+
+	* src/MMapArea.py:
+	* src/Links.py:
+	Add key filtering for +/- keys to increase / decrease
+	link strength (when selected)
+
+	* src/MMapArea.py:
+	* src/Links.py:
+	* src/BaseThought.py:
+	First pass at link selection
+	Able to select links (with think rectangle drawn around them)
+	BaseThought and MMapArea have minor modifications to support
+	Link selection
+
+	* src/TextThought.py:
+	Update attributes properly when using the mouse
+	to move the cursor
+
+2007-04-06 Don Scorgie <Don@Scorgie.org>
+
+	Merge of Windows-support branch:
+	* Windows/COPYING.txt:
+	* Windows/defs.py:
+	* Windows/lab.iss:
+	* Windows/labyrinth.lnk:
+	* Windows/labyrinth.bat:
+	* Windows/labyrinth.ico:
+	* Windows/WinSetup.bat:
+	* Windows/winsetup.py:
+	Add files for Windows build
+
+	* src/Browser.py:
+	* src/labyrinth.py:
+	* src/MainWindow.py:
+	* src/TextThought.py:
+	* src/utils.py:
+	Various fixes required to build and run on Windows properly
+
+
+2007-04-05 Don Scorgie <Don@Scorgie.org>
+
+	* src/TextThought.py:
+	Fix stupid bug to make text selection work
+
+
+2007-04-05 Don Scorgie <Don@Scorgie.org>
+
+	* src/MainWindow.py:
+	* src/MMapArea.py:
+	* src/TextThought.py:
+	* src/TextBufferMarkup.py:
+	Add support for italics and underline
+	
+	* doc/TheFuture:
+	Rework goals for 0.4 release
+
+
+2007-04-05 Don Scorgie <Don@Scorgie.org>
+
+	* src/MMapArea.py:
+	Only update cursor type when the type has changes
+	(Patch from Kamila Chyla)
+
+2007-04-05 Don Scorgie <Don@Scorgie.org>
+
+	* AUTHORS:
+	* doc/TheFuture:
+	Minor updates (correct email, add tick)
+	
+	* src/TextBufferMarkup.py:
+	Total rewrite from scratch.  The old one wasn't as shiny
+	and didn't really do what I wanted
+	New one is smaller and does what is needed
+	Add support for enboldening and framework for other
+	text attributes
+	
+	* src/DrawingThought.py:
+	* src/ImageThought.py:
+	* src/BaseThought.py:
+	Update to use new extended buffer properly
+
+	* src/UndoManager.py:
+	Handle text attributes properly
+	Combine translation / rotations
+
+	* src/MainWindow.py:
+	Un-disable Bold button
+	Add support for enabling and disabling Bold (along with other attributes)
+	Add undo support for translations and scaling
+	
+	* src/MMapArea.py:
+	New signal to tell the Bold widget to enable when we want it to
+	Add undo transform (translate / scale)
+	Allow bold to be set in thoughts
+	
+	* src/TextThought.py:
+	Update to use new extended buffer
+	Enable bold in text thoughts themselves
+	Shift some stuff around to work with the attributes
+	Add framework for further attribute work
+	
+2007-03-28 Don Scorgie <Don@Scorgie.org>
+
+	* src/utils.py:
+	Make intermediate dirs for savedir (should fix issue #50)
+
+2007-03-11  Don Scorgie  <Don@Scorgie.org>
+
+	* src/Browser.py: 
+	* src/DrawingThought.py:
+	* src/ImageThought.py: 
+	* src/TextThought.py: 
+	* src/MMapArea.py: 
+	* src/Links.py: 
+	* src/prefs.py: 
+	* src/MainWindow.py: 
+	* src/UndoManager.py: 
+	* src/labyrinth.py: 
+	* doc/FileFormat: 
+	* AUTHORS: 
+	Updated my email address to new address
+	
+	* src/MainWindow.py:
+	* src/MMapArea.py:
+	* src/UndoMAnager.py:
+	Enable undo / redo of scaling and translation
+
+2007-03-10 Don Scorgie <Don@Scorgie.org>
+
+	* src/BaseThought.py:
+	* src/ImageThought.py:
+	* src/DrawingThought.py:
+	* src/TextThought.py:
+	* src/MMapArea.py:
+	Various misc fixes to make all thoughts
+	work with transforms properly
+
+	* src/Mainindow.py:
+	* src/MMapArea.py:
+	Add arrows around main area for translation
+	Fix scaling properly
+	Translate using button 2 (middle button) instead
+	of ctrl-button 1
+
+	* src/MainWindow.py:
+	* src/MMapArea.py:
+	* src/TextThought.py:
+	* data/labyrinth-ui.xml:
+	Add initial support for scaling canvas and translating
+	on canvas (infinte-scroll canvas)
+
+2006-11-25 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+    * src/Links.py:
+    * src/MainWindow.py:
+    Remove (incorrect) interpreter invocations
+    These files shouldn't be called outside of
+    labyrinth anyway (in normal circumstances)
+
+
+2006-11-15 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/Links.py:
+	Only try and calculate ends on loading
+	if both parent and child exists (issue #34)
+
+	* src/MapList.py:
+	Don't calculate the number of nodes within a map
+	It's not used and seems to cause problems with some maps
+	( issue #36)
+
+=========== V0.3 ===========
+2006-11-13 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* configure.ac:
+	* NEWS:
+	Bump Version
+	Prepare for 0.3 release
+
+	* data/Makefile.am:
+	Fix make distcheck (add uninstall rule)
+
+	* doc/TheFuture:
+	* README:
+	Update for 0.3 release
+
+
+2006-11-12 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MMapArea.py:
+	* src/labyrinth.py:
+	* src/Browser.py:
+	Fix thought numbers on loading.  Again.  Sigh (issue #32
+	and previously issue #6)
+	Fix loading of maps from the command line
+
+	* src/MainWindow.py:
+	Make export dialog work again (issue #29)
+
+2006-11-08 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/utils.py:
+	* src/TextThought.py:
+	Use Tango palette colours, which are slightly
+	less jarring, though feel somewhat strange ;)
+	Text selection is still bright red
+	Primary thought is "Butter"
+	Selected thoughts are "Sky Blue"
+
+	* src/MMapArea.py:
+	Add an implicit "current_root" which acts as the
+	anchor for new thoughts without being selected
+
+	* src/MainWindow.py:
+	Only set / change the mode with pygtk versions > 2.8
+	as the function was apparently only introduced
+	during 2.10
+
+2006-11-07 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* data/labyrinth-ui.xml:
+	* src/MainWindow.py:
+	* src/MMapArea.py:
+	Add "(Un)Link Thoughts" menu item
+	which links or unlinks thoughts when
+	2 (and only 2) thoughts are selected
+	shortcut: ctrl-L (for want of a better one)
+
+	* data/labyrinth.glade:
+	Follow global toolbar style prefs in
+	browser window (Jean-François Fortin Tam)
+
+	* src/DrawingThought.py:
+	Add erase mode using shift key
+	Add erase action to undo list
+
+2006-11-06 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/Browser.py:
+	* src/MainWindow.py:
+	Fix a couple of typos and unclear messages
+	Issue #28 - Josef Vybíral
+
+	* src/MainWindow.py:
+	* src/Browser.py:
+	* src/utils.py:
+	* data/labyrinth-ui.xml:
+	* data/labyrinth.glade:
+	New, improved Browser window
+	Move "Help->About" to Browser window.  Remove from map windows
+	Based heavily on a patch from Jean-François Fortin Tam.  Issue #15
+
+	* src/MainWindow.py:
+	* data/labyrinth-ui.xml:
+	Remove Quit and New actions.  Remove their callbacks
+	- New hasn't worked for a while anyway and Quit
+	has been removed for a while
+	Convert several menu items to use stock labels
+
+2006-11-05 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/TextThought.py:
+	Don't draw selected text when
+	not editing
+
+	* src/MMapArea.py:
+	Implement ctrl-a when no thought
+	is being edited
+
+	* src/TextThought.py:
+	implement ctrl-a in thoughts.
+	Various improvments in handling
+	arrow keys
+
+	* src/TextThought.py:
+	Make backspace work again at end of text
+
+	* src/TextBufferMarkup.py:
+	* src/DrawingThought.py:
+	* src/UndoManager.py:
+	* src/MainWindow.py:
+	* src/BaseThought.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	* src/MMapArea.py:
+	* src/Makefile.am:
+	* data/labyrinth-ui.xml:
+	Add undo and redo capabilities
+	Each action should be mirrored properly
+	Thought selection across undo's may be somewhat
+	shaky and inconsistant.
+	There are probably also many bugs still in the
+	implementation
+
+	* src/Links.py:
+	Clean up old Links class
+
+
+2006-11-04 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/TextThought.py:
+	Hook up remaining (interesting) signals from IMContext
+	Insert preedit text where appropriate (including all the
+	shiny pango attrs that go with it)
+
+	* src/TextThought.py:
+	Check the function return for get_direction, not just the function
+	address.  Oops.
+
+	* src/MainWindow.py:
+	* src/Browser.py:
+	* data/labyrinth-ui.xml:
+	* data/labyrinth.glade:
+	New, improved Browser window
+	Add "Convert" to export to image (currently)
+	Move "Help->About" to Browser window.  Remove from map windows
+	Based hevily on a patch from "nekohayo".  Issue #15
+
+	* src/MainWindow.py:
+	* src/Browser.py:
+	* data/labyrinth-ui.xml:
+	* data/labyrinth.glade:
+	New, improved Browser window
+	Add "Convert" to export to image (currently)
+	Move "Help->About" to Browser window.  Remove from map windows
+	Based hevily on a patch from "nekohayo".  Issue #15
+
+	* src/BaseThought.py:
+	Don't print events - just pass silently
+
+	* src/TextThought.py:
+	* src/BaseThought.py:
+	* src/MMapArea.py:
+	* src/prefs.py:
+	* src/labyrinth.py:
+	* src/Makefile.am:
+	Catch (temporarily) im_context signals and dump to terminal
+	Add prefs.py to calculate / store preferences
+	Add RTL mode when in a RTL environment -
+	right edge anchored and edit sign displayed in
+	top right corner
+	Mixing RTL and LTR doesn't work so well yet.
+
+	* src/MainWindow.py:
+	Fix creation of new maps - MapNumber wasn't referenced
+	properly
+
+	* src/DrawingThought.py:
+	* src/utils.py:
+	* src/MainWindow.py:
+	* src/BaseThought.py:
+	* src/Links.py:
+	* src/Browser.py:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	* data/labyrinth-ui.xml:
+	Merge of "Rework" branch.
+	Architecture rework of MMapArea and Thoughts
+	Fixes (hopefully) many problems encountered thus far
+	In addition, new features that have fallen out:
+	- Kill Move mode.
+	 - In edit mode, single click selects
+	 - Single click + drag moves
+	 - Double click edits
+	 - Single click with ctrl drags a link
+	- Multiple selection of thoughts is now possible
+	  using shift and ctrl keys
+	 - When multiple thoughts selected, extended buffer
+	   clears and becomes insensitive
+	- Don't recalculate every text thought's text every
+	  redraw.  Reduces CPU load significantly
+	- Cursor changes happen on mouse-over
+	- More cursor changes than you can shake a stick at
+	- Middle clicking pastes primary selection text when possible
+	- Thought heirarchy goes by selection order.  Thoughts selected
+	  more recently appear in front of thought that appear less recently
+	- Framework in place for popup menus (though none appear yet)
+	- Framework in place to select links (though not done yet)
+	Bug fixes included are:
+	- Don't "jerk" thoughts around when moving.  Moving is much
+	  smoother now (#19)
+	- Escape key finishes editing a thought (#23)
+	- Backspace at the start of text kills things.  Delete at end of
+	  text ditto (#25)
+	- Fix a fairly strange bug in resizing images using the top-right corner
+
+2006-10-23 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/TrayIcon.py:
+	* src/labyrinth.py:
+	* src/utils.py:
+	* src/MapList.py:
+	* src/MainWindow.py:
+	* src/Makefile.am:
+	* src/Browser.py:
+	Massive update to Browser from Andreas Sliwka
+	Split into MVC style: MapList contains the maps
+	Browser only shows them
+	Add debug_print function
+	Move defs stuff into utils
+	Add optional TrayIcon (disabled by default: --use-tray-icon)
+
+2006-10-21 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* README:
+	Added "License" section at the top of the file
+
+	* data/labyrinth.svg:
+	* data/labyrinth-24.png:
+	* data/labyrinth-22.png:
+	* data/labyrinth-16.png:
+	Shiny new icon from Josef Vybíral
+	(icon released under GNU GPL v2)
+
+    * src/Makefile.am:
+    Add TextBufferMarkup.py (Issue #16)
+    Thanks to "jmalonzo" for spotting :)
+
+
+2006-10-19 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MainWindow.py:
+	Don't complain if no selection is made in extended buffer
+	and edit menu is opened with focus on extended buffer
+
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/ImageThought.py:
+	Adapt to fit new text entry stuff (pass im_context to
+	begin_edit which isn't called for other thought types)
+
+	* src/MMapArea.py:
+	* src/TextThought.py:
+	New text entry stuff.  Pass all keystrokes
+	through an IM Context.  Picks up dead keys
+	and unicode entry (though no cool underlines u atm).
+	Update view entirely when > 1 key is pressed in
+	quick succession
+	Construct a byte table in text thoughts to handle
+	proper deletion / selection / movement within
+	multibyte characters
+
+
+2006-10-18 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/BaseThought.py:
+	Fix typo in docstring (Thanks to Rob Tirrell)
+
+
+2006-10-17 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MainWindow.py:
+	* src/BaseThought.py:
+	* src/TextBufferMarkup.py:
+	* src/MMapArea.py:
+	* data/labyrinth-ui.xml:
+	Implement cut / copy / paste for thoughts and extended buffer
+	New menu - "Edit" for copy etc., delete thought and View Extended
+	Minor edit of TextBufferMarkup
+	Clipboard works for both primary selection and main clipboard :)
+
+
+	* doc/TheFuture:
+	A few minor updates from the Export stuff below
+
+	* src/MainWindow.py:
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/Links.py:
+	* src/utils.py:
+	* src/Browser.py:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	* data/labyrinth-ui.xml:
+	* data/labyrinth.glade:
+	Implement "Export as Image" in File menu.
+	Supports png and jpg.  Whether supported is determined
+	based on file extension.  Initial file name comes from
+	map title.
+	Export dialog is in glade file (need to move glade stuff
+	into utils!)
+	Not fully finished - spin boxes need hooked up
+	Several new methods in all thought classes (update_bbox,
+	export, get_max_area)
+
+
+2006-10-16 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MMapArea.py:
+	When loading, ensure nthoughts > actual thoughts on canvas
+	Don't create duplicate thought numbers.  Maybe fix issue #6 (possibly)
+
+	* src/DrawingThought.py:
+	Don't draw multiple copies of drawings when saved / loaded
+
+	* src/MainWindow.py:
+	Fix maximised restore across 2 saves
+
+	Merge of "Further Info" personal branch.  This is an
+	experiment into adding a "More Info" text area to the
+	bottom of Map windows (when the user requests it).
+	It also includes several other minor features.
+	These are outlined below (main stuff described
+	below all entries).  Sorry for the long entry
+	* doc/TheFuture:
+	Updated what's done.  Added new "non-feature" section
+
+	* src/MainWindow.py:
+	Save and restore maximised state of windows
+	Remove old "number_windows" function
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/TextBufferMarkup.py:
+	* src/Browser.py:
+	Don't display window.  Let window display itself
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	* data/labyrinth-ui.xml:
+	Add "Drawing Mode" and "Add Image" to Mode menu
+	(All): Add "more info" option to Mode menu.  When selected,
+	add a text entry to bottom of window (resizeable) to add further
+	info to a thought.  Save and restore this option.  Save and
+	restore text buffer across instances.  Add new toolbar to bottom
+	of window that will (in future) allow text to be bold, italics etc.
+	Allow saving of these text properties (in future) using TextBufferMarkup.py,
+	borrowed from Gourmet Recipe Manager (http://grecipe-manager.sourceforge.net/)
+	Note: This isn't final.  There is still quite a bit of work to do in it
+	It's in a workable state though, so I'm committing.
+
+2006-10-13 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MMapArea.py:
+	Update view when thought deleted (got lost somewhere along the line)
+
+	* doc/TheFuture:
+	Update - Text selection now works (damned ugly thought)
+
+	* src/TextThought.py:
+	* src/MMapArea.py:
+	Make text selection with cursor by dragging work properly
+
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/ImageThought.py:
+	Add "selected" callback to thoughts.  Used for notification when
+	the user selects the thought.  Makes text selection much easier
+	Make thought.handle_movement return a bool indicating whether
+	movement was in fact handled
+
+
+	* src/TextThought.py:
+	Fix delete key with no selection enabled
+
+	* src/TextThought.py:
+	Allow index to go to end of text / line when user requests it
+	with mouse selection of text
+
+	*  src/BaseThought.py:
+	* src/MMapArea.py:
+	* src/TextThought.py:
+	Rework lots of stuff to allow beginning of text selection with
+	mouse.  Right now, only moves the "index".  Pressing shift + clicking
+	will select a range.  Click-dragging will not.  Yet.
+	Doesn't obey current selected areas either yet.
+
+	* src/TextThought.py:
+	Handle text selection using keyboard navigation
+	(Ignore the hideous colour for now ;)
+
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/ImageThought.py:
+	* src/MMapArea.py:
+	Pass modifier mask when handling keystrokes
+
+2006-10-12 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/labyrinth.py:
+	Only import utils once labyrinth knows where to look
+
+2006-10-11 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/utils.py:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	Split out drawing of thought outlines (into utils.py)
+	Standardise (somewhat more) on what ul and lr really mean
+	Fix resizing of drawing thoughts in edit mode
+
+	* src/labyrinth.py:
+	Make current path clearer in terminal printing
+
+	* src/Makefile.am:
+	Really regenerate defs.py and labyrinth when configure is run
+	Might (hopefully) fix issue #1
+
+	* src/labyrinth.py:
+	* src/Browser.py:
+	Add new command line options:
+	-o / --open: open a map from the given (full) path and filename
+	-m / --map: open a map with the filename from the internal "database"
+	(Based on patch from Kevin Kubasik.  Fixes issue #3)
+
+	* src/MainWindow.py:
+	Add (stupid) icons to toolbar entries.
+	Temporarily improves issue #2 until gtk+ fixes it
+
+
+2006-10-10 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* doc/TheFuture:
+	* doc/FileFormat:
+	Rejig to be more readable in 80-column format
+
+	* doc/TheFuture:
+	List of goals for 1.0 release
+
+
+2006-10-08 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MainWindow.py:
+	* src/Browser.py:
+	Add missing strings to translations
+
+
+======= Version 0.2 ======================
+2006-10-06 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* configure.ac:
+	Bump version
+
+	* src/MainWindow.py:
+	Actually set the window icon properly.  No, really this time
+
+	* src/Browser.py:
+	Make 'Open' and 'Delete' buttons only sensitive when a map is selected
+
+	* src/ImageThought.py:
+	Gracefully handle case where image file isn't available (display empty thought)
+
+	* src/MMapArea.py:
+	When bad (unended) links are loaded, assume them to be broken and remove them properly
+
+	* po/POTFILES.in:
+	Add ImageThought as it now contains translatable strings
+
+	* doc/TheFuture:
+	Update for v0.2
+
+	* doc/FileFormat:
+	Add new file (incomplete) describing the save format for Labyrinth maps
+
+	* doc/Makefile.am:
+	Add FileFormat to EXTRA_DIST
+
+	* src/MainWindow.py:
+	* src/Browser.py:
+	* src/labyrinth.py:
+	Fix uninstalled mode.  Silence glade warning when not really a warning
+
+	* src/labyrinth.py:
+	fix i18n stuff.  Hopefully.
+
+2006-10-04 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* Browser.py:
+	* MainWindow.py:
+	Fix window icon
+
+	* configure.ac:
+	* src/MainWindow.py:
+	* src/labyrinth.py:
+	* src/DrawingThought.py:
+	* src/Browser.py:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	* Makefile.am:
+	* po/LINGUAS:
+	* po/ChangeLog:
+	* po/POTFILES.in:
+	Add i18n framework.  Maybe.
+
+	* src/Browser.py:
+	Only activate 'Open' and 'Delete' when an item is selected
+
+	* src/MMapArea.py:
+	* src/MainWindow.py:
+	Set mode back properly when image is inserted
+
+	* src/MMapArea.py:
+	Only allow drawing in "Drawing" mode.  In edit mode, allow linking thoughts instead
+
+	* src/Browser.py:
+	* src/MainWindow.py:
+	Set icon for browser and windows to be Labyrinth icon
+
+
+2006-10-03 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MainWindow.py:
+	* src/BaseThought.py:
+	* src/DrawingThought.py:
+	* src/Links.py:
+	* src/Makefile.am:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	* data/labyrinth-ui.xml:
+	Add DrawingThought.  Add "Drawing Mode" to toolbar
+	Attempt to fix various problems with XML loading in all thought types
+	Various code cleanups
+	Make removing links work properly again (I hope)
+
+
+2006-09-25 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+    * src/TextThought.py:
+    Fix corner rounding when a thought only contains an 'i'
+    * src/MMapArea.py:
+    Fix problem when loading a map stuck in "AddImage" mode
+
+
+2006-09-13 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* src/MMapArea.py:
+	Use the FileChooser instead of the old, nasty FileSelector
+
+	* src/ImageThought.py:
+	* src/TextThought.py:
+	Curve the corners of thoughts slightly.  Makes the entire thing slightly prettier
+	and less intimidating
+
+	* src/ImageThought.py:
+	Clip title to only be actual filename (ignore path and suffix)
+
+	* src/BaseThought.py:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	Add a cursor change when resizing images, reflecting direction of change
+
+
+	* src/BaseThought.py:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	Make loading and saving of image thoughts work.  Fingers crossed.
+	Should work.
+	Cleanup temp stuff from BaseThought
+
+	* src/TextThought.py:
+	* src/ImageThought.py:
+	Make links originate and end in the center of thoughts
+	which looks so much cooler :)
+
+	* src/MainWindow.py:
+	* src/BaseThought.py:
+	* src/Makefile.am:
+	* src/MMapArea.py:
+	* src/ImageThought.py:
+	Beginnings of an Image Thought.  New mode: "Add Image".  Dosn't drop out when image added though :(
+	In edit mode, image can be resized
+	In mode mode, image is moved
+	Links are screwed up
+	Doesn't save or load (hence still screws up any maps using them)
+	Can't add text to images
+
+    * src/MMapArea.py:
+    Fix typo (Rogi Lemar)
+
+    * src/BaseThought.py:
+    * src/MainWindow.py:
+    * src/MMapArea.py:
+    * src/TextThought.py:
+    New base thought type: resizable.  Will be used to contain drawings and images
+    Hook up "New Image" Button to (temporarily) draw a basic resizable thought
+    Fit everything else in required
+    - Click-dragging (in edit mode) near a resizable thoughts edge will allow it to be resized
+    - Move mode works as expected
+    WARNING: as the resizable thought isn't fully supported, its likely to corrupt maps if used
+    WARNING: No, really, any use of resizable thoughts is likely to destroy maps, creating random links
+             and screwing everything up (They also aren't saved)
+
+2006-09-09 Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+    * src/MainWindow.py:
+	* data/labyrinth-ui.xml:
+	Added "add image" button in preperation for future work
+
+    * src/Makefile.am:
+    * src/defs.py.in:
+	Fix compilation once again.  Sigh
+
+
+2006-09-06  Don Scorgie <DonScorgie@Blueyonder.co.uk>
+
+	* configure.ac:
+	* src/Makefile.am:
+	* src/defs.py.in:
+	Make defs get generated properly.  Hopefully (taken from Alacarte)
+
+	* src/Links.py:
+	Import TextThought instead of Thoughts
+
+	* data/labyrinth-??.png:
+	* data/labyrinth.svg:
+	* data/labyrinth.desktop.in:
+	Add these vital files.  Labyrinth should now show up in the Applications->Office menu
+	Complete with its own (very ugly) icon
+
+	* data/Makefile.am:
+	Update to install icons and desktop file
+
+	* TextThought.py:
+	* MMapArea.py:
+	Move Thoughts.py to new file
+	Update MMapArea to use the file
+
+	* BaseThought.py:
+	New file: Base class for thoughts
+
+    * Thoughts.py:
+    * MMapArea.py:
+    Update to use BaseThought.  Rename Thought to TextThought
+
+	* MMapArea.py:
+	* Thoughts.py:
+	Draw links behind thoughts to make thoughts feel more solid
+
+	* MMapArea.py:
+	Don't redraw on mouse motion when not watching
+	Only redraw every 1/40th second to stop from hammering X server
+
+2006-08-29  Don Scorgie  <DonScorgie@Blueyonder.co.uk>
+
+	* Initial Import into new home on Google
+
+What follows is the svn log dumped from the repo on my machine.  Don't judge it too harshly ;)
+
+------------------------------------------------------------------------
+r85 | don | 2006-08-28 16:16:00 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Oops forgot to add in md5sums.
+
+------------------------------------------------------------------------
+r84 | don | 2006-08-28 16:01:54 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Update web page a little.  Bump version up to 0.1.
+
+------------------------------------------------------------------------
+r83 | don | 2006-08-28 14:03:40 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Add 2 new screenshots showing the browser and current map window
+
+------------------------------------------------------------------------
+r82 | don | 2006-08-28 12:47:41 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Fix spelling mistake
+
+------------------------------------------------------------------------
+r81 | don | 2006-08-28 12:46:40 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+More README update
+
+------------------------------------------------------------------------
+r80 | don | 2006-08-28 12:37:17 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Make the about dialog go away when requested
+
+------------------------------------------------------------------------
+r79 | don | 2006-08-28 12:31:15 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Minor addition to configure.ac
+
+------------------------------------------------------------------------
+r78 | don | 2006-08-28 12:29:53 +0100 (Mon, 28 Aug 2006) | 2 lines
+
+Make installation actually work (hopefully)
+
+------------------------------------------------------------------------
+r77 | don | 2006-08-28 12:14:41 +0100 (Mon, 28 Aug 2006) | 3 lines
+
+Remove Quit from menu in map windows
+Try and fix installation again.  Fail :(
+
+------------------------------------------------------------------------
+r76 | don | 2006-08-27 20:23:09 +0100 (Sun, 27 Aug 2006) | 2 lines
+
+Update README and TheFuture a little more in light of the new browser
+
+------------------------------------------------------------------------
+r75 | don | 2006-08-27 18:43:15 +0100 (Sun, 27 Aug 2006) | 2 lines
+
+Stupid work-around to make maps save when open and quit is selected
+
+------------------------------------------------------------------------
+r74 | don | 2006-08-27 15:48:36 +0100 (Sun, 27 Aug 2006) | 3 lines
+
+Update glade to make prettier.  Slightly.
+Make rows respond to activation
+
+------------------------------------------------------------------------
+r73 | don | 2006-08-26 16:07:15 +0100 (Sat, 26 Aug 2006) | 2 lines
+
+More browser work.  Hooked up most of the signals required.
+
+------------------------------------------------------------------------
+r72 | don | 2006-08-26 14:26:58 +0100 (Sat, 26 Aug 2006) | 5 lines
+
+Updated configure, README
+
+First pass at Browser.  Not too shabby though.  Doesn't work just yet,
+but give it time
+
+------------------------------------------------------------------------
+r71 | don | 2006-08-24 22:03:02 +0100 (Thu, 24 Aug 2006) | 4 lines
+
+Update a couple of comments
+Add new TheFuture entry for current (soon) release
+Update NEWS for new release
+
+------------------------------------------------------------------------
+r70 | don | 2006-08-24 21:36:37 +0100 (Thu, 24 Aug 2006) | 2 lines
+
+Remove old cruft
+
+------------------------------------------------------------------------
+r69 | don | 2006-08-24 21:30:12 +0100 (Thu, 24 Aug 2006) | 3 lines
+
+Move functions.py to utils.py
+Just seems nicer somehow
+
+------------------------------------------------------------------------
+r68 | don | 2006-08-23 22:44:06 +0100 (Wed, 23 Aug 2006) | 16 lines
+
+Many, many updates from the local "rework" branch.
+
+* Add new functions.py to store functions that can be used by anyone
+* Rework Thoughts, links so only MMapArea has a copy of all of them
+* Remove / kill parent child relationship for thoughts
+ - These make loading / Saving much easier
+ - They make updating links much easier
+ - They make considering things much easier
+
+* Save window geometry
+
+All old classes are still there.  Much needs cleaned up.
+
+TheFuture needs cleaning properly
+
+
+------------------------------------------------------------------------
+r67 | don | 2006-08-14 18:30:04 +0100 (Mon, 14 Aug 2006) | 5 lines
+
+Update save to use only 2 passes (although, very hackily)
+Make loading actually delete thoughts when requested
+Make save only save when area is closed
+Update TheFuture somewhat (maybe)
+
+------------------------------------------------------------------------
+r66 | don | 2006-08-01 21:34:16 +0100 (Tue, 01 Aug 2006) | 3 lines
+
+More loading work.  Seems to be mostly done (first pass).  Issue remains
+with saving a doc twice: The text is repeated!The text is repeated!
+
+------------------------------------------------------------------------
+r65 | don | 2006-08-01 20:54:49 +0100 (Tue, 01 Aug 2006) | 3 lines
+
+More loading work.  Almost working (badly).  Now links are drawn, but it
+doesn't update properly and moving nodes breaks things
+
+------------------------------------------------------------------------
+r64 | don | 2006-08-01 19:58:25 +0100 (Tue, 01 Aug 2006) | 3 lines
+
+More work on loading.  Coords are parsed and small squares shown on
+screen
+
+------------------------------------------------------------------------
+r63 | don | 2006-08-01 18:42:07 +0100 (Tue, 01 Aug 2006) | 4 lines
+
+First attempt at a pass at loading of files:
+* Load all files in save directory
+* Only set title of window
+
+------------------------------------------------------------------------
+r62 | don | 2006-07-31 20:44:41 +0100 (Mon, 31 Jul 2006) | 2 lines
+
+Save to a real-life file!
+
+------------------------------------------------------------------------
+r61 | don | 2006-07-31 20:17:55 +0100 (Mon, 31 Jul 2006) | 3 lines
+
+Lots more saving stuff.  Prints out the complete (for now) save file in
+a pretty format
+
+------------------------------------------------------------------------
+r60 | don | 2006-07-31 19:36:13 +0100 (Mon, 31 Jul 2006) | 3 lines
+
+First attempt at saving to XML.  Dumps the content of each node and the
+cursor position to stdout when double-click happens
+
+------------------------------------------------------------------------
+r59 | don | 2006-07-23 13:31:15 +0100 (Sun, 23 Jul 2006) | 2 lines
+
+Remove note_number since its no longer used
+
+------------------------------------------------------------------------
+r58 | don | 2006-07-16 16:56:42 +0100 (Sun, 16 Jul 2006) | 2 lines
+
+Remove dead python setup files
+
+------------------------------------------------------------------------
+r57 | don | 2006-07-16 16:52:05 +0100 (Sun, 16 Jul 2006) | 2 lines
+
+Remove extra files.  Most are auto-generated.  src/Labyrinth has moved
+
+------------------------------------------------------------------------
+r56 | don | 2006-07-16 16:47:25 +0100 (Sun, 16 Jul 2006) | 2 lines
+
+... and another forgotten file
+
+------------------------------------------------------------------------
+r55 | don | 2006-07-16 16:46:30 +0100 (Sun, 16 Jul 2006) | 2 lines
+
+Move UI description to lower-case
+
+------------------------------------------------------------------------
+r54 | don | 2006-07-16 16:44:52 +0100 (Sun, 16 Jul 2006) | 2 lines
+
+Sigh.  One more file to add
+
+------------------------------------------------------------------------
+r53 | don | 2006-07-16 16:44:10 +0100 (Sun, 16 Jul 2006) | 2 lines
+
+Add m4 subdir, forgotten in last commit
+
+------------------------------------------------------------------------
+r52 | don | 2006-07-16 16:42:32 +0100 (Sun, 16 Jul 2006) | 7 lines
+
+Move to autotools style setup.  Allows installing to happen.  Takes care
+of removing .py from labyrinth in bindir.  Adapt everything to cope.
+Adapt everything to allow to run from either uninstalled or from
+installed instance.
+
+Based on auto* stuff from deskbar-applet.  Added (empty) changelogs.
+
+------------------------------------------------------------------------
+r51 | don | 2006-07-15 19:19:11 +0100 (Sat, 15 Jul 2006) | 2 lines
+
+Update md5 sums of packages on web-page
+
+------------------------------------------------------------------------
+r50 | don | 2006-07-15 19:15:01 +0100 (Sat, 15 Jul 2006) | 4 lines
+
+Bump version v0.0.5
+Update README et. al. to reflect changes.  Discover install is broken.
+Decided "What the fuck.".  Moving to new system (hopefully) soon.
+
+------------------------------------------------------------------------
+r49 | don | 2006-07-15 18:49:51 +0100 (Sat, 15 Jul 2006) | 2 lines
+
+Continued work on index for web-page
+
+------------------------------------------------------------------------
+r48 | don | 2006-07-15 18:41:25 +0100 (Sat, 15 Jul 2006) | 5 lines
+
+Make the primary thought red when not selected (Making it easier, for
+non-colour-blind people, to pick out).
+Move screenshot to -002.  Add in -005 screenshot.
+Start updating website
+
+------------------------------------------------------------------------
+r47 | don | 2006-07-15 18:11:50 +0100 (Sat, 15 Jul 2006) | 12 lines
+
+Fix stupid bugs.  Find out Python is actually EVIL.  When it doesn't
+feel like it, it won't alert you to exceptions, just silently fail.
+
+Anyway:  Make deletion of parent nodes work properly.
+	 Make title change as requested
+	 Handle deletion of primary node gracefully
+	 If title text is "", revert to "Unknown Map %d"
+	 Ensure selection of primary and current root works when
+deleting thoughts
+	 Probably a load more.  True feature parity with before rewrite.
+Woo-hoo
+
+------------------------------------------------------------------------
+r46 | don | 2006-07-14 18:18:31 +0100 (Fri, 14 Jul 2006) | 2 lines
+
+Make window title the primary thought content.  If > 27 chars, truncate.
+
+------------------------------------------------------------------------
+r45 | don | 2006-07-13 20:41:55 +0100 (Thu, 13 Jul 2006) | 2 lines
+
+Bring up to feature-parity with before.  Delete *Classic versions
+
+------------------------------------------------------------------------
+r44 | don | 2006-07-13 20:19:23 +0100 (Thu, 13 Jul 2006) | 4 lines
+
+Fix a few regressions about editing and selecting different nodes and
+...
+Nothing terribly interesting :(
+
+------------------------------------------------------------------------
+r43 | don | 2006-07-13 19:35:21 +0100 (Thu, 13 Jul 2006) | 3 lines
+
+Rework links.  THings are now around the same level as before the
+rewrite, but much clearer in the code :)
+
+------------------------------------------------------------------------
+r42 | don | 2006-07-13 19:15:31 +0100 (Thu, 13 Jul 2006) | 2 lines
+
+Start Link rework.  Make Area and Thoughts work together.
+
+------------------------------------------------------------------------
+r41 | don | 2006-07-12 22:57:45 +0100 (Wed, 12 Jul 2006) | 3 lines
+
+Rework of Thoughts.  More clean now.  Seems to work for the most part.
+No colouring.  No links as yet.  Not tried things out properly.
+
+------------------------------------------------------------------------
+r40 | don | 2006-07-12 21:49:24 +0100 (Wed, 12 Jul 2006) | 3 lines
+
+Oops.  Forgot the delete function.  Fixed.  Still nothing works though
+;)
+
+------------------------------------------------------------------------
+r39 | don | 2006-07-12 21:01:10 +0100 (Wed, 12 Jul 2006) | 5 lines
+
+Great MMapArea rewrite.  Breaks program badly until Links and Thoughts
+are rewritten to support it.
+
+New code is much cleaner and easier to follow though.
+
+------------------------------------------------------------------------
+r38 | don | 2006-07-10 21:20:53 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Make Node deletion work.  (Added a list of children to current thought)
+
+------------------------------------------------------------------------
+r37 | don | 2006-07-10 21:01:15 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add list of children.  Save drawing links the wrong way around
+
+------------------------------------------------------------------------
+r36 | don | 2006-07-10 20:46:49 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Make dragging of links work in editing mode.  Make links update when
+dragging thoughts around.
+
+------------------------------------------------------------------------
+r35 | don | 2006-07-10 20:16:02 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Links now work as before
+
+------------------------------------------------------------------------
+r34 | don | 2006-07-10 19:47:59 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+First attempt at adding a link type.  Very, very broken for now.
+
+------------------------------------------------------------------------
+r33 | don | 2006-07-10 17:47:44 +0100 (Mon, 10 Jul 2006) | 4 lines
+
+Implement Moving and Editing Modes.  Now, to edit a thought, you have to
+be in editing mode (default).  To move thoughts around, you must be in
+move mode.
+
+------------------------------------------------------------------------
+r32 | don | 2006-07-10 17:24:51 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add a silly "About" dialog
+
+------------------------------------------------------------------------
+r31 | don | 2006-07-10 17:08:43 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Make NewWindow, CloseWindow and Quit work as expected.  Allows > 1
+window at a time to be worked on
+
+------------------------------------------------------------------------
+r30 | don | 2006-07-10 16:46:38 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add menubar and titlebar to window.  Nothing works yet thought.
+
+------------------------------------------------------------------------
+r29 | don | 2006-07-10 15:59:41 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add UI description.  Update setup and MANIFEST to ship them
+
+------------------------------------------------------------------------
+r28 | don | 2006-07-10 15:50:30 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Add new file describing MainWindow
+Update script to use LabyrinthWindow
+
+------------------------------------------------------------------------
+r27 | don | 2006-07-10 14:45:34 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+NEW VERSION
+Bump version number to 0.0.3
+
+------------------------------------------------------------------------
+r26 | don | 2006-07-10 14:45:02 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Put the correct filenames on the webpage
+
+------------------------------------------------------------------------
+r25 | don | 2006-07-10 14:40:47 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add in md5 sums
+
+------------------------------------------------------------------------
+r24 | don | 2006-07-10 14:35:46 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Remove MANIFEST from repo.  It's automatically generated.
+
+------------------------------------------------------------------------
+r23 | don | 2006-07-10 14:35:23 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add in webpage to repo.  Including screenshot.
+
+------------------------------------------------------------------------
+r22 | don | 2006-07-10 14:31:48 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Include MANIFEST.in in dist, adding in other various files
+
+------------------------------------------------------------------------
+r21 | don | 2006-07-10 14:27:26 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Make package installable.  Update TheFuture to show some ideas.  Add
+NEWS file.  Update README to reflect changes
+
+------------------------------------------------------------------------
+r20 | don | 2006-07-10 13:07:07 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add a missing *
+
+------------------------------------------------------------------------
+r19 | don | 2006-07-10 06:02:05 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Add some docstrings.  Create README.  Update TheFuture
+
+------------------------------------------------------------------------
+r18 | don | 2006-07-10 02:45:16 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Remove some surplus prints.  A selected thought will now become the root
+node.  Yay.  Means that there can now be multiple root thoughts.
+
+------------------------------------------------------------------------
+r17 | don | 2006-07-10 02:40:46 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Rework signals.  Make single click select node.  Make double click edit
+node.  Make dragging nodes actually work as expected.  I hope.
+
+------------------------------------------------------------------------
+r16 | don | 2006-07-10 01:14:01 +0100 (Mon, 10 Jul 2006) | 2 lines
+
+Make draggin work properly.  Pretty cool.
+
+------------------------------------------------------------------------
+r15 | don | 2006-07-10 00:59:07 +0100 (Mon, 10 Jul 2006) | 3 lines
+
+Cleanup some syntax
+First attempt at drag-moving boxes around.  Doesn't work.  Yet.
+
+------------------------------------------------------------------------
+r14 | don | 2006-07-09 23:54:57 +0100 (Sun, 09 Jul 2006) | 3 lines
+
+Make thoughts selectable.  Clicking in them makes them change back to
+"editing" state
+
+------------------------------------------------------------------------
+r13 | don | 2006-07-09 23:44:40 +0100 (Sun, 09 Jul 2006) | 3 lines
+
+... and then I go and spoil it all by doing something stupid like ...
+chaning my mind.  Home / End go to start / End of line
+
+------------------------------------------------------------------------
+r12 | don | 2006-07-09 23:40:52 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Added Home and End buttons to go to start and end of buffer
+
+------------------------------------------------------------------------
+r11 | don | 2006-07-09 23:37:35 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Add a corner in the top-left of the currently-being-edited note
+
+------------------------------------------------------------------------
+r10 | don | 2006-07-09 23:34:43 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Shade current root thought a hideous bluey color
+
+------------------------------------------------------------------------
+r9 | don | 2006-07-09 22:38:52 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Don't fall over when ctrl-C'd to quit.  Personal peeve
+
+------------------------------------------------------------------------
+r8 | don | 2006-07-09 22:37:38 +0100 (Sun, 09 Jul 2006) | 3 lines
+
+Option parsing.  Only 1 option - -h (for help)
+At least shows something now
+
+------------------------------------------------------------------------
+r7 | don | 2006-07-09 22:09:59 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Update require to actually check version of Gtk available (maybe)
+
+------------------------------------------------------------------------
+r6 | don | 2006-07-09 22:04:51 +0100 (Sun, 09 Jul 2006) | 4 lines
+
+Make the background white
+If current_thought is empty when finishing editing, don't bother drawing
+it
+
+------------------------------------------------------------------------
+r5 | don | 2006-07-09 21:10:07 +0100 (Sun, 09 Jul 2006) | 5 lines
+
+Added a small overview of where this might be leading in the next
+version
+
+Bump version number
+
+------------------------------------------------------------------------
+r4 | don | 2006-07-09 21:04:16 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Make MoveUp and MoveDown work as expected
+
+------------------------------------------------------------------------
+r3 | don | 2006-07-09 19:58:18 +0100 (Sun, 09 Jul 2006) | 3 lines
+
+Make text insertion work
+First pass at Up navigation.  Very broken
+
+------------------------------------------------------------------------
+r2 | don | 2006-07-09 19:18:25 +0100 (Sun, 09 Jul 2006) | 3 lines
+
+Moving back / forward while editing thought
+Backspace / delete actually work as expected
+
+------------------------------------------------------------------------
+r1 | don | 2006-07-09 18:59:02 +0100 (Sun, 09 Jul 2006) | 2 lines
+
+Initial Import of Labyrinth to new home
+
+------------------------------------------------------------------------

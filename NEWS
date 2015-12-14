@@ -1,0 +1,140 @@
+12/11/06 v0.3 (Beautiful Insane)
+-------------
+
+New Features:
+ * Open maps from the command line (allowing Beagle to work with labyrinth
+   properly) - Kevin Kubasik (Issue #3)
+ * Add "Further Info" to all thoughts allowing further notes to be attached to
+   any thought.  Some work borrowed from Gourmet Recipe Manager
+   (http://grecipe-manager.sourceforge.net/)
+ * Store maximised state for maps across saves
+ * Export as Image (png and jpeg)
+ * Selecting text within thought now works
+ * Cut / copy / paste using clipboard and primary selection
+ * Much improved handling of multibyte characters and non-English keyboard
+   layouts
+ * Massively cool new tango-ified icon (Josef Vybíral)
+ * Large Browser internal rework.  Added optional trayicon (disabled by default)
+   Can be enabled by passing --use-tray-icon to labyrinth
+    - First step towards an applet
+    (Andreas Sliwka)
+ * Much improved Browser window layout, adding menus and moving
+   the "Help->About" from Map windows to the Browser window, among other things
+   (Jean-François Fortin Tam, issue #15)
+ * Add debug printing framework (Andreas Sliwka)
+ * Change cursor when moving mouse across thoughts to reflext currently
+   available action
+ * Merge "Move" and "Edit" mode into single "Edit" mode
+ * Selection of multiple thoughts now possible
+ * More performance work
+ * Massively improved RTL support
+ * Add (experimental) Undo / Redo framework
+ * Add menu entry to link / unlink selected thoughts
+ * Use tango-ified colours for text selection colour and to denote selected
+   and root thought (until theme support is added)
+
+Fixes:
+ * Regenerate defs.py when required (Issue #1)
+ * Add icons to toolbar as temprary fix for issue #2
+ * Fix thought numbers across saves (issue #6 and #32)
+ * Don't "jerk" thoughts around when moving (issue #19)
+ * Escape should finish editing thoughts (issue # 23)
+ * Backspace at start of thoughts breaks things royally (issue #25)
+ * Problem resizing drawings / images using the top-right corner
+ * ctrl-a selects either all thoughts or all text in (currently editing) thought
+ * Improvements to handling of arrow keys within editing thoughts
+ * Fix several unclear and confusing messages (Issue #28)
+ * Change mode when inserting image.  Remember current mode across saves
+   properly (Requires PyGtk >= 2.10)
+ * Fix export dialog to show up properly (Issue #29)
+
+Translations:
+ * ru (Alexandre Prokoudine)
+ * nl (Rigo Ketelings and Max Beauchez)
+ * pl (Tomasz Dominikowski)
+ * pt_BR (Leonardo Gregianin)
+ * ca (Gil Forcada)
+ * cs (Josef Vybíral)
+ * fr (Mathieu Leduc-Hamel and Jean-François Fortin Tam)
+ * pt_PT (Luis Gomes)
+ * eu (Zunbeltz Izaola)
+ * sv (Robin Sonefors)
+ * de (Raphael Schmid and Florian Ludwig)
+
+Infrastructure Changes:
+ * Add list of 1.0 targets to doc/TheFuture
+ * Fantastic new website design by Florian Ludwig
+
+
+v0.2
+----
+
+New Features:
+ * Base thought class for future thought types to derive from
+ * Add new document to docs describing (current) file format
+ * Add i18n framework.  No translations yet thought
+ * Add Image Thought for adding images from external files
+ * Add image mode for adding an image
+ * Add Drawing Thought for simple drawings
+ * Add drawing mode for drawing in drawing thoughts
+ * Both Image and Drawing Thoughts are resizable by dragging corners / edges
+ * New (crappy) Labyrinth icon
+ * Add menu entry (shows up in Applications->Office)
+ * Set window icon to new Labyrinth icon in Browser and map windows
+ * All thought types now have slightly rounded corners
+ * When resizing thoughts, change the cursor to reflect this
+ * Links now originate at the centre of thoughts, making them look prettier
+
+Fixes:
+ * Fix uninstalled mode
+ * Only allow 'Open' and 'Delete' to be used when a map is selected in Browser window
+ * Make removal of links work properly
+ * Various code cleanups (Thanks to Rogi Lemar)
+ * Make defs get generated properly (From Alacarte)
+ * Only redraw every 1/40th second when required to stop hammering X server
+ * Draw links behind thoughts for added solidity
+
+
+v0.1
+----
+
+New features:
+ * Tomboy style loading and saving of maps
+   * Saves all thoughts and links
+   * Saves window title, current mode, geometry and placement of window
+ * Link strengthening and weakening
+   * Drag a link from a current parent to a current child to strengthen the link by 1
+   * Drag from child to parent to weaken the link by 1
+   * If strength reaches 0, link is deleted
+ * Massive internal rework (Yes, again)
+   * No more parent-child relationship in code
+   * Makes it much easier to maintain and write save files for
+ * Make install work again
+
+
+v0.0.5
+------
+
+New features:
+ * Menubar and toolbar added.  Beginnings of a user-interface.  Yay!
+ * Allow multiple Labyrinth windows to open at the same time
+ * Added an About dialog
+ * Allow windows to be closed (ctrl-W) or quit the app (ctrl-Q).  Also from the menu.
+ * Different modes:
+   * Move Mode allows you to drag thoughts around and delete them with the delete / backspace key.
+   * Edit Mode</b> allows you to enter new thoughts, edit old thoughts and link up thoughts.
+ * Deletion of nodes.  Either through delete / backspace key in Move Mode or by menu item in any mode.  Note, when no node is selected, this silently fails.  The menu item is always sensitive.
+ * Massive code rework.  Code is now cleaner than before and easier to work with. (Of course, it will likely be screwed with again before becoming serious)
+ * Window title becomes Primary Thought content.  If no primary thought, default to "Untitled Map %d"
+ * Break Install
+
+
+v0.0.2
+------
+
+Initial release
+
+* Add gtk.fixed for positioning textviews (for OSK)
+* Reconfigure toolbars to fit in portrait mode
+* Refresh display when changing screen dimensions (rotation)
+* Replace combo boxes with buttons/palettes (more touch friendly)

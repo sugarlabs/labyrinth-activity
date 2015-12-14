@@ -1,0 +1,475 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-06-20 16:51+0200\n"
+"Last-Translator: Chris <cjl@laptop.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ps\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "ستره وداني"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr ""
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "ټاکل شوی فکر(ونه) لیرې کړه"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "کړکۍ سره برابرول"
+
+#: labyrinthactivity.py:201
+#, fuzzy
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "اصلي کچه"
+
+#: labyrinthactivity.py:207
+#, fuzzy
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "لویول"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>نفي"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "کمول"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>جمع"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr ""
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr ""
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr ""
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "د متن اکر"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>ت"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "انځور زیاتولو اکر"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>ې"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "د رسمولو اکر"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>د"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr ""
+
+#: labyrinthactivity.py:593
+#, fuzzy
+msgid "<ctrl>a"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>ي"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "دوه ټاکل شوي فکرونه لینک\\بې لینکه کړه"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>ل"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr ""
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr ""
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "سمول"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "لید"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr ""
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr ""
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr "د مرکزي فکر د زیاتولو لپاره کلیک کړه"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "د مرستې د ښکاره کولو توان نلري: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "ژباړه د ډان سکورجي لخوا"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "نقشه اوس نشي ړنګول کېدلی. ایا دا پرانیستې ده؟"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "نقشه ورسره تړلی دوسیه نوم نلري."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "دا نقشه نشي ړنګولی"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "ایا ته ریښتیا دا نقشه ړنګول غواړې؟"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "دوسیه پرانیستل"
+
+#: src/Browser.py:288
+#, fuzzy
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Compressed Map (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "د نقشې نوم"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "اخري تازه شوی"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "رسمول #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "انځور غوره کول"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "رنګ غوره کول"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "رنګ ټاکل"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "ناسرلیکې نقشه"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "دوسیه"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "د انځور په توګه صادرول"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "خپله نقشه د انځور په توګه صادره کړئ"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "نقشه صادرول..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "خپله نقشه د XML په توګه صادره کړئ"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "اوسنۍ کړکۍ بنده کړئ"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "ـــسمول"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "ـــکتنه"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "ـــوسیله پټه"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "خیالونه لینکول"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "ټاکل شوي خیالونه لینک کړه"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "ـــاکر"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "ـــړنګول"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "ټاکل شوی توکی(ي) ړنګ کړه"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "ـــد سمولو اکر"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "د سمولو اکر ولګوه"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "ـــانځور زیاتول"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "ټاکل شوي خیال ته انځور زیات کړه"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "ـــد رسمولو اکر"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "یو ښکلی رسم جوړ کړه"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "سرچینه زیاتول"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "یوه سرچینه زیاته کړه"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "کږونې-کارول"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "کږونې د لینکونو په توګه کارول"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "کرښې-کارول"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "نېغې کرښې د لینکونو په توګه کارول"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "پراخ کړل شوي معلومات"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "د خیالونو لپاره پراخ کړل شوي معلومات وښیه"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "ــخاکه"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "د خیال د مراتبو د سلسلې خاکه وښیه"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "ـــمرکزي"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "مرکزي وسیله پټه وښیه"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "ـــبڼه"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "د بڼې وسیله پټه وښیه"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "خیالونه"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "دوسیه د په توګه خوندي کړه"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "ټولې دوسیې"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG انځور (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG انځور (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG Vector انځور (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "د پي ډي ایف وړونی لاسوند"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "د نامعلومې بڼې دوسیه"
+
+#: src/MainWindow.py:711
+#, python-format
+#, python-format, fuzzy
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"د دوتنې ډول ناملاتړی دی. - - مهرباني وکړئ شاتاړی '.png', '.jpg' یا '.svg' "
+"وکاروئ."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "متن سمول"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "یو ار ايي سمول"
+
+#~ msgid "Edit mode"
+#~ msgstr "د سمولو اکر"

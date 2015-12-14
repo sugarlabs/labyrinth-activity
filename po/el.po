@@ -1,0 +1,486 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2011-03-07 10:33+0200\n"
+"Last-Translator: Yannis <kiolalis@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.1\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Λαβύρινθος"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Αποκοπή"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Διαγραφή επιλεγμένων εννοιών"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Ταίριασμα στο παράθυρο"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Αρχικό μέγεθος"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Σμίκρυνση"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>αρνητικό"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Μεγέθυνση"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>ίσο"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr ""
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr ""
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr ""
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Έντονα"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Πλάγια"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Υπογραμμισμένα"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr ""
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr ""
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Λειτουργία κειμένου"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Λειτουργία προσθήκης εικόνας"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Λειτουργία σχεδίασης"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Κατάσταση ετικέτας"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr ""
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Σύνδεση/Αποσύνδεση δυο επιλεγμένων εννοιών"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr ""
+
+#: labyrinthactivity.py:633
+#, fuzzy
+msgid "<ctrl>m"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr ""
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Προβολή"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Κείμενο"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Μορφή σκέψης"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Κάντε κλικ για να προσθέσετε\n"
+"μια κεντρική έννοια"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Αδυναμία εμφάνισης βοήθειας: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Μετάφραση από τον Don Scorgie"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Ο χάρτης δεν μπορεί να διαγραφεί τώρα. Είναι ανοιχτός;"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Ο χάρτης δεν έχει συσχετισμένο όνομα αρχείου."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Αδυναμία διαγραφής αυτού του χάρτη"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Θέλετε οπωσδήποτε να διαγράψετε αυτόν τον χάρτη;"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Άνοιγμα αρχείου"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ Συμπιεσμένος χάρτη (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Όνομα χάρτη"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Τελευταία τροποποίηση"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Σχεδίαση #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Επιλογή εικόνας"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Επιλογή χρώματος"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Ορισμός χρώματος"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Ανώνυμος χάρτης"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Αρχείο"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Εξαγωγή ως εικόνα"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Εξαγωγή του χάρτη σας ως μια εικόνα"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Εξαγωγή χάρτη..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Εξαγωγή του χάρτη σας ως XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Κλείσιμο του τρέχοντος παραθύρου"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Επεξεργασία"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Προβολή"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "_Εργαλειοθήκη"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Σύνδεση εννοιών"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Σύνδεση των επιλεγμένων εννοιών"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_ Κατάσταση"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Διαγραφή"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Διαγραφή των επιλεγμένων στοιχείων"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "_Λειτουργία επεξεργασίας"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Αλλαγή σε λειτουργία επεξεργασίας"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "_Προσθήκη εικόνας"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Προσθήκη εικόνας στην επιλεγμένη έννοια"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "_Λειτουργία σχεδίασης"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Δημιουργία ενός όμορφου σχεδίου"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Προσθήκη πόρου"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Προσθήκη ενός πόρου"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Χρήση _Καμπυλών"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Χρήση καμπυλών ως συνδέσμων"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Χρήση _Γραμμών"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Χρήση ευθειών γραμμών ως συνδέσμων"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Εκτεταμένες πληροφορίες"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Εμφάνιση εκτεταμένων πληροφοριών για τις έννοιες"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Περίγραμμα"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Εμφάνιση περιγράμματος της ιεραρχίας των εννοιών"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Κύριο"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Εμφάνιση κύριας εργαλειοθήκης"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Μορφή"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Εμφάνιση εργαλειοθήκης μορφοποίησης"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Έννοιες"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Αποθήκευση αρχείου ως"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Όλα τα αρχεία"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "Εικόνα PNG (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "Εικόνα JPEG (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "Διανυσματική εικόνα SVG (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "Φορητό έγγραφο PDF (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Άγνωστη μορφή αρχείου"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Αυτή η μορφή αρχείου '%s' δεν υποστηρίζεται.  Παρακαλώ χρησιμοποιήστε "
+"κατάληξη '.png', '.jpg' ή '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Επεξεργασία κειμένου"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Επεξεργασία URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Λειτουργία επεξεργασίας"
+
+#~ msgid "Keep to PDF"
+#~ msgstr "Διατήρηση ως PDF"
+
+#~ msgid "Error loading file"
+#~ msgstr "Σφάλμα φόρτωσης αρχείου"
+
+#, python-format
+#~ msgid "%s could not be found.  Associated thought will be empty."
+#~ msgstr "%s δεν μπορεί να βρεθεί.  Η συνδεδεμένη σκέψη θα είναι κενή."

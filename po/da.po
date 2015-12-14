@@ -1,0 +1,445 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-05-24 00:31-0400\n"
+"PO-Revision-Date: 2013-08-13 15:42+0200\n"
+"Last-Translator: Aputsiaq Niels <aj@isit.gl>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.0.5\n"
+
+#. TRANS: "name" option from activity.info file
+msgid "Labyrinth"
+msgstr "Labyrint"
+
+#. TRANS: "summary" option from activity.info file
+#. TRANS: "description" option from activity.info file
+msgid ""
+"Do you have a lot on your mind? Map it! This activity lets you create mind "
+"maps that, in addition to words, can have drawings and images!"
+msgstr ""
+"Har du meget i tankerne? Kortlæg det! Denne aktivitet lader dig oprette "
+"tankekort, der - i tillæg til ord - kan have tegninger og billeder!"
+
+#: labyrinthactivity.py:146
+msgid "Cut"
+msgstr "Klip"
+
+#: labyrinthactivity.py:154
+msgid "Erase selected thought(s)"
+msgstr "Slet markerede tanke(r)"
+
+#: labyrinthactivity.py:200
+msgid "Fit to window"
+msgstr "Tilpas til vindue"
+
+#: labyrinthactivity.py:201
+msgid "<ctrl>9"
+msgstr "<ctrl>9"
+
+#: labyrinthactivity.py:206
+msgid "Original size"
+msgstr "Original størrelse"
+
+#: labyrinthactivity.py:207
+msgid "<ctrl>0"
+msgstr "<ctrl>0"
+
+#: labyrinthactivity.py:212
+msgid "Zoom out"
+msgstr "Zoom ud"
+
+#: labyrinthactivity.py:213
+msgid "<ctrl>minus"
+msgstr "<ctrl>minus"
+
+#: labyrinthactivity.py:218
+msgid "Zoom in"
+msgstr "Zoom ind"
+
+#: labyrinthactivity.py:219
+msgid "<ctrl>equal"
+msgstr "<ctrl>lighedstegn"
+
+#: labyrinthactivity.py:360
+msgid "Select font"
+msgstr "Vælg skrifttype"
+
+#: labyrinthactivity.py:368
+msgid "Bigger"
+msgstr "Større"
+
+#: labyrinthactivity.py:384
+msgid "Smaller"
+msgstr "Mindre"
+
+#: labyrinthactivity.py:391
+msgid "Bold"
+msgstr "Fed"
+
+#: labyrinthactivity.py:396
+msgid "Italics"
+msgstr "Kursiv"
+
+#: labyrinthactivity.py:401
+msgid "Underline"
+msgstr "Understreget"
+
+#: labyrinthactivity.py:406
+msgid "Set font color"
+msgstr "Vælg skriftfarve"
+
+#: labyrinthactivity.py:411
+msgid "Set background color"
+msgstr "Angiv baggrundsfarve"
+
+#: labyrinthactivity.py:567
+msgid "Text mode"
+msgstr "Teksttilstand"
+
+#: labyrinthactivity.py:568
+msgid "<ctrl>t"
+msgstr "<ctrl>t"
+
+#: labyrinthactivity.py:577
+msgid "Image add mode"
+msgstr "Indsæt billeder tilstand"
+
+#: labyrinthactivity.py:578
+msgid "<ctrl>i"
+msgstr "<ctrl>i"
+
+#: labyrinthactivity.py:585
+msgid "Drawing mode"
+msgstr "Tegne-tilstand"
+
+#: labyrinthactivity.py:586
+msgid "<ctrl>d"
+msgstr "<ctrl>d"
+
+#: labyrinthactivity.py:592
+msgid "Label mode"
+msgstr "Mærkat-tilstand"
+
+#: labyrinthactivity.py:593
+msgid "<ctrl>a"
+msgstr "<ctrl>a"
+
+#: labyrinthactivity.py:617
+msgid "Select thoughts"
+msgstr "Vælg tankebobler"
+
+#: labyrinthactivity.py:619
+msgid "<ctrl>e"
+msgstr "<ctrl>e"
+
+#: labyrinthactivity.py:624
+msgid "Link/unlink two selected thoughts"
+msgstr "Sammenkobling/frakobling af to markerede tanker"
+
+#: labyrinthactivity.py:626
+msgid "<ctrl>l"
+msgstr "<ctrl>l"
+
+#: labyrinthactivity.py:631
+msgid "Move selected thoughs"
+msgstr "Flyt valgte tankebobler"
+
+#: labyrinthactivity.py:633
+msgid "<ctrl>m"
+msgstr "<ctrl>m"
+
+#: labyrinthactivity.py:638
+msgid "Scroll the screen"
+msgstr "Rul skærmen"
+
+#: labyrinthactivity.py:716 labyrinthactivity.py:772
+msgid "Portable Document Format (PDF)"
+msgstr "Portable Document Format (PDF)"
+
+#: labyrinthactivity.py:722 labyrinthactivity.py:777
+msgid "Portable Network Graphic (PNG)"
+msgstr "Portable Network Graphic (PNG)"
+
+#: labyrinthactivity.py:731 labyrinthactivity.py:783
+msgid "Edit"
+msgstr "Redigér"
+
+#: labyrinthactivity.py:743 labyrinthactivity.py:795
+msgid "View"
+msgstr "Vis"
+
+#: labyrinthactivity.py:750
+msgid "Text"
+msgstr "Tekst"
+
+#: labyrinthactivity.py:757
+msgid "Thought Type"
+msgstr "Tanke-type"
+
+#: labyrinthactivity.py:938
+msgid ""
+"Click to add\n"
+"central thought"
+msgstr ""
+"Klik for tilføje\n"
+"central tanke"
+
+#: src/Browser.py:194
+#, python-format
+msgid "Unable to display help: %s"
+msgstr "Kan ikke vise hjælp: %s"
+
+#: src/Browser.py:225
+msgid "Translation by Don Scorgie"
+msgstr "Oversættelse ved Aputsiaq Janussen"
+
+#: src/Browser.py:247
+msgid "The map cannot be deleted right now. Is it open?"
+msgstr "Dette kort kan ikke slette lige nu. Er det åbent?"
+
+#: src/Browser.py:249
+msgid "The map has no associated filename."
+msgstr "Dette kort har ikke noget tilknyttet filnavn."
+
+#: src/Browser.py:252
+msgid "Cannot delete this map"
+msgstr "Kan ikke slette dette kort"
+
+#: src/Browser.py:259
+msgid "Do you really want to delete this Map?"
+msgstr "Vil du virkelig slette dette kort?"
+
+#: src/Browser.py:284
+msgid "Open File"
+msgstr "Åbn fil"
+
+#: src/Browser.py:288
+msgid "MAPZ Compressed Map (*.mapz)"
+msgstr "MAPZ-komprimeret kort (*.mapz)"
+
+#: src/Browser.py:319
+msgid "Map Name"
+msgstr "Navn på kort"
+
+#: src/Browser.py:326
+msgid "Last Modified"
+msgstr "Senest ændret"
+
+#: src/DrawingThought.py:60
+#, python-format
+msgid "Drawing #%d"
+msgstr "Tegner #%d"
+
+#: src/ImageThought.py:59 src/ImageThought.py:62
+msgid "Choose image"
+msgstr "Vælg billede"
+
+#: src/Links.py:269
+msgid "Choose Color"
+msgstr "Vælg farve"
+
+#: src/Links.py:282
+msgid "Set Color"
+msgstr "Indstil farve"
+
+#: src/MainWindow.py:163 src/MainWindow.py:517
+msgid "Untitled Map"
+msgstr "Ikke-navngivet kort"
+
+#: src/MainWindow.py:229
+msgid "File"
+msgstr "Fil"
+
+#: src/MainWindow.py:230
+msgid "Export as Image"
+msgstr "Eksportér som billede"
+
+#: src/MainWindow.py:231
+msgid "Export your map as an image"
+msgstr "Eksportér dit kort som et billede"
+
+#: src/MainWindow.py:232
+msgid "Export Map..."
+msgstr "Eksportér kort..."
+
+#: src/MainWindow.py:233
+msgid "Export your map as XML"
+msgstr "Eksportér dit kort som XML"
+
+#: src/MainWindow.py:235
+msgid "Close the current window"
+msgstr "Luk det nuværende vindue"
+
+#: src/MainWindow.py:236
+msgid "_Edit"
+msgstr "_Redigér"
+
+#: src/MainWindow.py:237
+msgid "_View"
+msgstr "_Vis"
+
+#: src/MainWindow.py:238
+msgid "_Toolbar"
+msgstr "Værk_tøjsbjælke"
+
+#: src/MainWindow.py:247
+msgid "Link Thoughts"
+msgstr "Sammenkæd tanker"
+
+#: src/MainWindow.py:248
+msgid "Link the selected thoughts"
+msgstr "Sammenkæd de markerede tanker"
+
+#: src/MainWindow.py:249
+msgid "_Mode"
+msgstr "_Tilstand"
+
+#: src/MainWindow.py:250
+msgid "_Delete"
+msgstr "_Slet"
+
+#: src/MainWindow.py:251
+msgid "Delete the selected element(s)"
+msgstr "Slet markerede element(er)"
+
+#: src/MainWindow.py:257
+msgid "_Edit Mode"
+msgstr "R_edigeringstilstand"
+
+#: src/MainWindow.py:258
+msgid "Turn on edit mode"
+msgstr "Slå redigeringstilstand til"
+
+#: src/MainWindow.py:259
+msgid "_Add Image"
+msgstr "Til_føj billede"
+
+#: src/MainWindow.py:260
+msgid "Add an image to selected thought"
+msgstr "Tilføj et billede til markerede tanke"
+
+#: src/MainWindow.py:261
+msgid "_Drawing Mode"
+msgstr "Te_gnetilstand"
+
+#: src/MainWindow.py:262
+msgid "Make a pretty drawing"
+msgstr "Lav en pæn tegning"
+
+#: src/MainWindow.py:263
+msgid "Add Resource"
+msgstr "Tilføj ressource"
+
+#: src/MainWindow.py:264
+msgid "Add a resource"
+msgstr "Tilføj en ressource"
+
+#: src/MainWindow.py:266
+msgid "Use _Curves"
+msgstr "Benyt _kurver"
+
+#: src/MainWindow.py:267
+msgid "Use curves as links"
+msgstr "Brug kurver til sammenkædninger"
+
+#: src/MainWindow.py:268
+msgid "Use _Lines"
+msgstr "Benyt _linjer"
+
+#: src/MainWindow.py:269
+msgid "Use straight lines as links"
+msgstr "Brug lige linjer som sammenkædninger"
+
+#: src/MainWindow.py:271
+msgid "_Extended Information"
+msgstr "_Udvidet information"
+
+#: src/MainWindow.py:272
+msgid "Show extended information for thoughts"
+msgstr "Vis udvidet information for tanker"
+
+#: src/MainWindow.py:273
+msgid "_Outline"
+msgstr "_Disposition"
+
+#: src/MainWindow.py:274
+msgid "Show outline of thought hierarchy"
+msgstr "Vis disposition af tankehierarki"
+
+#: src/MainWindow.py:275
+msgid "_Main"
+msgstr "_Primær"
+
+#: src/MainWindow.py:276
+msgid "Show main toolbar"
+msgstr "Vis primær værktøjsbjælke"
+
+#: src/MainWindow.py:277
+msgid "_Format"
+msgstr "_Formattering"
+
+#: src/MainWindow.py:278
+msgid "Show format toolbar"
+msgstr "Vis værktøjsbjælke for formattering"
+
+#: src/MainWindow.py:303
+msgid "Thoughts"
+msgstr "Tanker"
+
+#: src/MainWindow.py:576
+msgid "Save File As"
+msgstr "Gem fil som"
+
+#: src/MainWindow.py:670
+msgid "All Files"
+msgstr "Alle filer"
+
+#: src/MainWindow.py:671
+msgid "PNG Image (*.png)"
+msgstr "PNG-billede (*.png)"
+
+#: src/MainWindow.py:672
+msgid "JPEG Image (*.jpg, *.jpeg)"
+msgstr "JPEG-billede (*.jpg, *.jpeg)"
+
+#: src/MainWindow.py:673
+msgid "SVG Vector Image (*.svg)"
+msgstr "SVG-vektorbillede (*.svg)"
+
+#: src/MainWindow.py:674
+msgid "PDF Portable Document (*.pdf)"
+msgstr "PDF Portable Document (*.pdf)"
+
+#: src/MainWindow.py:710
+msgid "Unknown file format"
+msgstr "Ukendt filformat"
+
+#: src/MainWindow.py:711
+#, python-format
+msgid ""
+"The file type '%s' is unsupported.  Please use the suffix '.png', '.jpg' or "
+"'.svg'."
+msgstr ""
+"Filtypen '%s' understøttes ikke.  Benyt venligst endelsen '.png', '.jpg' "
+"eller '.svg'."
+
+#: src/ResourceThought.py:128
+msgid "Edit Text"
+msgstr "Rediger tekst"
+
+#: src/ResourceThought.py:133
+msgid "Edit URI"
+msgstr "Rediger URI"
+
+#~ msgid "Edit mode"
+#~ msgstr "Redigeringstilstand"
