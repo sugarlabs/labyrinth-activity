@@ -26,19 +26,15 @@
 # news is that much of the complexity disappears.
 # --Walter Bender <walter@sugarlabs.org> 2013
 
-import utils
-import string
+from gi.repository import Gtk, Gdk, Pango, PangoCairo
+
 import os
 import xml.dom
-import logging
 
-from gi.repository import Gtk
-from gi.repository import Gdk
-from gi.repository import Pango
-from gi.repository import GObject
-
-from BaseThought import *
+import utils
+import BaseThought
 import UndoManager
+from BaseThought import *
 import prefs
 
 UNDO_ADD_ATTR=64
@@ -115,9 +111,6 @@ class TextThought (ResizableThought):
         italics = False
         underline = False
         pango_font = None
-
-        if hasattr(self, "attrlist"):
-            del self.attrlist
 
         self.attrlist = Pango.AttrList()
         # TODO: splice instead of own method

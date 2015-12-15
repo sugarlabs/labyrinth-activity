@@ -178,37 +178,31 @@ class MMapArea (Gtk.DrawingArea):
 
         self.set_can_focus(True)
 
-    def load_colors(self, father, *args):
-        self.father = father
+        # set theme colors
+        w = Gtk.Window()
+        w.realize()
+        style = Gtk.Style()  ##w.get_style()
+        c = w.get_style_context()
+        font = c.get_font(Gtk.StateFlags.NORMAL)
 
-        style = self.get_style()
+        self.pango_context.set_font_description(font)
+        self.font_name = font.get_family()
+        utils.default_font = self.font_name
+
+        self.font_size = font.get_size() / Pango.SCALE
+        utils.default_colors["text"] = utils.gtk_to_cairo_color(c.get_color(Gtk.StateFlags.NORMAL))  ##utils.gtk_to_cairo_color(style.text[gtk.STATE_NORMAL])
+        utils.default_colors["base"] = utils.gtk_to_cairo_color(c.get_background_color(Gtk.StateFlags.NORMAL)) ##utils.gtk_to_cairo_color(style.base[gtk.STATE_NORMAL])
+
+        # Match the fixed white canvas colour (makes thought focus visible)
         self.background_color = style.white
         self.foreground_color = style.black
-        self.pango_context.set_font_description(style.font_desc)
+        utils.default_colors["bg"] = utils.gtk_to_cairo_color(c.get_background_color(Gtk.StateFlags.NORMAL))  ##utils.gtk_to_cairo_color(style.bg[gtk.STATE_NORMAL])
+        utils.default_colors["fg"] = utils.gtk_to_cairo_color(c.get_color(Gtk.StateFlags.NORMAL))  ##utils.gtk_to_cairo_color(style.fg[gtk.STATE_NORMAL])
 
-        # FIXME: rude hack to remove fontsize from font name
-        parts = style.font_desc.to_string().split()
-        try:
-            float(parts[-1])
-            self.font_name = string.join(parts[0:-2])
-
-        except ValueError:
-            self.font_name = style.font_desc.to_string()
-
-        utils.default_font = self.font_name
-        self.font_size = utils.default_font_size
-        ##utils.default_colors["text"] = utils.gtk_to_cairo_color(style.text[Gtk.StateType.NORMAL])
-        ##utils.default_colors["base"] = utils.gtk_to_cairo_color(style.base[Gtk.StateType.NORMAL])
-        # Match the fixed white canvas colour (makes thought focus visible)
-        ##utils.default_colors["bg"] = utils.gtk_to_cairo_color(style.bg[Gtk.StateType.NORMAL])
-        ##utils.default_colors["fg"] = utils.gtk_to_cairo_color(style.fg[Gtk.StateType.NORMAL])
-
-        ##utils.selected_colors["text"] = utils.gtk_to_cairo_color(style.text[Gtk.StateType.SELECTED])
-        ##utils.selected_colors["bg"] = utils.gtk_to_cairo_color(style.bg[Gtk.StateType.SELECTED])
-        ##utils.selected_colors["fg"] = utils.gtk_to_cairo_color(style.fg[Gtk.StateType.SELECTED])
-        ##utils.selected_colors["fill"] = utils.gtk_to_cairo_color(style.base[Gtk.StateType.SELECTED])
-
-        ##w.destroy()
+        utils.selected_colors["text"] = utils.gtk_to_cairo_color(c.get_color(Gtk.StateFlags.SELECTED))  ##utils.gtk_to_cairo_color(style.text[gtk.STATE_SELECTED])
+        utils.selected_colors["bg"] = utils.gtk_to_cairo_color(c.get_background_color(Gtk.StateFlags.SELECTED))  ##utils.gtk_to_cairo_color(style.bg[gtk.STATE_SELECTED])
+        utils.selected_colors["fg"] = utils.gtk_to_cairo_color(c.get_color(Gtk.StateFlags.SELECTED))  ##utils.gtk_to_cairo_color(style.fg[gtk.STATE_SELECTED])
+        utils.selected_colors["fill"] = utils.gtk_to_cairo_color(c.get_background_color(Gtk.StateFlags.SELECTED)) ##utils.gtk_to_cairo_color(style.base[gtk.STATE_SELECTED])
 
     def set_text_attributes(self, text_attributes):
         return
@@ -505,7 +499,7 @@ class MMapArea (Gtk.DrawingArea):
             self.window = self.get_window()
 
             if mode == MODE_IMAGE or mode == MODE_DRAW:
-                self.set_cursor (Gdk.CursorTypeCROSSHAIR)
+                self.set_cursor (Gdk.CursorType.CROSSHAIR)
             else:
                 self.set_cursor (Gdk.CursorType.LEFT_PTR)
         else:
@@ -803,7 +797,7 @@ class MMapArea (Gtk.DrawingArea):
 
         if type == MODE_TEXT:
             # fixed<-_vbox<-_sw<-_main_area
-            thought = TextThought.TextThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color, fixed=self.father, parent=self)
+            thought = TextThought.TextThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color, fixed=self.get_parent().get_parent().get_parent().get_parent(), parent=self)
         elif type == MODE_LABEL:
             thought = LabelThought.LabelThought (coords, self.pango_context, self.nthoughts, self.save, self.undo, loading, self.background_color, self.foreground_color)
         elif type == MODE_IMAGE:
