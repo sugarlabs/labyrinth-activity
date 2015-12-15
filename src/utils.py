@@ -31,6 +31,8 @@ from array import array
 # Not available on OLPC's XO, but not needed neither
 #from Numeric import *
 
+from gi.repository import Gdk
+
 try:
     # Sugar specific modules
     from sugar3.profile import get_color
@@ -188,7 +190,10 @@ def margin_thought_classic ():
     return (5, 5, 5, 5)
 
 def gtk_to_cairo_color(color):
-    if type(color) == Gdk.Color:
+    if type(color) == Gdk.RGBA:
+        return (color.red, color.green, color.red)
+
+    elif type(color) == Gdk.Color:
         return (color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0)
 
     elif type(color) == tuple:

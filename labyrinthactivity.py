@@ -813,7 +813,6 @@ class LabyrinthActivity(activity.Activity):
             activity_toolbar.share.props.visible = False
             toolbox.set_current_toolbar(1)
 
-        self.connect("show", self.__start)
         self.show_all()
 
         self.__configure_cb(None)
@@ -821,9 +820,6 @@ class LabyrinthActivity(activity.Activity):
         self._mode = MMapArea.MODE_TEXT
         self._main_area.set_mode(self._mode)
         self.set_focus_child(self._main_area)
-
-    def __start(self, widget):
-        self._main_area.load_colors(self.fixed)
 
     def __build_main_canvas_area(self):
         self.fixed = Gtk.Fixed()
