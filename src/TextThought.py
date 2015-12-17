@@ -370,8 +370,6 @@ class TextThought (ResizableThought):
         if not self.editing:
             return False
 
-        ## FIXME
-        """
         if (event.state & modifiers) & Gdk.ModifierType.CONTROL_MASK:
             if event.keyval == gtk.keysyms.a:
                 self.index = self.bindex = 0
@@ -409,7 +407,6 @@ class TextThought (ResizableThought):
             clear_attrs = False
         else:
             handled = False
-        """
 
         if clear_attrs:
             del self.current_attrs
@@ -724,7 +721,7 @@ class TextThought (ResizableThought):
                 self.bindex = self.bindex_from_index (self.index)
                 if not (event.state & modifiers) & Gdk.ModifierType.SHIFT_MASK:
                     self.end_index = self.index
-            elif event.type == Gdk.EventType.BUTTON2_MASK: ##Gdk.EventType._2BUTTON_PRESS:
+            elif event.type == Gdk.EventType._2BUTTON_PRESS:
                 self.index = len(self.text)
                 self.end_index = 0                        # and mark all
                 self.double_click = True
