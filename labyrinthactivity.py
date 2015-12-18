@@ -475,53 +475,8 @@ class TextAttributesToolbar(Gtk.Toolbar):
         self._main_area.font_size = font_size
 
     def __attribute_values(self):
-        attributes = {"bold": True, "italics": True, "underline": True,
-                      "font": ""}
-        it = self._main_area.selected[0].attributes.get_iterator()
-        start_index = self._main_area.selected[0].index
-        end_index = self._main_area.selected[0].end_index
-        while(1):
-            found = False
-            r = it.range()
-            if start_index == end_index:
-                if r[0] <= start_index and r[1] > start_index:
-                    found = True
-            elif start_index < end_index:
-                if r[0] > end_index:
-                    break
-                if start_index == end_index and \
-                    r[0] < start_index and \
-                    r[1] > start_index:
-                    found = True
-                elif start_index != end_index and r[0] <= start_index and \
-                   r[1] >= end_index:
-                    found = True
-            else:
-                if r[0] > start_index:
-                    break
-                if start_index == end_index and \
-                    r[0] < start_index and \
-                    r[1] > start_index:
-                    found = True
-                elif start_index != end_index and r[0] <= end_index and \
-                   r[1] >= start_index:
-                    found = True
-
-            if found:
-                attr = it.get_attrs()
-                for x in attr:
-                    if x.type == Pango.AttrType.WEIGHT and x.value == Pango.Weight.BOLD:
-                        attributes["bold"] = False
-                    elif x.type == Pango.AttrStyle and x.value == Pango.Style.ITALIC: ## FIXME: Pango.AttrStyle
-                        attributes["italics"] = False
-                    elif x.type == Pango.AttrType.UNDERLINE and x.value == Pango.Underline.SINGLE:
-                        attributes["underline"] = False
-                    elif x.type == Pango.AttrType.FONT_DESC:
-                        attributes["font"] = x.desc
-            if it.next() == False:
-                break
-
-        return attributes
+        thought = self._main_area.selected[0]
+        return thought.attributes.copy()
 
     def __font_sizes_cb(self, button, increase):
         if not hasattr(self._main_area, 'font_size'):
@@ -549,19 +504,20 @@ class TextAttributesToolbar(Gtk.Toolbar):
     def __bold_cb(self, button):
         if len(self._main_area.selected) < 1:
             return
-        value = self.__attribute_values()["bold"]
+        value = not self.__attribute_values()["bold"]
         self._main_area.set_bold(value)
 
     def __italics_cb(self, button):
         if len(self._main_area.selected) < 1:
             return
-        value = self.__attribute_values()["italics"]
+
+        value = not self.__attribute_values()["italic"]
         self._main_area.set_italics(value)
 
     def __underline_cb(self, button):
         if len(self._main_area.selected) < 1:
             return
-        value = self.__attribute_values()["underline"]
+        value = not self.__attribute_values()["underline"]
         self._main_area.set_underline(value)
 
     def __foreground_color_cb(self, button):
