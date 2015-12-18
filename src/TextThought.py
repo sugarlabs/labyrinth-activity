@@ -46,7 +46,7 @@ class TextThought (ResizableThought):
     def __init__ (self, coords, pango_context, thought_number, save, undo,
               loading, background_color, foreground_color, name="thought",
               fixed=None, parent=None):
-        super (TextThought, self).__init__(coords, save, name, undo, background_color, foreground_color)
+        super(TextThought, self).__init__(coords, save, name, undo, background_color, foreground_color)
 
         self.index = 0
         self.end_index = 0
@@ -59,8 +59,6 @@ class TextThought (ResizableThought):
         self.pango_context = pango_context
         self.moving = False
         self.preedit = None
-        self.attrlist = None
-        self.attributes = Pango.AttrList()
         self.current_attrs = []
         self.double_click = False
         self.orig_text = None
@@ -70,158 +68,78 @@ class TextThought (ResizableThought):
         self._textview_handler = None
         self._clipboard = None
 
-        if prefs.get_direction () == Gtk.TextDirection.LTR:
+        self.attributes = {"bold": False,
+                           "italic": False,
+                           "underline": False,
+                           "font": "Sans"}
+
+        self.tag_bold = None
+        self.tag_italic = None
+        self.tag_underline = None
+
+        if prefs.get_direction() == Gtk.TextDirection.LTR:
             self.pango_context.set_base_dir(Pango.Direction.LTR)
         else:
             self.pango_context.set_base_dir(Pango.Direction.RTL)
 
         self.b_f_i = self.bindex_from_index
         margin = utils.margin_required (utils.STYLE_NORMAL)
+
         if coords:
             self.ul = (coords[0]-margin[0], coords[1] - margin[1])
+
         else:
             self.ul = None
 
         self.all_okay = True
 
-    def index_from_bindex (self, bindex):
+    def make_tags(self):
+        buffer = self.textview.get_buffer()
+        self.tag_bold = buffer.create_tag("bold", weight=Pango.Weight.BOLD)
+        self.tag_italic = buffer.create_tag("italic", style=Pango.Style.ITALIC)
+        self.tag_underline = buffer.create_tag("underline", underline=Pango.Underline.SINGLE)
+        self.tag_font = buffer.create_tag("font", font=self.attributes["font"])
+
+    def index_from_bindex(self, bindex):
         if bindex == 0:
             return 0
+
         index = 0
         for x in range(bindex):
             index += int(self.bytes[x])
+
         return index
 
-    def bindex_from_index (self, index):
+    def bindex_from_index(self, index):
         if index == 0:
             return 0
+
         bind = 0
         nbytes = 0
+
         for x in self.bytes:
             nbytes += int (x)
             bind+=1
             if nbytes == index:
                 break
+
         if nbytes < index:
             bind = len(self.bytes)
+
         return bind
-
-    def attrs_changed (self):
-        bold = False
-        italics = False
-        underline = False
-        pango_font = None
-
-        self.attrlist = Pango.AttrList()
-        # TODO: splice instead of own method
-        it = self.attributes.get_iterator()
-
-        while 1:
-            at = it.get_attrs()
-            for x in at:
-                self.attrlist.change(x)
-            if it.next() == False:
-                break
-        if self.preedit:
-            ins_text = self.preedit[0]
-            ins_style = self.preedit[1]
-            if self.index == len(self.text):
-                show_text = self.text+ins_text
-            elif self.index == 0:
-                show_text = ins_text + self.text
-            else:
-                split1 = self.text[:self.index]
-                split2 = self.text[self.index:]
-                show_text = split1 + ins_text + split2
-            self.attrlist.splice(ins_style, self.index, len(ins_text))
-        else:
-            show_text = self.text
-
-        it = self.attributes.get_iterator()
-        while(1):
-            found = False
-            r = it.range()
-            if self.index == self.end_index:
-                if r[0] <= self.index and r[1] > self.index:
-                    found = True
-            elif self.index < self.end_index:
-                if r[0] > self.end_index:
-                    break
-                if self.index == self.end_index and \
-                    r[0] < self.index and \
-                    r[1] > self.index:
-                    found = True
-                elif self.index != self.end_index and r[0] <= self.index and \
-                   r[1] >= self.end_index:
-                    # We got a winner!
-                    found = True
-            else:
-                if r[0] > self.index:
-                    break
-                if self.index == self.end_index and \
-                    r[0] < self.index and \
-                    r[1] > self.index:
-                    found = True
-                elif self.index != self.end_index and r[0] <= self.end_index and \
-                   r[1] >= self.index:
-                       # We got another winner!
-                    found = True
-
-            if found:
-                # FIXME: the it.get() seems to crash python
-                # through Pango.
-                attr = it.get_attrs()
-                for x in attr:
-                    if x.type == Pango.Weight and x.value == Pango.Weight.BOLD:
-                        bold = True
-                    elif x.type == Pango.Style and x.value == Pango.Style.ITALIC:
-                        italics = True
-                    elif x.type == Pango.Underline and x.value == Pango.Underline.SINGLE:
-                        underline = True
-                    elif x.type == Pango.AttrFontDesc:
-                        pango_font = x.desc
-
-            if it.next() == False:
-                break
-
-        to_add = []
-        if bold:
-            to_add.append(Pango.Weight(Pango.Weight.BOLD)) ##, self.index, self.index))
-        if italics:
-            to_add.append(Pango.AttrStyle(Pango.Style.ITALIC)) ##, self.index, self.index))
-        if underline:
-            to_add.append(Pango.Underline(Pango.Underline.SINGLE)) ##, self.index, self.index))
-        if pango_font:
-            to_add.append(Pango.AttrFontDesc(pango_font, self.index, self.index))
-        for x in self.current_attrs:
-            if x.type == Pango.Weight and x.value == Pango.Weight.BOLD:
-                bold = True
-                to_add.append(x)
-            if x.type == Pango.Style and x.value == Pango.Style.ITALIC:
-                italics = True
-                to_add.append(x)
-            if x.type == Pango.Underline and x.value == Pango.Underline.SINGLE:
-                underline = True
-                to_add.append(x)
-            if x.type == Pango.AttrFontDesc:
-                pango_font = x.desc
-                to_add.append(x)
-        del self.current_attrs
-        self.current_attrs = to_add
-        self.emit("update-attrs", bold, italics, underline, pango_font)
-        return show_text
 
     def recalc_text_edges (self):
         if (not hasattr(self, "layout")):
             return
 
-        #del self.layout
-
-        show_text = self.attrs_changed()
-
         self.layout = Pango.Layout(self.pango_context)
-        self.layout.set_text (show_text)
-        self.layout.set_attributes(self.attrlist)
+
+        if self.textview != None:
+            start, end = self.textview.get_buffer().get_bounds()
+            text = self.textview.get_buffer().get_text(start, end, True)
+            self.layout.set_text(text, len(text))
+
+        ##self.layout.set_attributes(self.attrlist)
 
         margin = utils.margin_required(utils.STYLE_NORMAL)
         text_w, text_h = self.layout.get_pixel_size()
@@ -237,7 +155,7 @@ class TextThought (ResizableThought):
         self.max_y = self.min_y + text_h
 
     def recalc_edges (self):
-        self.lr = (self.ul[0]+self.width, self.ul[1]+self.height)
+        self.lr = (self.ul[0] + self.width, self.ul[1] + self.height)
         if not self.creating:
             self.recalc_text_edges()
 
@@ -273,50 +191,9 @@ class TextThought (ResizableThought):
             bright = self.bytes[self.b_f_i(self.index):]
             change = len(string)
 
-        it = self.attributes.get_iterator()
-        changes= []
-        for x in self.current_attrs:
-            x.start_index = self.index
-            x.end_index = self.index + len(string)
-            changes.append(x)
-        old_attrs = []
-        while (1):
-            (start,end) = it.range()
-            l = it.get_attrs()
-            if start <= self.index:
-                if end > self.end_index:
-                    # Inside range
-                    for x in l:
-                        old_attrs.append(x.copy())
-                        x.end_index += change
-                        changes.append(x)
-                else:
-                    for x in l:
-                        old_attrs.append(x.copy())
-                        changes.append(x)
-            else:
-                if end > self.end_index:
-                    for x in l:
-                        old_attrs.append(x.copy())
-                        x.end_index += change
-                        x.start_index += change
-                        changes.append(x)
-                else:
-                    for x in l:
-                        old_attrs.append(x.copy())
-                        changes.append(x)
-            if it.next() == False:
-                break
-
-        del self.attributes
-        self.attributes = Pango.AttrList()
-
-        for x in changes:
-            self.attributes.change(x)
-
         self.text = left + string + right
         self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.INSERT_LETTER, self.undo_text_action,
-                            self.bindex, string, len(string), old_attrs, changes))
+                            self.bindex, string, len(string), self.attributes, []))
         self.index += len (string)
         self.bytes = bleft + str(len(string)) + bright
         self.bindex = self.b_f_i (self.index)
@@ -338,13 +215,23 @@ class TextThought (ResizableThought):
         context.set_source_rgb (r, g, b)
         self.layout.set_alignment(Pango.Alignment.CENTER)
         context.move_to (textx, texty)
-        context.show_layout (self.layout)
+        ##context.show_layout (self.layout)
         if self.editing:
             if self.preedit:
                 (strong, weak) = self.layout.get_cursor_pos (self.index + self.preedit[2])
+
             else:
                 (strong, weak) = self.layout.get_cursor_pos (self.index)
-            (startx, starty, curx,cury) = strong
+
+            if type(strong) == tuple:
+                (startx, starty, curx,cury) = strong
+
+            elif type(strong) == Pango.Rectangle:
+                startx = strong.x
+                starty = strong.y
+                curx = strong.width
+                cury = strong.height
+
             startx /= Pango.SCALE
             starty /= Pango.SCALE
             curx /= Pango.SCALE
@@ -352,6 +239,7 @@ class TextThought (ResizableThought):
             context.move_to (textx + startx, texty + starty)
             context.line_to (textx + startx, texty + starty + cury)
             context.stroke ()
+
         context.set_source_rgb (0,0,0)
         context.stroke ()
 
@@ -425,9 +313,11 @@ class TextThought (ResizableThought):
         if action.undo_type == UndoManager.DELETE_LETTER or action.undo_type == UndoManager.DELETE_WORD:
             real_mode = not mode
             attrslist = [action.args[5], action.args[4]]
+
         else:
             real_mode = mode
             attrslist = [action.args[3], action.args[4]]
+
         self.bindex = action.args[0]
         self.index = self.index_from_bindex (self.bindex)
         self.end_index = self.index
@@ -441,9 +331,6 @@ class TextThought (ResizableThought):
             self.rebuild_byte_table ()
             self.bindex = self.b_f_i (self.index)
 
-        del self.attributes
-        self.attributes = Pango.AttrList()
-        map(lambda a : self.attributes.change(a), attrs)
         self.recalc_edges ()
         self.emit ("title_changed", self.text)
         self.emit ("update_view")
@@ -473,51 +360,8 @@ class TextThought (ResizableThought):
             change = -len(local_text)
 
         changes= []
-        old_attrs = []
+        old_attrs = self.attributes.copy()
         accounted = -change
-
-        it = self.attributes.get_iterator()
-        while (1):
-            (start,end) = it.range()
-            l = it.get_attrs()
-            if end <= self.index:
-                for x in l:
-                    changes.append(x)
-            elif start < self.index and end <= self.end_index:
-                # partial ending
-                for x in l:
-                    old_attrs.append(x.copy())
-                    accounted -= (x.end_index - self.index)
-                    x.end_index -= (x.end_index - self.index)
-                    changes.append(x)
-            elif start <= self.index and end >= self.end_index:
-                # Swallow whole
-                accounted -= (end - start)
-                for x in l:
-                    old_attrs.append(x.copy())
-                    x.end_index += change
-                    changes.append(x)
-            elif start < self.end_index and end > self.end_index:
-                # partial beginning
-                for x in l:
-                    old_attrs.append(x.copy())
-                    accounted -= (x.start_index - self.index)
-                    x.start_index = self.index
-                    x.end_index = x.start_index + (end - start) - accounted
-                    changes.append(x)
-            else:
-                # Past
-                for x in l:
-                    old_attrs.append(x.copy())
-                    x.start_index += change
-                    x.end_index += change
-                    changes.append(x)
-            if it.next() == False:
-                break
-
-        del self.attributes
-        self.attributes = Pango.AttrList()
-        map(lambda a : self.attributes.change(a), changes)
 
         self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.DELETE_LETTER, self.undo_text_action,
                             self.b_f_i (self.index), local_text, len(local_text), local_bytes, old_attrs,
@@ -529,8 +373,10 @@ class TextThought (ResizableThought):
     def backspace_char (self):
         if self.index == self.end_index == 0:
             return
+
         if self.index > self.end_index:
             self.index, self.end_index = self.end_index, self.index
+
         if self.index != self.end_index:
             left = self.text[:self.index]
             right = self.text[self.end_index:]
@@ -539,6 +385,7 @@ class TextThought (ResizableThought):
             local_text = self.text[self.index:self.end_index]
             local_bytes = self.bytes[self.b_f_i (self.index):self.b_f_i (self.end_index)]
             change = -len(local_text)
+
         else:
             left = self.text[:self.index-int(self.bytes[self.bindex-1])]
             right = self.text[self.index:]
@@ -549,60 +396,18 @@ class TextThought (ResizableThought):
             self.index-=int(self.bytes[self.bindex-1])
             change = -len(local_text)
 
-        old_attrs = []
-        changes= []
+        old_attrs = self.attributes.copy()
+        changes = []
         accounted = -change
-
-        it = self.attributes.get_iterator()
-        while (1):
-            (start,end) = it.range()
-            l = it.get_attrs()
-            if end <= self.index:
-                for x in l:
-                    old_attrs.append(x.copy())
-                    changes.append(x)
-            elif start < self.index and end <= self.end_index:
-                # partial ending
-                for x in l:
-                    old_attrs.append(x.copy())
-                    accounted -= (x.end_index - self.index)
-                    x.end_index -= (x.end_index - self.index)
-                    changes.append(x)
-            elif start <= self.index and end >= self.end_index:
-                # Swallow whole
-                accounted -= (end - start)
-                for x in l:
-                    old_attrs.append(x.copy())
-                    x.end_index += change
-                    changes.append(x)
-            elif start < self.end_index and end > self.end_index:
-                # partial beginning
-                for x in l:
-                    old_attrs.append(x.copy())
-                    accounted -= (x.start_index - self.index)
-                    x.start_index = self.index
-                    x.end_index = x.start_index + (end - start) - accounted
-                    changes.append(x)
-            else:
-                # Past
-                for x in l:
-                    old_attrs.append(x.copy())
-                    x.start_index += change
-                    x.end_index += change
-                    changes.append(x)
-            if it.next() == False:
-                break
-
-        del self.attributes
-        self.attributes = Pango.AttrList()
-        map(lambda a : self.attributes.change(a), changes)
 
         self.text = left+right
         self.bytes = bleft+bright
         self.end_index = self.index
-        self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.DELETE_LETTER, self.undo_text_action,
-                            self.b_f_i (self.index), local_text, len(local_text), local_bytes, old_attrs,
-                            changes))
+
+        self.undo.add_undo(UndoManager.UndoAction (self, UndoManager.DELETE_LETTER, self.undo_text_action,
+                           self.b_f_i (self.index), local_text, len(local_text), local_bytes, old_attrs,
+                           changes))
+
         if self.index < 0:
             self.index = 0
 
@@ -610,7 +415,9 @@ class TextThought (ResizableThought):
         if self.index <= 0:
             self.index = 0
             return
+
         self.index -= int(self.bytes[self.bindex-1])
+
         if not mod:
             self.end_index = self.index
 
@@ -698,6 +505,8 @@ class TextThought (ResizableThought):
     def process_button_down (self, event, coords):
         if not self._parent.move_mode and self.textview is None:
             self._create_textview()
+            self.make_tags()
+
         if self.textview is not None:
             self.textview.grab_focus()
 
@@ -711,7 +520,7 @@ class TextThought (ResizableThought):
         modifiers = Gtk.accelerator_get_default_mod_mask ()
 
         if event.button == 1:
-            if event.type == Gdk.EventType.BUTTON_MASK:
+            if event.type == Gdk.EventType.BUTTON_PRESS:
                 x = int ((coords[0] - self.min_x)*Pango.SCALE)
                 y = int ((coords[1] - self.min_y)*Pango.SCALE)
                 loc = self.layout.xy_to_index (x, y)
@@ -762,7 +571,7 @@ class TextThought (ResizableThought):
         font, size = None, None
         bold, italic, underline = False, False, False
         # Get current attributes and set them here
-        it = self.attributes.get_iterator()
+        """
         while (1):
             r = it.range()
             for x in it.get_attrs():
@@ -793,6 +602,7 @@ class TextThought (ResizableThought):
         if italic:
             font_desc.set_style(Pango.Style.ITALIC)
         self.textview.modify_font(font_desc)
+        """
 
         r, g, b = utils.gtk_to_cairo_color(self.foreground_color)
         rgba = Gdk.Color(int(65535 * r), int(65535 * g), int(65535 * b))
@@ -835,6 +645,31 @@ class TextThought (ResizableThought):
         y = (self.ul[1] + margin[1]) * self._parent.scale_fac
         return int(x + xo - hadj + tx), int(y + yo - vadj + ty), \
                int(w), int(h)
+
+    def apply_tags(self):
+        buffer = self.textview.get_buffer()
+        bounds = buffer.get_bounds()
+        if len(bounds) == 0:
+            return;
+
+        start, end = bounds
+
+        if self.attributes["bold"]:
+            buffer.apply_tag(self.tag_bold, start, end)
+        else:
+            buffer.remove_tag(self.tag_bold, start, end)
+
+        if self.attributes["italic"]:
+            buffer.apply_tag(self.tag_italic, start, end)
+        else:
+            buffer.remove_tag(self.tag_italic, start, end)
+
+        if self.attributes["underline"]:
+            buffer.apply_tag(self.tag_underline, start, end)
+        else:
+            buffer.remove_tag(self.tag_underline, start, end)
+
+        buffer.apply_tag(self.tag_font, start, end);
 
     def _textview_copy_cb(self, widget=None, event=None):
         self.textview.get_buffer().copy_clipboard(self._clipboard)
@@ -892,7 +727,7 @@ class TextThought (ResizableThought):
         # Fix me: We are forcing selection to entire buffer
         # (start, end) = (min(self.index, self.end_index), max(self.index, self.end_index))
         start, end = 0, len(self.text)
-        self.emit ("text_selection_changed", start, end, self.text[start:end])
+        self.emit("text_selection_changed", start, end, self.text[start:end])
 
     def handle_motion (self, event, transformed):
         if ResizableThought.handle_motion(self, event, transformed):
@@ -929,7 +764,7 @@ class TextThought (ResizableThought):
         r,g,b = utils.gtk_to_cairo_color (self.foreground_color)
         context.set_source_rgb (r, g, b)
         context.move_to (self.min_x+move_x, self.min_y+move_y)
-        context.show_layout (self.layout)
+        ##context.show_layout (self.layout)
         context.set_source_rgb (0,0,0)
         context.stroke ()
 
@@ -952,28 +787,35 @@ class TextThought (ResizableThought):
                 self.element.removeChild(self.extended_buffer.element)
             except xml.dom.NotFoundErr:
                 pass
-        self.element.setAttribute ("cursor", str(self.index))
-        self.element.setAttribute ("ul-coords", str(self.ul))
-        self.element.setAttribute ("lr-coords", str(self.lr))
-        self.element.setAttribute ("identity", str(self.identity))
-        self.element.setAttribute ("background-color", utils.color_to_string(self.background_color))
-        self.element.setAttribute ("foreground-color", utils.color_to_string(self.foreground_color))
+        self.element.setAttribute("cursor", str(self.index))
+        self.element.setAttribute("ul-coords", str(self.ul))
+        self.element.setAttribute("lr-coords", str(self.lr))
+        self.element.setAttribute("identity", str(self.identity))
+        self.element.setAttribute("background-color", utils.color_to_string(self.background_color))
+        self.element.setAttribute("foreground-color", utils.color_to_string(self.foreground_color))
+
         if self.am_selected:
                 self.element.setAttribute ("current_root", "true")
+
         else:
             try:
                 self.element.removeAttribute ("current_root")
+
             except xml.dom.NotFoundErr:
                 pass
+
         if self.am_primary:
             self.element.setAttribute ("primary_root", "true");
+
         else:
             try:
                 self.element.removeAttribute ("primary_root")
+
             except xml.dom.NotFoundErr:
                 pass
+
         doc = self.element.ownerDocument
-        it = self.attributes.get_iterator()
+        """
         while (1):
             r = it.range()
             for x in it.get_attrs():
@@ -1004,7 +846,7 @@ class TextThought (ResizableThought):
                     elem.setAttribute("value", x.desc.to_string ())
             if not it.next():
                 break
-
+        """
     def rebuild_byte_table (self):
         # Build the Byte table
         del self.bytes
@@ -1030,7 +872,7 @@ class TextThought (ResizableThought):
         self.text = tmp
 
     def load (self, node, tar):
-        self.index = int (node.getAttribute ("cursor"))
+        self.index = 0 ##int (node.getAttribute ("cursor"))
         self.end_index = self.index
         tmp = node.getAttribute ("ul-coords")
         self.ul = utils.parse_coords (tmp)
@@ -1040,7 +882,7 @@ class TextThought (ResizableThought):
         self.width = self.lr[0] - self.ul[0]
         self.height = self.lr[1] - self.ul[1]
 
-        self.identity = int (node.getAttribute ("identity"))
+        self.identity = 0 ##int (node.getAttribute ("identity"))
         try:
             tmp = node.getAttribute ("background-color")
             self.background_color = Gdk.Color.parse(tmp)
@@ -1063,16 +905,13 @@ class TextThought (ResizableThought):
                 end = int(n.getAttribute("end"))
 
                 if attrType == "bold":
-                    attr = Pango.Weight(Pango.Weight.BOLD) ##, start, end)
+                    self.attributes["bold"] = True
                 elif attrType == "italics":
-                    attr = Pango.Style(Pango.Style.ITALIC) ##, start, end)
+                    self.atributes["italic"] = True
                 elif attrType == "underline":
-                    attr = Pango.Underline(Pango.Underline.SINGLE) ##, start, end)
-                elif attrType == "font":
-                    font_name = str(n.getAttribute("value"))
-                    pango_font = Pango.FontDescription (font_name)
-                    attr = Pango.AttrFontDesc(pango_font) ##, start, end)
-                self.attributes.change(attr)
+                    self.attributes["underline"] = True
+                ##elif attrType == "font":
+                ##    self.attributes["font"] = font
             else:
                 print "Unknown: "+n.nodeName
         self.rebuild_byte_table ()
@@ -1104,13 +943,12 @@ class TextThought (ResizableThought):
 
         change    = old - new
         changes   = []
-        old_attrs = []
+        old_attrs = self.attributes.copy()
         accounted = -change
         index     = offset
         end_index = offset - (new-orig)
 
-        it = self.attributes.get_iterator()
-        while (1):
+        """while (1):
             (start,end) = it.range()
             l = it.get_attrs()
             if end <= start:
@@ -1147,11 +985,7 @@ class TextThought (ResizableThought):
                     changes.append(x)
             if it.next() == False:
                 break
-
-        del self.attributes
-        self.attributes = Pango.AttrList()
-        map(lambda x : self.attributes.change(x), changes)
-
+        """
         self.recalc_edges ()
         self.undo.add_undo (UndoManager.UndoAction (self, UndoManager.DELETE_LETTER, self.undo_text_action,
                                 self.b_f_i (offset), local_text, len(local_text),
@@ -1179,29 +1013,21 @@ class TextThought (ResizableThought):
             elif action.undo_type == UNDO_ADD_ATTR:
                 self.current_attrs.remove(action.args[0])
             elif action.undo_type == UNDO_REMOVE_ATTR_SELECTION:
-                self.attributes = action.args[0].copy()
+                pass##self.attributes = action.args[0].copy()
             elif action.undo_type == UNDO_ADD_ATTR_SELECTION:
-                self.attributes = action.args[0].copy()
+                pass##self.attributes = action.args[0].copy()
         else:
             if action.undo_type == UNDO_REMOVE_ATTR:
                 self.current_attrs.remove(action.args[0])
             elif action.undo_type == UNDO_ADD_ATTR:
                 self.current_attrs.append(action.args[0])
             elif action.undo_type == UNDO_REMOVE_ATTR_SELECTION:
-                self.attributes = action.args[1].copy()
+                pass##self.attributes = action.args[1].copy()
             elif action.undo_type == UNDO_ADD_ATTR_SELECTION:
-                self.attributes = action.args[1].copy()
+                pass##self.attributes = action.args[1].copy()
         self.recalc_edges()
         self.emit("update_view")
         self.undo.unblock()
-
-    def create_attribute(self, attribute, start, end):
-        if attribute == 'bold':
-            return Pango.Weight(Pango.Weight.BOLD) ##, start, end)
-        elif attribute == 'italic':
-            return Pango.Style(Pango.Style.ITALIC) ##, start, end)
-        elif attribute == 'underline':
-            return Pango.Underline(Pango.Underline.SINGLE) ##, start, end)
 
     def set_attribute(self, active, attribute):
         # if not self.editing:
@@ -1223,13 +1049,7 @@ class TextThought (ResizableThought):
         end = max(index, end_index)
 
         if not active:
-            attr = Pango.Style(pstyle) ##, init, end)
-            #if index == end_index:
-            #    self.current_attrs.change(attr)
-            #else:
-            self.attributes.change(attr)
-
-            tmp = []
+            """tmp = []
             attr = None
             if index == end_index:
                 for x in self.current_attrs:
@@ -1243,11 +1063,8 @@ class TextThought (ResizableThought):
                                           self.undo_attr_cb,
                                           attr))
                     return
-
-            it = self.attributes.get_iterator()
-            old_attrs = self.attributes.copy()
-            changed = []
-
+            """
+            """
             while True:
                 r = it.range()
                 if r[0] <= init and r[1] >= end:
@@ -1262,20 +1079,14 @@ class TextThought (ResizableThought):
 
                 if not it.next():
                     break
-
-            del self.attributes
-            self.attributes = Pango.AttrList()
-            map(lambda x : self.attributes.change(x), changed)
-            tmp = []
-            for x in self.current_attrs:
-                if not (x.type == ptype and x.value == pvalue):
-                    tmp.append(x)
-            self.current_attrs = tmp
+            """
+            old_attrs = self.attributes.copy()
             self.undo.add_undo(UndoManager.UndoAction(self, UNDO_REMOVE_ATTR_SELECTION,
                                   self.undo_attr_cb,
                                   old_attrs,
                                   self.attributes.copy()))
         else:
+            """
             if index == end_index:
                 attr = self.create_attribute(attribute, index, end_index)
                 self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR,
@@ -1291,17 +1102,21 @@ class TextThought (ResizableThought):
                                       self.undo_attr_cb,
                                       old_attrs,
                                       self.attributes.copy()))
+            """
         self.recalc_edges()
         self.remove_textview()
 
-    def set_bold (self, active):
-        self.set_attribute(active, 'bold')
+    def set_bold(self, active):
+        self.attributes["bold"] = active
+        self.apply_tags()
 
-    def set_italics (self, active):
-        self.set_attribute(active, 'italic')
+    def set_italics(self, active):
+        self.attributes["italic"] = active
+        self.apply_tags()
 
     def set_underline (self, active):
-        self.set_attribute(active, 'underline')
+        self.attributes["underline"] = active
+        self.apply_tags()
 
     def set_font (self, font_name, font_size):
         # With textview, we are always editing
@@ -1311,30 +1126,25 @@ class TextThought (ResizableThought):
         # Always modify whole string
         self.index = 0
         self.end_index = len(self.text)
+        self.attributes["font"] = "%s %d" % (font_name, font_size)
 
         start = min(self.index, self.end_index)
         end = max(self.index, self.end_index)
 
-
-        pango_font = Pango.FontDescription('%s %s' % (font_name, str(font_size)))
-
-        attr = Pango.AttrFontDesc(pango_font) ##, start, end)
+        self.textview.get_buffer().remove_tag(self.tag_font)
+        self.tag_font = self.textview.get_buffer().create_tag("font", self.attributes["font"])
 
         if start == end:
             self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR,
-                                  self.undo_attr_cb,
-                                  attr))
-            try:
-                self.current_attrs.change(attr)
-            except AttributeError:
-                self.current_attrs.append(attr)
+                               self.undo_attr_cb,
+                               ))##attr))
+            ##self.current_attrs.change(attr)
         else:
-            old_attrs = self.attributes.copy()
-            self.attributes.change(attr)
-            self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR_SELECTION,
-                                  self.undo_attr_cb,
-                                  old_attrs,
-                                  self.attributes.copy()))
+            pass
+            ##self.undo.add_undo(UndoManager.UndoAction(self, UNDO_ADD_ATTR_SELECTION,
+            ##                      self.undo_attr_cb,
+            ##                      old_attrs,
+            ##                      self.attributes.copy()))
         self.recalc_edges()
         self.remove_textview()
 
@@ -1370,3 +1180,4 @@ class TextThought (ResizableThought):
         self.end_index = self.index
         self.emit ("update_links")
         self.recalc_edges ()
+

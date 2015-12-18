@@ -241,16 +241,23 @@ class UndoManager:
     def add_undo (self, action):
         if self.blocked:
             return
+
         if not isinstance(action, UndoAction):
             print "Error: Not a valid undo action.  Ignoring."
             return
+
         del self.redo_list[:]
         if action.undo_type == INSERT_LETTER:
-            self.combine_insertions (action)
+            self.combine_insertions(action)
+
         elif action.undo_type == DELETE_LETTER:
-            self.combine_deletions (action)
+            self.combine_deletions(action)
+
         elif action.undo_type == TRANSFORM_CANVAS:
-            self.combine_transforms (action)
+            self.combine_transforms(action)
+
         else:
             self.undo_list.append (action)
-        self.update_sensitive ()
+
+        self.update_sensitive()
+

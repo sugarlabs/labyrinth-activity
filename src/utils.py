@@ -42,6 +42,9 @@ except:
     pass
 
 def color_to_string(color):
+    if type(color) == tuple:
+        color = color[1]  # (bool, Gdk.Color)
+
     return '#%04x%04x%04x' % (color.red, color.green, color.blue)
 
 __BE_VERBOSE=os.environ.get('DEBUG_LABYRINTH',0)
@@ -197,7 +200,11 @@ def gtk_to_cairo_color(color):
         return (color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0)
 
     elif type(color) == tuple:
-        return (color[0] / 65535.0, color[1] / 65535.0, color[2] / 65535.0)
+        if len(color) == 2:  # (bool, Gdk.Color)
+            return gtk_to_cairo_color(color[1])
+
+        else:
+            return (color[0] / 65535.0, color[1] / 65535.0, color[2] / 65535.0)
 
 def draw_thought_extended (context, ul, lr, am_root, am_primary, background_color, fatborder=False, dashborder=False):
     radius = min(15, lr[0]-ul[0], lr[1]-ul[1])
