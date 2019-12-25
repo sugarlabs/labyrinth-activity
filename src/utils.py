@@ -194,7 +194,7 @@ def margin_thought_classic ():
 
 def gtk_to_cairo_color(color):
     if type(color) == Gdk.RGBA:
-        return (color.red, color.green, color.red)
+        return (color.red, color.green, color.blue)
 
     elif type(color) == Gdk.Color:
         return (color.red / 65535.0, color.green / 65535.0, color.blue / 65535.0)
